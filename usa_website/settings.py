@@ -55,7 +55,7 @@ ROOT_URLCONF = 'usa_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/Users/David/Desktop/usa/usa_website/schedule_builder/templates/schedule_builder'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
