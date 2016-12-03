@@ -11,4 +11,12 @@ def index(request):
 	html = t.render(context)
 	return HttpResponse(html, context)
 
-# Create your views here.
+def home(request):
+	html = get_template("index.html")
+	context = Context({})
+	return HttpResponse(html.render(context))
+
+def aboutus(request):
+	html = get_template("aboutus.html")
+	context = Context({})
+	return HttpResponse(html.render(context))
