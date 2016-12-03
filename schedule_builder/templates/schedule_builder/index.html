@@ -56,15 +56,26 @@
 	<header id="fh5co-header" role="banner">
 		<div class="container">
 			<div class="header-inner">
-				<h1><a href="home">USA</a></h1>
+				<h1><a href="{% url 'home' %}">USA</a></h1>
 				<nav role="navigation">
 					<ul>
-						<li class="active"><a href="aboutus">About Us</a></li>
-						<li><a href="pricing.html">Get Courses</a></li>
-						<li><a href="about.html">News</a></li>
-						<li><a href="contact.html">Committees</a></li>
-						<li class="cta"><a href="#">Apply</a></li>
-						<li class="cta"><a href="#">Contact</a></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Committees<span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					          	<li><a href="{% url 'project' %}">Projects</a></li>
+					          	<li><a href="{% url 'stat134' %}">Web Development</a></li>
+					          	<li><a href="{% url 'stat135' %}">Events</a></li>
+					          	<li><a href="{% url 'stat135' %}">Career Exploration</a></li>
+					        </ul>
+					    </li>
+						<li><a href="course-map">Course Map</a></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses<span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					          <li><a href="{% url 'stat133' %}">Stat 133</a></li>
+					          <li><a href="{% url 'stat134' %}">Stat 134</a></li>
+					          <li><a href="{% url 'stat135' %}">Stat 135</a></li>
+					        </ul>
+					      </li>
+						<li><a href="people">People</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -92,6 +103,52 @@
 		  	</ul>
 	  	</div>
 	</aside>
+
+	<div id="fh5co-pricing-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+					<h2>Committees</h2>
+					<p>Besides hosting events, USA also offers opportunities for students to hone their skills as a member of one of its four committees. By joining a committee, students can get involved in the leadership of the club and gain practical experience in statistical research, event planning, or marketing. We encourage any interested students to apply at the beginning of each semester.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="pricing">
+					<div class="col-md-3 animate-box">
+						<div class="price-box">
+							<h3>Projects</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+							<a href="{% url 'project' %}" class="btn btn-select-plan btn-sm">Learn More</a>
+						</div>
+					</div>
+
+					<div class="col-md-3 animate-box">
+						<div class="price-box">
+							<h3>Web Development</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the</p>
+							<a href="#" class="btn btn-select-plan btn-sm">Learn More</a>
+						</div>
+					</div>
+
+					<div class="col-md-3 animate-box">
+						<div class="price-box">
+							<h3>Events</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+							<a href="#" class="btn btn-select-plan btn-sm">Learn More</a>
+						</div>
+					</div>
+
+					<div class="col-md-3 animate-box">
+						<div class="price-box">
+							<h3>Career Exploration</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the </p>
+							<a href="#" class="btn btn-select-plan btn-sm">Learn More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	</div>
