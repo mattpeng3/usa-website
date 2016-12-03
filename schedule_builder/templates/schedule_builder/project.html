@@ -8,7 +8,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Undergraduate Statistics Association</title>
+	<title>Flew &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -40,7 +40,7 @@
 	<meta name="twitter:card" content="" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="{% static 'schedule_builder/images/favicon.ico' %}">
+	<link rel="shortcut icon" href="favicon.ico">
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">
 	
@@ -55,7 +55,6 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" type="text/css" href="{% static 'schedule_builder/css/style.css' %}" />
 
-	<!-- Modernizr JS -->
 	<script src="{% static 'schedule_builder/js/modernizr-2.6.2.min.js' %}"></script>
 
 
@@ -63,14 +62,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
 	<script src="{% static 'schedule_builder/js/list_courses.js' %}"></script>
-	
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
 
 	</head>
-	<body ng-app="courseList">
+	<body>
+	
 	
 	<div id="fh5co-page">
 	<header id="fh5co-header" role="banner">
@@ -86,15 +81,15 @@
 					          	<li><a href="{% url 'stat135' %}">Events</a></li>
 					          	<li><a href="{% url 'stat135' %}">Career Exploration</a></li>
 					        </ul>
-					    </li>
+					     </li>
 						<li><a href="course-map">Course Map</a></li>
 						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses<span class="caret"></span></a>
 					        <ul class="dropdown-menu">
-					          <li><a href="{% url 'stat133' %}">Stat 133</a></li>
-					          <li><a href="{% url 'stat134' %}">Stat 134</a></li>
-					          <li><a href="{% url 'stat135' %}">Stat 135</a></li>
+					          	<li><a href="{% url 'stat133' %}">Stat 133</a></li>
+					          	<li><a href="{% url 'stat134' %}">Stat 134</a></li>
+					          	<li><a href="{% url 'stat135' %}">Stat 135</a></li>
 					        </ul>
-					      </li>
+					     </li>
 						<li><a href="people">People</a></li>
 					</ul>
 				</nav>
@@ -102,17 +97,39 @@
 		</div>
 	</header>
 	
-
-	<!--<aside id="fh5co-hero" class="js-fullheight">
+	<div class="container">
+		
+	</div>
+	<aside id="fh5co-hero" class="js-fullheight">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
-		   	<li style="background-image: url({% static 'schedule_builder/images/slide_3.jpg' %});">
+		   	<li style="background-image: url(images/slide_1.jpg);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
-		   					<h2>Our Awesome Projects</h2>
-		   					<p class="fh5co-lead">Designed with <i class="icon-heart"></i> by the fine folks at <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></p>
+		   					<h2>Start Your Startup With This Template</h2>
+		   					<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/slide_2.jpg);">
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>Take Your Business To The Next Level</h2>
+		   					<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/slide_3.jpg);">
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>We Think Different That Others Can't</h2>
+		   					<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
 		   				</div>
 		   			</div>
 		   		</div>
@@ -121,151 +138,96 @@
 	  	</div>
 	</aside>
 
-	<form action="">
-		{% for c in courses %}
-	        <input type="checkbox" name="course_name" value="{{c.name}}"> {{c.name}}<br>
-	    {% endfor %}
-	    <button type="submit">Generate Schedule</button>
-	</form>-->
-
-	<div ng-controller="SettingsController1">
-	<div>
-	<ul class = "list-inline">
-		<li class = "list-inline" ng-repeat="c in courses" class = "fade">
-			<div>
-				<a ng-href = "[[c.link]]">[[c.name]]</a><br>
-				[[c.desc]]
-			</div>
-		</li>
-	</ul>
-	</div>
-
-	<div id="fh5co-work-section" class="fh5co-light-grey-section">
+	<div id="fh5co-blog-section" class="fh5co-light-grey-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4">
-					<div class="item-grid text-center animate-box">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+					<h2>Recent Projects</h2>
+					<p>Each semester we work on a diverse slate of projects. From analyzing city traffic data to surveying Cal Undergraduates, our members become experienced data collectors, data mungers, data modelers, data visualizers, and data presenters. We bring skill sets from academia and the workforce to tackle any kind of challenge. More importantly, we come together as a team to learn from each other and collaborate together.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-6 animate-box">
+					<a href="#" class="item-grid">
+						<div class="image" style="background-image: url({% static 'schedule_builder/images/projects_police.jpg' %})"></div>
 						<div class="v-align">
 							<div class="v-align-middle">
-								<!--<a href="javascript:;" id="formButton" ng-click="addCourse()">Select Course</a> <img id="checkmark" src="{% static 'schedule_builder/images/checkmark.png' %}">-->
-								<h3 class="title" id = "form"><a href="{% url 'stat133' %}">Stat 133</a></h3>
-								<h4 class="category">Concepts in Computing with Data</h4>
-								<button data-id = "Stat 133" data-desc = "Concepts in Computing with Data" data-link = "stat-133" ng-click = "addCourse($event)">Add</button>
-								<button data-id = "Stat 133" ng-click = "removeCourse($event)">Remove</button>
+								<h3 class="title">Crime in Berkeley</h3>
+								<h5 class="date"><span>Spring 2016</span></h5>
+								<p>A common concern for Berkeley students is the relatively concerning amount of crime in surrounding areas. For the Spring 2016 semester, we plan to investigate crime rate in Berkeley and surrounding areas. We hope to create a basic predictive model that will help Berkeley students decide whether walking home is the best decision.</p>
 							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6 col-sm-6 animate-box">
+					<a href="#" class="item-grid">
+						<div class="image" style="background-image: url({% static 'schedule_builder/images/projects_fire.jpeg' %})"></div>
+						<div class="v-align">
+							<div class="v-align-middle">
+								<h3 class="title">Fires in San Francisco</h3>
+								<h5 class="date"><span>Spring 2016</span></h5>
+								<p>Residents of the Mission District of San Francisco have been expressing concern over an apparently increasing rate of fires happening in their neighborhood. For the Spring 2016 semester, we plan to analyze if there is indeed an increasing amount of fires happening in the Mission District, and if so, we will investigate why this trend is occurring.</p>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-12 text-center animate-box">
+					<p><a href="#" class="btn btn-primary with-arrow">View More Post <i class="icon-arrow-right"></i></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="fh5co-pricing-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+					<h2>Pricing</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="pricing">
+					<div class="col-md-3 animate-box">
+						<div class="price-box">
+							<h2 class="pricing-plan">Starter</h2>
+							<div class="price"><sup class="currency">$</sup>9<small>/month</small></div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
 						</div>
 					</div>
 
-				</div>
-
-				<div class="col-md-4">
-					<div class="item-grid text-center animate-box">
-						<div class="v-align">
-							<div class="v-align-middle">
-								<!--<a href="javascript:;" id="formButton" ng-click="addCourse()">Select Course</a> <img id="checkmark" src="{% static 'schedule_builder/images/checkmark.png' %}">-->
-								<h3 class="title" id = "form"><a href="{% url 'stat133' %}">Stat 134</a></h3>
-								<h4 class="category">Concepts of Probability</h4>
-								<button data-id = "Stat 134" data-desc = "Concepts of Probability" data-link = "stat-134" ng-click = "addCourse($event)">Add</button>
-								<button data-id = "Stat 134" ng-click = "removeCourse($event)">Remove</button>
-							</div>
+					<div class="col-md-3 animate-box">
+						<div class="price-box">
+							<h2 class="pricing-plan">Basic</h2>
+							<div class="price"><sup class="currency">$</sup>27<small>/month</small></div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
 						</div>
 					</div>
 
-				</div>
-				<div class="col-md-4">
-					<div class="item-grid text-center animate-box">
-						<div class="v-align">
-							<div class="v-align-middle">
-								<!--<a href="javascript:;" id="formButton" ng-click="addCourse()">Select Course</a> <img id="checkmark" src="{% static 'schedule_builder/images/checkmark.png' %}">-->
-								<h3 class="title" id = "form"><a href="{% url 'stat133' %}">Stat 135</a></h3>
-								<h4 class="category">Concepts of Statistics</h4>
-								<button data-id = "Stat 135" data-desc = "Concepts of Statistics" data-link = "stat-135" ng-click = "addCourse($event)">Add</button>
-								<button data-id = "Stat 135" ng-click = "removeCourse($event)">Remove</button>
-							</div>
+					<div class="col-md-3 animate-box">
+						<div class="price-box popular">
+							<h2 class="pricing-plan pricing-plan-offer">Pro <span>Best Offer</span></h2>
+							<div class="price"><sup class="currency">$</sup>74<small>/month</small></div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
 						</div>
 					</div>
 
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url({% static 'schedule_builder/images/image_4.jpg' %})"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Web</h5>
-							</div>
+					<div class="col-md-3 animate-box">
+						<div class="price-box">
+							<h2 class="pricing-plan">Unlimited</h2>
+							<div class="price"><sup class="currency">$</sup>140<small>/month</small></div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+							<a href="#" class="btn btn-select-plan btn-sm">Select Plan</a>
 						</div>
-					</a>
+					</div>
 				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url({% static 'schedule_builder/images/image_5.jpg' %})"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Illustration</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url({% static 'schedule_builder/images/image_6.jpg' %})"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Web Application</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url({% static 'schedule_builder/images/image_7.jpg' %})"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Web Application</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url({% static 'schedule_builder/images/image_8.jpg' %})"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Web Application</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
-						<div class="image" style="background-image: url({% static 'schedule_builder/images/image_9.jpg' %})"></div>
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Geographical App</h3>
-								<h5 class="category">Web Application</h5>
-							</div>
-						</div>
-					</a>
-				</div>
-				<!-- Script runs when Select Course button is clicked to fade text and make checkmark appear -->
-				<script type = "text/javascript">
-					$('#formButton').on('click', function() {
-					    if ($('#form').css('opacity') == .25) $('#form').css('opacity', 1);
-					    else $('#form').css('opacity', .25);
-					    if ($('#checkmark').css('display') == 'inline-block') $('#checkmark').css('display', 'none');
-					    else if ($('#checkmark').css('display') == 'none') $('#checkmark').css('display', 'inline-block');
-					});
-				</script>
 			</div>
 		</div>
 	</div>
 
-	<div class="fh5co-cta" style="background-image: url({% static 'schedule_builder/images/slide_1.jpg' %});">
+	<div class="fh5co-cta" style="background-image: url(images/slide_2.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="col-md-12 text-center animate-box">

@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	{% load static %}
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Flew &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" type="text/css" href="{% static 'schedule_builder/css/animate.css' %}" />
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" type="text/css" href="{% static 'schedule_builder/css/icomoon.css' %}" />
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" type="text/css" href="{% static 'schedule_builder/css/bootstrap.css' %}" />
+	<!-- Flexslider  -->
+	<link rel="stylesheet" type="text/css" href="{% static 'schedule_builder/css/flexslider.css' %}" />
+	<!-- Theme style  -->
+	<link rel="stylesheet" type="text/css" href="{% static 'schedule_builder/css/style.css' %}" />
+
+	<script src="{% static 'schedule_builder/js/modernizr-2.6.2.min.js' %}"></script>
+
+
+	<script src="{% static 'schedule_builder/js/jquery-3.1.1.min.js' %}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
+	<script src="{% static 'schedule_builder/js/list_courses.js' %}"></script>
+
+	</head>
+	<body>
+	
+	
+	<div id="fh5co-page">
+	<header id="fh5co-header" role="banner">
+		<div class="container">
+			<div class="header-inner">
+				<h1><a href="index.html">Flew</a></h1>
+				<nav role="navigation">
+					<ul>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Committees<span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					          	<li><a href="{% url 'project' %}">Projects</a></li>
+					          	<li><a href="{% url 'stat134' %}">Web Development</a></li>
+					          	<li><a href="{% url 'stat135' %}">Events</a></li>
+					          	<li><a href="{% url 'stat135' %}">Career Exploration</a></li>
+					        </ul>
+					    </li>
+						<li><a href="course-map">Course Map</a></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses<span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					          <li><a href="{% url 'stat133' %}">Stat 133</a></li>
+					          <li><a href="{% url 'stat134' %}">Stat 134</a></li>
+					          <li><a href="{% url 'stat135' %}">Stat 135</a></li>
+					        </ul>
+					      </li>
+						<li class="active"><a href="people">People</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<div class="fh5co-team fh5co-light-grey-section">
+		<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+						<h2>Faculty Advisors</h2>
+						<p>Renowned Statistics Professors at the UC Berkeley Statistics Deparment act as faculty advisors to support and give our officers advice.</p>
+					</div>
+					<div class="col-md-4 fh5co-staff text-center animate-box">
+						<img src="{% static 'schedule_builder/images/david_aldous.webp' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+						<h3>David Aldous</h3>
+						<h4>Evans 351</h4>
+						<p>Professor David Aldous received his Ph.D. from Cambridge University and has worked at Berkeley since 1979. His research in probability has covered Markov chains, random networks, and stochastic coalescence. In addition, he teaches several upper division statistics courses and is a Fellow of the Royal Society and a foreign associate of the National Academy of Sciences.</p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 fh5co-staff text-center animate-box">
+						<img src="{% static 'schedule_builder/images/joan_bruna.webp' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+						<h3>Joan Bruna</h3>
+						<h4>Evans 419</h4>
+						<p>Assistant Professor Joan Bruna earned his Ph.D. in applied mathematics from École Polytechnique. His primary research interest is machine learning. He joined Berkeley in 2015 and previously worked for an image processing startup, the machine learning group at NYU, and Facebook AI Research.</p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 fh5co-staff text-center animate-box">
+						<img src="{% static 'schedule_builder/images/a_g.webp' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+						<h3>Adityanand Guntuboyina</h3>
+						<h4>Evans 423</h4>
+						<p>Assistant Professor Adityanand Guntuboyina recieved his Ph.D in statistics and has worked at Berkeley since 2012 after finishing his post-doc at the University of Pennsylvania. He is currently working on statistical problems involving convexity typfied by the estimation of convex sets and functions from various types of noisy measurements. </p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<br>
+				<hr>
+				<br>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+						<h2>Executive Team</h2>
+						<p>The Undergraduate Statistics Association is led by a group of statistics majors who have great passion to promote the major to all students in UC Berkeley. They come from different backgrounds and are interested in different areas within statistics.</p>
+					</div>
+					<div class="col-md-4 fh5co-staff text-center animate-box">
+						<img src="{% static 'schedule_builder/images/sandra.webp' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+						<h3>Sandra Herchen</h3>
+						<h4>President</h4>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 fh5co-staff text-center animate-box">
+						<img src="{% static 'schedule_builder/images/sam.webp' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+						<h3>Sam Xue</h3>
+						<h4>External Vice President</h4>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 fh5co-staff text-center animate-box">
+						<img src="{% static 'schedule_builder/images/julie_chen.webp' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+						<h3>Julie Chen</h3>
+						<h4>Internal Vice President</h4>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-4 fh5co-staff text-center animate-box">
+						<img src="{% static 'schedule_builder/images/chin_chang.webp' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+						<h3>Chin Chang</h3>
+						<h4>Treasurer</h4>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 fh5co-staff text-center animate-box">
+						<img src="{% static 'schedule_builder/images/arun_ramamurthy.webp' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+						<h3>Arun Ramamurthy</h3>
+						<h4>Project Director</h4>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 fh5co-staff text-center animate-box">
+						<img src="{% static 'schedule_builder/images/d_chai.webp' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+						<h3>Aaron Chai</h3>
+						<h4>Web Development Director</h4>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-4 fh5co-staff text-center animate-box">
+						<img src="{% static 'schedule_builder/images/alex_tran.webp' %}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+						<h3>Alex Tran</h3>
+						<h4>Events Director</h4>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+						<ul class="fh5co-social">
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+	</div>
+
+
+	<div id="fh5co-services-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+					<h2>Our pleasure to serve you</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				</div>
+				<div class="col-md-4 text-center item-block animate-box">
+					<h3>Strategy</h3>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+					<p><a href="#" class="btn btn-primary btn-outline with-arrow">Learn more <i class="icon-arrow-right"></i></a></p>
+				</div>
+				<div class="col-md-4 text-center item-block animate-box">
+					<h3>Explore</h3>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+					<p><a href="#" class="btn btn-primary btn-outline with-arrow">Learn more <i class="icon-arrow-right"></i></a></p>
+				</div>
+				<div class="col-md-4 text-center item-block animate-box">
+					<h3>Expertise</h3>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+					<p><a href="#" class="btn btn-primary btn-outline with-arrow">Learn more <i class="icon-arrow-right"></i></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="fh5co-cta" style="background-image: url(images/image_3.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="col-md-12 text-center animate-box">
+				<h3>We Try To Update The Site Everyday</h3>
+				<p><a href="#" class="btn btn-primary btn-outline with-arrow">Get started now! <i class="icon-arrow-right"></i></a></p>
+			</div>
+		</div>
+	</div>
+	
+	<footer id="fh5co-footer" role="contentinfo">
+	
+		<div class="container">
+			<div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>About Us</h3>
+				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				<p><a href="#" class="btn btn-primary btn-outline with-arrow btn-sm">Join Us <i class="icon-arrow-right"></i></a></p>
+			</div>
+			<div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>Our Services</h3>
+				<ul class="float">
+					<li><a href="#">Web Design</a></li>
+					<li><a href="#">Branding &amp; Identity</a></li>
+					<li><a href="#">Free HTML5</a></li>
+					<li><a href="#">HandCrafted Templates</a></li>
+				</ul>
+				<ul class="float">
+					<li><a href="#">Free Bootstrap Template</a></li>
+					<li><a href="#">Free HTML5 Template</a></li>
+					<li><a href="#">Free HTML5 &amp; CSS3 Template</a></li>
+					<li><a href="#">HandCrafted Templates</a></li>
+				</ul>
+
+			</div>
+
+			<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>Follow Us</h3>
+				<ul class="fh5co-social">
+					<li><a href="#"><i class="icon-twitter"></i></a></li>
+					<li><a href="#"><i class="icon-facebook"></i></a></li>
+					<li><a href="#"><i class="icon-google-plus"></i></a></li>
+					<li><a href="#"><i class="icon-instagram"></i></a></li>
+				</ul>
+			</div>
+			
+			
+			<div class="col-md-12 fh5co-copyright text-center">
+				<p>&copy; 2016 Free HTML5 template. All Rights Reserved. <span>Designed with <i class="icon-heart"></i> by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images by <a href="http://unsplash.com/" target="_blank">Unsplash</a></span></p>	
+			</div>
+			
+		</div>
+	</footer>
+	</div>
+	
+	
+	<!-- jQuery -->
+	<script src="{% static 'schedule_builder/js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'schedule_builder/js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'schedule_builder/js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'schedule_builder/js/jquery.waypoints.min.js' %}"></script>
+	<!-- Flexslider -->
+	<script src="{% static 'schedule_builder/js/jquery.flexslider-min.js' %}"></script>
+	<!-- Stellar -->
+	<script src="{% static 'schedule_builder/js/jquery.stellar.min.js' %}"></script>
+	
+	<!-- MAIN JS -->
+	<script src="{% static 'schedule_builder/js/main.js' %}"></script>
+
+	</body>
+</html>
+
