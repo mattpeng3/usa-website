@@ -89,8 +89,8 @@
 					          	<li><a href="{% url 'stat134' %}">Stat 134</a></li>
 					          	<li><a href="{% url 'stat135' %}">Stat 135</a></li>
 					        </ul>
-					     </li>
-						<li><a href="people">People</a></li>
+					    </li>
+						<li><a href="{% url 'people' %}">People</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -124,11 +124,11 @@
 		   			</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url(images/slide_3.jpg);">
+		   	<li style="background-image: url({% static 'schedule_builder/images/aaron/embarrassing3.jpg' %});">
 		   		<div class="container">
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
-		   					<h2>We Think Different That Others Can't</h2>
+		   					<h2>Project Committee</h2>
 		   					<p><a href="#" class="btn btn-primary btn-lg">Apply</a></p>
 		   				</div>
 		   			</div>
