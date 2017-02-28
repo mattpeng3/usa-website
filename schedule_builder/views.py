@@ -48,20 +48,22 @@ def courseMap(request):
 	context = Context({})
 	return HttpResponse(t.render(context))
 
-def project(request):
-	t = get_template("project.html")
+def webdev(request):
+	t = get_template("webdev.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
+
+def careerex(request):
+	t = get_template("careerex.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
 
 def events(request):
 	t = get_template("events.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
-def webdev(request):
-	t = get_template("webdev.html")
-	context = Context({})
-	return HttpResponse(t.render(context))
-def careerex(request):
-	t = get_template("careerex.html")
+def project(request):
+	t = get_template("project.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
