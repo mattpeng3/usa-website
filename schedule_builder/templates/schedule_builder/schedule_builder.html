@@ -1,0 +1,149 @@
+{% extends "header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+	<!--<aside id="fh5co-hero" class="js-fullheight">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+		   	<li style="background-image: url({% static 'schedule_builder/images/slide_3.jpg' %});">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<!-- <video playsinline autoplay muted loop>
+		   						WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+		   						<source src="static/schedule_builder/images/Pride.mp4" type="video/webm">
+		   					</video> -->
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		  	</ul>
+	  	</div>
+	</aside>
+
+	<div ng-controller="SettingsController1">
+	<div>
+	<ul class = "list-inline">
+		<li class = "list-inline" ng-repeat="c in courses" class = "fade">
+			<div>
+				<a ng-href = "[[c.link]]">[[c.name]]</a><br>
+				[[c.desc]]
+			</div>
+		</li>
+	</ul>
+	</div>
+
+	<div id="fh5co-work-section" class="fh5co-light-grey-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="item-grid text-center animate-box">
+						<div class="v-align">
+							<div class="v-align-middle">
+								<!--<a href="javascript:;" id="formButton" ng-click="addCourse()">Select Course</a> <img id="checkmark" src="{% static 'schedule_builder/images/checkmark.png' %}">-->
+								<h3 class="title" id = "form"><a href="{% url 'stat133' %}">Stat 133</a></h3>
+								<h4 class="category">Concepts in Computing with Data</h4>
+								<button data-id = "Stat 133" data-desc = "Concepts in Computing with Data" data-link = "stat-133" ng-click = "addCourse($event)">Add</button>
+								<button data-id = "Stat 133" ng-click = "removeCourse($event)">Remove</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-4">
+					<div class="item-grid text-center animate-box">
+						<div class="v-align">
+							<div class="v-align-middle">
+								<!--<a href="javascript:;" id="formButton" ng-click="addCourse()">Select Course</a> <img id="checkmark" src="{% static 'schedule_builder/images/checkmark.png' %}">-->
+								<h3 class="title" id = "form"><a href="{% url 'stat133' %}">Stat 134</a></h3>
+								<h4 class="category">Concepts of Probability</h4>
+								<button data-id = "Stat 134" data-desc = "Concepts of Probability" data-link = "stat-134" ng-click = "addCourse($event)">Add</button>
+								<button data-id = "Stat 134" ng-click = "removeCourse($event)">Remove</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-4">
+					<div class="item-grid text-center animate-box">
+						<div class="v-align">
+							<div class="v-align-middle">
+								<!--<a href="javascript:;" id="formButton" ng-click="addCourse()">Select Course</a> <img id="checkmark" src="{% static 'schedule_builder/images/checkmark.png' %}">-->
+								<h3 class="title" id = "form"><a href="{% url 'stat133' %}">Stat 135</a></h3>
+								<h4 class="category">Concepts of Statistics</h4>
+								<button data-id = "Stat 135" data-desc = "Concepts of Statistics" data-link = "stat-135" ng-click = "addCourse($event)">Add</button>
+								<button data-id = "Stat 135" ng-click = "removeCourse($event)">Remove</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Script runs when Select Course button is clicked to fade text and make checkmark appear -->
+				<script type = "text/javascript">
+					$('#formButton').on('click', function() {
+					    if ($('#form').css('opacity') == .25) $('#form').css('opacity', 1);
+					    else $('#form').css('opacity', .25);
+					    if ($('#checkmark').css('display') == 'inline-block') $('#checkmark').css('display', 'none');
+					    else if ($('#checkmark').css('display') == 'none') $('#checkmark').css('display', 'inline-block');
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+
+	<div class="fh5co-cta" style="background-image: url({% static 'schedule_builder/images/slide_1.jpg' %});">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="col-md-12 text-center animate-box">
+				<h3>We Try To Update The Site Everyday</h3>
+				<p><a href="#" class="btn btn-primary btn-outline with-arrow">Get started now! <i class="icon-arrow-right"></i></a></p>
+			</div>
+		</div>
+	</div>
+
+
+	<footer id="fh5co-footer" role="contentinfo">
+
+		<div class="container">
+			<div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>About Us</h3>
+				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				<p><a href="#" class="btn btn-primary btn-outline with-arrow btn-sm">Join Us <i class="icon-arrow-right"></i></a></p>
+			</div>
+			<div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>Our Services</h3>
+				<ul class="float">
+					<li><a href="#">Web Design</a></li>
+					<li><a href="#">Branding &amp; Identity</a></li>
+					<li><a href="#">Free HTML5</a></li>
+					<li><a href="#">HandCrafted Templates</a></li>
+				</ul>
+				<ul class="float">
+					<li><a href="#">Free Bootstrap Template</a></li>
+					<li><a href="#">Free HTML5 Template</a></li>
+					<li><a href="#">Free HTML5 &amp; CSS3 Template</a></li>
+					<li><a href="#">HandCrafted Templates</a></li>
+				</ul>
+
+			</div>
+
+			<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>Follow Us</h3>
+				<ul class="fh5co-social">
+					<li><a href="#"><i class="icon-twitter"></i></a></li>
+					<li><a href="#"><i class="icon-facebook"></i></a></li>
+					<li><a href="#"><i class="icon-google-plus"></i></a></li>
+					<li><a href="#"><i class="icon-instagram"></i></a></li>
+				</ul>
+			</div>
+
+
+			<div class="col-md-12 fh5co-copyright text-center">
+				<p>&copy; 2016 Free HTML5 template. All Rights Reserved. <span>Designed with <i class="icon-heart"></i> by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images by <a href="http://unsplash.com/" target="_blank">Unsplash</a></span></p>
+			</div>
+
+		</div>
+	</footer>
+
+    {% endblock %}
