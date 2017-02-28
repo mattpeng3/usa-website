@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 import sys
 import os
-sys.path.append(os.path.abspath("~/usa-website/src/schedule_builder"))
+sys.path.insert(0, '../schedule_builder')
 import urls
 from django.conf import settings
 from django.conf.urls.static import static
