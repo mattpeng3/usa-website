@@ -4,8 +4,10 @@ Website for the Undergraduate Statistics Association at Berkeley.
 First, clone this repository (git clone https://github.com/usaberkeley/usa-website). 
 
 If you are changing some code: 
--- If a branch for your task does not already exist, create a branch for your job (git checkout -b BRANCH_NAME). 
--- If a branch does already exist, switch to that branch (git checkout BRANCH_NAME). 
+
+- If a branch for your task does not already exist, create a branch for your job (git checkout -b BRANCH_NAME). 
+
+- If a branch does already exist, switch to that branch (git checkout BRANCH_NAME). 
 
 You can check what branch you're on by typing "git branch" or "git status". "git branch" will show you a list of all the branches that you can access.
 
