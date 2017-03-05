@@ -4,6 +4,8 @@ __pycache__/
 *$py.class
 .nfs*
 
+static/*
+
 
 # C extensions
 *.so

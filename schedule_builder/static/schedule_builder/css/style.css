@@ -1253,8 +1253,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #ucstatement {
-    font-size: 30%;
     text-align: center;
+    font-size:11%;
 }
 
 @keyframes formFade {
