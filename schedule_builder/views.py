@@ -38,6 +38,16 @@ def stat135(request):
 	context = Context({})
 	return HttpResponse(t.render(context))
 
+def stat150(request):
+	t = get_template("stat-150.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def stat155(request):
+	t = get_template("stat-155.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
 def people(request):
 	t = get_template("people.html")
 	context = Context({})
