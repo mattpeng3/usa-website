@@ -21,7 +21,7 @@ def home(request):
 def aboutus(request):
 	html = get_template("aboutus.html")
 	context = Context({})
-	return HttpResponse(html.render(context))
+	return HttpResponse(html.render({}))
 
 def stat133(request):
 	t = get_template("stat-133.html")
