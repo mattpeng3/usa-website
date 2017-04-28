@@ -1236,11 +1236,11 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .js .animate-box {
   opacity: 1;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -ms-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 #form {
@@ -1253,8 +1253,6 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #ucstatement {
-    text-align: center;
-    font-size:11%;
 }
 
 @keyframes formFade {
