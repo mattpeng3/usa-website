@@ -822,6 +822,8 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-staff img {
   margin-bottom: 1.5em;
+  height:360px;
+  width:360px;
 }
 .fh5co-staff h3 {
   margin: 0 0 20px 0;
