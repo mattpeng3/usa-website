@@ -1293,3 +1293,15 @@ to {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.photo-two {
+    display: none;
+}
+
+div>div>div>div>div:hover .photo-one {
+        display: none;
+    }
+div>div>div>div>div:hover .photo-two {
+        display: block;
+}
+
