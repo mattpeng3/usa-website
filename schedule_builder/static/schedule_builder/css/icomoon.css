@@ -497,6 +497,18 @@
 }
 .icon-facebook:before {
     content: "\f09a";
+    padding: 2px;
+    margin: 0;
+    list-style: none;
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    font-size: 22px;
+    color: #fff;
+}
+.icon-facebook:hover {
+    color: #27E1CE;
 }
 .icon-facebook-f:before {
     content: "\f09a";
