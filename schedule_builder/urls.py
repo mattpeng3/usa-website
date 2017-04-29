@@ -9,7 +9,6 @@ urlpatterns = [
 	url(r'stat-133$', views.stat133, name = "stat133"),
 	url(r'stat-134$', views.stat134, name = "stat134"),
 	url(r'stat-135$', views.stat135, name = "stat135"),
-
 	url(r'stat-150$', views.stat150, name = "stat150"),
 	url(r'stat-151a$', views.stat151a, name = "stat151a"),
 	url(r'stat-151b$', views.stat151b, name = "stat151b"),
