@@ -108,7 +108,6 @@ def careerex(request):
 	context = Context({})
 	return HttpResponse(t.render(context))
 
-
 def research(request):
 	t = get_template("research.html")
 	context = Context({})
