@@ -38,6 +38,56 @@ def stat135(request):
 	context = Context({})
 	return HttpResponse(t.render(context))
 
+def stat150(request):
+	t = get_template("stat-150.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def stat151a(request):
+	t = get_template("stat-151a.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def stat151b(request):
+	t = get_template("stat-151b.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def stat152(request):
+	t = get_template("stat-152.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def stat153(request):
+	t = get_template("stat-153.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def stat154(request):
+	t = get_template("stat-154.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def stat155(request):
+	t = get_template("stat-155.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def stat157(request):
+	t = get_template("stat-157.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def stat158(request):
+	t = get_template("stat-158.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def stat159(request):
+	t = get_template("stat-159.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
 def people(request):
 	t = get_template("people.html")
 	context = Context({})
