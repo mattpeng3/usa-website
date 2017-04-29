@@ -1157,7 +1157,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-pricing-section .pricing {
   display: block;
-  float: left;
+  float: center;
   margin-bottom: 30px;
 }
 #fh5co-pricing-section .price-box {
