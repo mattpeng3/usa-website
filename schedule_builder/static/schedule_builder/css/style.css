@@ -261,12 +261,8 @@ h1, h2, h3, h4, h5, h6, figure {
   zoom: 1;
   *display: inline;
 }
-.fh5co-social li a {
-  font-size: 22px;
-  color: #fff;
-  padding: 0;
-  margin: 0;
-  padding: 2px;
+.fh5co-social a {
+  font-size: 16px;
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
@@ -276,7 +272,7 @@ h1, h2, h3, h4, h5, h6, figure {
   -ms-border-radius: 7px;
   border-radius: 7px;
 }
-.fh5co-social li a:hover {
+.fh5co-social a:hover {
   color: #27E1CE;
 }
 .fh5co-social li a:hover, .fh5co-social li a:active, .fh5co-social li a:focus {
@@ -826,6 +822,8 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-staff img {
   margin-bottom: 1.5em;
+  height:360px;
+  width:360px;
 }
 .fh5co-staff h3 {
   margin: 0 0 20px 0;
@@ -934,8 +932,8 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-copyright {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   clear: both;
-  margin-top: 40px !important;
-  padding: 40px 0 0 0;
+  margin-top: 10px !important;
+  padding: 10px 0 0 0;
 }
 .fh5co-copyright span {
   display: block;
