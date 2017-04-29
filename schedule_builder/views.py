@@ -109,8 +109,8 @@ def careerex(request):
 	return HttpResponse(t.render(context))
 
 
-def events(request):
-	t = get_template("events.html")
+def research(request):
+	t = get_template("research.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
 def project(request):
