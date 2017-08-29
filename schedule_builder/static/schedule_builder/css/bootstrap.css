@@ -6,7 +6,6 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -327,7 +326,8 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+/*  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: "Avenir Next";
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
