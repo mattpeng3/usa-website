@@ -24,5 +24,6 @@ urlpatterns = [
 	url(r'project$', views.project, name = "project"),
         url(r'webdev$', views.webdev, name="webdev"),
         url(r'research$', views.research, name="research"),
-        url(r'careerex$', views.careerex, name="careerex")
+        url(r'careerex$', views.careerex, name="careerex"),
+    url(r'blog$', views.blog, name="blog")
 ]

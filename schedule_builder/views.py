@@ -116,3 +116,8 @@ def project(request):
 	t = get_template("project.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
+
+def blog(request):
+    t = get_template("blog.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
