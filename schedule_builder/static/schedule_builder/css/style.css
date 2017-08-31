@@ -28,14 +28,17 @@
 .fade.ng-enter.ng-enter-active {
     opacity:1;
 }
+html {
+  background-color: #eee8d5;
+  }
 
 body {
   font-family: "Avenir Next", serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
-  color: #7f7f7f;
-  background: #EEE8D5;
+  /*color: #7f7f7f;*/
+  color: #00171d;
   height: 100%;
   position: relative;
 }
@@ -46,6 +49,7 @@ a {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
+
 a:hover, a:active, a:focus {
   color: #268BD2;
   outline: none;
@@ -888,6 +892,7 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
   position: relative;
   background: #262626;
+  color: #eee8d5
 }
 @media screen and (max-width: 768px) {
   #fh5co-footer {
@@ -954,7 +959,6 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-page {
   position: relative;
   z-index: 2;
-  background: #fff;
 }
 
 #fh5co-offcanvas, .fh5co-nav-toggle, #fh5co-page {
@@ -1154,7 +1158,6 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-pricing-section {
   padding: 7em 0;
-  background: #fcfcfc;
 }
 @media screen and (max-width: 768px) {
   #fh5co-pricing-section {
@@ -1188,7 +1191,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-pricing-section .price-box .btn-select-plan {
   padding: 10px 20px;
-  background: #5bc0de;
+  background: #268BD2;
   color: #fff;
 }
 #fh5co-pricing-section .price-box:hover, #fh5co-pricing-section .price-box:focus {
