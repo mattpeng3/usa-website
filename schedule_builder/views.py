@@ -112,8 +112,8 @@ def research(request):
 	t = get_template("research.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
-def project(request):
-	t = get_template("project.html")
+def dataconsulting(request):
+	t = get_template("dataconsulting.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
 
