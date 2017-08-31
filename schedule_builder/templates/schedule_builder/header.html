@@ -67,6 +67,7 @@
                 <a href="{% url 'home' %}"><img src="{% static 'schedule_builder/images/susafinallogo.png' %}" style="height:90%;vertical-align:middle;margin-top:5px;"></img></a>
                 <nav role="navigation">
                     <ul>
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Committees<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{% url 'project' %}">Projects</a></li>
@@ -77,7 +78,7 @@
                         </li>
                         <li><a href="course-map">Course Map</a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="overflow-y:auto; max-height:250px;">
                                 <li><a href="{% url 'stat133' %}">Stat 133</a></li>
                                 <li><a href="{% url 'stat134' %}">Stat 134</a></li>
                                 <li><a href="{% url 'stat135' %}">Stat 135</a></li>
