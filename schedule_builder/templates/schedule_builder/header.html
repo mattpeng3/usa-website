@@ -67,6 +67,7 @@
                 <a href="{% url 'home' %}"><img src="{% static 'schedule_builder/images/susafinallogo.png' %}" style="height:90%;vertical-align:middle;margin-top:5px;"></img></a>
                 <nav role="navigation">
                     <ul>
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Committees<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{% url 'project' %}">Data Consulting</a></li>
@@ -77,7 +78,7 @@
                         </li>
                         <li><a href="course-map">Course Map</a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="overflow-x:hidden; overflow-y:auto; max-height:250px;">
                                 <li><a href="{% url 'stat133' %}">Stat 133</a></li>
                                 <li><a href="{% url 'stat134' %}">Stat 134</a></li>
                                 <li><a href="{% url 'stat135' %}">Stat 135</a></li>
@@ -114,7 +115,7 @@
 		<div class="container">
 			<div class="col-md-12 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>About Us</h3>
-                <p>The Undergraduate Statistics Association is a premier organization at UC Berkeley that stimulates its members' interests in Statistics and facilitates their further development in a statistics career.</p>
+                <p>The Statistics Undergraduate Student Association is a premier organization at UC Berkeley that stimulates its members' interests in Statistics and facilitates their further development in a statistics career.</p>
                 <!--<p><a href="#" class="btn btn-primary btn-outline with-arrow btn-sm">Join Us <i class="icon-arrow-right"></i></a></p>-->
             <!-- <div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>Our Services</h3>
