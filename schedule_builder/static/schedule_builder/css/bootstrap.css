@@ -2874,7 +2874,6 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 10px 20px;
-  font-size: 18px;
   line-height: 1.33333;
   border-radius: 6px;
 }
