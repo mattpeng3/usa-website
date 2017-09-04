@@ -116,6 +116,11 @@ def dataconsulting(request):
 	t = get_template("dataconsulting.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
+def comingSoon(request):
+	t = get_template("comingSoon.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
 
 def blog(request):
     t = get_template("blog.html")
