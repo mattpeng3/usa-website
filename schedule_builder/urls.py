@@ -23,7 +23,8 @@ urlpatterns = [
 	url(r'course-map$', views.courseMap, name = "courseMap"),
 	url(r'dataconsulting$', views.dataconsulting, name = "dataconsulting"),
         url(r'webdev$', views.webdev, name="webdev"),
-        url(r'research$', views.research, name="research"),
         url(r'careerex$', views.careerex, name="careerex"),
+        url(r'research$', views.research, name="research"),
+        url(r'comingSoon$', views.comingSoon, name="comingSoon"),
     url(r'blog$', views.blog, name="blog")
 ]
