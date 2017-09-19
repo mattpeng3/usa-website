@@ -120,6 +120,12 @@ def comingSoon(request):
 	t = get_template("comingSoon.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
+def yitz(request):
+	t = get_template("yitz.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+
 
 
 def blog(request):
