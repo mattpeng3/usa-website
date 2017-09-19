@@ -26,5 +26,6 @@ urlpatterns = [
         url(r'careerex$', views.careerex, name="careerex"),
         url(r'research$', views.research, name="research"),
         url(r'comingSoon$', views.comingSoon, name="comingSoon"),
-    url(r'blog$', views.blog, name="blog")
+        url(r'blog$', views.blog, name="blog"),
+        url(r'yitz$', views.yitz, name = "yitz")
 ]
