@@ -6,6 +6,8 @@ __pycache__/
 
 static/*
 
+schedule_builder/migrations/*
+
 
 # C extensions
 *.so
