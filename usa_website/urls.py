@@ -28,16 +28,16 @@ admin.autodiscover()
 
 """
 urlpatterns = [
-	url('^$', extraViews.home, name='home'),
-	url('aboutus', extraViews.aboutus, name='aboutus'),
-	url('index', extraViews.index, name='index'),
+    url('^$', extraViews.home, name='home'),
+    url('aboutus', extraViews.aboutus, name='aboutus'),
+    url('index', extraViews.index, name='index'),
         url('stat-133', extraViews.stat133, name="stat133"),
         url('stat-134', extraViews.stat134, name="stat134"),
         url('stat-135', extraViews.stat135, name="stat135"),
         url('people', extraViews.people, name="people"),
         url('course-map', extraViews.courseMap, name="courseMap"),
         url('project', extraViews.project, name="project"),
-	url(r'^schedule_builder/', include('schedule_builder.urls')),
+    url(r'^schedule_builder/', include('schedule_builder.urls')),
 
 """
 urlpatterns = [
