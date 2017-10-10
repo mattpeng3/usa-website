@@ -8,10 +8,6 @@ static/*
 schedule_builder/migrations/*
 
 
-
-schedule_builder/migrations/*
-
-
 # C extensions
 *.so
 
