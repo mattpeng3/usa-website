@@ -7,6 +7,8 @@ __pycache__/
 static/*
 schedule_builder/migrations/*
 
+db.sqlite3
+
 
 # C extensions
 *.so
