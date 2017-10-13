@@ -127,7 +127,6 @@ def yitz(request):
 
 
 
-
 def blog(request):
     t = get_template("blog.html")
     context = Context({})

@@ -14,14 +14,11 @@ class Blog(models.Model):
     def __unicode__(self):
         return '%s' % self.title
 
+
     @models.permalink
     def get_absolute_url(self):
         return ('view_blog_post', None, { 'slug': self.slug })
 
 
 class blogPost(models.Model):
-        title = models.CharField(max_length=50)
-        body = models.CharField(max_length=200)
-
-
-
+    title = models.CharField(max_length=100, unique=True)
