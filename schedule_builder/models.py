@@ -20,5 +20,3 @@ class Blog(models.Model):
         return ('view_blog_post', None, { 'slug': self.slug })
 
 
-class blogPost(models.Model):
-    title = models.CharField(max_length=100, unique=True)
