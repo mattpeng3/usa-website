@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from django.template.loader import get_template
 from django.template import Context
-from .models import Course
+from .models import Course, Blog
+from django.shortcuts import render_to_response, get_object_or_404
+
 
 # Create your views here.
 def index(request):
@@ -125,10 +127,18 @@ def yitz(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
-
-
-
 def blog(request):
-    t = get_template("blog.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
+    return render_to_response('blog.html', {
+        'posts': Blog.objects.all()[:5]
+    })
+
+    #t = get_template("blog.html")
+    #context = Context({})
+    #return HttpResponse(t.render(context))
+
+
+def view_post(request, slug):
+    return render_to_response('view_post.html', {
+        'post': get_object_or_404(Blog, slug=slug)
+    })
+

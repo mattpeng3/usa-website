@@ -32,7 +32,16 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
                     <h2>Blog</h2>
-                    <p>Coming soon!</p>
+                    <h2>Posts</h2>
+                    {% if posts %}
+                        <ul>
+                            {% for post in posts %}
+                                <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>There are no posts.</p>
+                    {% endif %}
                 </div>
             </div>
                 <div class="col-md-12 text-center animate-box">
