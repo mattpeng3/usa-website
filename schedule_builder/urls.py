@@ -27,5 +27,6 @@ urlpatterns = [
         url(r'research$', views.research, name="research"),
         url(r'comingSoon$', views.comingSoon, name="comingSoon"),
         url(r'blog$', views.blog, name="blog"),
-        url(r'yitz$', views.yitz, name = "yitz")
+        url(r'yitz$', views.yitz, name = "yitz"),
+       url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post,name='view_blog_post')
 ]
