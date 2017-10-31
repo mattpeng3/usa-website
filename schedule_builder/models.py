@@ -4,10 +4,10 @@ from django.db import models
 class Course(models.Model):
     name = models.CharField(max_length = 50)
 
-
 class Blog(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
+    author = models.CharField(max_length=100, unique=True)
     body = models.TextField()
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
 
@@ -18,5 +18,3 @@ class Blog(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('view_blog_post', None, { 'slug': self.slug })
-
-
