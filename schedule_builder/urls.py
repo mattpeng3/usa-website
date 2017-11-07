@@ -28,5 +28,8 @@ urlpatterns = [
         url(r'comingSoon$', views.comingSoon, name="comingSoon"),
         url(r'blog$', views.blog, name="blog"),
         url(r'yitz$', views.yitz, name = "yitz"),
-       url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post,name='view_blog_post')
+       url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post,name='view_blog_post'),
+       url(r'susawebappTest', views.susawebappTest, name = "susawebappTest"),
+       url(r'plot.js', views.plot, name = "plot"),
+       url(r'costarica_converted.csv', views.cccsv, name = "cccsv")
 ]

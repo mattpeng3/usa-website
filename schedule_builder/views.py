@@ -122,6 +122,7 @@ def comingSoon(request):
     t = get_template("comingSoon.html")
     context = Context({})
     return HttpResponse(t.render(context))
+
 def yitz(request):
     t = get_template("yitz.html")
     context = Context({})
@@ -141,4 +142,23 @@ def view_post(request, slug):
     return render_to_response('view_post.html', {
         'post': get_object_or_404(Blog, slug=slug)
     })
+
+def susawebappTest(request):
+    t = get_template("webapp/index.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def plot(request):
+    t = get_template("webapp/plot.js")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def cccsv(request):
+    t = get_template("webapp/costarica_converted.csv")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
+
+
 
