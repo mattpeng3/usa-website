@@ -25,6 +25,11 @@ def aboutus(request):
     context = Context({})
     return HttpResponse(html.render({}))
 
+def calendar(request):
+    html = get_template("calendar.html")
+    context = Context({})
+    return HttpResponse(html.render({}))
+
 def stat133(request):
     t = get_template("stat-133.html")
     context = Context({})
