@@ -9,7 +9,7 @@ class Blog(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     #author = models.CharField(max_length=100, unique=True)
     body = models.TextField()
-    posted = models.DateTimeField(db_index=True, auto_now_add=True)
+    posted = models.DateField(db_index=True, auto_now_add=True)
 
     def __unicode__(self):
         return '%s' % self.title
@@ -19,7 +19,6 @@ class Blog(models.Model):
     def get_absolute_url(self):
         return ('view_blog_post', None, { 'slug': self.slug })
 
-
-class William(models.Model):
-    title = models.CharField(max_length=100, unique=True)
+    def get_first_paragraph(self):
+        return self.body.split("\n")[0]
 
