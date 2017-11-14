@@ -1,0 +1,53 @@
+
+{% extends "header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+
+
+<div class="container">
+
+</div>
+<aside id="fh5co-hero" class="js-fullheight">
+    <div class="flexslider js-fullheight">
+        <ul class="slides">
+            <li style="background-image: url({% static 'schedule_builder/images/research.jpg' %});">
+                <div class="overlay-gradient"></div>
+                <div class="container">
+                    <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+                        <div class="slider-text-inner">
+                            <h2>Research & Publication</h2>
+                            <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSf91HQneSOXWyZ3YNKKbwXkXgch01xdfUwiqQGsI6T8SgISGQ/viewform" class="btn btn-primary btn-lg">Apply</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</aside>
+
+<div id="fh5co-pricing-section" class="fh5co-light-grey-section">
+    <div class="container">
+        {% if post %}
+            <div class="row">
+                <div class="pricing">
+                    <div class="col-md-6 col-md-offset-3 animate-box">
+                        <div class="price-box">
+                            <h3>{{ post.title }}</h3>
+                            <p style="color: #000">{{ post.posted }}</p>
+                            <p style="color: #000">{{ post.body }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+        <p>There are no posts.</p>
+        {% endif %}
+    </div>
+</div>
+<div class="col-md-12 text-center animate-box">
+    <!--<p><a href="/project" class="btn btn-primary with-arrow">View Past Projects <i class="icon-arrow-right"></i></a></p>-->
+</div>
+
+{% endblock %}

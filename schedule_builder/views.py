@@ -144,7 +144,7 @@ def blog(request):
 
 
 def view_post(request, slug):
-    return render_to_response('view_post.html', {
+    return render_to_response('viewPost.html', {
         'post': get_object_or_404(Blog, slug=slug)
     })
 
