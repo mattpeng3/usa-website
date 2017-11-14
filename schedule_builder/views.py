@@ -105,6 +105,7 @@ def courseMap(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+
 def webdev(request):
     t = get_template("webdev.html")
     context = Context({})
