@@ -5,12 +5,12 @@
 
 
 
-    <div class="container">
+<div class="container">
 
-    </div>
-    <aside id="fh5co-hero" class="js-fullheight">
-        <div class="flexslider js-fullheight">
-            <ul class="slides">
+</div>
+<aside id="fh5co-hero" class="js-fullheight">
+    <div class="flexslider js-fullheight">
+        <ul class="slides">
             <li style="background-image: url({% static 'schedule_builder/images/research.jpg' %});">
                 <div class="overlay-gradient"></div>
                 <div class="container">
@@ -23,35 +23,40 @@
                 </div>
             </li>
 
-            </ul>
-        </div>
-    </aside>
-
-    <div id="fh5co-blog-section" class="fh5co-light-grey-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
-                    <h2>Blog</h2>
-                    <h2>Posts</h2>
-                    {% if posts %}
-                            {% for post in posts %}
-                            <h2>{{ post.title }}</h2>
-                            <p>{{ post.posted }}</p>
-                            <p>{{ post.body }}</p>
-                            {% endfor %}
-                    {% else %}
-                        <p>There are no posts.</p>
-                    {% endif %}
-                </div>
-            </div>
-                <div class="col-md-12 text-center animate-box">
-                    <!--<p><a href="/project" class="btn btn-primary with-arrow">View Past Projects <i class="icon-arrow-right"></i></a></p>-->
-                </div>
-            </div>
-        </div>
+        </ul>
     </div>
+</aside>
 
-    {% endblock %}
+<div id="fh5co-pricing-section" class="fh5co-light-grey-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+                <h2>Blog Posts</h2>
+            </div>
+        </div>
+        {% if posts %}
+        {% for post in posts %}
+        <a href="{{ post.get_absolute_url }}">
+            <div class="row">
+                <div class="pricing">
+                    <div class="col-md-6 col-md-offset-3 animate-box">
+                        <div class="price-box">
+                            <h3>{{ post.title }}</h3>
+                            <p style="color: #000">{{ post.posted }}</p>
+                            <p style="color: #000">{{ post.body }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+        {% else %}
+        <p>There are no posts.</p>
+        {% endif %}
+    </div>
+</div>
+<div class="col-md-12 text-center animate-box">
+    <!--<p><a href="/project" class="btn btn-primary with-arrow">View Past Projects <i class="icon-arrow-right"></i></a></p>-->
+</div>
 
-
-
+{% endblock %}
