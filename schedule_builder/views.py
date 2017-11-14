@@ -149,6 +149,11 @@ def view_post(request, slug):
         'post': get_object_or_404(Blog, slug=slug)
     })
 
+def view_author(request, author):
+    return render_to_response('viewAuthor.html', {
+        'posts': Blog.objects.all()
+    })
+
 def susawebappTest(request):
     t = get_template("webapp/index.html")
     context = Context({})
