@@ -19,3 +19,8 @@ class Blog(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('view_blog_post', None, { 'slug': self.slug })
+
+
+class William(models.Model):
+    title = models.CharField(max_length=100, unique=True)
+
