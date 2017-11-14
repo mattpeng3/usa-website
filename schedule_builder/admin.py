@@ -11,4 +11,3 @@ class BlogAdmin(admin.ModelAdmin):
 admin.site.register(Course)
 admin.site.register(Blog, BlogAdmin)
 
-admin.site.register(David)
