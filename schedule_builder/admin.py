@@ -10,3 +10,4 @@ class BlogAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Course)
 admin.site.register(Blog, BlogAdmin)
+
