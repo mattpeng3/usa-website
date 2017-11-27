@@ -2,7 +2,12 @@
 {% extends "header.html" %}
 {% block content %}
 {% load staticfiles %}
+ 
 
+<h2>Math in TeX notation</h2>
+
+When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
 
 <div class="container">
@@ -36,7 +41,8 @@
                         <div class="price-box">
                             <h3>{{ post.title }}</h3>
                             <p style="color: #000">{{ post.posted }}</p>
-                            <p style="color: #000">{{ post.body |linebreaks }}</p>
+                            <!--<p style="color: #000"> -->
+                            {%autoescape off %}{{ post.body |linebreaks}} {% endautoescape %} <!--</p>-->
                         </div>
                     </div>
                 </div>

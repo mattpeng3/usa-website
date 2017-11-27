@@ -41,7 +41,7 @@ urlpatterns = [
 
 """
 urlpatterns = [
-        url('^', include('schedule_builder.urls')),
         url(r'^admin/', admin.site.urls),
+        url('^', include('schedule_builder.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()
