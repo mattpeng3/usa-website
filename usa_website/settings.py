@@ -34,18 +34,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 #print(STATIC_ROOT)
 #STATIC_ROOT= ''
 STATIC_URL = '/static/'
-STATICFILES_DIR = (os.path.join(BASE_DIR, 'schedule_builder/static'),)
+STATICFILES_DIR = (os.path.join(BASE_DIR, 'usa_website/static'),)
 
 # Application definition
 
 INSTALLED_APPS = [
-    'schedule_builder.apps.ScheduleBuilderConfig',
+    #'schedule_builder.apps.ScheduleBuilderConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'usa_website.apps.UsaWebsiteConfig', 
     #'django.contrib.sites',
 ]
 
@@ -64,7 +65,7 @@ ROOT_URLCONF = 'usa_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR + '/schedule_builder/templates/schedule_builder'],
+        'DIRS': [BASE_DIR + '/usa_website/templates/usa_website'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
