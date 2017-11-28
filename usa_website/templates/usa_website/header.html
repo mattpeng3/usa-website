@@ -71,11 +71,10 @@
     <div id="fh5co-page">
     <header id="fh5co-header" role="banner">
         <div class="container">
-            <div class="header-inner">
+            <!--<div class="header-inner">-->
                 <!--<h1><a href="{% url 'home' %}">SUSA</a></h1>-->
-                <a href="{% url 'home' %}"><img src="{% static 'schedule_builder/images/susafinallogo.png' %}" style="height:90%;vertical-align:middle;margin-top:5px;"></img></a>
-                <div class="fb-share-button" data-href="https://susa.berkeley.edu/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsusa.berkeley.edu%2F&amp;src=sdkpreparse">Share</a></div>
-                <nav role="navigation">
+                
+                <nav class="header-inner" role="navigation">
                     <ul>
                         <li><a href="{% url 'blog' %}">Blog</a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Committees<span class="caret"></span></a>
@@ -108,7 +107,7 @@
                         <li><a href="{% url 'people' %}">People</a></li>
                     </ul>
                 </nav>
-            </div>
+            <!--</div>-->
         </div>
     </header>
 
