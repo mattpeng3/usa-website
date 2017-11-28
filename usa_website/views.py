@@ -136,7 +136,7 @@ def yitz(request):
 
 def blog(request):
     return render_to_response('blog.html', {
-        'posts': Blog.objects.all()[:5]
+        'posts': Blog.objects.all()[-1:-6:-1]
     })
 
     #t = get_template("blog.html")
