@@ -383,7 +383,7 @@ h1, h2, h3, h4, h5, h6, figure {
   border-radius: 50%;
 }
 #fh5co-header h1, #fh5co-header nav {
-  margin: 38px 0 0 0;
+  margin: 0px 0 0 0;
 }
 #fh5co-header nav {
   float: right;
@@ -396,7 +396,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-header nav ul {
   padding: 0;
-  margin: 0 -0px 0 0;
+  margin: 38px -0px 0 0;
   line-height: 0;
 }
 #fh5co-header nav ul li {
