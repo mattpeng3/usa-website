@@ -675,11 +675,13 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   padding-bottom: 30px;
 }
+
 @media screen and (max-width: 992px) {
   .wrap-testimony .testimony-slide blockquote {
     width: 100%;
   }
 }
+
 .wrap-testimony .testimony-slide blockquote p {
   font-size: 20px;
   line-height: 1.6em;
@@ -1009,7 +1011,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 @media screen and (max-width: 768px) {
   #fh5co-offcanvas {
-    display: block;
+    display: none;
   }
 }
 #fh5co-offcanvas ul {
@@ -1159,7 +1161,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: none;
   cursor: pointer;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .fh5co-nav-toggle {
     display: block;
     top: 20px;
