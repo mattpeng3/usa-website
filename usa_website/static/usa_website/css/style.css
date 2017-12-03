@@ -383,7 +383,7 @@ h1, h2, h3, h4, h5, h6, figure {
   border-radius: 50%;
 }
 #fh5co-header h1, #fh5co-header nav {
-  margin: 38px 0 0 0;
+  margin: 0px 0 0 0;
 }
 #fh5co-header nav {
   float: right;
@@ -396,7 +396,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-header nav ul {
   padding: 0;
-  margin: 0 -0px 0 0;
+  margin: 38px -0px 0 0;
   line-height: 0;
 }
 #fh5co-header nav ul li {
@@ -675,11 +675,13 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   padding-bottom: 30px;
 }
+
 @media screen and (max-width: 992px) {
   .wrap-testimony .testimony-slide blockquote {
     width: 100%;
   }
 }
+
 .wrap-testimony .testimony-slide blockquote p {
   font-size: 20px;
   line-height: 1.6em;
@@ -996,9 +998,9 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-offcanvas {
-  display: none;
+  display: block;
   height: 100%;
-  right: 0;
+  right: -275px;
   overflow-y: auto;
   position: fixed;
   z-index: 1;
@@ -1085,7 +1087,7 @@ h1, h2, h3, h4, h5, h6, figure {
   text-transform: uppercase;
   text-indent: -55px;
   background: #000;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 .fh5co-nav-toggle i::before, .fh5co-nav-toggle i::after {
   content: '';
@@ -1159,7 +1161,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: none;
   cursor: pointer;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .fh5co-nav-toggle {
     display: block;
     top: 20px;
