@@ -998,9 +998,9 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-offcanvas {
-  display: none;
+  display: block;
   height: 100%;
-  right: 0;
+  right: -275px;
   overflow-y: auto;
   position: fixed;
   z-index: 1;
@@ -1011,7 +1011,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 @media screen and (max-width: 768px) {
   #fh5co-offcanvas {
-    display: none;
+    display: block;
   }
 }
 #fh5co-offcanvas ul {
@@ -1087,7 +1087,7 @@ h1, h2, h3, h4, h5, h6, figure {
   text-transform: uppercase;
   text-indent: -55px;
   background: #000;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 .fh5co-nav-toggle i::before, .fh5co-nav-toggle i::after {
   content: '';
