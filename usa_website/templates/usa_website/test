@@ -1,0 +1,66 @@
+
+{% extends "header.html" %}
+{% block content %}
+{% load staticfiles %}
+ <script src="/textboxio/textboxio.js"></script>
+
+    <script>
+      /*
+      This function replaces all <textareas> on a page with
+      instances of Textbox.io.
+
+      For the service section below, replace the hostname and port for both urls.
+      If you're running the services on HTTPS you will also need to change the protocol.
+
+      For example:
+          services: {
+            spelling: {
+              url: 'http://localhost:8080/ephox-spelling'
+            }
+          }
+      */
+
+      var instantiateTextbox = function () {
+        textboxio.replaceAll('textarea', {
+          paste: {
+            style: 'clean'
+          },
+          css: {
+            stylesheets: ['example.css']
+          },
+          services: {
+            spelling: {
+              url: 'http://hostname:port/ephox-spelling'
+            }
+          }
+        });
+      };
+
+    </script>
+    <script>
+      /*
+      This function gets the content from the instance of Textbox.io
+      with the ID 'textbox'
+      */
+      var getEditorContent = function(){
+          var editors = textboxio.get('#textbox');
+          var editor = editors[0];
+          return editor.content.get();
+      };
+    </script>
+
+
+  <body onload="instantiateTextbox();">
+
+         <textarea id = "textbox">HTML editor content.</textarea>
+         <script>textboxio.replace('textarea');</script>
+        <p align="center"><button onclick="javascript:alert(getEditorContent());">Get Content</button></p>
+
+  </body>
+
+    {% endblock %}
+
+        <textarea id="textbox" style="width: 100%; height: 400px;">
+            <h2>This is Textbox.io</h2>
+            <p>Welcome to the next generation of rich text editing on the web.</p>
+        </textarea>

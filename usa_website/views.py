@@ -1,8 +1,11 @@
 from django.http import HttpResponse
+
 from django.template.loader import get_template
 from django.template import Context
 from .models import Course, Blog
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404, render, redirect
+from .forms import PostForm
+
 
 
 # Create your views here.
@@ -154,22 +157,92 @@ def view_author(request, author):
         'posts': Blog.objects.all()
     })
 
-def susawebappTest(request):
-    t = get_template("webapp/index.html")
+def susawebapp(request):
+    t = get_template("SUSA-web-app/index.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
-def plot(request):
-    t = get_template("webapp/plot.js")
+def argentina(request):
+    t = get_template("SUSA-web-app/Argentina.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
-def cccsv(request):
-    t = get_template("webapp/costarica_converted.csv")
+def china(request):
+    t = get_template("SUSA-web-app/china.csv")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
+def guatemala(request):
+    t = get_template("SUSA-web-app/Guatemala.csv")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
+def nigeria(request):
+    t = get_template("SUSA-web-app/Nigeria.csv")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
+def sudan(request):
+    t = get_template("SUSA-web-app/Sudan.csv")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
+def unitedstates(request):
+    t = get_template("SUSA-web-app/unitedstates.csv")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
+def world(request):
+    t = get_template("SUSA-web-app/world.csv")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
+def benin(request):
+    t = get_template("SUSA-web-app/benin.csv")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
+def tunisia(request):
+    t = get_template("SUSA-web-app/Tunisia.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
 
 
+def user(request):
+    t = get_template("SUSA-web-app/user.csv")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
+def textboxio(request):
+    t = get_template("textboxio/textboxio.js")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.slug = "-".join(post.title.split(" "))
+            post.save()
+            return redirect('/blog/view/' + post.slug + ".html")
+    else: 
+        form = PostForm()
+
+    return render(request, 'submit.html', {'form': form})
+
+def convert_csv(request):
+    t= get_template("SUSA-web-app/convert_csv.py")
+    context = Context({})
+    return HttpResponse(t.render(context))
 

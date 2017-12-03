@@ -5,9 +5,9 @@ class Course(models.Model):
     name = models.CharField(max_length = 50)
 
 class Blog(models.Model):
-    title = models.CharField(max_length=100, unique=True)
+    title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
-    author = models.CharField(max_length=100, unique=True)
+    author = models.CharField(max_length=100)
     body = models.TextField()
     posted = models.DateField(db_index=True, auto_now_add=True)
     def __unicode__(self):

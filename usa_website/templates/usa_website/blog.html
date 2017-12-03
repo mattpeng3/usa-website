@@ -41,8 +41,8 @@
                         <div class="price-box">
                             <h3>{{ post.title }}</h3>
                             <p style="color: #000">{{ post.posted }}</p>
-                            <p style="color: #000">{{ post.get_first_paragraph }}</p>
-                            <a href="{{ post.getAuthorPosts }}">{{ post.author }} </p>
+                            <p style="color: #000">{% autoescape off %}{{ post.get_first_paragraph }}{% endautoescape %}</p>
+                            <a href="{{ post.getAuthorPosts }}">{{ post.author }}</a>
                         </div>
                     </div>
                 </div>

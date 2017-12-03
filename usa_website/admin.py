@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Course
 from .models import Blog
-
 from django import forms
 
 class BlogAdmin(admin.ModelAdmin):
