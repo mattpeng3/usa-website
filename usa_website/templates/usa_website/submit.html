@@ -54,12 +54,9 @@
       };
     </script>
     <div style="width:50%; margin:auto">
-        <h1>Welcome to Textbox.io</h1>
-
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"> aaa</span></a>
 
         <h1>New post</h1>
-            <form method="POST" class="post-form">{% csrf_token %}
+            <form method="POST" class="post-form" novalidate>{% csrf_token %}
                 {{ form.as_p }}
             <button type="submit" class="save btn btn-default">Save</button>
         </form>
@@ -75,10 +72,5 @@
 
         <script> instantiateTextbox(); </script>
 
-        <p>You can now create editor instances by replacing &lt;textarea&gt; or &lt;div&gt; elements with the <a href="http://docs.ephox.com/display/tbio/replace">textboxio.replace() API</a>. When Textbox.io replaces a &lt;textarea&gt; element within a &lt;form&gt;, it mimics the behavior of the original &lt;textarea&gt; element when the form is submitted, supplying content as part of the &lt;form&gt; POST.</p>
-
-        <p>For spell checking and image upload you will need to install and configure the Textbox.io Server Components to a J2EE web application server.  See the documentation on <a href="http://docs.ephox.com/display/tbio/Server-Side+Components">Server Components</a> for more information.</p>
-        <p>Visit the  <a href="http://docs.ephox.com/display/tbio/API+Basics">API Basics</a> guide to learn how to tailor the editor to your application's needs.</p>
-    </div>
 
     {% endblock %}
