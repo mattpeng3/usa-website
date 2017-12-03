@@ -6,6 +6,7 @@ __pycache__/
 
 static/*
 schedule_builder/migrations/*
+usa_website/migrations/*
 
 db.sqlite3
 
