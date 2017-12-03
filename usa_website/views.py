@@ -158,7 +158,7 @@ def view_author(request, author):
     })
 
 def susawebapp(request):
-    t = get_template("SUSA-web-app/index.html")
+    t = get_template("webapp/index.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
