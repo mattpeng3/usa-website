@@ -722,6 +722,19 @@ h1, h2, h3, h4, h5, h6, figure {
   border: 2px solid #268BD2;
 }
 
+#blog-link {
+  text-decoration: none;
+}
+
+#blog-title {
+  color: #000;
+  font-family: "Britannic Bold", serif;
+  font-weight: 400;
+  font-size: 250%;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+}
+
 #fh5co-blog-section .item-grid {
   width: 100%;
   float: left;
@@ -1183,11 +1196,11 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-pricing-section {
-  padding: 7em 0;
+  padding: 1em 0;
 }
 @media screen and (max-width: 768px) {
   #fh5co-pricing-section {
-    padding: 3em 0;
+    padding: 0.5em 0;
   }
 }
 #fh5co-pricing-section .pricing {

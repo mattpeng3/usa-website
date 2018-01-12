@@ -138,13 +138,18 @@ def yitz(request):
     return HttpResponse(t.render(context))
 
 def blog(request):
-    return render_to_response('blog.html', {
+    return render_to_response('blog/blog.html', {
         'posts': Blog.objects.all()#[-1:-6:-1]
     })
 
     #t = get_template("blog.html")
     #context = Context({})
     #return HttpResponse(t.render(context))
+
+def tobacco_heart_disease(request):
+    t= get_template("blog/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
 
 def view_post(request, slug):

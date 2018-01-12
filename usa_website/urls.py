@@ -42,7 +42,7 @@ urlpatterns = [
 
 """
 urlpatterns = [
-        url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
     url(r'index$', views.index, name = 'index'),
     url(r'home$', views.home, name = 'home'),
     url(r'^$', views.home, name = 'home'),
@@ -69,7 +69,8 @@ urlpatterns = [
     url(r'careerex$', views.careerex, name="careerex"),
     url(r'research$', views.research, name="research"),
     url(r'comingSoon$', views.comingSoon, name="comingSoon"),
-    url(r'blog$', views.blog, name="blog"),
+    url(r'blog/$', views.blog, name="blog"),
+    url(r'blog/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates$', views.tobacco_heart_disease, name="tobacco_heart_disease"),
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'yitz$', views.yitz, name = "yitz"),
     url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),
