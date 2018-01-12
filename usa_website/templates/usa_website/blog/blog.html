@@ -1,5 +1,5 @@
 
-{% extends "header.html" %}
+{% extends "blog/blog_header.html" %}
 {% block content %}
 {% load staticfiles %}
 
@@ -28,9 +28,7 @@
     </div>
 </aside> -->
 
-<div id="fh5co-pricing-section" >
-    <center><h1>The University Statistics Review</h1></center>
-    <div class="container">
+
 
         {% if posts %}
         {% for post in posts %}
@@ -53,7 +51,7 @@
         <p>There are no posts.</p>
         {% endif %}
     </div>
-</div>
+</div> <!-- Closing div for fh5co-pricing-section -->
 <div class="col-md-12 text-center animate-box">
     <!--<p><a href="/project" class="btn btn-primary with-arrow">View Past Projects <i class="icon-arrow-right"></i></a></p>-->
 </div>

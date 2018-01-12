@@ -8,7 +8,7 @@
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Statistics Undergraduate Student Association</title>
+    <title>SUSA - University Statistics Review</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="SUSA is here to provide Berkeley undergraduates interested in Statistics with resources and a statistics-driven community" />
     <meta name="keywords" content="statistics, data science, berkeley, SUSA, undergraduate" />
@@ -67,78 +67,34 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
 
-
-
     <div id="fh5co-page">
-    <header id="fh5co-header" role="banner">
-        <div class="container">
-            <div class="header-inner">
-                <!--<h1><a href="{% url 'home' %}">SUSA</a></h1>-->  
-                <a href="/"><img src="/static/usa_website/images/susafinallogowhite.png" style="height:90%;vertical-align:middle;margin-top:5px;"></img></a>
-                <div class="fb-share-button" data-href="https://susa.berkeley.edu/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsusa.berkeley.edu%2F&amp;src=sdkpreparse">Share</a></div>              
-                <nav class="navbar" role="navigation">
-                    <div class="container-fluid">
-                        <!--
-                        <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-bar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>                        
-                        </button>
-                        
-                        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'usa_website/images/susafinallogo.png' %}" style="height:200%;vertical-align:left"></img></a>
-                        <div class="fb-share-button" data-href="https://susa.berkeley.edu/" data-layout="button_count" data-size="small" data-mobile-iframe="true" style="padding-top:20px"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsusa.berkeley.edu%2F&amp;src=sdkpreparse">Share</a></div>
-                        
-                        </div>
-                        
-                        <div class="collapse navbar-collapse" id="header-bar">
-                        -->
-                        <ul>
-                            <li><a href="{% url 'blog' %}">Blog</a></li>
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Committees<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{% url 'dataconsulting' %}">Data Consulting</a></li>
-                                    <li><a href="{% url 'webdev' %}">Web Development</a></li>
-                                    <li><a href="{% url 'research' %}">Research and Publication</a></li>
-                                    <li><a href="{% url 'careerex' %}">Career Exploration</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="calendar">Calendar</a></li>
-                            <li><a href="course-map">Course Map</a></li>
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses<span class="caret"></span></a>
-                                <ul class="dropdown-menu" style="overflow-x:hidden; overflow-y:auto; max-height:250px;">
-                                    <li><a href="{% url 'stat133' %}">Stat 133</a></li>
-                                    <li><a href="{% url 'stat134' %}">Stat 134</a></li>
-                                    <li><a href="{% url 'stat135' %}">Stat 135</a></li>
-                                    <li><a href="{% url 'stat150' %}">Stat 150</a></li>
-                                    <li><a href="{% url 'stat151a' %}">Stat 151A</a></li>
-                                    <li><a href="{% url 'stat151b' %}">Stat 151B</a></li>
-                                    <li><a href="{% url 'stat152' %}">Stat 152</a></li>
-                                    <li><a href="{% url 'stat153' %}">Stat 153</a></li>
-                                    <li><a href="{% url 'stat154' %}">Stat 154</a></li>
-                                    <li><a href="{% url 'stat155' %}">Stat 155</a></li>
-                                    <li><a href="{% url 'stat157' %}">Stat 157</a></li>
-                                    <li><a href="{% url 'stat158' %}">Stat 158</a></li>
-                                    <li><a href="{% url 'stat159' %}">Stat 159</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{% url 'people' %}">People</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <!--Closing div below footer closing tag-->
+    <div id="fh5co-pricing-section">
+
+    <div class="container">
+
+        <center>
+        <table>
+            <tr>
+                <td><a href="/"><img src="/static/usa_website/images/susafinallogo.png" style="height:80px;vertical-align:middle;margin-top:5px;"></img></a></td>
+                <td valign="bottom"><a href="blog" id="blog-link"><span id="blog-title">University Statistics Review</span></a></td>
+            </tr>
+        </table>
+        </center>
+        <br><br>
+        <div class="col-md-9">
+
+    <!--Closing div in blog.html-->
 
     {% block content %}
 
 
-
-
-
     {% endblock %}
 
-
+    </div>
+    </div>
+    </div>
+    </div>
     <footer id="fh5co-footer" role="contentinfo">
 
         <div class="container">
@@ -173,7 +129,7 @@
             </div>
             </div>
             <div class="col-md-12 fh5co-copyright text-center">
-                <p>Copyright © 2017 SUSA. All rights reserved. Design by Yitz Deng, Aaron Chai, David Nahm.</p>
+                <p>Copyright © 2018 SUSA. All rights reserved. Design by Yitz Deng, Aaron Chai, David Nahm, Anthony Yu.</p>
                 <p>We are a student group acting independently of the University of California. <span> We take full responsibility for our organization and this web site. </span></p>
     <a href="https://www.ocf.berkeley.edu">
             <img src="https://www.ocf.berkeley.edu/hosting-logos/ocfbadge_mini8darkglow.png"
