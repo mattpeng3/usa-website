@@ -142,7 +142,7 @@ def blog(request):
         'posts': Blog.objects.all()#[-1:-6:-1]
     })
 
-    #t = get_template("blog.html")
+    #t = get_template("blog/blog.html")
     #context = Context({})
     #return HttpResponse(t.render(context))
 
