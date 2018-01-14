@@ -147,7 +147,12 @@ def blog(request):
     #return HttpResponse(t.render(context))
 
 def tobacco_heart_disease(request):
-    t= get_template("blog/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates.html")
+    t = get_template("blog/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def shallow_dive(request):
+    t = get_template("blog/a-shallow-dive-into-time-series-analysis-of-local-restaurant-data-using-r.html")
     context = Context({})
     return HttpResponse(t.render(context))
 

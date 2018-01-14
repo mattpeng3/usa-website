@@ -71,6 +71,7 @@ urlpatterns = [
     url(r'comingSoon$', views.comingSoon, name="comingSoon"),
     url(r'blog/$', views.blog, name="blog"),
     url(r'blog/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates.html', views.tobacco_heart_disease, name="tobacco_heart_disease"),
+    url(r'blog/a-shallow-dive-into-time-series-analysis-of-local-restaurant-data-using-r.html', views.shallow_dive, name="shallow_dive"),
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'yitz$', views.yitz, name = "yitz"),
     # url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),
