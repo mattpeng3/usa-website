@@ -142,14 +142,56 @@ def blog(request):
         'posts': Blog.objects.all()#[-1:-6:-1]
     })
 
-    #t = get_template("blog.html")
+    #t = get_template("blog/blog.html")
     #context = Context({})
     #return HttpResponse(t.render(context))
 
-def tobacco_heart_disease(request):
-    t= get_template("blog/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates.html")
+##################################
+###### FALL 2017 BLOG POSTS ######
+##################################
+
+def shallow_dive(request):
+    t = get_template("blog/a-shallow-dive-into-time-series-analysis-of-local-restaurant-data-using-r.html")
     context = Context({})
     return HttpResponse(t.render(context))
+
+def tobacco_heart_disease(request):
+    t = get_template("blog/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def alphago(request):
+    t = get_template("blog/an-introduction-to-go-alphago-and-quantifying-go-gameplay.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def rapnet(request):
+    t = get_template("blog/rapnet-machine-learning-for-hip-hop-artist-classification.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def evol_lyrics(request):
+    t = get_template("blog/the-evolution-of-lyrics.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def ucb_ug_mental(request):
+    t = get_template("blog/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def world_happiness(request):
+    t = get_template("blog/world-happiness-report-eda.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def yelp_review(request):
+    t = get_template("blog/yelp-review-and-rating-analysis.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+##################################
+
 
 
 def view_post(request, slug):

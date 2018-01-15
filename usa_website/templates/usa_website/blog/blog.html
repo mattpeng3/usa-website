@@ -28,28 +28,21 @@
     </div>
 </aside> -->
 
+    <h3>Featured</h3>
+    <p><a href="{% url 'alphago' %}">AN INTRODUCTION TO GO, ALPHAGO AND QUANTIFYING GO GAMEPLAY</a></p>
+    <p><a href="{% url 'rapnet' %}">RAPNET: MACHINE LEARNING FOR HIP-HOP ARTIST CLASSIFICATION</a></p>
 
-
-        {% if posts %}
-        {% for post in posts %}
-        <a href="{{ post.get_absolute_url }}">
-            <div class="row">
-                <div class="pricing">
-                    <div class="col-md-10 col-md-offset-1 animate-box">
-                        <div class="price-box">
-                            <h3>{{ post.title }}</h3>
-                            <p style="color: #000">{{ post.posted }}</p>
-                            <p style="color: #000">{% autoescape off %}{{ post.get_first_paragraph }}{% endautoescape %}</p>
-                            <a href="{{ post.getAuthorPosts }}">{{ post.author }}</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        {% endfor %}
-        {% else %}
-        <p>There are no posts.</p>
-        {% endif %}
+    <br>
+    <h3>Fall 2017</h3>
+    <p><a href="{% url 'shallow_dive' %}">A SHALLOW DIVE INTO TIME SERIES: ANALYSIS OF LOCAL RESTAURANT DATA USING R</a></p>
+    <p><a href="{% url 'tobacco_heart_disease' %}">A SPATIAL INVESTIGATION INTO HEART DISEASE MORTALITY RATES AND YOUTH TOBACCO RATES</a></p>
+    <p><a href="{% url 'alphago' %}">AN INTRODUCTION TO GO, ALPHAGO AND QUANTIFYING GO GAMEPLAY</a></p>
+    <p><a href="{% url 'rapnet' %}">RAPNET: MACHINE LEARNING FOR HIP-HOP ARTIST CLASSIFICATION</a></p>
+    <p><a href="{% url 'evol_lyrics' %}">THE EVOLUTION OF LYRICS</a></p>
+    <p><a href="{% url 'ucb_ug_mental' %}">UC BERKELEY UNDERGRADUATES' GENERAL MENTAL HEALTH AND USE OF MENTAL HEALTH SERVICES</a></p>
+    <p><a href="{% url 'world_happiness' %}">WORLD HAPPINESS REPORT EDA</a></p>
+    <p><a href="{% url 'yelp_review' %}">YELP REVIEW AND RATING ANALYSIS</a></p>
+    
     </div>
 </div> <!-- Closing div for fh5co-pricing-section -->
 <div class="col-md-12 text-center animate-box">
