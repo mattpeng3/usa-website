@@ -1,7 +1,7 @@
 # usa-website
 Website for the Statistics Undergraduate Student Association at Berkeley.
 
-If this is your first time, clone this repository (git clone https://github.com/usaberkeley/usa-website).  
+If this is your first time, clone this repository (git clone https://github.com/SUSA-org/usa-website).  
 Otherwise, pull (``git pull origin master``).
 
 If you are changing some code: 
