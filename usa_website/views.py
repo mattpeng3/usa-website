@@ -210,61 +210,61 @@ def susawebapp(request):
     return HttpResponse(t.render(context))
 
 def argentina(request):
-    t = get_template("SUSA-web-app/Argentina.csv")
+    t = get_template("webapp/Argentina.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def china(request):
-    t = get_template("SUSA-web-app/china.csv")
+    t = get_template("webapp/china.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
 
 def guatemala(request):
-    t = get_template("SUSA-web-app/Guatemala.csv")
+    t = get_template("webapp/Guatemala.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
 
 def nigeria(request):
-    t = get_template("SUSA-web-app/Nigeria.csv")
+    t = get_template("webapp/Nigeria.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
 
 def sudan(request):
-    t = get_template("SUSA-web-app/Sudan.csv")
+    t = get_template("webapp/Sudan.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
 
 def unitedstates(request):
-    t = get_template("SUSA-web-app/unitedstates.csv")
+    t = get_template("webapp/unitedstates.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
 
 def world(request):
-    t = get_template("SUSA-web-app/world.csv")
+    t = get_template("webapp/world.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
 
 def benin(request):
-    t = get_template("SUSA-web-app/benin.csv")
+    t = get_template("webapp/benin.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
 
 def tunisia(request):
-    t = get_template("SUSA-web-app/Tunisia.csv")
+    t = get_template("webapp/Tunisia.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
 
 
 def user(request):
-    t = get_template("SUSA-web-app/user.csv")
+    t = get_template("webapp/user.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 
@@ -289,7 +289,7 @@ def post_new(request):
     return render(request, 'submit.html', {'form': form})
 
 def convert_csv(request):
-    t= get_template("SUSA-web-app/convert_csv.py")
+    t= get_template("webapp/convert_csv.py")
     context = Context({})
     return HttpResponse(t.render(context))
 
