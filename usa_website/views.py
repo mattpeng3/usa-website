@@ -251,7 +251,7 @@ def world(request):
 
 
 def benin(request):
-    t = get_template("webapp/benin.csv")
+    t = get_template("webapp/Benin.csv")
     context = Context({})
     return HttpResponse(t.render(context))
 

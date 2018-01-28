@@ -14,7 +14,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "Argentina.csv",
+          url: "{% url 'argentina' %}",
           dataType: "text",
           success: function(argentinaset){
             plot(argentinaset)
@@ -25,7 +25,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/Benin.csv' %}",
+          url: "{% url 'benin' %}",
           dataType: "text",
           success: function(beninset){
             benin=beninset;
@@ -35,7 +35,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/china.csv' %}",
+          url: "{% url 'china' %}",
           dataType: "text",
           success: function(chinaset){
             china=chinaset;
@@ -45,7 +45,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/Guatemala.csv' %}",
+          url: "{% url 'guatemala' %}",
           dataType: "text",
           success: function(guatemalaset){
             guatemala=guatemalaset;
@@ -55,7 +55,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/Nigeria.csv' %}",
+          url: "{% url 'nigeria' %}",
           dataType: "text",
           success: function(nigeriaset){
             nigeria=nigeriaset;
@@ -65,7 +65,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/Sudan.csv' %}",
+          url: "{% url 'sudan' %}",
           dataType: "text",
           success: function(sudanset){
             sudan=sudanset;
@@ -75,7 +75,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/Tunisia.csv' %}",
+          url: "{% url 'tunisia' %}",
           dataType: "text",
           success: function(tunisiaset){
             tunisia=tunisiaset;
@@ -85,7 +85,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/unitedstates.csv' %}",
+          url: "{% url 'unitedstates' %}",
           dataType: "text",
           success: function(usset){
             us=usset;
@@ -95,7 +95,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/world.csv' %}",
+          url: "{% url 'world' %}",
           dataType: "text",
           success: function(worldset){
             world=worldset;
