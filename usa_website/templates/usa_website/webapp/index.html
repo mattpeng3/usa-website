@@ -218,10 +218,11 @@
         <br>
 
     <!-- Begin Javascript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
+    <!--<script src="{% static 'usa_website/js/webapp.js' %}"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
-      var oldData = 2015;
+    	      var oldData = 2015;
       //load csvs
       $(document).ready(function() {
         $.ajax({
@@ -932,6 +933,214 @@
           }
         }
     </script>
+    
+    <style type="text/css">
+      /*
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        font-size: 11px;
+        background-color: #EEE9D4;
+      }
+      */
+      h1{
+        font-size: 50px;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 16px;
+      }
+      p{
+        font-size: 16px;
+        text-align: center;
+        padding:15px;
+      }
+      .axis path, .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: auto;
+      }
+
+      .dropbtn {
+          background-color: #268BD2;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: 2px;
+          border-radius: 30px;
+          cursor: pointer;
+          text-align: center;
+          position: relative;
+          display: block;
+      }
+
+      .dropdown {
+          position: relative;
+          display: inline-block;
+          text-align: center;
+          padding-bottom: 10px;
+      }
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #EEE9D4;
+          min-width: 250px; /*160*/
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          border: 2px;
+          border-radius: 10px;
+
+      }
+
+      .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          border: inherit;
+          border-radius: inherit;
+      }
+
+
+      .dropdown-content a:hover {background-color: #f1f1f1}
+
+      .dropdown:hover .dropdown-content {
+          display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+          background-color: #337ab7;
+      }
+      .container2{
+        text-align: center;
+      }
+      svg{
+        background-color: #f0eada;
+
+        border-radius: 50px;
+        display:block;
+        -webkit-filter: drop-shadow(15px 12px 15px rgba(0,0,0,0.5));
+        filter: drop-shadow(15px 12px 15px rgba(0,0,0,0.5));
+        margin:auto;
+
+      }
+
+      #graphcont {
+        height: 650px;
+        width: 1300px;
+
+        /*border-style: solid;
+        border-width:2px;*/
+      }
+      #below {
+        margin-top: 10px;
+
+      }
+      #UNans {
+        font-size: 16px;
+        border: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px;
+
+        color: white;
+        border-radius: 30px;
+      }
+
+      #MLans {
+        font-size: 16px;
+        border: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px;
+        border-radius: 30px;
+        color: white;
+      }
+      #TSans {
+        font-size: 16px;
+        border: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px;
+        border-radius: 30px;
+        color: white;
+      }
+      #clear {
+        margin-top: 10px;
+        font-size: 16px;
+        border: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px;
+        background-color: #CBCBCB;
+        color: black;
+        border-radius: 30px;
+
+      }
+      #footer{
+        text-align: center;
+        font-size: 11px;
+      }
+      .orig {
+        background-color: #268BD2;;
+      }
+      .new {
+        background-color: #51a9c6;;
+      }
+
+    </style>
+    <div class="fh5co-team">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+            <h2> Population Modeling Demo </h2>
+            <p> Plot the values every two years from 2015 to 2025 below! Click the toggle buttons
+               when you're done to view the predicted
+              <br>
+              United Nations<super>*</super> model as well as our own time series and machine learning generated models!</p>
+          </div>
+        </div>
+      
+        <div class="row">
+          <div class="container2">
+              <div class="dropdown">
+                <button class="dropbtn">Choose a Population to Model!</button>
+                <div class="dropdown-content">
+                  <a href="#argentina">Argentina</a>
+                  <a href="#benin">Benin</a>
+                  <a href="#china">China</a>
+                  <a href="#guatemala">Guatemala</a>
+                  <a href="#nigeria">Nigeria</a>
+                  <a href="#sudan">Sudan</a>
+                  <a href="#tunisia">Tunisia</a>
+                  <a href="#us">United States</a>
+                  <a href="#world">The Entire World</a>
+                </div>
+              </div>
+            </div>
+          <br>
+          <div id="svgcontainer" align="center">
+          </div>
+              <br><br>
+          <div class ="container2">
+              <button type="button" id="clear">Clear my answers</button>
+
+
+              <button type="button" class= "orig" id="UNans" value="0">Click here for the <br>United Nations' Predictions</button>
+
+              <button type="button" class= "orig" id="MLans" value="0">Click here for our <br>Machine Learning Predictions</button>
+
+              <button type="button" class= "orig" id="TSans">Click here for our <br>Time Series Predictions</button>
+              <!-- <div class="col-sm-9">
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+      <br>
+        <div id= "footer"><super>*</super>United Nations projections were taken as the average increase over a 5 year period.</div>
+
+        <br>
 
 
     {% endblock %}
