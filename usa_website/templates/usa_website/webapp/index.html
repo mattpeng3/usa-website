@@ -14,7 +14,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/Argentina.csv' %}",
+          url: "Argentina.csv",
           dataType: "text",
           success: function(argentinaset){
             plot(argentinaset)
