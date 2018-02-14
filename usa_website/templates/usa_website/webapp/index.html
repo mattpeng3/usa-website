@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
 
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
     <!--<script src="{% static 'usa_website/js/webapp.js' %}"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
@@ -14,7 +15,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "Argentina.csv",
+          url: "{% url 'argentina' %}",
           dataType: "text",
           success: function(argentinaset){
             plot(argentinaset)
@@ -25,7 +26,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/Benin.csv' %}",
+          url: "{% url 'benin' %}",
           dataType: "text",
           success: function(beninset){
             benin=beninset;
@@ -35,7 +36,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/china.csv' %}",
+          url: "{% url 'china' %}",
           dataType: "text",
           success: function(chinaset){
             china=chinaset;
@@ -45,7 +46,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/Guatemala.csv' %}",
+          url: "{% url 'guatemala' %}",
           dataType: "text",
           success: function(guatemalaset){
             guatemala=guatemalaset;
@@ -55,7 +56,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/Nigeria.csv' %}",
+          url: "{% url 'nigeria' %}",
           dataType: "text",
           success: function(nigeriaset){
             nigeria=nigeriaset;
@@ -65,7 +66,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/Sudan.csv' %}",
+          url: "{% url 'sudan' %}",
           dataType: "text",
           success: function(sudanset){
             sudan=sudanset;
@@ -75,7 +76,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/Tunisia.csv' %}",
+          url: "{% url 'tunisia' %}",
           dataType: "text",
           success: function(tunisiaset){
             tunisia=tunisiaset;
@@ -85,7 +86,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/unitedstates.csv' %}",
+          url: "{% url 'unitedstates' %}",
           dataType: "text",
           success: function(usset){
             us=usset;
@@ -95,7 +96,7 @@
       $(document).ready(function() {
         $.ajax({
           type: "GET",
-          url: "{% static 'usa_website/csv/world.csv' %}",
+          url: "{% url 'world' %}",
           dataType: "text",
           success: function(worldset){
             world=worldset;
@@ -928,6 +929,7 @@
         <div id= "footer"><super>*</super>United Nations projections were taken as the average increase over a 5 year period.</div>
 
         <br>
+
 
 
     {% endblock %}
