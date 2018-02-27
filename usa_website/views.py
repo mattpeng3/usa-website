@@ -33,6 +33,11 @@ def calendar(request):
     context = Context({})
     return HttpResponse(html.render({}))
 
+def officehours(request):
+    html = get_template("officehours.html")
+    context = Context({})
+    return HttpResponse(html.render({}))
+
 def stat133(request):
     t = get_template("stat-133.html")
     context = Context({})
