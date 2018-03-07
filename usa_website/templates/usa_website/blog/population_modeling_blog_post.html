@@ -1,0 +1,81 @@
+
+{% extends "blog/blog_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<html>
+	<h3 class="title toc-ignore">Population Modeling</h3>
+
+	<p>
+		For the Fall 2017 semester, SUSA worked with UC Berkeley demography professors in investigating modeling population rates using time series and machine learning techniques. Although there exists a variety of approaches on population modeling techniques, most of these techniques rely on highly advanced and complex models. Our goal was to create easy to understand models using relatively elementary techniques, and place these into an interactive <a href="http://susa.berkeley.edu/webapp">web interface</a>. By combining interpretable models and an interactive interface, people of the general public can draw their own predictions for the population rates of various countries and compare them with our predictions and the United Nations’.
+	</p>
+
+	<br />
+
+	<p>
+		For this project, we worked with four main features and used these to create our model predictions. These are:
+		<ol>
+			<li>
+				Birth Rate: number of live births per thousand of population per year
+			</li>
+			<li>
+				Mortality Rate: number of deaths per thousand of population per year
+			</li>
+			<li>
+				Life Expectancy: expected number of years an individual born in the given year will live
+			</li>
+			<li>
+				Fertility Rate: the expected number of children born per woman in the given year
+			</li>
+		</ol>
+			Our models utilize these four time series to predict the population rate of a given country.
+	</p>
+
+	<br />
+
+	<p>
+		We began with preliminary data analysis and visualizations, such as looking into the demographic transition. Most civilizations initially have birth and mortality rates close to equal, with a fertility rate of about 6, meaning 6 children per woman. These civilizations go through a period of where medicine and education allow mortality rates to sharply decrease, causing an drastic increase in population. Afterwards, birth rates drop to max the mortality rate, and the country population flattens out. The fertility rate flattens around 2 births per woman. The demographic transition characterizes the period of time where population rate drastically increases, and returns to normal.
+	</p>
+
+	<div class="row">
+		<div class="col-md-6">In the graph on the right, we notice that the fertility rate drops from 6 to 2 for Costa Rica and Korea, representing the tail end of the demographic transition. Similarly, the United States also has a decline from 4 to 2, demonstrating that the demographic transition is slightly longer for the United States.</div>
+		<div class="col-md-6">INSERT PIC 1</div>
+	</div>
+	<p>
+		After conducting basic data visualizations, we began looking into fundamental techniques to serve as benchmarks. We conducted linear regression and principal component regression, although these had rather poor results. These models do not assume any correlation from the previous data points, resulting in a large loss of information. 
+	</p>
+
+	<div class="row">
+		<div class="col-md-6">One first step was determining how the different features cluster the data. We conducted a PCA on the four features with respect to continent, and found striking distinctions between country location and population features. We then developed <a href="https://plot.ly/~junseopark/89.embed">plotly web application</a> to showcase our analysis interactively.</div>
+		<div class="col-md-6">INSERT PIC 2</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">The graph on the right demonstrates our original principal component regression. It was marginally better than linear regression since it ensures that the features are not correlated with each other, but still performs poorly due to a lack of prior knowledge about the data.
+		<br />
+		Next, we looked into using autoregressive integrated moving average (ARIMA) models. These models perform regression on the lagged values, essentially the difference between prior values (hence autoregressive). With ARIMA models (shown on the right), we were able to obtain much better results, close to what is expected. 
+		<br />
+		Finally, we also investigated TBATS models, which are similar to ARIMA models except they deal with complex seasonalities more effectively. They apply Box-Cox transformations as well as trigonometric regressors.
+		</div>
+		<div class="col-md-6">INSERT PIC 3, 4</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">INSERT PIC 5</div>
+		<div class="col-md-6">INSERT PIC 6</div>
+	</div>
+	<p>
+		Another approach we attempted to forecasting these time series was centered around applying machine learning techniques. We began with multivariate linear regression, but had trouble with the same issues as before, the models did not take into account the correlations with prior data points.
+		<br />
+		We decided to look into more powerful models, and decided to utilize Recurrent Neural Networks (RNNs) with Long Short Term Memory (LSTMs). Since RNNs and LSTMs are quite complicated, we shall only give a brief overview of what they do. The major difference between RNNs and vanilla NNs is that RNNs have the ability to operate over sequences of vectors, rather than interpreting each vector independently. LSTMs that this a step further, they have the nice property that these values are “remembered”, stored in some form of memory. If you would like to read more about RNNs and LSTMs, Andrej Karpathy has a great blog post <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">http://karpathy.github.io/2015/05/21/rnn-effectiveness/</a>, and Chris Olah has a great explanation on LSTMs <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">http://colah.github.io/posts/2015-08-Understanding-LSTMs/</a>. 
+	</p>
+	<div class="row">
+		<div class="col-md-6">Our models were able to perform quite well on fitting to population rates given the four features, as shown on the right with Argentina.
+		<br />
+		Additionally, we created GIFs to visualization the training of an LSTM on the population rate, shown below with Nigeria. 	
+		</div>
+		<div class="col-md-6">INSERT PIC 7</div>
+	</div>
+	<div>
+		INSTERT PIC 8
+	</div>
+</html>
