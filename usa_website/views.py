@@ -195,8 +195,22 @@ def yelp_review(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
-##################################
+###################################
+###### FALL 2017 DC PROJECTS ######
+###################################
+def population_modeling(request):
+    t = get_template("blog/population-modeling.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
+
+###################################
+########## CRASH COURSES ##########
+###################################
+def r0(request):
+    t = get_template("blog/r0.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
 
 def view_post(request, slug):
