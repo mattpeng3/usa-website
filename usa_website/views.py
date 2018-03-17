@@ -195,8 +195,22 @@ def yelp_review(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
-##################################
+###################################
+###### FALL 2017 DC PROJECTS ######
+###################################
+def population_modeling(request):
+    t = get_template("blog/population-modeling.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
+
+###################################
+########## CRASH COURSES ##########
+###################################
+def r0(request):
+    t = get_template("blog/r0.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
 
 def view_post(request, slug):
@@ -214,64 +228,64 @@ def susawebapp(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
-def argentina(request):
-    t = get_template("webapp/Argentina.csv")
-    context = Context({})
-    return HttpResponse(t.render(context))
+# def argentina(request):
+#     t = get_template("webapp/Argentina.csv")
+#     context = Context({})
+#     return HttpResponse(t.render(context))
 
-def china(request):
-    t = get_template("webapp/china.csv")
-    context = Context({})
-    return HttpResponse(t.render(context))
-
-
-def guatemala(request):
-    t = get_template("webapp/Guatemala.csv")
-    context = Context({})
-    return HttpResponse(t.render(context))
+# def china(request):
+#     t = get_template("webapp/china.csv")
+#     context = Context({})
+#     return HttpResponse(t.render(context))
 
 
-def nigeria(request):
-    t = get_template("webapp/Nigeria.csv")
-    context = Context({})
-    return HttpResponse(t.render(context))
+# def guatemala(request):
+#     t = get_template("webapp/Guatemala.csv")
+#     context = Context({})
+#     return HttpResponse(t.render(context))
 
 
-def sudan(request):
-    t = get_template("webapp/Sudan.csv")
-    context = Context({})
-    return HttpResponse(t.render(context))
+# def nigeria(request):
+#     t = get_template("webapp/Nigeria.csv")
+#     context = Context({})
+#     return HttpResponse(t.render(context))
 
 
-def unitedstates(request):
-    t = get_template("webapp/unitedstates.csv")
-    context = Context({})
-    return HttpResponse(t.render(context))
+# def sudan(request):
+#     t = get_template("webapp/Sudan.csv")
+#     context = Context({})
+#     return HttpResponse(t.render(context))
 
 
-def world(request):
-    t = get_template("webapp/world.csv")
-    context = Context({})
-    return HttpResponse(t.render(context))
+# def unitedstates(request):
+#     t = get_template("webapp/unitedstates.csv")
+#     context = Context({})
+#     return HttpResponse(t.render(context))
 
 
-def benin(request):
-    t = get_template("webapp/Benin.csv")
-    context = Context({})
-    return HttpResponse(t.render(context))
+# def world(request):
+#     t = get_template("webapp/world.csv")
+#     context = Context({})
+#     return HttpResponse(t.render(context))
 
 
-def tunisia(request):
-    t = get_template("webapp/Tunisia.csv")
-    context = Context({})
-    return HttpResponse(t.render(context))
+# def benin(request):
+#     t = get_template("webapp/Benin.csv")
+#     context = Context({})
+#     return HttpResponse(t.render(context))
+
+
+# def tunisia(request):
+#     t = get_template("webapp/Tunisia.csv")
+#     context = Context({})
+#     return HttpResponse(t.render(context))
 
 
 
-def user(request):
-    t = get_template("webapp/user.csv")
-    context = Context({})
-    return HttpResponse(t.render(context))
+# def user(request):
+#     t = get_template("webapp/user.csv")
+#     context = Context({})
+#     return HttpResponse(t.render(context))
 
 def textboxio(request):
     t = get_template("textboxio/textboxio.js")

@@ -1,4 +1,393 @@
-      var oldData = 2015;
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    {% load staticfiles %}
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Statistics Undergraduate Student Association</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SUSA is here to provide Berkeley undergraduates interested in Statistics with resources and a statistics-driven community" />
+    <meta name="keywords" content="statistics, data science, berkeley, SUSA, undergraduate" />
+    <meta name="author" content="FreeHTML5.co" />
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Web app import D3 -->
+    <script src="{% static 'usa_website/js/d3.v3.min.js' %}" charset="utf-8"></script>
+
+    <!-- Web app specific styling -->
+    <style type="text/css">
+      body {
+        margin: 0;
+        /*font-family: sans-serif;
+        font-size: 11px;*/
+        background-color: #EEE9D4;
+      }
+      h1{
+        /*font-size: 50px;*/
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 16px;
+      }
+      p{
+        /*font-size: 16px;*/
+        text-align: center;
+        padding:15px;
+      }
+      .axis path, .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: auto;
+      }
+
+      .dropbtn {
+          background-color: #268BD2;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: 2px;
+          border-radius: 30px;
+          cursor: pointer;
+          text-align: center;
+          position: relative;
+          display: block;
+      }
+
+      .dropdown {
+          position: relative;
+          display: inline-block;
+          text-align: center;
+          padding-bottom: 10px;
+      }
+      .container{
+        text-align: center;
+      }
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #EEE9D4;
+          min-width: 250px; /*160*/
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          border: 2px;
+          border-radius: 10px;
+
+      }
+
+      .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          border: inherit;
+          border-radius: inherit;
+      }
+
+
+      .dropdown-content a:hover {background-color: #f1f1f1}
+
+      .dropdown:hover .dropdown-content {
+          display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+          background-color: #337ab7;
+      }
+      .container2{
+        text-align: center;
+      }
+      svg{
+        background-color: #f0eada;
+
+        border-radius: 50px;
+        display:block;
+        -webkit-filter: drop-shadow(15px 12px 15px rgba(0,0,0,0.5));
+        filter: drop-shadow(15px 12px 15px rgba(0,0,0,0.5));
+        margin:auto;
+
+      }
+
+      #graphcont {
+        height: 650px;
+        width: 1300px;
+
+        /*border-style: solid;
+        border-width:2px;*/
+      }
+      #below {
+        margin-top: 10px;
+
+      }
+      #UNans {
+        font-size: 16px;
+        border: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px;
+
+        color: white;
+        border-radius: 30px;
+      }
+
+      #MLans {
+        font-size: 16px;
+        border: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px;
+        border-radius: 30px;
+        color: white;
+      }
+      #TSans {
+        font-size: 16px;
+        border: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px;
+        border-radius: 30px;
+        color: white;
+      }
+      #clear {
+        margin-top: 10px;
+        font-size: 16px;
+        border: none;
+        text-align: center;
+        display: inline-block;
+        padding: 10px;
+        background-color: #CBCBCB;
+        color: black;
+        border-radius: 30px;
+
+      }
+      #footer{
+        text-align: center;
+        font-size: 11px;
+      }
+      .orig {
+        background-color: #268BD2;;
+      }
+      .new {
+        background-color: #51a9c6;;
+      }
+    </style>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="{% static 'usa_website/images/favicon/favicon.ico' %}">
+    <script src="{% static 'usa_website/js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'usa_website/js/owl.carousel.min.js' %}"></script>
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/animate.css' %}" />
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/icomoon.css' %}" />
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/bootstrap.css' %}" />
+    <!-- Flexslider  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/flexslider.css' %}" />
+    <!-- Theme style  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/style.css' %}" />
+    <!-- Custom font style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/fonts.css' %}" />
+
+    <!-- Modernizr JS -->
+    <script src="{% static 'usa_website/js/modernizr-2.6.2.min.js' %}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
+    <script src="{% static 'usa_website/js/list_courses.js' %}"></script>
+
+    <!-- scroll button -->
+    <script src="{% static 'usa_website/js/scroll-down.js' %}"></script>
+    <!-- smooth scroll -->
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../../static/usa_website/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../static/usa_website/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../static/usa_website/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../static/usa_website/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../static/usa_website/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../static/usa_website/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../static/usa_website/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../static/usa_website/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static/usa_website/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../static/usa_website/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../static/usa_website/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../static/usa_website/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../static/usa_website/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../static/usa_website/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../static/usa_website/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    </head>
+    <body>
+
+
+    <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+    <div id="fh5co-page">
+    <header id="fh5co-header" role="banner">
+        <div class="container">
+            <div class="header-inner">
+                <!--<h1><a href="{% url 'home' %}">SUSA</a></h1>-->
+                <a href="/"><img src="/static/usa_website/images/susafinallogowhite.png" style="height:90%;vertical-align:middle;margin-top:5px;"></img></a>
+                <div class="fb-share-button" data-href="https://susa.berkeley.edu/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsusa.berkeley.edu%2F&amp;src=sdkpreparse">Share</a></div>
+                <nav class="navbar" role="navigation">
+                    <div class="container-fluid">
+                        <!--
+                        <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-bar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'usa_website/images/susafinallogo.png' %}" style="height:200%;vertical-align:left"></img></a>
+                        <div class="fb-share-button" data-href="https://susa.berkeley.edu/" data-layout="button_count" data-size="small" data-mobile-iframe="true" style="padding-top:20px"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsusa.berkeley.edu%2F&amp;src=sdkpreparse">Share</a></div>
+
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="header-bar">
+                        -->
+                        <ul>
+                            <li><a href="{% url 'blog' %}">Blog</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Committees<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url 'dataconsulting' %}">Data Consulting</a></li>
+                                    <li><a href="{% url 'webdev' %}">Web Development</a></li>
+                                    <li><a href="{% url 'research' %}">Research and Publication</a></li>
+                                    <li><a href="{% url 'careerex' %}">Career Exploration</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="calendar">Calendar</a></li>
+                            <li><a href="course-map">Course Map</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses<span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="overflow-x:hidden; overflow-y:auto; max-height:250px;">
+                                    <li><a href="{% url 'stat133' %}">Stat 133</a></li>
+                                    <li><a href="{% url 'stat134' %}">Stat 134</a></li>
+                                    <li><a href="{% url 'stat135' %}">Stat 135</a></li>
+                                    <li><a href="{% url 'stat150' %}">Stat 150</a></li>
+                                    <li><a href="{% url 'stat151a' %}">Stat 151A</a></li>
+                                    <li><a href="{% url 'stat151b' %}">Stat 151B</a></li>
+                                    <li><a href="{% url 'stat152' %}">Stat 152</a></li>
+                                    <li><a href="{% url 'stat153' %}">Stat 153</a></li>
+                                    <li><a href="{% url 'stat154' %}">Stat 154</a></li>
+                                    <li><a href="{% url 'stat155' %}">Stat 155</a></li>
+                                    <li><a href="{% url 'stat157' %}">Stat 157</a></li>
+                                    <li><a href="{% url 'stat158' %}">Stat 158</a></li>
+                                    <li><a href="{% url 'stat159' %}">Stat 159</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'people' %}">People</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+
+
+
+
+
+    {% endblock %}
+
+
+    <footer id="fh5co-footer" role="contentinfo">
+
+        <div class="container">
+            <div class="col-md-12 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+                <h3>About Us</h3>
+                <p>The Statistics Undergraduate Student Association is a premier organization at UC Berkeley that stimulates its members' interests in Statistics and facilitates their further development in a statistics career.</p>
+
+                <p>You may contact us at <a href="mailto:contact@susa.berkeley.edu">contact@susa.berkeley.edu</a> or follow us on <a href="https://www.facebook.com/susaberkeley">Facebook!</a></p>
+                <!--<p><a href="#" class="btn btn-primary btn-outline with-arrow btn-sm">Join Us <i class="icon-arrow-right"></i></a></p>-->
+            <!-- <div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+                <h3>Our Services</h3>
+                <ul class="float">
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Branding &amp; Identity</a></li>
+                    <li><a href="#">Free HTML5</a></li>
+                    <li><a href="#">HandCrafted Templates</a></li>
+                </ul>
+                <ul class="float">
+                    <li><a href="#">Free Bootstrap Template</a></li>
+                    <li><a href="#">Free HTML5 Template</a></li>
+                    <li><a href="#">Free HTML5 &amp; CSS3 Template</a></li>
+                    <li><a href="#">HandCrafted Templates</a></li>
+                </ul>
+            </div>
+            <div class="col-md-12 col-md-push-0 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0 fh5co-social">
+                <h3><a href="https://www.facebook.com/susaberkeley/">Follow us on Facebook!</a></h3>
+            <ul class="fh5co-social">
+            <div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+            </div>
+            </ul>-->
+            </div>
+            </div>
+            <div class="col-md-12 fh5co-copyright text-center">
+                <p>Copyright © 2018 SUSA. All rights reserved. Design by Yitz Deng, Aaron Chai, David Nahm, Anthony Yu.</p>
+                <p>We are a student group acting independently of the University of California. <span> We take full responsibility for our organization and this web site. </span></p>
+    <a href="https://www.ocf.berkeley.edu">
+            <img src="https://www.ocf.berkeley.edu/hosting-logos/ocfbadge_mini8darkglow.png"
+                    alt="Hosted by the OCF" style="border: 0;" />
+    </a>
+            </div>
+
+        </div>
+    </footer>
+    </div>
+
+
+
+    <!-- jQuery -->
+    <script src="{% static 'usa_website/js/jquery.min.js' %}"></script>
+    <!-- jQuery Easing -->
+    <script src="{% static 'usa_website/js/jquery.easing.1.3.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'usa_website/js/bootstrap.min.js' %}"></script>
+    <!-- Waypoints -->
+    <script src="{% static 'usa_website/js/jquery.waypoints.min.js' %}"></script>
+    <!-- Flexslider -->
+    <script src="{% static 'usa_website/js/jquery.flexslider-min.js' %}"></script>
+    <!-- Stellar -->
+    <script src="{% static 'usa_website/js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'usa_website/js/owl.carousel.min.js' %}"></script>
+    <!-- MAIN JS -->
+    <script src="{% static 'usa_website/js/main.js' %}"></script>
+
+    <!-- Web app specific Javascript -->
+    <!-- Begin Javascript -->
+    <script type="text/javascript">
+        var oldData = 2015;
       //load csvs
       $(document).ready(function() {
         $.ajax({
@@ -6,7 +395,8 @@
           url: "{% static 'usa_website/csv/Argentina.csv' %}",
           dataType: "text",
           success: function(argentinaset){
-            plot(argentinaset)
+            console.log(argentinaset);
+            plot(argentinaset);
             argentina=argentinaset;
           }
         });
@@ -118,12 +508,12 @@
       //adding un-projection key for un model
       $(function(){
         $('#UNans').on('click', function (e) {
-		        // Update whether or not the elements are active
+                // Update whether or not the elements are active
             var active   = unproj.active ? false:true ,
-  		        newOpacity = active ? 1 : 0;
-  		          // Hide or show the elements
+                newOpacity = active ? 1 : 0;
+                  // Hide or show the elements
         console.log(newOpacity)
-  		      d3.select("#unproj").attr("opacity", newOpacity);
+              d3.select("#unproj").attr("opacity", newOpacity);
 
               unproj.active = active;
               //toggle color
@@ -140,12 +530,12 @@
 
       $(function(){
         $('#MLans').on('click', function (e) {
-  		       // Update whether or not the elements are active
+               // Update whether or not the elements are active
            var active   = ML.active ? false:true ,
               newOpacity = active ? 1 : 0;
-     	         // Hide or show the elements
+                 // Hide or show the elements
            d3.select("#ML").attr("opacity", newOpacity);
-      	     ML.active = active;
+             ML.active = active;
              //toggle color
              var gValue = $(this).attr('class');
              if (gValue == 'orig') {
@@ -160,12 +550,12 @@
 
       $(function(){
         $('#TSans').on('click', function (e) {
-  		       // Update whether or not the elements are active
+               // Update whether or not the elements are active
             var active   = TS.active ? false:true ,
-    		       newOpacity = active ? 1 : 0;
-    		         // Hide or show the elements
-    		     d3.select("#TS").attr("opacity", newOpacity);
-  		         TS.active = active;
+                   newOpacity = active ? 1 : 0;
+                     // Hide or show the elements
+                 d3.select("#TS").attr("opacity", newOpacity);
+                 TS.active = active;
                //toggle color
              var gValue = $(this).attr('class');
              if (gValue == 'orig') {
@@ -179,7 +569,9 @@
         });
       //configuring the dropdown menu
       $("div.dropdown-content a").click(function() {
+        console.log("click");
         if (this.href.includes("#argentina")) {
+          console.log("argentina");
           oldData = 2015;
           d3.select("svg").remove();
           plot(argentina);
@@ -418,6 +810,7 @@
 
 
     function plot(data) {
+      console.log("plot data");
       dataset = [];
       pointset =[];
       // read from CSV
@@ -478,6 +871,7 @@
 
       //adds vertical dotted line on 2015
       var x = xScale(2015).toFixed(1);
+      console.log(xScale(2015));
       var y1 = yScale(Math.min(0,d3.min(dataset, function(d) { return d.y; }))).toFixed(1);
       var y2 = yScale(8.5).toFixed(1);
       svg.append("line")
@@ -708,3 +1102,7 @@
             x.remove();
           }
         }
+    </script>
+    </body>
+</html>
+
