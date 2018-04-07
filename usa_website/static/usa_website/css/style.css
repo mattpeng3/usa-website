@@ -9,7 +9,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *	Edit this section
 *
 * ======================================================= */
@@ -1372,8 +1372,8 @@ div>div>div>div>div:hover .photo-two {
 .jumbo {
   margin-top: 50px;
 }
-.seo-header, .product-header, 
-.intro-type .container h1.white, 
+.seo-header, .product-header,
+.intro-type .container h1.white,
 .company-heading h1 {
   font-weight: 100 !important;
   text-transform: capitalize;
@@ -1410,7 +1410,7 @@ div>div>div>div>div:hover .photo-two {
   -webkit-transition: background-color 0.25s ease-in-out;
   transition: background-color 0.25s ease-in-out;
 }
-img, 
+img,
 figure {
   max-width: 100%;
 }
@@ -1428,7 +1428,7 @@ figure {
 }
 
 #officehours th {
-  background: #000000; 
+  background: #000000;
   color:white;
 }
 
