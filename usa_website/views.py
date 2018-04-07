@@ -194,6 +194,11 @@ def yelp_review(request):
     t = get_template("blog/yelp-review-and-rating-analysis.html")
     context = Context({})
     return HttpResponse(t.render(context))
+    
+def bias_variance(request):
+    t = get_template("blog/Bias-Variance-Decision-Trees-Ensemble-Learning.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
 ###################################
 ###### FALL 2017 DC PROJECTS ######
