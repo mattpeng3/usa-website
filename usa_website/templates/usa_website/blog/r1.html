@@ -22,7 +22,7 @@
   <br/>
   <h5>r1</h5>
   <p>
-  	This document contains textbook-style information on R programming. It will cover the essentials of both base R and a few packages such as <pre class="python"><code>magrittr</code></pre> and <pre class="python"><code>stringr</code></pre>.
+  	This document contains textbook-style information on R programming. It will cover the essentials of both base R and a few packages such as <code>magrittr</code> and <code>stringr</code>.
   </p>
   <br />
   <h5>r1-workbook</h5>
@@ -34,11 +34,210 @@
   	<p>The associated workbook requires some knowledge of R Markdown to use.</p>
   	<br/>
   	<p>
-  		<strong>R Markdown</strong> is a powerful way to combine text, code, code output, images, LaTeX, and web elements into a single document, report, slide deck, or website. R Markdown is a file format and markup language that allows you to <strong>knit</strong> together <pre class="python"><code>Rmd</code></pre> files, which can either be <em>interactive</em> (as <strong>notebooks</strong>), or <em>published</em> (like this <pre class="python"><code>html</code></pre> document). It allows you to break up your code into bite-sized <strong>code chunks</strong>, surrounded by (optionally marked up) text. See the Additional Reading section at the end of this document for more information on how to make your own beautiful reports and workbooks in R! As R Markdown documents are standalone and work regardless of the computer that opens them, they are the best way to edit and share statistical code.
+  		<strong>R Markdown</strong> is a powerful way to combine text, code, code output, images, LaTeX, and web elements into a single document, report, slide deck, or website. R Markdown is a file format and markup language that allows you to <strong>knit</strong> together <code>Rmd</code> files, which can either be <em>interactive</em> (as <strong>notebooks</strong>), or <em>published</em> (like this <code>html</code> document). It allows you to break up your code into bite-sized <strong>code chunks</strong>, surrounded by (optionally marked up) text. See the Additional Reading section at the end of this document for more information on how to make your own beautiful reports and workbooks in R! As R Markdown documents are standalone and work regardless of the computer that opens them, they are the best way to edit and share statistical code.
   	</p>
   	<br />
   	<p>
-  		At the very core of the notebook philosophy is the <strong>code chunk</strong>. To make a chunk in RStudio, simply type three backticks, <pre class="python"><code>{R}</code></pre>, and then three more backticks when you are finished writing your code chunk. An example of the chunk syntax is below: 
+  		At the very core of the notebook philosophy is the <strong>code chunk</strong>. To make a chunk in RStudio, simply type three backticks, <code>{R}</code>, and then three more backticks when you are finished writing your code chunk. An example of the chunk syntax is below: 
   	</p>
+  	<h4>Base R</h4>
+  	<p>
+  		Base R (known as the <code>base</code> package internally) contains hundreds of functions by default to jumpstart your data analysis workflow. We will go over the syntax of R, as well as some of these functions.
+  	</p>
+  	<br />
+  	<h4>Basic R</h4>
+  	<h5>Syntax Basics</h5>
+  	<p>
+  		R is <em>case-sensitive</em>. So, ensure that you are always using the correct capitalization when dealing with functions, variables, and dataframe column names.<br />
+  		Additionally, every command is separated by a new line, or a semicolon if you want to make multiple commands on a single line. <br />
+  		Finally, you can comment code with #, which requests that R ignore the entire rest of the line, and treat it as normal text in the output.
+  	</p>
+  	<br />
+  	<h5>Expressions</h5>
+  	<p>You can do basic arithmetic in R without the need of more advanced functions. These operations include the EMDAS (<code>^</code>, <code>*</code>, <code>/</code>, <code>+</code>, <code>-</code> respectively) operators, as well as the modulo/remainder operator (<code>%%</code>). Some examples are below:
+  	</p>
+  	<pre class="python"><code>2 ^ 3</code></pre>
+  	<pre class="python"><code>4 * 4</code></pre>
+  	<pre class="python"><code>5 / 10</code></pre>
+  	<pre class="python"><code>3 + 3</code></pre>
+  	<pre class="python"><code>7 - 6</code></pre>
+  	<pre class="python"><code>8 %% 6</code></pre>
+  	<p>
+  		We can also use the equality operator (<code>==</code>) and the inequality operator (<code>!=</code>), as well as operators like greater-than (<code>></code>) and less-than-or-equal (<code><=</code>) to test values. (To <strong>test</strong> means to return <code>TRUE</code> in some cases and <code>FALSE</code> otherwise). Some examples are below:
+  	</p>
+  	<pre class="python"><code>4 > 4</code></pre>
+  	<pre class="python"><code>4 >= 4</code></pre>
+  	<pre class="python"><code>4 == 4</code></pre>
+  	<pre class="python"><code>4 != 4</code></pre>  	
+  	<p>
+  		Note that spaces between operators and operands are optional, but may improve readability.
+  	</p>
+  	<h5>Variables & Assignment</h5>
+  	<p>
+  		In R, a <strong>variable</strong> is an object that stores a value of some sort. After assigning a variable an initial value, you can re-assign it as many time as you'd like, even changing the type of object it stores. <br />
+		The most basic way to assign a variable a value in R is to use the <code>=</code> operator, which sets a variable to the value to its right. However, you can also use the <strong>arrow operator</strong> to set variables on either the left or the right of the value. <br />
+		As such, the following are equivalent:
+  	</p>
+  	<pre class="python"><code>a = 1</code></pre>
+  	<pre class="python"><code>a <- 1</code></pre>
+  	<pre class="python"><code>1 -> a</code></pre>
+  	<p>
+  		After you have set a variable, you can <code>print</code> its value using print. Alternatively, you can just type the variable to see its value.
+  	</p>
+  	<pre class="python"><code>print(a)</code></pre>
+  	<pre class="python"><code>a</code></pre>
+  	<p>
+  		Once you have set a variable, you can use it in arithmetic! For example, let's emulate the Pythagorean Formula.
+  	</p>
+  	<pre class="python"><code>a <- 3</code></pre>
+  	<pre class="python"><code>b <- 4</code></pre>
+  	<pre class="python"><code>c <- sqrt(a^2 + b^2)</code></pre>
+  	<pre class="python"><code>c</code></pre> 
+  	<p>
+  		Normally, R will not let you start a variable with a number or include any spaces in your variable name. To get around this, surround your variable with backticks.
+  	</p>
+  	<pre class="python"><code>`5 and a space` <- 420</code></pre>
+  	<pre class="python"><code>print(`5 and a space`)</code></pre> 
+  	<h4>Atomic Objects</h4>
+  	<p>
+  		An <strong>atomic</strong> object in R is an object or list of objects that are both <strong>flat</strong> (cannot be reduced or opened further) and of the same <strong>type</strong>.<br />
+	
+		There are three <strong>types</strong> in R - we will be going over their properties individually, before discussing vectors, which are collections of atomic objects. To check the type of an object, use the <code>mode</code> function:
+	</p>
+  	<pre class="python"><code>mode(1.23)</code></pre> 
+  	<h5>Types</h5>
+  	<h5>Numerics</h5>
+  	<p>
+  		A <strong>numeric</strong> is an atomic object that refers to integers, doubles (<em>decimals</em>), and more.<br />
+
+		Some examples are below:
+  	</p>
+  	<pre class="python"><code>13</code></pre> 
+  	<pre class="python"><code>013</code></pre> 
+  	<pre class="python"><code>0130</code></pre>
+  	<pre class="python"><code>1.30</code></pre> 
+   	<pre class="python"><code>13e-1</code></pre> 
+   	<p>R also contains the constant <code>pi</code>, which evaluates to 3.141593.</p>
+   	<h5>Logicals</h5>
+   	<p>
+   		A <strong>logical</strong> is a quantity that evaluates to either <code>TRUE</code> or <code>FALSE</code>. Recall the (in)equality testing we reviewed above - the output of these operators are logicals. <br/>
+
+		Any non-zero numeric evaluates to <code>TRUE</code>. You can also use <code>T</code> and <code>F</code> rather than <code>TRUE</code> and <code>FALSE</code>, respectively. <br/>
+
+		The <strong>boolean</strong> operators in R are operators that have logicals as operands. There are three basic ones:
+   	</p>
+   	<ul>
+   		<li><code>|</code> the binary OR operator, which returns <code>TRUE</code> if either of its arguments are <code>TRUE</code></li>
+   		<li><code>&</code> the binary AND operator, which returns <code>TRUE</code> if both of its arguments are <code>TRUE</code></li>
+   		<li><code>!</code> the unary NOT operator, which returns the opposite of its logical operand</li>
+   	</ul>
+   	<h5>Characters</h5>
+   	<p>
+   		A single lexographical symbol or <strong>string</strong> of multiple symbols is of type <strong>character</strong>. To make a string, surround one or more symbols in double-quotes (or alternatively, in single-quotes). A string does not evaluate its contents, and so <code>"TRUE"</code> and <code>"123"</code> are distinct from <code>TRUE</code> and <code>123</code>. Observe the functionality of various basic string syntaxes and functions below:
+   	</p>
+   	<pre class="python"><code>str <- "susa"; nchar(str)</code></pre> 
+   	<pre class="python"><code>str2 <- "1.2"; str2 == 1.2</code></pre> 
+   	<pre class="python"><code>str3 <- paste("Statistics", "Undergraduate", "Students", "Association"); print(str3)</code></pre> 
+   	<h4>Vectors</h4>
+   	<p>
+		A <strong>vector</strong> is an ordered finite sequence of elements, each of the same type. Just like the atomic objects it contains, a vector is also considered an atomic object*. As such, they must be both <strong>flattened</strong> (fully reduced) and of the <strong>same type</strong>. Vectors are an important building block in R, as they compute quickly and are a way to bind together multiple values.<br/>
+
+		*(<em>In fact, singleton values are just single-element vectors in R.</em>)
+   	</p>
+   	<h5>Vector Basics</h5>
+   	<p>
+   		To construct a vector, we use the <code>c</code> function, which stands for <em>concatenate</em>, as it can also add more values to the vector. You can also use the <code>:</code> notation to make ordered sequences of numbers. Finally, you can check the length of a vector using <code>length</code>. Observe these behaviors below:
+   	</p>   	
+   	<pre class="python"><code>vec <- c(1,2,3,4)</code></pre>
+   	<pre class="python"><code>vec2 <- 1:4</code></pre>
+   	<pre class="python"><code>print(vec)</code></pre>
+   	<pre class="python"><code>length(vec2)</code></pre>
+   	<pre class="python"><code>vec === vec2</code></pre>
+   	<h5>Vectorized Functionality</h5>
+   	<p>
+   		Notice that operators (e.g. <code>==</code>) function on vectors <em>element-wise</em>. This is an example of R's <strong>vectorization</strong> behavior. Essentially, R will try to take basic operators and functions and apply it to each element in a vector automatically, then return the resultant vector. Because of vectorization, vector operation in R is efficient. Here are some examples of vectorization in R:
+   	</p>
+   	<pre class="python"><code>v <- c(1, 12, 169, 7)</code></pre>
+   	<pre class="python"><code>1/v</code></pre>
+   	<pre class="python"><code>2*v^2 - v + 3</code></pre>
+   	<h5>Flattening</h5>
+   	<p>
+   		Recall from the previous section that atomic objects are always <em>flattened</em>. That is, they cannot contain non-atomic objects. When you combine two vectors in R with <code>c</code>, they will automatically become one long vector, rather than a 2-element vector of two vectors. To better illustrate this, observe the following examples of <em>flattening</em>:
+   	</p>
+   	<pre class="python"><code>v <- 1:5</code></pre>
+   	<pre class="python"><code>c(1,2,3,v)</code></pre>
+   	<pre class="python"><code>c(1:3, v)</code></pre>
+   	<pre class="python"><code>w <- c(v, v)</code></pre>
+   	<pre class="python"><code>length(w)</code></pre>
+   	<pre class="python"><code>w</code></pre>
+
+   	<p>
+   		An example of both properties of atomic objects (<em>flattening</em> and <em>same-typeness</em>) is that R will automatically <strong>cast</strong> elements of different types to be the type. Logicals will turn into numerics, and both numerics and logicals will turn into strings if R has to convert them to retain <em>same-typeness</em>. Consider the following example of this behavior:
+   	</p>
+    <pre class="python"><code>a <- v(T, F)</code></pre>
+    <pre class="python"><code>c(a, 3)</code></pre>
+   	<pre class="python"><code>c(a, "TREE")</code></pre>
+
+	<h5>Subsetting Vectors</h5>
+	<p>
+		All vectors are <strong>indexed</strong> (labeled by number) so that you can access them by telling R which elements you want. The indicies are <em>1-indexed</em> - i.e. the first element is labeled <code>1</code>, the second <code>2</code>, and so on. You can specify which elements with square brackets. Finally, you can tell R to <em>exclude</em> rather than select the indices you pass to it using <code>-</code>. Observe the following behaviors:
+	</p>
+	<pre class="python"><code>v <- c("red", "blue", "green")</code></pre>
+    <pre class="python"><code>v[1]</code></pre>
+   	<pre class="python"><code>v[2]</code></pre>
+   	<pre class="python"><code>v[1:2]</code></pre>
+    <pre class="python"><code>v[-2]</code></pre>
+   	<pre class="python"><code>v[-c(3,1,2)]</code></pre>
+
+   	<p>Alternatively, you can specify an inclusion indicator for each element by giving a vector of logicals. Observe the following behaviors:</p>
+   	<pre class="python"><code>v <- 1:5</code></pre>
+    <pre class="python"><code>v[c(T, F, F, F, T)]</code></pre>
+   	<pre class="python"><code>v[! c(T, F, T, F, T)]</code></pre>
+
+   	<p>Finally, if you set <strong>names</strong> for the elements of your vector, you can access the elements in your <strong>named</strong> vector by giving which specifying you want. Observe the following behaviors:
+   	</p>
+   	<pre class="python"><code>v <- c(one = 1, two = 2, three = 3)</code></pre>
+    <pre class="python"><code>v["one"]</code></pre>
+   	<pre class="python"><code>get_these <- c("one", "three")</code></pre>
+   	<pre class="python"><code>v[get_these]</code></pre>
+
+   	<h4>Lists</h4>
+   	<p>
+   		Now let's learn a few <em>non-atomic</em> objects. A <strong>list</strong> is an ordered sequence of values of <em>flexible type</em>. In comparison to vectors, lists are unconstrained in what they can contain. Their elements can be of different type or even be vectors or lists themselves! To access elements of a list, use single square brackets to get a sublist, or <strong>extract</strong> a single value with double bracket.s Observe the following behaviors:
+   	</p>
+   	<pre class="python"><code>vec <- 3:1</code></pre>
+    <pre class="python"><code>1  <- list("SUSA", vec, c(F, T)); 1</code></pre>
+   	<pre class="python"><code>length(1)</code></pre>
+   	<pre class="python"><code>1[2] #[] returns a sublist</code></pre>
+   	<pre class="python"><code>1[2:3]</code></pre>
+    <pre class="python"><code>1[[2]] #[[]] returns the item within the list</code></pre>
+
+    <h4>Functions</h4>
+    <p>
+    	Now that you've learnt some of the basic data structures in R, let's learn some of the <strong>functions</strong> that operate on them! A <strong>function</strong> is a device that accepts zero or more input <strong>arguments</strong> and yields single output, or <strong>result</strong>. Unlike the binary and unary operators (e.g. <code>+</code>, <code>==</code>, etc.) we've been reading about, functions have the following usage syntax: <code>f(x,y)</code>, just like functions you study in math class.
+    </p>
+    <h5>Using Functions</h5>
+    <p>Let's learn a couple of functions that should help illustrate how functions work in R. First up, we have the <code>sqrt</code> function, which simply finds the square root of its argument. Observe the following behavior:</p>
+    <pre class="python"><code>sqrt(4)</code></pre>
+    <pre class="python"><code>sqrt(23)</code></pre>
+   	<pre class="python"><code>real_negative = -1; sqrt(real_negative)</code></pre>
+   	<pre class="python"><code>complex_negative = as.complex(-1); sqrt(complex_negative)</code></pre>
+
+   	<p>
+   		<em>Notice that <code>sqrt(-1)</code> returns <code>NaN</code>("Not a Number") for real -1, but returns i for complex -1.</em>
+   	</p>
+   	<br />
+	<p>
+		To check how a function works in R, simply type e.g. <code>?sqrt</code> in your console. The associated documentation for the function you searched will open up in the Help pane. You will see a <strong>Description</strong> section, which discusses the function's purpose in English; a <strong>Usage</strong> section, which shows you the right syntax to use the function; a <strong>Arguments</strong> section, which details what kinds of objects will be accepted as arguments; a <strong>Details</strong> section, which explains special cases and considerations; and an <strong>Examples</strong> sections which gives example code segments on how to use the function in question. 
+	</p>
+	<br />
+	<p>
+	Some functions have <strong>default values</strong> for some arguments. For example, if you type <code>?log</code>, you will see information on R's log function. Notice that the default base is <code>base = exp(1)</code>. That is, if we use <code>log</code> in R, by default it will take the natural log. If we wanted to change the base, we could specify it as something else than its default value. Finally, note that many functions in R (e.g. <code>log</code>), also support vectorization. Observe the following examples:
+   	</p>
+	<pre class="python"><code>tens <- 10^(1:10)</code></pre>
+    <pre class="python"><code>log(tens)</code></pre>
+    <pre class="python"><code>log(tens, base = 10)</code></pre>
+    <pre class="python"><code>log(tens, base = 2)</code></pre>
+
 </div>
 </div>
