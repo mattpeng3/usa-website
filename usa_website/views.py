@@ -212,6 +212,11 @@ def r0(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def r1(request):
+    t = get_template("blog/r1.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 
 def view_post(request, slug):
     return render_to_response('viewPost.html', {

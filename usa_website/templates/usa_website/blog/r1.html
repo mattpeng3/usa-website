@@ -6,7 +6,7 @@
 <div class="col-md-9">
 <div class="container-fluid">
   <h3>Introduction to R</h3>
-  <h4> Part 1: Base R & Basic Packages</h4>
+  <h4> Part 1: Base R and Basic Packages</h4>
   <h4><span style="color: #D5518D" id="author">By </span><span style="color: #3E95D7" id="name">Arun Ramamurthy</span>  </h4>
   <br />
   <h4>Introduction</h4>
@@ -106,7 +106,7 @@
 		There are three <strong>types</strong> in R - we will be going over their properties individually, before discussing vectors, which are collections of atomic objects. To check the type of an object, use the <code>mode</code> function:
 	</p>
   	<pre class="python"><code>mode(1.23)</code></pre> 
-  	<h5>Types</h5>
+  	<h4>Types</h4>
   	<h5>Numerics</h5>
   	<p>
   		A <strong>numeric</strong> is an atomic object that refers to integers, doubles (<em>decimals</em>), and more.<br />
@@ -270,7 +270,6 @@
 	<p>
 		Now that we've learnt about vectors, lists, and functions, we are ready to learn about the most essential object for data analysis: the <strong>dataframe</strong>. A dataframe is a list of (named) vectors, all of the same length.
 	</p>
-	<br />
 	<h5>Constructing Dataframes</h5>
 	<p>
 		For example, let's suppose we wanted to make a dataframe of a group of friends, with their ages and favorite colors. First, we would make a vector of their names, a vector of their ages, and a vector of their favorite colors. Notice that these vectors are of different types, but all contain exactly 3 elements:
@@ -293,7 +292,6 @@
 	<p>
 		Notice that <code>data.frame</code> converted our string vectors (<code>friends</code>, <code>fav_colors</code>) into factor vectors. A <strong>factor</strong> is a new type that refers to categorical data with a finite number of categories. R prefers to work with factors, as it makes checking equality and sorting faster than if it had to parse strings. R will implicitly convert strings into factors, unless you ask it not to by specifying <code>stringsAsFactors=FALSE</code> in the function call of <code>data.frame</code>.
 	</p>
-	<br />
 	<h5>Subsetting Dataframes</h5>
 	<p>
 		To extract a specific vector back out of a dataframe, use <code>$</code> notation. Alternatively, you can use the standard list double square-bracket notation:
@@ -312,16 +310,13 @@
 	<p>
 		An <strong>RDS</strong> (<em>R Data Structure</em>) is the most efficient way to make your dataframes portable. It simply packages whatever object you pass to the <code>saveRDS</code> function in a memory-efficient way, and then you can Slack, email, or share your object, and another person can read it in R with <code>readRDS</code>.
 	</p>
-	<br />
 	<h4>Installing & Using Packages</h4>
 	<p>
 		We've now covered a fair amount of base R. We could keep going and learn more, but there are actually packages that accomplish a lot of the things in base R more easily. Next, we will learn how to install and load packages, and then learn about two of the most popular ones: <code>magrittr</code> and <code>stringr</code>.
 	</p>
-	<br />
 	<p>
 		A <strong>package</strong> is an addition to the base libraries in R. Some packages contain multiple smaller packages. Packages are easy to install and quick to load in R.
 	</p>
-	<br />
 	<h5>Installing Packages</h5>
 	<p>
 		The first time you use a package, you will need to install it first. Use the <code>install.packages</code> function to do this. Let's install the <code>magrittr</code> and <code>stringr</code> packages.
@@ -332,7 +327,6 @@
 	</p>
 	<pre class="python"><code>library(magrittr)</code></pre>
 	<pre class="python"><code>library(stringr)</code></pre>
-	<br />
 	<h5><code>magrittr</code></h5>
 	<p>
 		<code>magrittr</code> is a package that allows you to use <strong>piping</strong> in R. Piping is a way to make your code more readable. Essentially, it allows you to compose functions as <code>x %>% g %>% f</code> rather than using <code>f(g(x))</code>. The symbol for pipe is <code>%>%</code>. Since piping reads left-to-right rather than the usual in-to-out, it is more readable and makes your code easier to manage. Furthermore, in <code>magrittr</code> notation, the <code>.</code> symbol is used indicate "what was just passed into the pipe". Therefore, the following are equivalent:
@@ -357,13 +351,12 @@
 	<pre class="python"><code>a %>% divide_by(4) -> a; print(a)</code></pre>
 	<pre class="python"><code># is equiv. to</code></pre>
 	<pre class="python"><code>a %<>% divide_by(4); print(a)</code></pre>
-	<br />
 
 	<h5><code>stringr</code></h5>
 	<p>
 		<code>stringr</code> is a package used for text and string manipulation in R. We will learn it to gain more familiarity with functions, as well as ease into the <code>tidyverse</code>, which we will learn more about next week.
 	</p>
-	<h6><code>str_length</code></h6>
+	<h5><code>str_length</code></h5>
 	<p>
 		<code>stringr</code>'s <code>str_length</code> function returns the number of characters in a string. Observe the following examples:
 	</p>
@@ -371,7 +364,7 @@
 	<pre class="python"><code>str_length(x)</code></pre>
 	<pre class="python"><code>str_length(c(x, x, "asdfgh"))</code></pre>
 	<pre class="python"><code>str_length(NA)</code></pre>
-	<h6><code>str_sub</code></h6>
+	<h5><code>str_sub</code></h5>
 	<p>
 		The <code>str_sub</code> function extracts a substring from a string, given a start and end index. Using negative values for the index indicates that you'd like to count the index from the <em>back</em> of the string rather than from the <em>front</em>. Observe the following examples:
 	</p>
@@ -384,8 +377,7 @@
 	</p>
 	<pre class="python"><code>str_sub(x, 1, 4) <- "ggplot"</code></pre>
 	<pre class="python"><code>x</code></pre>
-	<br />
-	<h6><code>str_trim</code></h6>
+	<h5><code>str_trim</code></h5>
 	<p>
 		You can easily <strong>trim</strong> off the whitespace at the beginning or end of a string using <code>str_trim</code>. Observe the following example:
 	</p>
@@ -394,13 +386,13 @@
 	<pre class="python"><code>trimmed_x <- str_trim(x); trimmed_x</code></pre>
 	<pre class="python"><code>str_length(trimmed_x)</code></pre>
 
-	<h6><code>str_detect</code></h6>
+	<h5><code>str_detect</code></h5>
 	<p>
 		You can search a vector of strings for a search pattern using <code>str_detect</code>. Observe the following example:
 	</p>
 	<pre class="python"><code>x <- c("Hello world", "#SUSA magic", "#careerexploration", "no hashtags here", "#hashtag"); x</code></pre>
 	<pre class="python"><code>str_detect(x, pattern = "#")</code></pre>
-	<h6><code>str_replace, str_replace_all</code></h6>
+	<h5><code>str_replace, str_replace_all</code></h5>
 	<p>
 		You can replace all the matches to a particular pattern with a replacement pattern using <code>str_replace_all</code>. In contrast, <code>str_replace</code> will only replace the first instance of a pattern per string. Observe the following example:
 	</p>
