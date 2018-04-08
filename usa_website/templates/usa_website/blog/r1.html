@@ -40,6 +40,7 @@
   	<p>
   		At the very core of the notebook philosophy is the <strong>code chunk</strong>. To make a chunk in RStudio, simply type three backticks, <code>{R}</code>, and then three more backticks when you are finished writing your code chunk. An example of the chunk syntax is below: 
   	</p>
+  	#insert picture here
   	<h4>Base R</h4>
   	<p>
   		Base R (known as the <code>base</code> package internally) contains hundreds of functions by default to jumpstart your data analysis workflow. We will go over the syntax of R, as well as some of these functions.
@@ -239,5 +240,192 @@
     <pre class="python"><code>log(tens, base = 10)</code></pre>
     <pre class="python"><code>log(tens, base = 2)</code></pre>
 
+    <h5>Writing Functions</h5>
+    <p>
+		To write your own function in R, we will use curly brackets, the <code>function</code> function, and the <code>return</code> function. For example, to make a function <code>square</code> that returns the 2nd power of its inputted argument, we can run:
+	</p>
+	<pre class="python"><code>square <- function(x){return(x^2)}</code></pre>
+	<p>
+		Then, we can use the <code>square</code> function anytime we wish. Since the contents of the <code>square</code> function uses the vectorized operator <code>^</code>, our <code>square</code> function is vectorized too.
+	</p>
+	<pre class="python"><code>square(12)</code></pre>
+	<pre class="python"><code>square(1:10)</code></pre>
+	<p>
+		Suppose we also wanted to make a more general function <code>power</code>, that will raise a number to the $n^{th}$ power, but default to just squaring a number. We could write it as so:
+	</p>
+	<pre class="python"><code>power <- function(x, n = 2){return(x^n)}</code></pre>
+	<p>Observe the following behaviors of our handmade function:</p>
+	<pre class="python"><code>power(12)</code></pre>
+	<pre class="python"><code>power(12, n = 5)</code></pre>
+	<pre class="python"><code>power(1:10)</code></pre>
+	<pre class="python"><code>power(1:10, n = 1/2)</code></pre>
+	<p>
+		Finally, if you want to use multple functions together, you can <strong>compose</strong> them just like you do in math (e.g. <code>f(g(x))</code>). We will later learn about a package called <code>magrittr</code> that makes reading function compositions much easier. Observe the following examples:
+	</p>
+	<pre class="python"><code>sqrt(square(12))</code></pre>
+	<pre class="python"><code>sqrt(power(12))</code></pre>
+	<pre class="python"><code>sqrt(power(12, n = 3))</code></pre>
+
+	<h4>Dataframes</h4>
+	<p>
+		Now that we've learnt about vectors, lists, and functions, we are ready to learn about the most essential object for data analysis: the <strong>dataframe</strong>. A dataframe is a list of (named) vectors, all of the same length.
+	</p>
+	<br />
+	<h5>Constructing Dataframes</h5>
+	<p>
+		For example, let's suppose we wanted to make a dataframe of a group of friends, with their ages and favorite colors. First, we would make a vector of their names, a vector of their ages, and a vector of their favorite colors. Notice that these vectors are of different types, but all contain exactly 3 elements:
+	</p>
+	<pre class="python"><code>friends <- c("Hadley", "Mom", "R"); class(friends)</code></pre>
+	<pre class="python"><code>ages <- c(30, 45, 18); class(ages)</code></pre>
+	<pre class="python"><code>fav_colors <- c("Pink", "Yellow", "Blue"); class(fav_colors)</code></pre>
+	<p>
+		Then, we can combine these into a dataframe, or list of named vectors, using the <code>data.frame</code> function. Alternatively, we can first make a list of vectors, and then give it as an argument to <code>data.frame</code> to acheive the same thing:
+	</p>
+	<pre class="python"><code>my_friends <- data.frame(Name = friends, Age = ages, `Favorite Color` = fav_colors, check.names = F)</code></pre>
+	<pre class="python"><code>print(my_friends)</code></pre>
+	<pre class="python"><code>my_friends_2_precursor <- list(Name = friends, Age = ages, `Favorite Color` = fav_colors)</code></pre>
+	<pre class="python"><code>my_friends_2 <- data.frame(my_friends_2_precursor, check.names = F)</code></pre>
+	<pre class="python"><code># my_friends is identical to my_friends_2</code></pre>
+	<p>
+		R has constructed a dataframe called <code>my_friends</code> with three column vectors, <code>Name</code>, <code>Age</code>, and <code>Favorite Color</code>. We can check the <strong>structure</strong> of our dataframe with the <code>str</code> command, which details the number of <strong>observations</strong> (<em>rows</em>) and the number of <strong>variables</strong> (<em>columns</em>), as well as the type of each:
+	</p>
+	<pre class="python"><code>str(my_friends)</code></pre>
+	<p>
+		Notice that <code>data.frame</code> converted our string vectors (<code>friends</code>, <code>fav_colors</code>) into factor vectors. A <strong>factor</strong> is a new type that refers to categorical data with a finite number of categories. R prefers to work with factors, as it makes checking equality and sorting faster than if it had to parse strings. R will implicitly convert strings into factors, unless you ask it not to by specifying <code>stringsAsFactors=FALSE</code> in the function call of <code>data.frame</code>.
+	</p>
+	<br />
+	<h5>Subsetting Dataframes</h5>
+	<p>
+		To extract a specific vector back out of a dataframe, use <code>$</code> notation. Alternatively, you can use the standard list double square-bracket notation:
+	</p>
+	<pre class="python"><code>vec <- my_friends$Name</code></pre>
+	<pre class="python"><code>print(vec)</code></pre>
+	<pre class="python"><code>vec2 <- my_friends[[1]]</code></pre>
+	<pre class="python"><code>vec == vec2)</code></pre>
+	<p>
+		Finally, you can <strong>subset</strong> your dataframe to return a new dataframe with only particular columns or rows with the single square-bracket notation:
+	</p>
+	<pre class="python"><code>my_friends[1, ]</code></pre>
+	<pre class="python"><code>my_friends[, 3]</code></pre>
+	<pre class="python"><code>my_friends[1,3]</code></pre>
+	<h4>RDS Files</h4>
+	<p>
+		An <strong>RDS</strong> (<em>R Data Structure</em>) is the most efficient way to make your dataframes portable. It simply packages whatever object you pass to the <code>saveRDS</code> function in a memory-efficient way, and then you can Slack, email, or share your object, and another person can read it in R with <code>readRDS</code>.
+	</p>
+	<br />
+	<h4>Installing & Using Packages</h4>
+	<p>
+		We've now covered a fair amount of base R. We could keep going and learn more, but there are actually packages that accomplish a lot of the things in base R more easily. Next, we will learn how to install and load packages, and then learn about two of the most popular ones: <code>magrittr</code> and <code>stringr</code>.
+	</p>
+	<br />
+	<p>
+		A <strong>package</strong> is an addition to the base libraries in R. Some packages contain multiple smaller packages. Packages are easy to install and quick to load in R.
+	</p>
+	<br />
+	<h5>Installing Packages</h5>
+	<p>
+		The first time you use a package, you will need to install it first. Use the <code>install.packages</code> function to do this. Let's install the <code>magrittr</code> and <code>stringr</code> packages.
+	</p>
+	<pre class="python"><code>install.packages(c("magrittr", "stringr"))</code></pre>
+	<p>
+		After you've installed it the first time, the package will remain downloaded on your machine. Then, you just need to call <code>library</code> each time you re-open R to use the functions from that package. Let's load up <code>magrittr</code> and <code>stringr</code> for use in the next two sections.
+	</p>
+	<pre class="python"><code>library(magrittr)</code></pre>
+	<pre class="python"><code>library(stringr)</code></pre>
+	<br />
+	<h5><code>magrittr</code></h5>
+	<p>
+		<code>magrittr</code> is a package that allows you to use <strong>piping</strong> in R. Piping is a way to make your code more readable. Essentially, it allows you to compose functions as <code>x %>% g %>% f</code> rather than using <code>f(g(x))</code>. The symbol for pipe is <code>%>%</code>. Since piping reads left-to-right rather than the usual in-to-out, it is more readable and makes your code easier to manage. Furthermore, in <code>magrittr</code> notation, the <code>.</code> symbol is used indicate "what was just passed into the pipe". Therefore, the following are equivalent:
+	</p>
+	<pre class="python"><code>sqrt(power(123, n = 3))</code></pre>
+	<pre class="python"><code># is equiv. to...</code></pre>
+	<pre class="python"><code>123 %>% power(n = 3) %>% sqrt</code></pre>
+	<pre class="python"><code># is equiv. to</code></pre>
+	<pre class="python"><code>3 %>% power(123, n = .) %>% sqrt</code></pre>
+	<p>
+		You can also use <code>magrittr</code> to use functions rather than the equivalent operator, again making your code easier to read. To view all the aliases, type <code>multiply_by</code> in your R console. Observe the following example:
+	</p>
+	<pre class="python"><code>(((30 + 6) / 4) %% 3) > 0</code></pre>
+	<pre class="python"><code>## is equiv. to...</code></pre>
+	<pre class="python"><code>30 %>% add(6) %>% divide_by(4) %>% mod(3) %>% is_greater_than(0)</code></pre>
+	<p>
+		Finally, you can use <code>magrittr</code> for variable assigment, after running a variable through a lot of functions, using <code>%<>%</code>. Observe the following behaviors:
+	</p>
+	<pre class="python"><code>a = 64</code></pre>
+	<pre class="python"><code>a <- a %>% divide_by(4); print(a)</code></pre>
+	<pre class="python"><code># is equiv. to</code></pre>
+	<pre class="python"><code>a %>% divide_by(4) -> a; print(a)</code></pre>
+	<pre class="python"><code># is equiv. to</code></pre>
+	<pre class="python"><code>a %<>% divide_by(4); print(a)</code></pre>
+	<br />
+
+	<h5><code>stringr</code></h5>
+	<p>
+		<code>stringr</code> is a package used for text and string manipulation in R. We will learn it to gain more familiarity with functions, as well as ease into the <code>tidyverse</code>, which we will learn more about next week.
+	</p>
+	<h6><code>str_length</code></h6>
+	<p>
+		<code>stringr</code>'s <code>str_length</code> function returns the number of characters in a string. Observe the following examples:
+	</p>
+	<pre class="python"><code>x <- "asdf"</code></pre>
+	<pre class="python"><code>str_length(x)</code></pre>
+	<pre class="python"><code>str_length(c(x, x, "asdfgh"))</code></pre>
+	<pre class="python"><code>str_length(NA)</code></pre>
+	<h6><code>str_sub</code></h6>
+	<p>
+		The <code>str_sub</code> function extracts a substring from a string, given a start and end index. Using negative values for the index indicates that you'd like to count the index from the <em>back</em> of the string rather than from the <em>front</em>. Observe the following examples:
+	</p>
+	<pre class="python"><code>x <- "SUSA is awesome!"</code></pre>
+	<pre class="python"><code>x %>% str_sub(start = 2, end = -2)</code></pre>
+	<pre class="python"><code>x %>% str_sub(1, 4)</code></pre>
+	<pre class="python"><code>x %>% str_sub(3, 3)</code></pre>
+	<p>
+		We can also use <code>str_sub</code> to edit a substring of a string. Observe the following example:
+	</p>
+	<pre class="python"><code>str_sub(x, 1, 4) <- "ggplot"</code></pre>
+	<pre class="python"><code>x</code></pre>
+	<br />
+	<h6><code>str_trim</code></h6>
+	<p>
+		You can easily <strong>trim</strong> off the whitespace at the beginning or end of a string using <code>str_trim</code>. Observe the following example:
+	</p>
+	<pre class="python"><code>x <- "    there are unecessary spaces here    "</code></pre>
+	<pre class="python"><code>str_length(x)</code></pre>
+	<pre class="python"><code>trimmed_x <- str_trim(x); trimmed_x</code></pre>
+	<pre class="python"><code>str_length(trimmed_x)</code></pre>
+
+	<h6><code>str_detect</code></h6>
+	<p>
+		You can search a vector of strings for a search pattern using <code>str_detect</code>. Observe the following example:
+	</p>
+	<pre class="python"><code>x <- c("Hello world", "#SUSA magic", "#careerexploration", "no hashtags here", "#hashtag"); x</code></pre>
+	<pre class="python"><code>str_detect(x, pattern = "#")</code></pre>
+	<h6><code>str_replace, str_replace_all</code></h6>
+	<p>
+		You can replace all the matches to a particular pattern with a replacement pattern using <code>str_replace_all</code>. In contrast, <code>str_replace</code> will only replace the first instance of a pattern per string. Observe the following example:
+	</p>
+	<pre class="python"><code>x <- c("susa", "pythons suck", "r > python > stata")</code></pre>
+	<pre class="python"><code>str_replace(x, pattern = "py", replacement = "mara")</code></pre>
+	<pre class="python"><code>str_replace_all(x, pattern = "s", replacement = "S")</code></pre>
+	<p>
+		This concludes our brief overview of <code>stringr. stringr</code> includes many other very useful functions, so consult the Additional Reading section below if you wish to learn more.
+	</p>
+	<h4>Sneakpeet at <code>r2</code></h4>
+	<p>
+		Next week, we will be covering data cleaning and other data science tools in R. You will learn how to <strong>tidy</strong> your data using the <code>tidyverse</code>, a set of packages designed to make data wrangling in R as rapid and painless as possible. tidyverse actually contains <code>stringr</code>, so you're already on your way in learning these tools in R! You will also learn a little bit on how to scrape data from the web.
+	</p>
+	<br />
+	<h4>Additional Reading</h4>
+	<ul>
+		<li>For a cheatsheet on Base R, visit RStudio's <a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf">Base R Cheat Sheet</a>.</li>
+		<li>For more information on R Markdown, visit the <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown quick reference guide</a>.</li>
+		<li>For a quick intro on the <code>magrittr</code> package, visit the <a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">magrittr vignette</a>.</li>
+		<li>For more information on the <code>stringr</code> text manipulation package, visit the <a href="https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html">stringr vignette</a>.</li>
+		<li>For a quick introduction to regex, visit <a href="https://www.maketecheasier.com/the-beginner-guide-to-regular-expressions/">this guide</a>.</li>
+		<li>The premier free online textbook for R, written by one of the leading developers of the R ecosystem, <a href="http://r4ds.had.co.nz/">"R for Data Science" can be found here</a>.</li>
+		<li>The follow-up textbook to <a href="http://r4ds.had.co.nz/">"R for Data Science"</a>, <a href="http://adv-r.had.co.nz/">"Advanced R", can be found here</a>.</li>
+		<li>For a detailed official guide on R, see the first three manuals on <a href="https://cran.cnr.berkeley.edu/manuals.html">this CRAN page</a>.</li>
+		<li>For an interactive guide to learning R and Python, visit <a href="https://www.datacamp.com/">DataCamp</a> a paid tutorial website for learning data computing.</li>
+	</ul>
 </div>
 </div>
