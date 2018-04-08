@@ -175,6 +175,11 @@ def evol_lyrics(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def data_good(request):
+    t = get_template("blog/data-for-good-proposal.html")
+    context = Context({})
+    
+    return HttpResponse(t.render(context))
 def ucb_ug_mental(request):
     t = get_template("blog/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services.html")
     context = Context({})
