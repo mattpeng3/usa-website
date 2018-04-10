@@ -199,15 +199,24 @@ def yelp_review(request):
     t = get_template("blog/yelp-review-and-rating-analysis.html")
     context = Context({})
     return HttpResponse(t.render(context))
+
+#####################################
+###### SPRING 2018 DC PROJECTS ######
+#####################################
     
 def bias_variance(request):
-    t = get_template("blog/Bias-Variance-Decision-Trees-Ensemble-Learning.html")
+    t = get_template("blog/bias-variance-decision-trees-ensemble-learning.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
-###################################
-###### FALL 2017 DC PROJECTS ######
-###################################
+def tutorfly(request):
+    t = get_template("blog/tutorfly.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+#####################################
+####### FALL 2017 DC PROJECTS #######
+#####################################
 def population_modeling(request):
     t = get_template("blog/population-modeling.html")
     context = Context({})
@@ -219,6 +228,11 @@ def population_modeling(request):
 ###################################
 def r0(request):
     t = get_template("blog/r0.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def r1(request):
+    t = get_template("blog/r1.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
