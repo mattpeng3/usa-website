@@ -82,6 +82,7 @@ urlpatterns = [
     url(r'blog/yelp-review-and-rating-analysis', views.yelp_review, name="yelp_review"),
     url(r'blog/population-modeling', views.population_modeling, name="population_modeling"),
     url(r'blog/installing-r-and-rstudio', views.r0, name="r0"),
+    url(r'blog/Bias-Variance-Decision-Trees-Ensemble-Learning', views.bias_variance, name="bias_variance"),
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'yitz$', views.yitz, name = "yitz"),
     # url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),
