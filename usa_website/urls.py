@@ -76,6 +76,7 @@ urlpatterns = [
     url(r'blog/an-introduction-to-go-alphago-and-quantifying-go-gameplay', views.alphago, name="alphago"),
     url(r'blog/rapnet-machine-learning-for-hip-hop-artist-classification', views.rapnet, name="rapnet"),
     url(r'blog/the-evolution-of-lyrics', views.evol_lyrics, name="evol_lyrics"),
+    url(r'blog/data-for-good-proposal', views.data_good, name="data_good"),
     url(r'blog/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services', views.ucb_ug_mental, name="ucb_ug_mental"),
     url(r'blog/world-happiness-report-eda', views.world_happiness, name="world_happiness"),
     url(r'blog/yelp-review-and-rating-analysis', views.yelp_review, name="yelp_review"),
