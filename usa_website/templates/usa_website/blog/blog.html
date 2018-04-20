@@ -32,7 +32,7 @@
         <div class="container">
             <center>
                 <h3>Journal Introduction</h3>
-                <p>The Statistics Undergraduate Students Association is proud to announce <b><i>The University Statistics Review</i></b>, our online journal to showcase undergraduate statistics and data science-related research. Throughout the semester, students have used statistical methods and tools to analyze a myriad of topics of personal interest, from song lyrics to the game of Go. The wide-ranging topics of articles we produce reflect the diversity of the statistics community itself, and we aim to publish content accessible to all readers. In addition, this journal serves as an outlet for discussion and commentary on the statistics community at Berkeley, whether it be experiences or ongoing developments. Articles are intended to be accessible to those without a statistical background, in order to foster broader interdisciplinary discourse. Readers can anticipate data-driven articles and more — coming soon.</p>
+                <p>The Statistics Undergraduate Students Association is proud to announce <b><i>The University Statistics Review</i></b>, our online journal to showcase undergraduate statistics and data science-related research. Throughout the semester, students have used statistical methods and tools to analyze a myriad of topics of personal interest, from song lyrics to the game of Go. The wide-ranging topics of articles we produce reflect the diversity of the statistics community itself, and we aim to publish content accessible to all readers. In addition, this journal serves as an outlet for discussion and commentary on the statistics community at Berkeley, whether it be experiences or ongoing developments. Articles are intended to be accessible to those without a statistical background, in order to foster broader interdisciplinary discourse. Readers can anticipate data-driven articles and more.</p>
             </center>
             <!--
             <h3>Featured</h3>
@@ -94,12 +94,36 @@
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'r2' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to R - Preparing for Data Analysis</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>March 5, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
                     <a href="{% url 'bias_variance' %}" class="item-grid">
                         <div class="v-align">
                             <div class="v-align-middle">
                                 <h3 class="title">The Bias Variance Tradeoff, Decision Trees, Bagging and Ensemble Learning</h3>
                                 <h5 class="date"><span>Patrick Chao</span></h5>
                                 <h5 class="date"><span>March 21, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'p0' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to Python - Installing Python and Anaconda</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>February 21, 2018</span></h5>
                             </div>
                         </div>
                     </a>
@@ -145,6 +169,17 @@
                                 <h5 class="date"><span>PM Patrick Chao</span></h5>
                                 <h5 class="date"><span>Fall 2017</span></h5>
                                 <p>For the Fall 2017 semester, SUSA worked with UC Berkeley demography professors in investigating modeling population rates using time series and machine learning techniques. Although there exists a variety of approaches on population modeling techniques, most of these techniques rely on highly advanced and complex models...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <a href="{% url 'facial_emotion_recognition' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Facial Emotion Recognition</h3>
+                                <h5 class="date"><span>PM Zhongling Jiang</span></h5>
+                                <h5 class="date"><span>Fall 2017</span></h5>
                             </div>
                         </div>
                     </a>
@@ -249,7 +284,7 @@
         </div>
     </div>
     
-    </div>
+    <!--</div>-->
 </div> <!-- Closing div for fh5co-pricing-section -->
 <div class="col-md-12 text-center animate-box">
     <!--<p><a href="/project" class="btn btn-primary with-arrow">View Past Projects <i class="icon-arrow-right"></i></a></p>-->
