@@ -203,14 +203,14 @@ def yelp_review(request):
 #####################################
 ###### SPRING 2018 DC PROJECTS ######
 #####################################
-    
-def bias_variance(request):
-    t = get_template("blog/bias-variance-decision-trees-ensemble-learning.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
 
 def tutorfly(request):
     t = get_template("blog/tutorfly.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def facial_emotion_recognition(request):
+    t = get_template("blog/facial-emotion-recognition.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
@@ -235,6 +235,26 @@ def r1(request):
     t = get_template("blog/r1.html")
     context = Context({})
     return HttpResponse(t.render(context))
+
+def r2(request):
+    t = get_template("blog/r2.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def p0(request):
+    t = get_template("blog/p0.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def bias_variance(request):
+    t = get_template("blog/bias-variance-decision-trees-ensemble-learning.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
+###################################
+######### MISCELLANEOUS ###########
+###################################
 
 def view_post(request, slug):
     return render_to_response('viewPost.html', {
