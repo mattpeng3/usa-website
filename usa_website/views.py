@@ -330,6 +330,12 @@ def susawebapp(request):
 #     context = Context({})
 #     return HttpResponse(t.render(context))
 
+def housingcrisis(request):
+    t = get_template("housingcrisis/index.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
 def textboxio(request):
     t = get_template("textboxio/textboxio.js")
     context = Context({})
@@ -345,7 +351,7 @@ def post_new(request):
             post.slug = "-".join(post.title.split(" "))
             post.save()
             return redirect('/blog/view/' + post.slug + ".html")
-    else: 
+    else:
         form = PostForm()
 
     return render(request, 'submit.html', {'form': form})
@@ -354,4 +360,3 @@ def convert_csv(request):
     t= get_template("webapp/convert_csv.py")
     context = Context({})
     return HttpResponse(t.render(context))
-
