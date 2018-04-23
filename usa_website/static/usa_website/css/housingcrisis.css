@@ -1,48 +1,252 @@
-#details{
-  display: inline;
+@keyframes bounce {
+  0% {
+    transform: translateY(0); }
+  20% {
+    transform: translateY(0); }
+  40% {
+    transform: translateY(-20px); }
+  50% {
+    transform: translateY(0); }
+  60% {
+    transform: translateY(-10px); }
+  80% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(0); } }
 
+@keyframes bounce_out {
+  0% {
+    transform: translateX(0); }
+  20% {
+    transform: translateX(0); }
+  40% {
+    transform: translateX(20px); }
+  50% {
+    transform: translateX(0); }
+  60% {
+    transform: translateX(10px); }
+  80% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(0); } }
+
+html, body {
+  overflow: hidden;
+}
+
+#details {
+  display: inline;
   text-align: left;
 }
-#map{
-  float: left;
-  padding: 50px;
-  margin-left: auto;
-  margin-right: 20px;
-    height: 600px;
-    width: 500px;
+
+#overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  display: block;
+  z-index: 3;
 }
-#reset_map{
+
+.overlayContent {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  color: white;
+  /*transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);*/
+}
+
+.input-group {
+  color: white;
+}
+
+.recalc-btn {
+  color: black;
+}
+
+.bounce {
+  animation: bounce 3s 1.5s 6s;
+}
+
+.bounce_out {
+  animation: bounce_out 3s 1.5s 6s;
+}
+
+#map {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.slider {
+  position: absolute;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 2;
+  transition-duration: 500ms;
+}
+
+.slider:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+#leftsidebar {
+  left: -20%;
+  height: 100%;
+  top: 0%;
+  width: 20%;
+  transition-property: left;
+  background-color: rgba(0,0,0,0.4);
+
+}
+
+#dropdownWindow {
+  left: 20px;
+  height: 25%;
+  bottom: -25%;
+  width: calc(100% - 20px);
+  min-height: 100px;
+  transition-property: bottom, left, width;
+  background-color: rgba(0,0,0,0.4);
+}
+
+#toggleSidebar {
+  height: 100%;
+  width: 20px;
+  left: 0%;
+  transition-property: left;
+}
+
+#toggleDropdown {
+  left: 20px;
+  height: 20px;
+  width: calc(100% - 20px);
+  bottom: 0%;
+  transition-property: bottom, width, left;
+}
+
+.arrow-left {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  transform: scale(-1, 1);
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+
+  border-right: 20px solid white;
+}
+
+.arrow-bottom {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  transform: scale(1, -1);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+
+  border-top: 20px solid white;
+}
+
+#reset_map {
   margin: 10px;
+  z-index: 20;
 }
-h1{
+
+#housingbutton {
+  background: transparent;
+  border: none !important;
+}
+
+.text-center {
+  display: none !important;
+}
+
+#countyOverlay {
+  position: absolute;
+  display: block;
+  padding:5px;
+  border-radius: 25px;
+  top: 18%;
+  right: 1%;
+  font-size: 18px;
+  font-weight: bolder;
+  font-size: larger;
+  background-color: lightblue;
+  z-index: 2;
+}
+
+h1 {
   text-align: center;
   padding: 30px;
 }
-p{
+
+p {
   text-align: center;
 }
+
 .info {
-    padding: 3px 4px;
-    font: 12px/14px Arial, Helvetica, sans-serif;
-    background: white;
-    background: rgba(255,255,255,0.8);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 5px;
+  padding: 3px 4px;
+  font: 12px/14px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
+
 .info h4 {
-    margin: 0 0 5px;
-    color: #4286f4;
-    font: 12px/14px Arial, Helvetica, sans-serif;
-    /*color: #777;*/
+  margin: 0 0 5px;
+  color: #4286f4;
+  font: 12px/14px Arial, Helvetica, sans-serif;
 }
-.legend {
-    line-height: 18px;
-    color: #555;
+
+.input-group {
+  height: 40px;
+  width: auto;
 }
-.legend i {
-    width: 18px;
-    height: 18px;
-    float: left;
-    margin-right: 8px;
-    opacity: 0.7;
+
+.domain-min {
+  margin-right: 65px;
 }
+
+.domain_max {
+  margin-left: 65px;
+}
+
+
+/* KILLING LEAFLET STUFF, MAY BREAK FUTURE SHIT */
+
+.leaflet-control-layers {
+  display: none;
+}
+
+div.info.leaflet-control {
+  display: none;
+}
+
+div.info.legend.leaflet-control {
+  display: block;
+}
+
+/*
+.county-name{
+  position: absolute;
+  top:2em;
+  right:1em;
+  z-index:6;
+  background:rgba(0,0,0,.75);
+  color:white;
+  padding:.5em .75em;
+  font-size:.85em;
+  display:none;
+}
+*/
