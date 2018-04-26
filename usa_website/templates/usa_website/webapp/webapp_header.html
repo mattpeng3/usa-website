@@ -395,7 +395,7 @@
           url: "{% static 'usa_website/csv/Argentina.csv' %}",
           dataType: "text",
           success: function(argentinaset){
-            console.log(argentinaset);
+            //console.log(argentinaset);
             plot(argentinaset);
             argentina=argentinaset;
           }
@@ -512,7 +512,7 @@
             var active   = unproj.active ? false:true ,
                 newOpacity = active ? 1 : 0;
                   // Hide or show the elements
-        console.log(newOpacity)
+        //console.log(newOpacity)
               d3.select("#unproj").attr("opacity", newOpacity);
 
               unproj.active = active;
@@ -569,9 +569,9 @@
         });
       //configuring the dropdown menu
       $("div.dropdown-content a").click(function() {
-        console.log("click");
+        //console.log("click");
         if (this.href.includes("#argentina")) {
-          console.log("argentina");
+          //console.log("argentina");
           oldData = 2015;
           d3.select("svg").remove();
           plot(argentina);
@@ -810,7 +810,7 @@
 
 
     function plot(data) {
-      console.log("plot data");
+      //console.log("plot data");
       dataset = [];
       pointset =[];
       // read from CSV
@@ -871,7 +871,7 @@
 
       //adds vertical dotted line on 2015
       var x = xScale(2015).toFixed(1);
-      console.log(xScale(2015));
+      //console.log(xScale(2015));
       var y1 = yScale(Math.min(0,d3.min(dataset, function(d) { return d.y; }))).toFixed(1);
       var y2 = yScale(8.5).toFixed(1);
       svg.append("line")
@@ -971,8 +971,8 @@
               dataset.push(newData)  // Push data to our dataset array
 
               oldData = newData.x
-              console.log(oldData)
-              console.log(dataset);
+              //console.log(oldData)
+              //console.log(dataset);
             } else {
               temp = [];
               temp.push(dataset[0])
@@ -989,7 +989,7 @@
             }
             const pointsets = dataset.filter(dataset => dataset.x%2==1);
 
-            console.log(dataset);
+            //console.log(dataset);
             d3.selectAll("circle").remove();
             d3.selectAll("path").remove();
             d3.selectAll("g").remove();
@@ -1105,4 +1105,3 @@
     </script>
     </body>
 </html>
-

@@ -85,6 +85,9 @@ urlpatterns = [
     url(r'blog/base-r-and-basic-packages', views.r1, name="r1"),
     url(r'blog/bias-variance-decision-trees-ensemble-learning', views.bias_variance, name="bias_variance"),
     url(r'blog/tutorfly', views.tutorfly, name="tutorfly"),
+    url(r'blog/facial-emotion-recognition', views.facial_emotion_recognition, name="facial_emotion_recognition"),
+    url(r'blog/installing-python-and-anaconda', views.p0, name="p0"),
+    url(r'blog/preparing-for-data-analysis', views.r2, name="r2"),
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'yitz$', views.yitz, name = "yitz"),
     # url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),
@@ -110,6 +113,7 @@ urlpatterns = [
     # url(r'Benin.csv', views.benin, name = "benin"),
     # url(r'Tunisia.csv', views.tunisia, name = "tunisia"),
     # url(r'user.csv', views.user, name = "user"),
+    url(r'housingcrisis/', views.housingcrisis, name = "housingcrisis"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio")
         #url('^', include('schedule_builder.urls')),
