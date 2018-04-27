@@ -134,13 +134,16 @@ function handleLayer(layer) {
 	info.update = function (props) {
 		if (props) {
 			for (var i = 0; i < parameters.length; i++) {
-        // console.log(document.getElementById(parameters[i]['id']));
-				if (i == 4) { //rounding for school district score
-					document.getElementById(parameters[i]['id']).innerHTML = (props[parameters[i]['val']]* 10).toFixed(2) ;
+        if (i != 1 && !props[parameters[i]['val']]) {
+          document.getElementById(parameters[i]['id']).innerHTML = "N/A";
+        } else if (i == 5) {
+          document.getElementById(parameters[i]['id']).innerHTML = props[parameters[i]['val']].toFixed(1);
+        } else if (i == 4) { //rounding for school district score
+					document.getElementById(parameters[i]['id']).innerHTML = (props[parameters[i]['val']]* 10).toFixed(1);
 				} else if (i == 2 || i == 3) {
           document.getElementById(parameters[i]['id']).innerHTML = "$" + props[parameters[i]['val']];
         } else if (i == 1) {
-          document.getElementById(parameters[i]['id']).innerHTML = colorValue.toFixed(2);
+          document.getElementById(parameters[i]['id']).innerHTML = colorValue.toFixed(1);
         } else {
 					document.getElementById(parameters[i]['id']).innerHTML = props[parameters[i]['val']];
 				}
@@ -153,19 +156,35 @@ function handleLayer(layer) {
 
 //END TopoJSON
 
+//adding reset button
+ResetButton = L.easyButton( {
+  position:'topright',
+  states:[{
+    icon: '<strong>Reset Map</strong>',
+    onClick: function(){
+      reset();
+    }
+  }]
+}).addTo(map);
+ResetButton.button.style.width = '100px';
+
+function reset() {
+	map.flyTo([37.278,-119.418], 6.4);
+}
 var legend = L.control({ position: 'bottomright' });
 legend.onAdd = function (map) {
 	// KK: We can make this much simpler by portin this to the HTML
 	var div = L.DomUtil.create('div', 'info legend');
 	var labels = []
 	/* Add min & max*/
-	div.innerHTML = '<div id="abhinav"><h3 style="font-weight:bolder;font-size:larger;">Preference Scale</h3></div>\
+	div.innerHTML = '<div id="legend"><h3 style="font-weight:bolder;font-size:larger; text-align:center;">Preference Scale</h3></div>\
 		<div ><img src="colorscale.png" alt=""></div><div class="labels"><span class="domain-min">Low Pref</span>\
-		<span class="domain-max">High Pref</span></div>'
+		<span class="domain-max">High Pref</span>\
+    </div>'
 	return div
 }
 legend.addTo(map);
-
+// legend.style.width = '400px';
 function recalculate() {
    var sum = parseInt($('#slideCost').val()) + parseInt($('#slideSafety').val()) + parseInt($('#slideTravel').val()) + parseInt($('#slideSchool').val());
    costWeight = $('#slideCost').val() / sum;
@@ -175,7 +194,7 @@ function recalculate() {
    topoLayer.eachLayer(handleLayer);
 }
 
-function initMap() {
+function initMap(x,y) {
 	var geocoder = new google.maps.Geocoder();
 	document.getElementById('address').addEventListener('keydown', function(event) {
 			if (event.which == 13)
@@ -186,23 +205,29 @@ function initMap() {
 			geocodeAddress(geocoder, map);
 		});
 }
-// Initial Overlay Code:
+//Initial Overlay Code:
 function titleOverlay() {
-  var geocoder = new google.maps.Geocoder();
+    var geocoder = new google.maps.Geocoder();
   document.getElementById("submitTitle").addEventListener('click', function() {
+    console.log(geocoder);
     geocodeTitleOverlayAddress(geocoder, map);
-      document.getElementById("overlay").style.display = "none";
-
+    document.getElementById("overlay").style.display = "none";
+    toggleSidebar();
+    toggleDropdown();
+    });
   document.getElementById('addressTitle').addEventListener('keydown', function(event) {
     if (event.which == 13) {
       geocodeTitleOverlayAddress(geocoder, map);
 			document.getElementById("overlay").style.display = "none";
+      toggleSidebar();
+      toggleDropdown();
 		}
   });
-
-
-
-		});
+}
+function removeTitleOverlay(){
+    document.getElementById('addressTitle').removeEventListener()
+    document.getElementById('submitTitle').removeEventListener()
+    delete google.maps.Geocoder();
 }
 
 function geocodeAddress(geocoder, resultsMap) {
@@ -238,30 +263,7 @@ function geocodeTitleOverlayAddress(geocoder, resultsMap) {
 						}
 					});
 }
-//adding reset button
-ResetButton = L.easyButton( {
-  position:'topright',
-  states:[{
-    icon: '<strong>Reset Map</strong>',
-    onClick: function(){
-      reset();
-    }
-  }]
-}).addTo(map);
-ResetButton.button.style.width = '100px';
 
-function reset() {
-	map.flyTo([37.278,-119.418], 6.4);
-}
-
-SearchButton = L.easyButton( {
-  position:'topright',
-  states:[{
-    icon: '<strong>Search Map</strong>',
-    mouseover: function(){this.button.style.width ='200px';}
-  }]
-}).addTo(map);
-SearchButton.button.style.width = '100px';
 
 //TODO clear map colors and revert to base map
 function clearmap() {
@@ -285,23 +287,23 @@ function toggleSidebar() {
 	var dropdown = document.getElementById("dropdownWindow");
 	var button2 = document.getElementById("toggleDropdown");
 	if (leftVisible) {
-		sidebar.style.left = "-20%";
+		sidebar.style.left = "-420px";
 		button.style.left = "0%";
 		button.style.transform = "scale(1, 1)";
 
-		dropdown.style.width = "calc(100% - 20px)";
-		button2.style.width = "calc(100% - 20px)";
-		dropdown.style.left = "20px";
-		button2.style.left = "20px";
+		// dropdown.style.width = "calc(100% - 20px)";
+		// button2.style.width = "calc(100% - 20px)";
+		// dropdown.style.left = "420px";
+		// button2.style.left = "420px";
 	} else {
 		sidebar.style.left = "0%";
-		button.style.left = "20%";
+		button.style.left = "420px";
 		button.style.transform = "scale(-1,1)";
 
-		dropdown.style.width = "80%";
-		button2.style.width = "80%";
-		dropdown.style.left = "calc(20% + 20px)";
-		button2.style.left = "calc(20% + 20px)";
+		// dropdown.style.width = "80%";
+		// button2.style.width = "80%";
+		// dropdown.style.left = "calc(420px + 20px)";
+		// button2.style.left = "calc(420px + 20px)";
 	}
 	leftVisible = !leftVisible;
 }
@@ -310,14 +312,34 @@ var botVisible = false;
 function toggleDropdown() {
 	var dropdown = document.getElementById("dropdownWindow");
 	var button = document.getElementById("toggleDropdown");
+  var sidebar = document.getElementById("leftsidebar");
+  var button2 = document.getElementById("toggleSidebar");
 	if (botVisible) {
 		dropdown.style.bottom = "-25%";
+    dropdown.style.left = "0px";
+    dropdown.style.width = "100%";
 		button.style.bottom = "0%";
+    button.style.left = "0px";
+    button.style.width = "100%";
 		button.style.transform = "scale(1, 1)";
+
+    sidebar.style.height = "calc(100% - 20px)";
+    button2.style.height = "calc(100% - 20px)";
+    // sidebar.style.transform = "scale(1, 1)";
+    //button2.style.transform = "scale(1, 1)";
 	} else {
 		dropdown.style.bottom = "0%";
+    dropdown.style.left = "0px";
+    dropdown.style.width = "100%";
 		button.style.bottom = "25%";
+    button.style.left = "0px";
+    button.style.width = "100%";
 		button.style.transform = "scale(1,-1)";
+
+    sidebar.style.height = "calc(75% - 20px)";
+    button2.style.height = "calc(75% - 20px)";
+    // sidebar.style.transform = "scale(-1, 1)";
+    //button2.style.transform = "scale(1, -1)";
 	}
 	botVisible = !botVisible;
 }
