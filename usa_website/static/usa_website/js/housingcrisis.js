@@ -178,7 +178,7 @@ legend.onAdd = function (map) {
 	var labels = []
 	/* Add min & max*/
 	div.innerHTML = '<div id="legend"><h3 style="font-weight:bolder;font-size:larger; text-align:center;">Preference Scale</h3></div>\
-		<div ><img src="https://lh3.googleusercontent.com/GAShE1SEtvtajPEM8PatSdHTgsjdE_nqG0iOvW62WAA5yWpVJ5rGBFIzmas4Glwg8dAP5aAwGM4O1E0YnPJL=w2560-h1282" alt="" style="width: 100%;"></div><div class="labels"><span class="domain-min">Low Pref</span>\
+		<div ><img src="/static/usa_website/images/housingcrisis/colorscale.png" alt="" style="width: 100%;"></div><div class="labels"><span class="domain-min">Low Pref</span>\
 		<span class="domain-max">High Pref</span>\
     </div>'
 	return div
