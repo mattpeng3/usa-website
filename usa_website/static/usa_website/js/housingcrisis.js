@@ -26,7 +26,7 @@ var map = L.map('map', {zoomSnap: 0.1,
                         renderer: L.canvas(),
 						layers: [District]});
 map.zoomControl.setPosition('topright');
-
+//map.zoomControl.style.width = '50px';
 var topoLayer = new L.TopoJSON();
 
 const colorScale = chroma
@@ -62,6 +62,21 @@ function addTopoData(topoData) {
 	topoLayer.eachLayer(handleLayer);
 }
 
+window.onload = function() {
+  x= document.getElementById('address');
+  x.value="Berkeley, CA";
+  x= document.getElementById('addressTitle');
+  x.value="Berkeley, CA";
+  $('#slideCost').val(5);
+	$("#slideCost").trigger('change');
+	$('#slideTravel').val(5);
+	$("#slideTravel").trigger('change');
+	$('#slideSafety').val(5);
+	$("#slideSafety").trigger('change');
+	$('#slideSchool').val(5);
+	$("#slideSchool").trigger('change');
+};
+
 function handleLayer(layer) {
 	// TODO: Fix colors
 	//console.log("SCORES ");
@@ -74,10 +89,10 @@ function handleLayer(layer) {
 	//console.log(colorValue);
 	layer.setStyle({
 		fillColor : fillColor,
-		fillOpacity: .7,
+		fillOpacity: .6,
 		color:'#555',
 		weight:1,
-		opacity:.4
+		opacity:.8
 	});
 
 	layer.on({
@@ -96,7 +111,7 @@ function handleLayer(layer) {
 			weight:2,
 			opacity: 1,
 			color: '#666',
-			fillOpacity: 1
+			fillOpacity: .8
 		});
 	}
 
@@ -106,7 +121,7 @@ function handleLayer(layer) {
 			weight:1,
 			opacity:.5,
 			fillColor:fillColor,
-			fillOpacity:.7,
+			fillOpacity:.6,
 			color: '#555'
 		});
 		// info.update_loc();
@@ -167,7 +182,8 @@ ResetButton = L.easyButton( {
   }]
 }).addTo(map);
 ResetButton.button.style.width = '100px';
-
+//ResetButton.button.style.position = 'element(#searchbar)';
+//ResetButton.button.style.transform = 'translateY(-20%)';
 function reset() {
 	map.flyTo([37.278,-119.418], 6.4);
 }
@@ -177,14 +193,17 @@ legend.onAdd = function (map) {
 	var div = L.DomUtil.create('div', 'info legend');
 	var labels = []
 	/* Add min & max*/
-	div.innerHTML = '<div id="legend"><h3 style="font-weight:bolder;font-size:larger; text-align:center;">Preference Scale</h3></div>\
-		<div ><img src="colorscale.png" alt=""></div><div class="labels"><span class="domain-min">Low Pref</span>\
+	div.innerHTML = '<div id="legend" style="z-index:20;"><h3 style="font-weight:bolder;font-size:larger; text-align:center;">Preference Scale</h3></div>\
+		<div id="legendImgg" ></div><div class="labels"><span class="domain-min">Low Pref</span>\
 		<span class="domain-max">High Pref</span>\
     </div>'
 	return div
 }
 legend.addTo(map);
-// legend.style.width = '400px';
+//legend.style.width = '400px';
+document.getElementById("legendImgg").appendChild(legendImg);
+
+
 function recalculate() {
    var sum = parseInt($('#slideCost').val()) + parseInt($('#slideSafety').val()) + parseInt($('#slideTravel').val()) + parseInt($('#slideSchool').val());
    costWeight = $('#slideCost').val() / sum;
@@ -194,8 +213,10 @@ function recalculate() {
    topoLayer.eachLayer(handleLayer);
 }
 
-function initMap(x,y) {
-	var geocoder = new google.maps.Geocoder();
+
+
+function initMap() {
+  var geocoder = new google.maps.Geocoder();
 	document.getElementById('address').addEventListener('keydown', function(event) {
 			if (event.which == 13)
 				geocodeAddress(geocoder, map);
@@ -203,31 +224,22 @@ function initMap(x,y) {
 
 	document.getElementById("submit").addEventListener('click', function() {
 			geocodeAddress(geocoder, map);
-		});
-}
-//Initial Overlay Code:
-function titleOverlay() {
-    var geocoder = new google.maps.Geocoder();
-  document.getElementById("submitTitle").addEventListener('click', function() {
-    console.log(geocoder);
-    geocodeTitleOverlayAddress(geocoder, map);
-    document.getElementById("overlay").style.display = "none";
-    toggleSidebar();
-    toggleDropdown();
     });
-  document.getElementById('addressTitle').addEventListener('keydown', function(event) {
-    if (event.which == 13) {
+
+    document.getElementById("submitTitle").addEventListener('click', function() {
       geocodeTitleOverlayAddress(geocoder, map);
-			document.getElementById("overlay").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
       toggleSidebar();
       toggleDropdown();
-		}
+      });
+    document.getElementById('addressTitle').addEventListener('keydown', function(event) {
+      if (event.which == 13) {
+        geocodeTitleOverlayAddress(geocoder, map);
+  			document.getElementById("overlay").style.display = "none";
+        toggleSidebar();
+        toggleDropdown();
+  		}
   });
-}
-function removeTitleOverlay(){
-    document.getElementById('addressTitle').removeEventListener()
-    document.getElementById('submitTitle').removeEventListener()
-    delete google.maps.Geocoder();
 }
 
 function geocodeAddress(geocoder, resultsMap) {
