@@ -62,6 +62,21 @@ function addTopoData(topoData) {
 	topoLayer.eachLayer(handleLayer);
 }
 
+window.onload = function() {
+  x= document.getElementById('address');
+  x.value="Berkeley, CA";
+  x= document.getElementById('addressTitle');
+  x.value="Berkeley, CA";
+  $('#slideCost').val(5);
+	$("#slideCost").trigger('change');
+	$('#slideTravel').val(5);
+	$("#slideTravel").trigger('change');
+	$('#slideSafety').val(5);
+	$("#slideSafety").trigger('change');
+	$('#slideSchool').val(5);
+	$("#slideSchool").trigger('change');
+};
+
 function handleLayer(layer) {
 	// TODO: Fix colors
 	//console.log("SCORES ");
@@ -74,10 +89,10 @@ function handleLayer(layer) {
 	//console.log(colorValue);
 	layer.setStyle({
 		fillColor : fillColor,
-		fillOpacity: .7,
+		fillOpacity: .6,
 		color:'#555',
 		weight:1,
-		opacity:.4
+		opacity:.8
 	});
 
 	layer.on({
@@ -96,7 +111,7 @@ function handleLayer(layer) {
 			weight:2,
 			opacity: 1,
 			color: '#666',
-			fillOpacity: 1
+			fillOpacity: .8
 		});
 	}
 
@@ -106,7 +121,7 @@ function handleLayer(layer) {
 			weight:1,
 			opacity:.5,
 			fillColor:fillColor,
-			fillOpacity:.7,
+			fillOpacity:.6,
 			color: '#555'
 		});
 		// info.update_loc();
@@ -198,12 +213,7 @@ function recalculate() {
    topoLayer.eachLayer(handleLayer);
 }
 
-window.onload = function() {
-  x= document.getElementById('address');
-  x.value="Berkeley, CA";
-  x= document.getElementById('addressTitle');
-  x.value="Berkeley, CA";
-};
+
 
 function initMap() {
   var geocoder = new google.maps.Geocoder();

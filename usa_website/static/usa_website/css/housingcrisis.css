@@ -32,6 +32,8 @@
 
 html, body {
   overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica,Arial, sans-serif !important;
+
 }
 
 #details {
@@ -124,7 +126,6 @@ html, body {
   right: 1%;
   padding: 5px !important;
   width: 300px !important;
-  height:40px !important;
   border-radius: 5px !important;
   z-index: 2;
   background-color: white;
@@ -142,10 +143,19 @@ html, body {
 #address {
   width: 180px;
   float: left;
+  padding-left: 12px;
+  padding-right:12px;
+  padding-bottom:6px;
+  padding-top:6px;
+  height:32px;
 }
 #submit {
   width: 90px;
   float: right;
+  padding-left: 12px;
+  padding-right:12px;
+  padding-bottom:6px;
+  padding-top:6px;
 }
 #helpOverlay {
   display: block;
@@ -178,6 +188,7 @@ html, body {
   height: 30px;
   width: 50%;
   float: left;
+  font-family: "Helvetica Neue", Helvetica,Arial;
 }
 #dropdownWindow {
   left: 0px/*20px*/;
@@ -261,7 +272,9 @@ html, body {
   opacity: 0.9;
   z-index: 2;
 }
-
+.tableTitle{
+  font-size: 20px;
+}
 h1 {
   text-align: center;
   padding: 30px;
