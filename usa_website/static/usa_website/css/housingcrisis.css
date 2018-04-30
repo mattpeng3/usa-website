@@ -128,7 +128,7 @@ html, body {
   width: 300px !important;
   border-radius: 5px !important;
   z-index: 2;
-  background-color: white;
+  background-color: gray;
   opacity: 0.9;
 }
 /*
