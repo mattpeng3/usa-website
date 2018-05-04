@@ -27,7 +27,7 @@
         </ul>
     </div>
 </aside> -->
-
+  <div id="blog_body">
     <div id="fh5co-blog-section">
         <div class="container">
             <center>
@@ -108,6 +108,8 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <a href="{% url 'bias_variance' %}" class="item-grid">
+                      <div class="image" style="width:100%; background-image: url({% static 'usa_website/images/blog/bias_variance.gif' %})">
+                      </div>
                         <div class="v-align">
                             <div class="v-align-middle">
                                 <h3 class="title">The Bias Variance Tradeoff, Decision Trees, Bagging and Ensemble Learning</h3>
@@ -134,6 +136,8 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6">
                     <a href="{% url 'data_good' %}" class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/blog/data_good.png' %})">
+                      </div>
                         <div class="v-align">
                             <div class="v-align-middle">
                                 <h3 class="title">Evaluating and Advising Public Policy Directives for the California Housing Crisis</h3>
@@ -145,6 +149,8 @@
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <a href="{% url 'tutorfly' %}" class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/blog/tutorfly.png' %})">
+                      </div>
                         <div class="v-align">
                             <div class="v-align-middle">
                                 <h3 class="title">Tutorfly</h3>
@@ -160,7 +166,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6">
                     <a href="{% url 'population_modeling' %}" class="item-grid">
-                        <div class="image" style="background-image: url({% static 'usa_website/images/population_modeling_proj2.gif' %})">
+                        <div class="image" style="background-image: url({% static 'usa_website/images/blog/population_modeling_proj2.gif' %})">
 
                         </div>
                         <div class="v-align">
@@ -168,13 +174,14 @@
                                 <h3 class="title">Population Modeling</h3>
                                 <h5 class="date"><span>PM Patrick Chao</span></h5>
                                 <h5 class="date"><span>Fall 2017</span></h5>
-                                <p>For the Fall 2017 semester, SUSA worked with UC Berkeley demography professors in investigating modeling population rates using time series and machine learning techniques. Although there exists a variety of approaches on population modeling techniques, most of these techniques rely on highly advanced and complex models...</p>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <a href="{% url 'facial_emotion_recognition' %}" class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/blog/facial_emotion_recognition.jpg' %})">
+                      </div>
                         <div class="v-align">
                             <div class="v-align-middle">
                                 <h3 class="title">Facial Emotion Recognition</h3>
@@ -225,6 +232,8 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <a href="{% url 'rapnet' %}" class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/blog/rapnet.png' %})">
+                      </div>
                         <div class="v-align">
                             <div class="v-align-middle">
                                 <h3 class="title">Rapnet: Machine Learning for Hip-Hop Artist Classification</h3>
@@ -283,11 +292,11 @@
             </div>
         </div>
     </div>
-    
+
     <!--</div>-->
 </div> <!-- Closing div for fh5co-pricing-section -->
 <div class="col-md-12 text-center animate-box">
     <!--<p><a href="/project" class="btn btn-primary with-arrow">View Past Projects <i class="icon-arrow-right"></i></a></p>-->
 </div>
-
+</div>
 {% endblock %}

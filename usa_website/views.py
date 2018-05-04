@@ -183,7 +183,7 @@ def evol_lyrics(request):
 def data_good(request):
     t = get_template("blog/data-for-good-proposal.html")
     context = Context({})
-    
+
     return HttpResponse(t.render(context))
 def ucb_ug_mental(request):
     t = get_template("blog/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services.html")
@@ -197,6 +197,11 @@ def world_happiness(request):
 
 def yelp_review(request):
     t = get_template("blog/yelp-review-and-rating-analysis.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def ml_classification(request):
+    t = get_template("blog/MLclassification.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
@@ -268,6 +273,12 @@ def view_author(request, author):
 
 def susawebapp(request):
     t = get_template("webapp/index.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+#EASTEREGG
+def housingcRincess(request):
+    t = get_template("housingcRincess.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
