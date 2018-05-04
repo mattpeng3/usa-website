@@ -116,7 +116,8 @@ urlpatterns = [
     url(r'housingcrisis$', views.housingcrisis, name = "housingcrisis"),
     url(r'housingcrisis/$', views.housingcrisis, name = "housingcrisis"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
-    url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio")
+    url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio"),
+    url(r'housingcRincess$', views.housingcRincess, name = "housingcRincess")
         #url('^', include('schedule_builder.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()
