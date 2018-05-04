@@ -78,6 +78,7 @@ urlpatterns = [
     url(r'blog/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services', views.ucb_ug_mental, name="ucb_ug_mental"),
     url(r'blog/world-happiness-report-eda', views.world_happiness, name="world_happiness"),
     url(r'blog/yelp-review-and-rating-analysis', views.yelp_review, name="yelp_review"),
+    url(r'blog/MLclassification', views.ml_classification, name = "ml_classification"),
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'yitz$', views.yitz, name = "yitz"),
     # url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),
