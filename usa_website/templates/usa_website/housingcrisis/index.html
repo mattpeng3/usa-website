@@ -1,0 +1,200 @@
+
+{% block content %}
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'usa_website/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/housingcrisis.css' %}">
+    <link rel="stylesheet" href="{% static 'usa_website/css/leaflet.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+
+    <script src="{% static 'usa_website/js/leaflet.js' %}"></script>
+    <script src="{% static 'usa_website/js/topojson.v1.min.js' %}"></script>
+    <script src="{% static 'usa_website/js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'usa_website/js/chroma.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+    <script>
+      var legendImage = "{% static 'usa_website/images/housingcrisis/colorscale.png' %}";
+    </script>
+        <script>
+            var parameters = [
+                // {"text": "District Name","id": "name","val":"NAME"},
+                // {"text": "Custom Index","id": "custom_index","val":"rank"},
+                {"text": "County","id": "county","val":"County"},
+                {"text": "Custom Index (0-10)", "id": "custom_index", "val":"rank"},
+
+                {"text": "Housing Cost (Mo)","id": "avgmonthlyhouse","val":"h_cost"},
+                {"text": "Transportation Cost","id": "transportation","val":"t_cost_80ami"},
+                {"text": "Schools Score (0-10)","id": "rank","val":"Rank score (2017)"},
+                {"text": "Safety Score (0-10)","id": "safety","val":"safety"},
+                {"text": "Population","id": "population","val":"population"},
+                {"text": "Households","id": "households","val":"households"}];
+                // {"text": "Rent","id": "medgrossrent","val":"median_gross_rent"},
+                // {"text": "Violent Crimes","id": "violent","val":"Violent_sum"},
+                // {"text": "Property Crimes","id": "property","val":"Property_sum"}];
+                // {"text": "Transit Cost","id": "transit","val":"transit_cost_80ami"},
+                // {"text": "Job Access Score (0-10)","id": "access","val":"emp_ovrll_ndx"},
+                // {"text": "Annual Miles Traveled","id": "vmt","val":"vmt_per_hh_80ami"}];
+            var dataDict = [
+              'Weights cost, safety, travel, and school categories based on importance from sliders',
+              'Average of median monthly rent costs for both owners and renters, weighted by the ratio of housing units occupied by each group',
+              'Average household transportation cost, based on automobile ownership and use costs as well as public transit use costs',
+              'Average ranking of the schools (elementary through unified) in the county based on California Standardized Testing scores',
+              'Number of homicides, rapes, robberies, aggravated assaults, burglaries, larceny-thefts, and motor vehicle thefts in the county of the tract normalized as a ranking among other counties'
+            ]
+            $(document).ready(function () {
+                var tablebody = $('#detailsbody');
+                for (var i = 0; i < parameters.length; i++) {
+                    var th = '<tr><th scope="row" class="text-right parameter">' + parameters[i]['text']
+                    if ((0 < i) && (i < 6)){
+                      console.log(parameters[i]['text']);
+                      th = th + ' <div class="tooltip2"><img src="{% static 'usa_website/images/housingcrisis/imgTooltip.png' %}" height=15 width=15></img>'
+                      th = th + '<span class="tooltiptext2 tooltiptext-right">' + dataDict[i-1] + '</span></div>'
+                    }
+                    else {
+                      th = th + '</th>'
+                    }
+                    var td = '<td id="' + parameters[i]['id'] + '" class="parameter">...</td></tr>'
+                    tablebody.append(th+td);
+                }
+                $('.leaflet-control-zoom').css("margin-right" , "10px");
+                $('.leaflet-control-zoom').css("margin-top" , "60px");
+            });
+        </script>
+
+        <title>
+            SUSA: The California Housing Crisis
+        </title>
+    </head>
+
+    <body>
+        <div id="overlay" >
+            <div class="overlayContent">
+                <h1> Visualizing The California Housing Crisis </h1>
+                <p>Enter a location to start!</p>
+                </br>
+                <!-- <div class="row"> -->
+                <span>
+                    <div class="col col-sm-3" style="width:80%; left:25%;"><input id="addressTitle" type="textbox" class="form-control search-bar" value="Berkeley, CA"></div>
+
+                    <div class="col col-sm-1" style="right:15%;"><input id="submitTitle" class="btn btn-outline-secondary recalc-btn" type="button" value="Search" ></div>
+                </span>
+                <!-- </div> -->
+                <!-- <div class="row" style="margin: 0 auto; text-align: center;">
+                    <div class="col col-sm-2" style="left:18%; width:50%; display: table-column;">
+                        <input id="address" type="textbox" class="form-control" value="Berkeley, CA">
+                    </div>
+                    <div class="col col-sm-1" style="left:18%; color:black; display: table-column;">
+                        <input id="submit" class="btn btn-outline-secondary" type="button" value="Search">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div id="map"></div>
+
+        <div id="countyOverlay">
+          <h4 style="text-align:center;"> County Name </h4>
+          <p id="countyContent" style="font-size:27px;"></p>
+        </div>
+
+        <div id="leftsidebar" class="slider">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                  <div id="titleRow">
+                    <h4 id="tableTitle" class="parameter"> Tract Information: </h4>
+                    <div id="helpOverlay" class="tooltip2">
+                      <img id="helpButton" src="{% static 'usa_website/images/housingcrisis/helpImg.png' %}">
+                      <span class="tooltiptext2 tooltiptext-left">Click once on a census tract to bring up its information. Double-click to zoom in on a tract.</span>
+                    </div>
+                  </div>
+                  <table class="table" id="details">
+                      <tbody id="detailsbody">
+                          <tr></tr>
+                      </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+
+    	<div id="toggleSidebar" class="slider" onclick="toggleSidebar()">
+    		<!-- <div class="arrow-left bounce_out" ></div> -->
+    		<div class="arrow-left" ></div>
+
+    	</div>
+      <div id="searchbar">
+        <input id="address" type="textbox" class="form-control" value="Berkeley, CA" >
+        <input id="submit" class="btn btn-outline-secondary" type="button" value="Search" >
+      </div>
+
+        <div id="dropdownWindow" class="slider container">
+        </br>
+            <p style="color:white; font-size: 18px;">How important is each category to you?</p>
+            </br>
+    		<div class="row">
+    			<div class="col col-sm-4">
+    				<div class="input-group mb-3">
+    					<div class="input-group-prepend">
+    						<span class="input-group-text" style="width:80px;">Affordability</span>
+    					</div>
+    					<input type="range" min="0" max="10" value="5" class="form-control user-slider" id="slideCost" style="width:300px;" onchange="recalculate()">
+    					<div class="input-group-prepend">
+    						<span class="input-group-text" style="width:80px;">Neighborhood Safety</span>
+    					</div>
+    					<input type="range" min="0" max="10" value="5" class="form-control user-slider" id="slideSafety" style="width:300px;" onchange="recalculate()">
+    				</div>
+    			</div>
+    			<div class="col col-sm-4">
+    				<div class="input-group mb-3">
+    					<div class="input-group-prepend">
+    						<span class="input-group-text" style="width:80px;" >Transportation Time</span>
+    					</div>
+    					<input type="range" min="0" max="10" value="5" class="form-control user-slider" id="slideTravel" style="width:300px;" onchange="recalculate()">
+    					<div class="input-group-prepend">
+    						<span class="input-group-text"  style="width:80px;">School Quality</span>
+    					</div>
+    					<input type="range" min="0" max="10" value="5" class="form-control user-slider" id="slideSchool" style="width:300px;" onchange="recalculate()">
+    				</div>
+    			</div>
+    			<div class="col col-sm-4">
+    				<div class="input-group mb-3">
+    <!-- 					<input id="reset_map" style="color: black;" class="btn btn-outline-secondary" type="button" value="Reset Map" onclick="reset()"> -->
+    					<input id="clear_map" class="btn btn-outline-secondary recalc-btn" type="button" value="Reset Sliders" onclick="clearmap()">
+    				</div>
+    			</div>
+    		</div>
+
+        </div>
+
+    	<div id="toggleDropdown" class="slider" onclick="toggleDropdown()">
+    		<!-- <div class="arrow-top bounce" ></div> -->
+    		<div class="arrow-bottom" ></div>
+    	</div>
+
+        <br />
+        <br />
+
+        <input type="submit" id="housingbutton" value="Housing" onclick="pat()">
+
+        <div class="container">
+            <div id="pat" class="text-center">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto.php%3Ffbid%3D1062167560596407%26set%3Da.313791628767341.1073741827.100004095182897%26type%3D3&width=500" width="500" height="473"  scrolling="no" frameborder="0" allowTransparency="true" onclick="pat()"></iframe>
+            </div>
+        </div>
+        <script>
+        var legendImg = document.createElement("img");
+        legendImg.src= "{% static 'usa_website/images/housingcrisis/colorscale.png' %}";
+        </script>
+
+    <script src="{% static 'usa_website/js/housingcrisis.js' %}"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCslizjh07L9rDkfH9vY7vL6dDqju1gnA8&callback=initMap"></script>
+
+</html>
+
+
+  {% endblock %}

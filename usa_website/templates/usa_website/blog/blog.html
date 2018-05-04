@@ -27,13 +27,14 @@
         </ul>
     </div>
 </aside> -->
-
+  <div id="blog_body">
     <div id="fh5co-blog-section">
         <div class="container">
             <center>
                 <h3>Journal Introduction</h3>
-                <p>The Statistics Undergraduate Students Association is proud to announce <b><i>The University Statistics Review</i></b>, our online journal to showcase undergraduate statistics and data science-related research. Throughout the semester, students have used statistical methods and tools to analyze a myriad of topics of personal interest, from song lyrics to the game of Go. The wide-ranging topics of articles we produce reflect the diversity of the statistics community itself, and we aim to publish content accessible to all readers. In addition, this journal serves as an outlet for discussion and commentary on the statistics community at Berkeley, whether it be experiences or ongoing developments. Articles are intended to be accessible to those without a statistical background, in order to foster broader interdisciplinary discourse. Readers can anticipate data-driven articles and more — coming soon.</p>
+                <p>The Statistics Undergraduate Students Association is proud to announce <b><i>The University Statistics Review</i></b>, our online journal to showcase undergraduate statistics and data science-related research. Throughout the semester, students have used statistical methods and tools to analyze a myriad of topics of personal interest, from song lyrics to the game of Go. The wide-ranging topics of articles we produce reflect the diversity of the statistics community itself, and we aim to publish content accessible to all readers. In addition, this journal serves as an outlet for discussion and commentary on the statistics community at Berkeley, whether it be experiences or ongoing developments. Articles are intended to be accessible to those without a statistical background, in order to foster broader interdisciplinary discourse. Readers can anticipate data-driven articles and more.</p>
             </center>
+            <!--
             <h3>Featured</h3>
             <div class="row">
                 <div class="col-md-6 col-sm-6">
@@ -66,9 +67,133 @@
                         </div>
                     </a>
                 </div>
+            </div>-->
+            <br><br>
+            <h3>Crash Courses</h3>
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'r0' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to R - Installing R and RStudio</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>February 22, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'r1' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to R - Base R and Basic Packages</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>March 10, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'r2' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to R - Preparing for Data Analysis</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>March 5, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'bias_variance' %}" class="item-grid">
+                      <div class="image" style="width:100%; background-image: url({% static 'usa_website/images/blog/bias_variance.gif' %})">
+                      </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">The Bias Variance Tradeoff, Decision Trees, Bagging and Ensemble Learning</h3>
+                                <h5 class="date"><span>Patrick Chao</span></h5>
+                                <h5 class="date"><span>March 21, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'p0' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to Python - Installing Python and Anaconda</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>February 21, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <br><br>
-            <h3>Fall 2017</h3>
+            <h3>Spring 2018 Data Consulting</h3>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <a href="{% url 'data_good' %}" class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/blog/data_good.png' %})">
+                      </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Evaluating and Advising Public Policy Directives for the California Housing Crisis</h3>
+                                <h5 class="date"><span>PM Patrick Chao</span></h5>
+                                <h5 class="date"><span>Spring 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <a href="{% url 'tutorfly' %}" class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/blog/tutorfly.png' %})">
+                      </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Tutorfly</h3>
+                                <h5 class="date"><span>PM Zhongling Jiang</span></h5>
+                                <h5 class="date"><span>Spring 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <br><br>
+            <h3>Fall 2017 Data Consulting</h3>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <a href="{% url 'population_modeling' %}" class="item-grid">
+                        <div class="image" style="background-image: url({% static 'usa_website/images/blog/population_modeling_proj2.gif' %})">
+
+                        </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Population Modeling</h3>
+                                <h5 class="date"><span>PM Patrick Chao</span></h5>
+                                <h5 class="date"><span>Fall 2017</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <a href="{% url 'facial_emotion_recognition' %}" class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/blog/facial_emotion_recognition.jpg' %})">
+                      </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Facial Emotion Recognition</h3>
+                                <h5 class="date"><span>PM Zhongling Jiang</span></h5>
+                                <h5 class="date"><span>Fall 2017</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <br><br>
+            <h3>Fall 2017 Research and Publications</h3>
             <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <a href="{% url 'shallow_dive' %}" class="item-grid">
@@ -107,6 +232,8 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <a href="{% url 'rapnet' %}" class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/blog/rapnet.png' %})">
+                      </div>
                         <div class="v-align">
                             <div class="v-align-middle">
                                 <h3 class="title">Rapnet: Machine Learning for Hip-Hop Artist Classification</h3>
@@ -165,11 +292,11 @@
             </div>
         </div>
     </div>
-    
-    </div>
+
+    <!--</div>-->
 </div> <!-- Closing div for fh5co-pricing-section -->
 <div class="col-md-12 text-center animate-box">
     <!--<p><a href="/project" class="btn btn-primary with-arrow">View Past Projects <i class="icon-arrow-right"></i></a></p>-->
 </div>
-
+</div>
 {% endblock %}
