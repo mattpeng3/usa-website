@@ -80,6 +80,7 @@ urlpatterns = [
     url(r'blog/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services', views.ucb_ug_mental, name="ucb_ug_mental"),
     url(r'blog/world-happiness-report-eda', views.world_happiness, name="world_happiness"),
     url(r'blog/yelp-review-and-rating-analysis', views.yelp_review, name="yelp_review"),
+    url(r'blog/MLclassification', views.ml_classification, name = "ml_classification"),
     url(r'blog/population-modeling', views.population_modeling, name="population_modeling"),
     url(r'blog/installing-r-and-rstudio', views.r0, name="r0"),
     url(r'blog/base-r-and-basic-packages', views.r1, name="r1"),

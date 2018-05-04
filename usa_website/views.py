@@ -200,6 +200,11 @@ def yelp_review(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def ml_classification(request):
+    t = get_template("blog/MLclassification.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 #####################################
 ###### SPRING 2018 DC PROJECTS ######
 #####################################
