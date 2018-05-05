@@ -200,11 +200,6 @@ def yelp_review(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
-def ml_classification(request):
-    t = get_template("blog/MLclassification.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
-
 #####################################
 ###### SPRING 2018 DC PROJECTS ######
 #####################################
@@ -227,6 +222,10 @@ def population_modeling(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def food_insecurity(request):
+    t = get_template("blog/food-insecurity.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
 ###################################
 ########## CRASH COURSES ##########
@@ -253,6 +252,11 @@ def p0(request):
 
 def bias_variance(request):
     t = get_template("blog/bias-variance-decision-trees-ensemble-learning.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def ml_classification(request):
+    t = get_template("blog/MLclassification.html")
     context = Context({})
     return HttpResponse(t.render(context))
 

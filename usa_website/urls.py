@@ -89,6 +89,7 @@ urlpatterns = [
     url(r'blog/facial-emotion-recognition', views.facial_emotion_recognition, name="facial_emotion_recognition"),
     url(r'blog/installing-python-and-anaconda', views.p0, name="p0"),
     url(r'blog/preparing-for-data-analysis', views.r2, name="r2"),
+    url(r'blog/food-insecurity', views.food_insecurity, name="food_insecurity"),
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'yitz$', views.yitz, name = "yitz"),
     # url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),
