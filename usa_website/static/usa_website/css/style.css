@@ -1438,3 +1438,7 @@ figure {
   text-align: center;
   padding: 6px 6px 6px 6px;
 }
+
+.date {
+  margin: 0px;
+}
