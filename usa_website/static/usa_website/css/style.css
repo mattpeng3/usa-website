@@ -739,6 +739,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-blog-section .item-grid {
   width: 100%;
+  height: 25em;
   float: left;
   position: relative;
   margin-bottom: 50px;
@@ -752,9 +753,8 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 2px;
 }
 #fh5co-blog-section .item-grid .image {
-  height: 400px;
+  height: 60%;
   overflow: hidden;
-  margin-bottom: 20px;
   background-size: cover;
   background-position: center center;
 }
@@ -1437,4 +1437,8 @@ figure {
 #officehours th, td {
   text-align: center;
   padding: 6px 6px 6px 6px;
+}
+
+.date {
+  margin: 0px;
 }

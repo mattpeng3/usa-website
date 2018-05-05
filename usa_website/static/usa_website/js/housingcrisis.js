@@ -193,6 +193,7 @@ legend.onAdd = function (map) {
 	var div = L.DomUtil.create('div', 'info legend');
 	var labels = []
 	/* Add min & max*/
+
 	div.innerHTML = '<div id="legend" style="z-index:20;"><h3 style="font-weight:bolder;font-size:larger; text-align:center;">Preference Scale</h3></div>\
 		<div id="legendImgg" ></div><div class="labels"><span class="domain-min">Low Pref</span>\
 		<span class="domain-max">High Pref</span>\
