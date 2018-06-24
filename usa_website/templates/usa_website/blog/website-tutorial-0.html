@@ -17,10 +17,10 @@
     <li><a href="#Purpose">Purpose</a></li>
     <li><a href="#Introduction">Introduction: What is Git?</a></li>
     <li><a href="#Installation">Step 1: Installing Git</a></li>
-    <li><a href="#Create_Repo">Step 2: Creating a Repo on Github</a></li>
+    <li><a href="#Create_Repo">Step 2: Creating a Repo on GitHub</a></li>
     <li><a href="#Create_Local">Step 3: Creating a Local Project Folder</a></li>
-    <li><a href="#Github">Step 4: Working with Github</a></li>
-    <li><a href="#Github_Pages">Step 5: Using Github Pages</a></li>
+    <li><a href="#Github">Step 4: Working with GitHub</a></li>
+    <li><a href="#Github_Pages">Step 5: Using GitHub Pages</a></li>
   </ol>
 </div>
 <br></br>
@@ -32,7 +32,7 @@
       using what you learn to build your very own personal website using a mix of HTML, CSS, and Javascript.
       Because GitHub Pages is free and accessible to anyone with a GitHub account, we will use it to host
       our finished website. However, due to this, certain features may not be available to us as
-      Github Pages is not able to host back end languages such as node.js, PHP, Django. Future more advanced tutorials
+      GitHub Pages is not able to host back end languages such as node.js, PHP, Django. Future more advanced tutorials
       may be focused around back-end development, but for now we will try to create something simple using what we have.
       This tutorial will assume no prior programming knowledge and will be a prerequisite to working as a part of SUSA's
       Web Development Committee. So without further ado let us get started!
@@ -82,7 +82,7 @@ $ git config --global user.email "myemail@email.com"
 </div>
 
 <div id="Create_Repo">
-  <h4> Step 2: Creating a Repo on Github</h4>
+  <h4> Step 2: Creating a Repo on GitHub</h4>
     <p>
       Before we create our repository, it helps to have an idea of what a GitHub is, and what a repository helps us do.
       As mentioned earlier, <a href="https://github.com"><i>GitHub</i></a> is a web-based repository hosting service that uses Git. This essentially means GitHub
@@ -110,7 +110,7 @@ $ git config --global user.email "myemail@email.com"
         won't be included in the final build of your project.
       </li>
 
-      <li>A <i>license</i> details the conditions that others must meet in order to share or use your work on GitHub. Because Github is used to share open source software,
+      <li>A <i>license</i> details the conditions that others must meet in order to share or use your work on GitHub. Because GitHub is used to share open source software,
         licenses are an easy way in order to make sure your work is not plagiarized or used without your knowledge. Without one, other developers may not use your code.
         The most common license is the MIT license which allows others to use your work as long as they give you credit and relieves you of any liability. For a more
         complex rundown of the various types of licenses, visit this GitHub-owned <a href="https://choosealicense.com/"> Site</a>.
@@ -144,7 +144,7 @@ $ git config --global user.email "myemail@email.com"
 </div>
 
 <div id="Github">
-  <h4> Step 4: Working with Github</h4>
+  <h4> Step 4: Working with GitHub</h4>
     <p>
       Remember when you set up your GitHub repository earlier? Now it's time to connect that to our local folder. Type in the following into your terminal and hit enter:
       <pre><code>git remote add origin https://github.com/User/User.github.io.git</code></pre>
@@ -171,8 +171,8 @@ $ git config --global user.email "myemail@email.com"
       is basically a short message for your collaborators to understand what exactly you've changed since they last worked on the project. For now, since we don't have any collaborators,
       just input "First Commit" or something, and hit escape and enter to exit this screen.
       <br></br>
-      If you look at your web browser, you might notice that the files aren't showing up on GitHub. This is because we have not yet <i>pushed</i> the files to Github.
-      While git is tracking those files, Github has not explicitly been told to store them yet. To rectify this, type in <code>git push</code> and refresh your web browser. All
+      If you look at your web browser, you might notice that the files aren't showing up on GitHub. This is because we have not yet <i>pushed</i> the files to GitHub.
+      While git is tracking those files, GitHub has not explicitly been told to store them yet. To rectify this, type in <code>git push</code> and refresh your web browser. All
       relevant files (index.html, README.md) should now show up.
       <br></br>
       We have skipped a command, <code>git pull</code> because it will be of no use to us in series of tutorials. However, this is very important in a collaborative setting.
@@ -194,9 +194,9 @@ $ git config --global user.email "myemail@email.com"
 </div>
 
 <div id="Github_Pages">
-  <h4> Step 5: Using Github Pages</h4>
+  <h4> Step 5: Using GitHub Pages</h4>
     <p>
-      We're almost done getting set up! Our last step is to publish to github pages. Open up the Settings tab and scroll down until you see this:
+      We're almost done getting set up! Our last step is to publish to GitHub pages. Open up the Settings tab and scroll down until you see this:
     </p>
     <img src="{% static 'usa_website/images/blog/webdev_tutorials/0_github_pages_before.png' %}" alt=github pages before></img>
     <br></br>
