@@ -200,6 +200,15 @@ def yelp_review(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+#######################################
+###### SPRING 2018 DC BLOG POSTS ######
+#######################################
+
+def website_tutorial_0(request):
+    t = get_template("blog/website-tutorial-0.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 #####################################
 ###### SPRING 2018 DC PROJECTS ######
 #####################################

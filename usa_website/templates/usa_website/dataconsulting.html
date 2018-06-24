@@ -12,9 +12,7 @@ $( document ).ready(function() {
     var heights = $(".item-grid").map(function() {
         return $(this).height();
     }).get(),
-
     maxHeight = Math.max.apply(null, heights);
-
     $(".item-grid").height(maxHeight);
 });
 </script>
