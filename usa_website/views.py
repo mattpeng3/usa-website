@@ -209,6 +209,11 @@ def website_tutorial_0(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def website_tutorial_1(request):
+    t = get_template("blog/website-tutorial-1.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 #####################################
 ###### SPRING 2018 DC PROJECTS ######
 #####################################
