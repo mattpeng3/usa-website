@@ -89,6 +89,7 @@ urlpatterns = [
     url(r'blog/installing-python-and-anaconda', views.p0, name="p0"),
     url(r'blog/preparing-for-data-analysis', views.r2, name="r2"),
     url(r'blog/website-tutorial-0$', views.website_tutorial_0, name="website_tutorial_0"),
+    url(r'blog/website-tutorial-1$', views.website_tutorial_1, name="website_tutorial_1"),
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'yitz$', views.yitz, name = "yitz"),
     # url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),
