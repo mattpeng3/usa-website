@@ -1,0 +1,85 @@
+{% extends "blog/blog_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title> Introduction to HTML</title>
+<h3>How To Build Your Own Personal Website </h3>
+  <h4> Part 1: An Introduction To HTML!</h4>
+  <h4>
+    <span style="color: #D5518D" id="author">By </span>
+    <span style="color: #3E95D7" id="name">Anthony Yu</span>
+  </h4>
+  <br />
+
+
+<div class=Blog_Navigation>
+  <ol>
+    <li><a href="#Introduction">Introduction: What is HTML?</a></li>
+    <li><a href="#Section1">Section 1: Core HTML Elements</a></li>
+    <li><a href="#Create_Repo">Step 2: Creating a Repository on GitHub</a></li>
+    <li><a href="#Create_Local">Step 3: Creating a Local Project Folder</a></li>
+    <li><a href="#Github">Step 4: Working with GitHub</a></li>
+    <li><a href="#Github_Pages">Step 5: Using GitHub Pages</a></li>
+  </ol>
+</div>
+<br></br>
+
+<div id="Introduction">
+  <h4>Introduction: What is HTML?</h4>
+    <p>
+      HTML (stands for Hypertext Markup Language) is the core language behind building websites. With HTML, you have the basic building blocks to 
+      create headings, paragraphs, links, tables, images, and many more to use directly in your website. Combining this with CSS (next tutorial) and JavaScript, you will possess all the basic skills to build a simple, beautiful website! 
+    </p>
+    <p>
+      As you progress through the tutorial, be sure to open the page in your browser and see what the new bits of code do to your web page! It will be helpful to see exactly how your web page changes as you add, modify, or delete elements.
+    </p>
+</div>
+
+<br></br>
+<div id="Section1">
+  <h4>Section 1: Core HTML Elements</h4>
+  <p>
+    Let's set up our first HTML file! Open a text editor of your choice, then enter your first bit of HTML code:
+    <pre>
+      &lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+      &lt;/html&gt;
+    </pre>
+    The first line declares that your document should be read as an HTML file to your web browser. Following that are the opening and closing tags of <code>html</code>, which hold all elements for that webpage. 
+  </p>
+  <p>
+    For any element in HTML, you <b>must</b> have a pair of opening and closing tags of that element. This lets the browser know when to start and end a certain element. In the code you just entered, <code>&lt;html&gt;</code> indicates the start of the <code>html</code> element, and <code>&lt;/html&gt;</code> with the <code>/</code> indicates the corresponding closing tag to end the <code>html</code> element. If you forget to close your tags, the browser will automatically add them to render the page, but you may get strange-looking results! A good habit is to write both the opening and closing tags every time you add a new HTML element.
+  </p>
+  <p>
+    If you try opening this page right away in your browser, you should see a blank, white page. Let's make it a little more interesting! Within the <code>html</code> tags, add the following:
+    <pre>
+      &lt;head&gt;
+        &lt;title&gt;Enter title here&lt;/title&gt;
+      &lt;/head&gt;
+    </pre>
+    You can think of the <code>head</code> element as a setup for your webpage: in here you can set the title of the page (via <code>title</code> tags) and "import" other files by linking to CSS or JavaScript files (more on this in the next tutorial). Refresh the page on your browser, and you should see the name in the tab holds what you entered within the <code>title</code> tags!
+  </p>
+  <p>
+    Now let's add some content in your web page. After the <code>head</code> element, add a <code>body</code> element, and within the <code>body</code> add a large heading (using an <code>h1</code> element) with your name and a short paragraph (using a <code>p</code> element) introducing yourself. Before you scroll down to see the code to do this, try implementing it yourself, then check back to see if you've done it correctly. Don't forget to close all your HTML elements!
+    <pre>
+      &lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+        &lt;head&gt;
+          &lt;title&gt;Your title&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;h1&gt;Anthony Yu&lt;/h1&gt;
+          &lt;p&gt;Hi, I'm one of SUSA's Web Dev Directors!&lt;/p&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    </pre>
+    In HTML, there are six different headings, from <code>h1</code> (largest) to <code>h6</code> (smallest). <code>p</code> stands for "paragraph," good for entering regular text. Note that when you close your paragraph with <code>&lt;/p&gt;</code>, you are adding a line break immediately after your text. The same holds true for headings.
+  </p>
+  <p>
+    <i>A note on indentation: HTML is white-space independent, so the line breaks and tabs you add will not show up when you open the page on your browser. Like any other programming or scripting language, be sure to indent your code to make it more readable to you and your collaborators!</i>
+  </p>
+</div>
+
+
+
+{% endblock %}
