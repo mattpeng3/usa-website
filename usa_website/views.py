@@ -180,11 +180,6 @@ def evol_lyrics(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
-def data_good(request):
-    t = get_template("blog/data-for-good-proposal.html")
-    context = Context({})
-
-    return HttpResponse(t.render(context))
 def ucb_ug_mental(request):
     t = get_template("blog/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services.html")
     context = Context({})
@@ -219,12 +214,18 @@ def website_tutorial_1(request):
 #####################################
 
 def tutorfly(request):
-    t = get_template("blog/tutorfly.html")
+    t = get_template("blog/dataconsulting/tutorfly.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def facial_emotion_recognition(request):
-    t = get_template("blog/facial-emotion-recognition.html")
+    t = get_template("blog/dataconsulting/facial-emotion-recognition.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+
+def data_good(request):
+    t = get_template("blog/dataconsulting/data-for-good-proposal.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
@@ -232,12 +233,12 @@ def facial_emotion_recognition(request):
 ####### FALL 2017 DC PROJECTS #######
 #####################################
 def population_modeling(request):
-    t = get_template("blog/population-modeling.html")
+    t = get_template("blog/dataconsulting/population-modeling.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def food_insecurity(request):
-    t = get_template("blog/food-insecurity.html")
+    t = get_template("blog/dataconsulting/food-insecurity.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
