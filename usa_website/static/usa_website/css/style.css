@@ -419,6 +419,10 @@ h1, h2, h3, h4, h5, h6, figure {
   transition: 0.2s;
 }
 
+#fh5co-header nav ul li ul.dropdown-menu {
+  margin-top: 26px;
+}
+
 #fh5co-header nav ul li ul.dropdown-menu a {
   color: rgba(0, 0, 0, 0.7);
   font-size: 18px;
