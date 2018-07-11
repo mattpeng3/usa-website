@@ -128,10 +128,17 @@ def research(request):
     t = get_template("research.html")
     context = Context({})
     return HttpResponse(t.render(context))
+
 def dataconsulting(request):
     t = get_template("dataconsulting.html")
     context = Context({})
     return HttpResponse(t.render(context))
+
+def education(request):
+    t = get_template("education.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 def comingSoon(request):
     t = get_template("comingSoon.html")
     context = Context({})
@@ -156,42 +163,42 @@ def blog(request):
 ##################################
 
 def shallow_dive(request):
-    t = get_template("blog/a-shallow-dive-into-time-series-analysis-of-local-restaurant-data-using-r.html")
+    t = get_template("blog/rp/a-shallow-dive-into-time-series-analysis-of-local-restaurant-data-using-r.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def tobacco_heart_disease(request):
-    t = get_template("blog/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates.html")
+    t = get_template("blog/rp/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def alphago(request):
-    t = get_template("blog/an-introduction-to-go-alphago-and-quantifying-go-gameplay.html")
+    t = get_template("blog/rp/an-introduction-to-go-alphago-and-quantifying-go-gameplay.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def rapnet(request):
-    t = get_template("blog/rapnet-machine-learning-for-hip-hop-artist-classification.html")
+    t = get_template("blog/rp/rapnet-machine-learning-for-hip-hop-artist-classification.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def evol_lyrics(request):
-    t = get_template("blog/the-evolution-of-lyrics.html")
+    t = get_template("blog/rp/the-evolution-of-lyrics.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def ucb_ug_mental(request):
-    t = get_template("blog/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services.html")
+    t = get_template("blog/rp/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def world_happiness(request):
-    t = get_template("blog/world-happiness-report-eda.html")
+    t = get_template("blog/rp/world-happiness-report-eda.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def yelp_review(request):
-    t = get_template("blog/yelp-review-and-rating-analysis.html")
+    t = get_template("blog/rp/yelp-review-and-rating-analysis.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
