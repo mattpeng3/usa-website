@@ -200,7 +200,7 @@ def yelp_review(request):
 #######################################
 
 def website_tutorial_0(request):
-    t = get_template("blog/website-tutorial-0.html")
+    t = get_template("blog/education/website-tutorial-0.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
@@ -246,32 +246,32 @@ def food_insecurity(request):
 ########## CRASH COURSES ##########
 ###################################
 def r0(request):
-    t = get_template("blog/r0.html")
+    t = get_template("blog/education/r0.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def r1(request):
-    t = get_template("blog/r1.html")
+    t = get_template("blog/education/r1.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def r2(request):
-    t = get_template("blog/r2.html")
+    t = get_template("blog/education/r2.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def p0(request):
-    t = get_template("blog/p0.html")
+    t = get_template("blog/education/p0.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def bias_variance(request):
-    t = get_template("blog/bias-variance-decision-trees-ensemble-learning.html")
+    t = get_template("blog/education/bias-variance-decision-trees-ensemble-learning.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def ml_classification(request):
-    t = get_template("blog/MLclassification.html")
+    t = get_template("blog/education/MLclassification.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
