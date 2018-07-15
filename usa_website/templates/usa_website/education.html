@@ -39,17 +39,86 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-                    <h2>Education</h2>
-                    <p>The Education Committee creates materials for students to use.</p>
+                    <h2>Education Committee</h2>
+                    <p>The Education Committee works to create resources that are used by our Career Ex Committee and the Statistics Commiunity at Berkeley.</p>
                 </div>
             </div>
-                <!--
-                <div class="col-md-12 text-center">
-                    <p><a href="#" class="btn btn-primary with-arrow">View More Posts <i class="icon-arrow-right"></i></a></p>
+            <div class="row">
+              <center><h2>Past Projects</h2></center>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'r0' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to R - Installing R and RStudio</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>February 22, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                -->
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'r1' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to R - Base R and Basic Packages</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>March 10, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'r2' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to R - Preparing for Data Analysis</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>March 5, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'bias_variance' %}" class="item-grid">
+                      {% comment %}
+                        <div class="image" style="width:100%; background-image: url({% static 'usa_website/images/blog/bias_variance.gif' %})">
+                        </div>
+                      {% endcomment%}
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">The Bias Variance Tradeoff, Decision Trees, Bagging and Ensemble Learning</h3>
+                                <h5 class="date"><span>Patrick Chao</span></h5>
+                                <h5 class="date"><span>March 21, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'p0' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to Python - Installing Python and Anaconda</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>February 21, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'website_tutorial_0' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">How to Build Your Own Personal Website Part 0 - An Introduction to Git</h3>
+                                <h5 class="date"><span>Abhinav Bhaskar</span></h5>
+                                <h5 class="date"><span>June 25, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+          </div>
         </div>
-    </div>
 
     {% endblock %}
