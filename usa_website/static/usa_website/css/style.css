@@ -557,7 +557,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-hero .flexslider .slider-text {
   display: table;
-  opacity: 0;
+
   min-height: 80%;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner {
@@ -1194,6 +1194,13 @@ h1, h2, h3, h4, h5, h6, figure {
   display: none;
   cursor: pointer;
 }
+.background-overlay{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  z-index:1000000000;
+  color:white;
+}
 @media screen and (max-width: 992px) {
   .fh5co-nav-toggle {
     display: block;
@@ -1238,6 +1245,14 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 10px 20px;
   background: #268BD2;
   color: #fff;
+}
+#fh5co-pricing-section .committee-btn{
+  position:absolute;
+  left: 50%;
+transform: translateX(-50%);
+  bottom:0;
+  margin-bottom:20px;
+  float:none;
 }
 #fh5co-pricing-section .price-box:hover, #fh5co-pricing-section .price-box:focus {
   -webkit-box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
