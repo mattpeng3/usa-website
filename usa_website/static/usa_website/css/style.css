@@ -557,7 +557,6 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-hero .flexslider .slider-text {
   display: table;
-
   min-height: 80%;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner {
@@ -1200,6 +1199,7 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 100%;
   z-index:1000000000;
   color:white;
+  animation-delay:2s;
 }
 @media screen and (max-width: 992px) {
   .fh5co-nav-toggle {
