@@ -23,24 +23,40 @@ $( document ).ready(function() {
     </div>
     <aside id="fh5co-hero" class="js-fullheight">
         <div class="flexslider js-fullheight">
-            <ul class="slides">
-            <li style="background-image: url({% static 'usa_website/images/research.jpg' %});">
-                <div class="overlay-gradient"></div>
-                <div class="container">
-                    <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-                        <div class="slider-text-inner">
-                            <h2>Research and Publication Committee</h2>
-                            <div>
-                                <center>
-                                    <a href="#fh5co-blog-section">
-                                        <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
-                                    </a>
-                                </center>
-                            </div>
+          <div class="background-overlay animated fadeInUp">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+
+                    <div class="slider-text-inner">
+                        <!-- <video playsinline autoplay muted loop>
+                            WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+                            <source src="static/usa_website/images/Pride.mp4" type="video/webm">
+                        </video> -->
+                        <h2>Research and Publication Committee</h2>
+                        <div>
+                            <img src="{% static 'usa_website/images/icondata.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                            <img src="{% static 'usa_website/images/iconwebdev.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                            <img src="{% static 'usa_website/images/iconresearch.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                            <img src="{% static 'usa_website/images/iconcareerexploration.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                            <img src="{% static 'usa_website/images/iconivp.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                            <img src="{% static 'usa_website/images/iconevp.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
                         </div>
+                        <br>
+                        <div>
+                            <center>
+                                <a href="#fh5co-blog-section">
+                                    <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
+                                </a>
+                            </center>
+                        </div>
+                        <!-- <a href="/careerex" class="btn btn-select-plan btn-sm" style="padding:10px 20px; background:#5bc0de; color:#fff">Apply Now!</a> -->
                     </div>
+                  </div>
                 </div>
-            </li>
+          </div>
+
+            <ul class="slides">
+            <li style="background-image: url({% static 'usa_website/images/research.jpg' %});"></li>
 
             </ul>
         </div>

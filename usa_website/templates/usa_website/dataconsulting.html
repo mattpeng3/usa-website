@@ -22,40 +22,33 @@ $( document ).ready(function() {
     </div>
     <aside id="fh5co-hero" class="js-fullheight">
         <div class="flexslider js-fullheight">
+          <div class="background-overlay animated fadeInUp">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+
+                    <div class="slider-text-inner">
+                        <!-- <video playsinline autoplay muted loop>
+                            WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+                            <source src="static/usa_website/images/Pride.mp4" type="video/webm">
+                        </video> -->
+                        <h2>Data Consulting Committee</h2>
+                        <br>
+                        <div>
+                            <center>
+                                <a href="#fh5co-blog-section">
+                                    <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
+                                </a>
+                            </center>
+                        </div>
+                        <!-- <a href="/careerex" class="btn btn-select-plan btn-sm" style="padding:10px 20px; background:#5bc0de; color:#fff">Apply Now!</a> -->
+                    </div>
+                  </div>
+                </div>
+          </div>
+
             <ul class="slides">
-            <li style="background-image: url({% static 'usa_website/images/resistance.jpg' %});">
-                <div class="overlay-gradient"></div>
-                <div class="container">
-                    <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-                        <div class="slider-text-inner">
-                            <h2>Data Consulting Committee</h2>
-                            <div>
-                                <center>
-                                    <a href="#fh5co-blog-section">
-                                        <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
-                                    </a>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style="background-image: url({% static 'usa_website/images/grad_students.jpg' %});">
-                <div class="container">
-                    <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-                        <div class="slider-text-inner">
-                            <h2>Data Consulting Committee</h2>
-                            <div>
-                                <center>
-                                    <a href="#fh5co-blog-section">
-                                        <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
-                                    </a>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
+            <li style="background-image: url({% static 'usa_website/images/resistance.jpg' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/grad_students.jpg' %});"></li>
             <li style="background-image: url({% static 'usa_website/images/uizard_team.jpg' %});">
                 <div class="container">
                     <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
@@ -107,7 +100,7 @@ $( document ).ready(function() {
                   </a>
                 </div>
                 <div class="col-md-4 col-sm-4 ">
-                    <div class="item-grid">
+                    <a href="{% url 'housingcrisis' %}" class="item-grid">
                         <div class="image" style="background-image: url({% static 'usa_website/images/blog/data_good.png' %})">
 
                         </div>
@@ -119,7 +112,7 @@ $( document ).ready(function() {
                                 {% comment %}<p>This team will be focusing on the <a href="https://ctsp.berkeley.edu/data-for-good-competition/">Data for Good competition</a>, by investigating the housing situation in California. Our project team will be competing in this project sponsored by Facebook, for social good efforts. We will create data visualizations describing the housing situation, such as heatmaps of salary, housing costs, and availability. An end term goal may be to create matching tools for citizens to input factors such as salary, and employer location, and suggest viable locations to look for housing.</p>{% endcomment %}
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <a href="{% url 'data_good' %}" class="item-grid">
