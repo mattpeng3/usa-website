@@ -7,29 +7,40 @@
   <h4> Part 1: An Introduction To HTML!</h4>
   <h4>
     <span style="color: #D5518D" id="author">By </span>
-    <span style="color: #3E95D7" id="name">Anthony Yu</span>
+    <span style="color: #3E95D7" id="name">Anthony Yu and Abhinav Bhaskar</span>
   </h4>
   <br />
 
 
 <div class=Blog_Navigation>
   <ol>
+    <li><a href="#Purpose">Purpose</a></li>
     <li><a href="#Introduction">Introduction: What is HTML?</a></li>
     <li><a href="#Section1">Section 1: Core HTML Elements</a></li>
     <li><a href="#Section2">Section 2: The <code>div</code> and the <code>span</code></a></li>
     <li><a href="#Section3">Section 3: Bootstrap</a></li>
   </ol>
+  </div>
+<div id="Purpose">
+  <h4>Purpose</h4>
+    <p>
+      Hello and Welcome to Part 1 in our three part series on How To Build Your Own Personal Website! If you have not already,
+      be sure to check out <a href= http://susa.berkeley.edu/blog/website-tutorial-0>Part 0: An Introduction To Git! </a>
+      Technically, Part 0 is not required as we will only be dealing with local files in this and future installments of this tutorial
+      series, but it does contain important information about our overall goal with this series, collaborative work, and website hosting.
+      Part 1 will be focused on explaining the basics of HTML, and Part 2 will show you how to combine HTML with CSS to give some style
+      to your website. Part three will be focused on providing a very basic introduction to Javascript.
 </div>
-<br></br>
-
 <div id="Introduction">
   <h4>Introduction: What is HTML?</h4>
     <p>
-      HTML (stands for Hypertext Markup Language) is the core language behind building websites. With HTML, you have the basic building blocks to 
-      create headings, paragraphs, links, tables, images, and many more to use directly in your website. Combining this with CSS (next tutorial) and JavaScript, you will possess all the basic skills to build a simple, beautiful website! 
+      HTML, or Hypertext Markup Language, is the core language behind building websites. We will be focusing on HTML5, the latest version of HTML.
+      With HTML, you will have the basic building blocks to create headings, paragraphs, links, tables, images, and many more to use directly in your website.
     </p>
     <p>
-      As you progress through the tutorial, be sure to open the page in your browser and see what the new bits of code do to your web page! It will be helpful to see exactly how your web page changes as you add, modify, or delete elements.
+      As you progress through the tutorial, be sure to open the page in your browser by right clicking the html file and selecting "Open with Firefox/Chrome"
+      and see what the new bits of code do by refreshing your browser after every change! It will be helpful to see exactly how your web page changes as you add,
+      modify, or delete elements.
     </p>
 </div>
 
@@ -37,28 +48,41 @@
 <div id="Section1">
   <h4>Section 1: Core HTML Elements</h4>
   <p>
-    Let's set up our first HTML file! Open a text editor of your choice, then enter your first bit of HTML code:
+    Let's set up our first HTML file! Open a text editor of your choice, and in your project folder, create a file called <code>index.html</code>.
+    Your index will be the default or home page on your website. After this is done, enter in your first bit of HTML code:
     <pre>
       &lt;!DOCTYPE html&gt;
       &lt;html&gt;
       &lt;/html&gt;
     </pre>
-    The first line declares that your document should be read as an HTML file to your web browser. Following that are the opening and closing tags of <code>html</code>, which hold all elements for that webpage. 
+    The first line declares that your document should be read as an HTML file to your web browser. Following that are the opening and
+    closing tags of <code>html</code>, which hold all elements for that webpage.
   </p>
   <p>
-    For any element in HTML, you <b>must</b> have a pair of opening and closing tags of that element. This lets the browser know when to start and end a certain element. In the code you just entered, <code>&lt;html&gt;</code> indicates the start of the <code>html</code> element, and <code>&lt;/html&gt;</code> with the <code>/</code> indicates the corresponding closing tag to end the <code>html</code> element. If you forget to close your tags, the browser will automatically add them to render the page, but you may get strange-looking results! A good habit is to write both the opening and closing tags every time you add a new HTML element.
+    For any element in HTML, you <b>must</b> have a pair of opening and closing tags of that element. This lets the browser know when to
+    start and end a certain element. In the code you just entered, <code>&lt;html&gt;</code> indicates the start of the <code>html</code>
+    element, and <code>&lt;/html&gt;</code> with the <code>/</code> indicates the corresponding closing tag to end the <code>html</code>
+    element. If you forget to close your tags, the browser will automatically add them to render the page, but you may get strange-looking
+    results! A good habit is to write both the opening and closing tags every time you add a new HTML element.
   </p>
   <p>
-    If you try opening this page right away in your browser, you should see a blank, white page. Let's make it a little more interesting! Within the <code>html</code> tags, add the following:
+    If you try opening this page right away in your browser, you should see a blank, white page. Let's make it a little more interesting!
+    Within the <code>html</code> tags, add the following:
     <pre>
       &lt;head&gt;
         &lt;title&gt;Enter title here&lt;/title&gt;
       &lt;/head&gt;
     </pre>
-    You can think of the <code>head</code> element as a setup for your webpage: in here you can set the title of the page (via <code>title</code> tags) and "import" other files by linking to CSS or JavaScript files (more on this in the next tutorial). Refresh the page on your browser, and you should see the name in the tab holds what you entered within the <code>title</code> tags!
+    You can think of the <code>head</code> element as a setup for your webpage: in here you can set the title of the page (via <code>title</code>
+    tags) and "import" other files by linking to CSS or JavaScript files (more on this in the next tutorial). Refresh the page on your browser,
+    and you should see the name in the tab holds what you entered within the <code>title</code> tags!
   </p>
   <p>
-    Now let's add some content in your web page. After the <code>head</code> element, add a <code>body</code> element, and within the <code>body</code> add a large heading (using an <code>h1</code> element) with your name and a short paragraph (using a <code>p</code> element) introducing yourself. Before you scroll down to see the code to do this, try implementing it yourself, then check back to see if you've done it correctly. Don't forget to close all your HTML elements!
+    Now let's add some content to your web page. After the <code>head</code> element, add a <code>body</code> element, and within the
+    <code>body</code> add a large heading (using an <code>h1</code> element) with your name and a short paragraph (using a <code>p</code>
+    element) introducing yourself. Before you scroll down to see the code to do this, try implementing it yourself, then check back to
+    see if you've done it correctly. Don't forget to close all your HTML tags!
+
     <pre>
       &lt;!DOCTYPE html&gt;
       &lt;html&gt;
@@ -71,15 +95,181 @@
         &lt;/body&gt;
       &lt;/html&gt;
     </pre>
-    In HTML, there are six different headings, from <code>h1</code> (largest) to <code>h6</code> (smallest). <code>p</code> stands for "paragraph," good for entering regular text. Note that when you close your paragraph with <code>&lt;/p&gt;</code>, you are adding a line break immediately after your text. The same holds true for headings.
+
+    In HTML, there are six different headings, from <code>h1</code> (largest) to <code>h6</code> (smallest). <code>p</code> stands for
+    "paragraph," good for entering regular text. Note that when you close your paragraph with <code>&lt;/p&gt;</code>, you are adding a
+    line break immediately after your text. The same holds true for headings.
   </p>
   <p>
-    <i>A note on indentation: HTML is white-space independent, so the line breaks and tabs you add will not show up when you open the page on your browser. Like any other programming or scripting language, be sure to indent your code to make it more readable to you and your collaborators!</i>
+    <i>
+      NOTE: HTML is white-space independent, so the line breaks and tabs you add will not show up when you open the
+      page on your browser. Like any other programming or scripting language, be sure to indent your code to make it more readable to you
+      and your collaborators!
+    </i>
   </p>
 </div>
 
 <div id="Section2">
-    
+    <h4>Section 2: The <code>div</code> and the <code>span</code></h4>
+    <p>
+      There are two very important tags used across every website on the Internet: the <code>div</code> and the <code>span</code> tags. 
+      These are basically container tags, where <code>span</code> is typically used for in-line elements and <code>div</code> for block
+      (or simply larger) elements. It helps to organize your HTML code within these tags and becomes especially handy when you want to
+      style a group of individual HTML elements a certain way with CSS, which we will explore in the next tutorial.
+    </p>
+    <p>
+      To see how this grouping works, let's put a <code>div</code> wrapping your <code>h1</code> and your <code>p</code> elements, then 
+      outside this <code>div</code> add another paragraph:
+    </p>
+
+    <pre>
+      &lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+        &lt;head&gt;
+          &lt;title&gt;Your title&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;div&gt;
+            &lt;h1&gt;Anthony Yu&lt;/h1&gt;
+            &lt;p&gt;Hi, I'm one of SUSA's Web Dev Directors!&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;p&gt;Welcome to my website!&lt;/p&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    </pre>
+
+    <p>
+      If you tried refreshing your website, you won't see a difference. That's because we haven't added any formatting to our <code>div</code>!
+      Let's slip in a tiny bit of CSS to let you see the difference. Modify your opening <code>div</code> tag to something like this:
+    </p>
+    <pre>
+      &lt;div style="color: blue"&gt;
+    </pre>
+
+    <p>
+      Now if you refresh, you should see that your name and your first paragraph are colored blue, and the paragraph below is untouched! 
+    </p>
+    <p>
+      <i>
+        NOTE: In practice, we don't really style elements (like coloring the text) like we do here. Usually we hide all of this in other CSS files and
+        let the current HTML file link to the CSS file to grab all the styles we want. It keeps all our code organized and ensures that the HTML files
+        aren't cluttered with all sorts of styles. We will look at how to do this in the next tutorial.
+      </i>
+    </p>
+
+    <p>
+      As an exercise for yourself, try using the <code>span</code> element in the same fashion to color your first name and last name in different 
+      colors. 
+    </p>
+</div>
+
+<div id="Section3">
+  <h4>Bootstrap</h4>
+  <p>
+    Bootstrap is an incredibly popular and powerful library for web development. Using this library can make some front-end development (implementing
+    the part of the website users see directly on their screen, as opposed to back-end development) a lot easier, and it also comes with some built-in
+    buttons and other features that you can use directly on your own website!
+  </p>
+  <p>
+    First, to bring Bootstrap into your website, add the following line into your <code>head</code> element:
+  </p>
+  <pre>
+    &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"&gt;
+  </pre>
+  <p>
+    And just like that, you have access to all that Bootstrap has to offer for CSS!
+  </p>
+  <p>
+    In this tutorial, we'll be specifically looking at Bootstrap's grid system. I personally use this a lot to move elements around the page or to
+    have content on multiple columns of the page. I'm sure you will find this feature really useful as well, and thankfully it's easy to use! We'll 
+    use this feature to have two paragraph elements be on two separate columns in the same row to show the design of the grid system.
+  </p>
+  <p>
+    Before using this grid system, we have to set up a number of <code>div</code> elements. Let's first modify the <code>div</code> you have right now:
+  </p>
+  <pre>
+    &lt;div class="container-fluid" style="color: blue"&gt;
+  </pre>
+  <p>
+    There's quite a bit going on with that small addition. We will discuss more formally what that <code>class</code> means in the CSS tutorial, but 
+    basically it's saying that this <code>div</code> element is an instance of a group of <code>div</code>s under the name <code>container-fluid</code>.
+    <code>container-fluid</code> is a Bootstrap class that tells the browser to render this element to span across the entire width of the element 
+    it's in. If you don't want it to span the full width of the window, use <code>container</code> instead, in which you use other CSS formatting to specify its width. However, to use the grid system you <b>must</b> use one of these.
+  </p>
+  <p>
+    Now that the container is set up, let's actually create the grid! Imagine that your website is a giant table in which you can split up to 12 columns.
+    Our job now is to specify where to create new rows, and for each row how wide we want our columns to be.
+  </p>
+  <p>
+    Let's create a row just for our name header, and another row for your paragraph element sitting in your <code>container-fluid</code> 
+    <code>div</code>. We specify rows with more <code>div</code> elements with a class named <code>row</code>:
+  </p>
+  <pre>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"&gt;
+        &lt;title&gt;Your title&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;div class="container-fluid" style="color: blue"&gt;
+          &lt;div class="row"&gt;
+            &lt;h1&gt;Anthony Yu&lt;/h1&gt;
+          &lt;/div&gt;
+          &lt;div class="row"&gt;
+            &lt;p&gt;Hi, I'm one of SUSA's Web Dev Directors!&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;p&gt;Welcome to my website!&lt;/p&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  </pre>
+
+  <p>
+    In the second row, wrap the paragraph element with yet another <code>div</code> element with a class called <code>col-md-6</code>:
+  </p>
+  <pre>
+    &lt;div class="row"&gt;
+      &lt;div class="col-md-6"&gt;
+        &lt;p&gt;Hi, I'm one of SUSA's Web Dev Directors!&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  </pre>
+
+  <p>
+    Here we are specifying that for medium screens (that's what the <code>md</code> means) or larger (this covers laptop screens or bigger), have
+    this <code>div</code> element cover the first 6 of 12 units of the table, effectively covering half of the width. To see this really work, add
+    another one of these immediately after this first column:
+  </p>
+
+  <pre>
+    &lt;div class="row"&gt;
+      &lt;div class="col-md-6"&gt;
+        &lt;p&gt;Hi, I'm one of SUSA's Web Dev Directors!&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="col-md-6"&gt;
+        &lt;p&gt;I'm cooler than the other director Abhinav.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  </pre>
+
+  <p>
+    Try refreshing the page, and you should see the second paragraph start from the middle of the screen! This is because the first <code>div</code>
+    covered the first six units of the table, so the second <code>div</code> grabbed the remaining six of the row. Feel free to play around with
+    the numbers and see how the text shifts! 
+  </p>
+  <p>
+    <i>
+      NOTE: You can have up to 12 columns, each specified with a class of <code>col-*-1</code>, where <code>*</code> is the screen specification. 
+      You don't need to fill up all 12 units per row, but if you exceed 12, Bootstrap will automatically overflow the excess columns to the next row.
+      For clarity, it's best that you specify the rows yourself and never exceed 12 units per row.
+    </i>
+  </p>
+  <p>
+    More about this grid system can be found <a href="https://getbootstrap.com/docs/4.1/layout/grid/">here</a>, and the general 
+    documentation for this library can be found <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/">here</a>. 
+    At the time this was written, you will be linked to the documentation for version 4.1.
+  </p>
 </div>
 
 
