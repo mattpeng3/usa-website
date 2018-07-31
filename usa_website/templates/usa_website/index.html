@@ -92,7 +92,7 @@ $( document ).ready(function() {
                         <div class="price-box">
                                 <img src="{% static 'usa_website/images/iconwebdev.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
                             <h3>Web Development</h3>
-                            <p> The Web Development Committee develops and maintains our website in addition to developing web applications for various uses.</p>
+                            <p> The Web Development Committee develops and maintains our website in addition to developing web applications for various uses. Members will learn the fundamentals of developing and maintaining a website through working on the SUSA website as well as undergoing a 2-3 week bootcamp to create their own personal website.</p>
                             <a href="{% url 'webdev' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
                         </div>
                     </div>
@@ -111,6 +111,15 @@ $( document ).ready(function() {
             <br>
             <div class="row">
                 <div class="pricing">
+                  <div class="col-md-6 justify-content-center">
+                      <div class="price-box">
+                              <img src="{% static 'usa_website/images/education.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                          <h3>Education</h3>
+                          <p>The Education Committee provides a great outlet for those interested in statistics, data science, and machine learning to share their knowledge through writing and presenting material. Members will work on a multitude of topics, rotating between creating and presenting material for our Career Exploration Committee, creating blog posts, and incorporating all of our work into a DeCal for Spring 2019.</p>
+                          <a href="{% url 'education' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
+                      </div>
+                  </div>
+
                     <div class="col-md-6">
                         <div class="price-box">
                                 <img src="{% static 'usa_website/images/iconivp.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
@@ -120,16 +129,20 @@ $( document ).ready(function() {
                         </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="price-box">
-                                <img src="{% static 'usa_website/images/iconevp.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
-                            <h3>Expansionary Action (EVP Office)</h3>
-                            <p>The Expansionary Action Committee is a committee designed to aid the EVP in his/her daily tasks. As part of this committee, members will be aiding in maintaining relationships with our professor and alumni networks, as well as collaborating with other campus organizations through our club outreach programs. </p>
-                            <!--<a href="{% url 'comingSoon' %}" class="btn btn-select-plan btn-sm">Learn More</a>-->
-                        </div>
-                    </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="pricing justify-content-center">
+                  <div class="col-md-6">
+                      <div class="price-box">
+                              <img src="{% static 'usa_website/images/iconevp.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                          <h3>Expansionary Action (EVP Office)</h3>
+                          <p>The Expansionary Action Committee is a committee designed to aid the EVP in his/her daily tasks. As part of this committee, members will be aiding in maintaining relationships with our professor and alumni networks, as well as collaborating with other campus organizations through our club outreach programs. </p>
+                          <!--<a href="{% url 'comingSoon' %}" class="btn btn-select-plan btn-sm">Learn More</a>-->
+                      </div>
+                  </div>
+                  </div>
+                </div>
 
 
         </div>
