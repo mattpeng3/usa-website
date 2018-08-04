@@ -22,40 +22,33 @@ $( document ).ready(function() {
     </div>
     <aside id="fh5co-hero" class="js-fullheight">
         <div class="flexslider js-fullheight">
+          <div class="background-overlay animated fadeInUp">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+
+                    <div class="slider-text-inner">
+                        <!-- <video playsinline autoplay muted loop>
+                            WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+                            <source src="static/usa_website/images/Pride.mp4" type="video/webm">
+                        </video> -->
+                        <h2>Data Consulting Committee</h2>
+                        <br>
+                        <div>
+                            <center>
+                                <a href="#fh5co-blog-section">
+                                    <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
+                                </a>
+                            </center>
+                        </div>
+                        <!-- <a href="/careerex" class="btn btn-select-plan btn-sm" style="padding:10px 20px; background:#5bc0de; color:#fff">Apply Now!</a> -->
+                    </div>
+                  </div>
+                </div>
+          </div>
+
             <ul class="slides">
-            <li style="background-image: url({% static 'usa_website/images/resistance.jpg' %});">
-                <div class="overlay-gradient"></div>
-                <div class="container">
-                    <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-                        <div class="slider-text-inner">
-                            <h2>Data Consulting Committee</h2>
-                            <div>
-                                <center>
-                                    <a href="#fh5co-blog-section">
-                                        <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
-                                    </a>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style="background-image: url({% static 'usa_website/images/grad_students.jpg' %});">
-                <div class="container">
-                    <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-                        <div class="slider-text-inner">
-                            <h2>Data Consulting Committee</h2>
-                            <div>
-                                <center>
-                                    <a href="#fh5co-blog-section">
-                                        <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
-                                    </a>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
+            <li style="background-image: url({% static 'usa_website/images/resistance.jpg' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/grad_students.jpg' %});"></li>
             <li style="background-image: url({% static 'usa_website/images/uizard_team.jpg' %});">
                 <div class="container">
                     <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
@@ -86,22 +79,71 @@ $( document ).ready(function() {
                 </div>
             </div>
             <div class="row">
-                <center><h2>This Semester</h2></center>
-                <div class="col-md-6 col-sm-6 ">
-                    <div class="item-grid">
-                        <div class="image" style="background-image: url({% static 'usa_website/images/tutorfly_proj.jpg' %})">
+                <center><h2>This Semester</h2>
+                  <p>
+                    Projects will be announced as we begin our school year, please stay tuned and check back later!
+                  </p>
+                </center>
+                <br>
+                <center><h2>Past Projects</h2></center>
+                <div class="col-md-4 col-sm-4 ">
+                  <a href="{% url 'tutorfly' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/blog/tutorfly.png' %})">
+                    </div>
+                      <div class="v-align">
+                          <div class="v-align-middle">
+                              <h3 class="title">Tutorfly</h3>
+                              <h5 class="date"><span>PM Zhongling Jiang</span></h5>
+                              <h5 class="date"><span>Spring 2018</span></h5>
+                          </div>
+                      </div>
+                  </a>
+                </div>
+                <div class="col-md-4 col-sm-4 ">
+                    <a href="{% url 'housingcrisis' %}" class="item-grid">
+                        <div class="image" style="background-image: url({% static 'usa_website/images/blog/data_good.png' %})">
 
                         </div>
                         <div class="v-align">
                             <div class="v-align-middle">
-                                <h3 class="title">Tutorfly - Business and Web Analytics</h3>
+                                <h3 class="title">Data For Good - Housing Crisis - Data visualizations</h3>
+                                <h5 class="date"><span>PM Patrick Chao</span></h5>
                                 <h5 class="date"><span>Spring 2018</span></h5>
-                                <p><a href="https://tutorfly.org">Tutorfly</a> is a peer to peer tutoring platform disrupting the 11 billion dollar tutoring space that pairs high school student tutors with younger students in the same community. Parents log on to Tutorfly and can filter by subject, class, and teacher to find a tutor that’s just recently completed the exact same class as their child. Launched in 2017, Tutorfly has completed over 400 sessions to date and is expanding to high schools throughout California. Our data team will perform a set of business analytics tasks that fully address this client’s needs, including setting KPIs, creating a visualization dashboard, analyzing web browsing data, and generating a business report. We also expect to see how our analytics results can actually be reflected through the company’s decisions on newly launched projects.</p>
+                                {% comment %}<p>This team will be focusing on the <a href="https://ctsp.berkeley.edu/data-for-good-competition/">Data for Good competition</a>, by investigating the housing situation in California. Our project team will be competing in this project sponsored by Facebook, for social good efforts. We will create data visualizations describing the housing situation, such as heatmaps of salary, housing costs, and availability. An end term goal may be to create matching tools for citizens to input factors such as salary, and employer location, and suggest viable locations to look for housing.</p>{% endcomment %}
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'data_good' %}" class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/housing_proj.jpg' %})">
+                      </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Data For Good - Housing Crisis - Proposal</h3>
+                                <h5 class="date"><span>PM Patrick Chao</span></h5>
+                                <h5 class="date"><span>Spring 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-sm-4 ">
+                <a href="{% url 'population_modeling' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/blog/population_modeling_proj2.gif' %})">
+
+                    </div>
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">Population Modeling</h3>
+                            <h5 class="date"><span>PM Patrick Chao</span></h5>
+                            <h5 class="date"><span>Fall 2017</span></h5>
+                        </div>
+                    </div>
+                </a>
+              </div>
+                <div class="col-md-4">
                     <div class="item-grid">
                         <div class="image" style="background-image: url({% static 'usa_website/images/computer_brain_proj.jpg' %})">
 
@@ -109,79 +151,43 @@ $( document ).ready(function() {
                         <div class="v-align">
                             <div class="v-align-middle">
                                 <h3 class="title">UIzard - Automating UI Code</h3>
+                                <h5 class="date"><span>PM Noah Gundotra</span></h5>
                                 <h5 class="date"><span>Spring 2018</span></h5>
-                                <p>Our team will be focused on rapid implementation of deep learning papers, culminating in a final project with Danish startup <a href="https://www.uizard.io/">UIzard</a>. Led by Tony Beltramelli, this startup pioneered one of the first papers on turning sketches of User Interfaces for iOS and web apps into their respective code (Swift, React). </p>
-                                <p>Before we work with UIzard, we’ll be implementing 1-2 deep learning papers to sharpen our skills. The implemented papers or relevant engineering feats will be submitted to a relevant open source deep learning codebase. We’ll be working heavily with AWS, Python, and Unix. </p>
+
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4 col-sm-4 ">
+                  <a href="{% url 'facial_emotion_recognition' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/blog/facial_emotion_recognition.jpg' %})">
+                    </div>
+                      <div class="v-align">
+                          <div class="v-align-middle">
+                              <h3 class="title">Facial Emotion Recognition</h3>
+                              <h5 class="date"><span>PM Zhongling Jiang</span></h5>
+                              <h5 class="date"><span>Fall 2017</span></h5>
+                          </div>
+                      </div>
+                  </a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-sm-6 ">
-                    <div class="item-grid">
-                        <div class="image" style="background-image: url({% static 'usa_website/images/housing_proj.jpg' %})">
-
-                        </div>
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">Data for Good Competition (Housing Crisis) - Data visualizations</h3>
-                                <h5 class="date"><span>Spring 2018</span></h5>
-                                <p>This team will be focusing on the <a href="https://ctsp.berkeley.edu/data-for-good-competition/">Data for Good competition</a>, by investigating the housing situation in California. Our project team will be competing in this project sponsored by Facebook, for social good efforts. We will create data visualizations describing the housing situation, such as heatmaps of salary, housing costs, and availability. An end term goal may be to create matching tools for citizens to input factors such as salary, and employer location, and suggest viable locations to look for housing.</p>
-                            </div>
-                        </div>
+                <div class="col-md-4 col-sm-4 ">
+                  <a href="{% url 'food_insecurity' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/food_insecurity_proj.jpg' %})">
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <center><h2>Past Projects</h2></center>
-                <div class="col-md-6 col-sm-6 ">
-
-                    <div class="item-grid">
-                        <div class="image" style="background-image: url({% static 'usa_website/images/population_modeling_proj2.gif' %})">
-
-                        </div>
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">Population Modeling</h3>
-                                <h5 class="date"><span>Fall 2017</span></h5>
-                                <p>Population modeling is crucial for overall growth as it determines resource allocation and future plans. However, population modeling can be extremely challenging due to hundreds of time-sensitive variables. For the fall 2017 semester, the population modeling team worked to create models for population rates based on four elementary features: birth rate, mortality rate, fertility rate, and life expectancy. Using machine learning and time series techniques, we compared our models to the UN model as a standard. Click to see our <a href="{% url 'population_modeling' %}">blog post</a> and <a href="{% url 'susawebapp' %}">our approximations</a>!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 ">
-                    <div class="item-grid">
-                        <div class="image" style="background-image: url({% static 'usa_website/images/facial_emotion_proj.png' %})">
-
-                        </div>
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">Facial Emotion Recognition</h3>
-                                <h5 class="date"><span>Fall 2017</span></h5>
-                                <p>Deep learning is part of the broader machine learning context that learns data representations using complex architectures. The team worked on building a state of the art deep learning model that classifies human facial images into 7 different emotions: happy, sad, angry, fear, neutral, surprise and disgust. Different models, from CNN to Ensemble Learning, were evaluated and compared based on their performance.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-6 ">
-                    <div class="item-grid">
-                        <div class="image" style="background-image: url({% static 'usa_website/images/food_insecurity_proj.jpg' %})">
-
-                        </div>
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">Food Insecurity</h3>
-                                <h5 class="date"><span>Fall 2017</span></h5>
-                                <p>The main objectives for this project was to identify areas of Alameda County in need of greater food assistance. We conducted literature review and exploratory data analysis on various social, economic and demographic features of Alameda County to inform our model and feature selection. We then created a predictive model to predict pounds unmet by census tract.</p>
-                            </div>
-                        </div>
-                    </div>
+                      <div class="v-align">
+                          <div class="v-align-middle">
+                              <h3 class="title">Food Insecurity</h3>
+                              <h5 class="date"><span>PM Biyonka Liang</span></h5>
+                              <h5 class="date"><span>Fall 2017</span></h5>
+                          </div>
+                      </div>
+                  </a>
                 </div>
 
-                <div class="col-md-6 col-sm-6 ">
+                <div class="col-md-4 col-sm-4">
                     <div class="item-grid">
                         <div class="image" style="background-image: url({% static 'usa_website/images/projects_electrical.jpg' %})">
 
@@ -190,14 +196,12 @@ $( document ).ready(function() {
                             <div class="v-align-middle">
                                 <h3 class="title">Electrical Power</h3>
                                 <h5 class="date"><span>Fall 2016</span></h5>
-                                <p>The electric grid underlying American energy production and usage is a highly complex system, with many dynamic parts and facets. In the Fall 2016 semester, SUSA was hired by the environmental policy start-up, Environmental Progress, to model the relationships between the productions of power plants of differing fuel types on the Californian grid over time, in the context to the imminent closure of the Diablo Canyon Power Plant, the last remaining nuclear power plant in California. We extrapolated from the production data of the grid to predict the environmental effects of such a closure, and even extended our analysis to gauge the health effects the plant's shutdown could have on surrounding populations.</p>
+                                {% comment %}<p>The electric grid underlying American energy production and usage is a highly complex system, with many dynamic parts and facets. In the Fall 2016 semester, SUSA was hired by the environmental policy start-up, Environmental Progress, to model the relationships between the productions of power plants of differing fuel types on the Californian grid over time, in the context to the imminent closure of the Diablo Canyon Power Plant, the last remaining nuclear power plant in California. We extrapolated from the production data of the grid to predict the environmental effects of such a closure, and even extended our analysis to gauge the health effects the plant's shutdown could have on surrounding populations.</p>{% endcomment %}
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-6 ">
+                <div class="col-md-4 col-sm-4 ">
                     <div class="item-grid">
                         <div class="image" style="background-image: url({% static 'usa_website/images/projects_police.jpg' %})">
 
@@ -206,13 +210,14 @@ $( document ).ready(function() {
                             <div class="v-align-middle">
                                 <h3 class="title">Crime in Berkeley</h3>
                                 <h5 class="date"><span>Spring 2016</span></h5>
-                                <p>A common concern for Berkeley students is the relatively concerning amount of crime in surrounding areas. For the Spring 2016 semester, we plan to investigate crime rate in Berkeley and surrounding areas. We hope to create a basic predictive model that will help Berkeley students decide whether walking home is the best decision.</p>
+                                {% comment %}<p>A common concern for Berkeley students is the relatively concerning amount of crime in surrounding areas. For the Spring 2016 semester, we plan to investigate crime rate in Berkeley and surrounding areas. We hope to create a basic predictive model that will help Berkeley students decide whether walking home is the best decision.</p>{% endcomment %}
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-sm-6 ">
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 ">
                     <div class="item-grid">
                         <div class="image" style="background-image: url({% static 'usa_website/images/projects_fire.jpeg' %})">
 
@@ -221,7 +226,7 @@ $( document ).ready(function() {
                             <div class="v-align-middle">
                                 <h3 class="title">Fires in San Francisco</h3>
                                 <h5 class="date"><span>Spring 2016</span></h5>
-                                <p>Residents of the Mission District of San Francisco have been expressing concern over an apparently increasing rate of fires happening in their neighborhood. For the Spring 2016 semester, we plan to analyze if there is indeed an increasing amount of fires happening in the Mission District, and if so, we will investigate why this trend is occurring.</p>
+                                {% comment %}<p>Residents of the Mission District of San Francisco have been expressing concern over an apparently increasing rate of fires happening in their neighborhood. For the Spring 2016 semester, we plan to analyze if there is indeed an increasing amount of fires happening in the Mission District, and if so, we will investigate why this trend is occurring.</p>{% endcomment %}
                             </div>
                         </div>
                     </a>

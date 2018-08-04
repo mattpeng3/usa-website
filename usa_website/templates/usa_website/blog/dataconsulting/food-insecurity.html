@@ -1,4 +1,4 @@
-{% extends "blog/blog_header.html" %}
+{% extends "blog/dataconsulting/dc_header.html" %}
 {% block content %}
 {% load staticfiles %}
 
@@ -16,7 +16,8 @@
 
 <div class="container-fluid">
 	<h3 class="title toc-ignore"><strong>Food Insecurity in Alemeda County: Modeling Food Need and Access</strong></h3>
-	<h4><span style="color: #D5518D" id="author">By PM Biyonka Liang,</span><br><span style="color: #3E95D7" id="name">Sidney Le, Hubert Luo, Ash Mohan, Suhas Rao, Reese Williams, Rick Yang, Katherine Yen, Alexander Yi</span></h4>
+	<h4><span style="color: #D5518D" id="author">PM: </span><span style="color: #3E95D7" id="name"> Biyonka Liang</span><br>
+		<span style="color: #D5518D">Consultants: </span><span style="color: #3E95D7" id="name">Sidney Le, Hubert Luo, Ash Mohan, Suhas Rao, Reese Williams, Rick Yang, Katherine Yen, Alexander Yi</span></h4>
 	<p>
 		In partnership with the Alameda County Community Food Bank (ACCFB), SUSA worked to address issues of food insecurity and food pantry access in Alameda County. <a href="https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/definitions-of-food-security.aspx">Defined by the United States Department of Agriculture Economic Research Service</a>, food insecurity is a state of  hunger and “reduced quality, variety, or desirability of diet” resulting from poor access to food, either from structural issues (low availability) or from economic issues (low income). In 2010, it is estimated that some 49 million people in the US live in food insecure households, which face serious health and developmental risks as a result of their food insecurity. In Alameda County alone, Feeding America estimated that 14.3% of people, roughly 1 in 7, were food insecure in 2015. A key part of the solution is creating a cheap, or even free, and accessible supply of healthy food, which food bank networks such as the ACCFB attempt to do. However, no matter how well their network creates access, their supply of food and funding is limited. The core of this issue becomes misallocation; besides vague ideas about which regions might have more people experiencing food insecurity, there has been no systematic way to estimate which regions need what quantity of food. It is generally clear that food insecurity is spatially defined, but how local factors come into play in estimating food need thus became our goal.
 	</p>
@@ -39,7 +40,7 @@
 	</p>
 	<h4><em>Exploratory data analysis</em></h4>
 	<p>
-		With a strong footing in existing research, we set off to better understand the Alameda County from the perspective of the data. As food insecurity is determined by an innumerable number of environmental and economic variables, the hope was that by examining the geographical distribution of some specific variables we identified as important, we could get a good grasp of the whole landscape of need and hunger across the county. 
+		With a strong footing in existing research, we set off to better understand the Alameda County from the perspective of the data. As food insecurity is determined by an innumerable number of environmental and economic variables, the hope was that by examining the geographical distribution of some specific variables we identified as important, we could get a good grasp of the whole landscape of need and hunger across the county.
 	</p>
 	<div class="row">
 		<div class="col-md-5">
@@ -75,7 +76,7 @@
 	<div class="row">
 		<div class="col-md-5">
 			<p>
-				While we were very lucky that the Gundersen et. al. paper specified a well-researched model for estimating food insecurity that we could use, what we actually want to estimate is pounds of food need that is unmet by a local food bank (which will be referred to simply as “pounds unmet”). The data that was provided by ACCFB and Feeding America for the actual observed pounds unmet for the past year would be used to train and validate our models, so it was important that we could properly specify what we were trying to estimate in the first place. Thus, our model would be attempting to unearth an empirical relationship between food insecurity/local variables and pounds unmet, one that had not yet been researched. 
+				While we were very lucky that the Gundersen et. al. paper specified a well-researched model for estimating food insecurity that we could use, what we actually want to estimate is pounds of food need that is unmet by a local food bank (which will be referred to simply as “pounds unmet”). The data that was provided by ACCFB and Feeding America for the actual observed pounds unmet for the past year would be used to train and validate our models, so it was important that we could properly specify what we were trying to estimate in the first place. Thus, our model would be attempting to unearth an empirical relationship between food insecurity/local variables and pounds unmet, one that had not yet been researched.
 			</p>
 		</div>
 		<div class="col-md-7">
@@ -83,7 +84,7 @@
 		</div>
 	</div>
 	<p>
-		What we ended up taking from the Gundersen et. al. model was their selected variables and their approach for taking rates for a large geographic unit and projecting downwards to a more granular geographic unit. In our case, it made the most sense to work with census tracts, since that was the most granular, local level we could work on, and we used county-level data to project downwards onto census tracts. Both the identified variables and this projection approach were vetted by the Gundersen et. al. research, so we could feel confident in using both. The variables identified by the paper were the following: 1) unemployment, 2) poverty rates, 3) median income, 4) percentage of population that is Hispanic, and 5) percentage of population that is Black. In addition to these five variables, we also included census tract population to be able to factor in food insecurity rates in the model. The multiple regression model did relatively well, but the residuals were clearly patterned—telltale signs of poor model performance. We theorized that this was the result of the difference between the fixed effects model and the linear regression model. We attempted to transform variables in a number of ways to account for the residual patterns, and eventually we found a strong fit. It appeared that our predictors were strong predictors for the cube root of pounds unmet, with r-squared of 0.8969. The model held up remarkably well; the residuals were well-distributed and the model made it through 10-fold cross-validation with little problem. 
+		What we ended up taking from the Gundersen et. al. model was their selected variables and their approach for taking rates for a large geographic unit and projecting downwards to a more granular geographic unit. In our case, it made the most sense to work with census tracts, since that was the most granular, local level we could work on, and we used county-level data to project downwards onto census tracts. Both the identified variables and this projection approach were vetted by the Gundersen et. al. research, so we could feel confident in using both. The variables identified by the paper were the following: 1) unemployment, 2) poverty rates, 3) median income, 4) percentage of population that is Hispanic, and 5) percentage of population that is Black. In addition to these five variables, we also included census tract population to be able to factor in food insecurity rates in the model. The multiple regression model did relatively well, but the residuals were clearly patterned—telltale signs of poor model performance. We theorized that this was the result of the difference between the fixed effects model and the linear regression model. We attempted to transform variables in a number of ways to account for the residual patterns, and eventually we found a strong fit. It appeared that our predictors were strong predictors for the cube root of pounds unmet, with r-squared of 0.8969. The model held up remarkably well; the residuals were well-distributed and the model made it through 10-fold cross-validation with little problem.
 	</p>
 	<h4><em>Future work</em></h4>
 	<div class="row">

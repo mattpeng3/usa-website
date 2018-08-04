@@ -6,30 +6,57 @@
 <!-- scroll button -->
 <script src="../../static/usa_website/js/scroll-down.js"></script>
 <!-- smooth scroll -->
+<script>
+
+$( document ).ready(function() {
+    var heights = $(".item-grid").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".item-grid").height(maxHeight);
+});
+
+</script>
 
     <div class="container">
 
     </div>
     <aside id="fh5co-hero" class="js-fullheight">
         <div class="flexslider js-fullheight">
-            <ul class="slides">
-            <li style="background-image: url({% static 'usa_website/images/research.jpg' %});">
-                <div class="overlay-gradient"></div>
-                <div class="container">
-                    <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-                        <div class="slider-text-inner">
-                            <h2>Research and Publication Committee</h2>
-                            <div>
-                                <center>
-                                    <a href="#fh5co-blog-section">
-                                        <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
-                                    </a>
-                                </center>
-                            </div>
+          <div class="background-overlay animated fadeInUp">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+
+                    <div class="slider-text-inner">
+                        <!-- <video playsinline autoplay muted loop>
+                            WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+                            <source src="static/usa_website/images/Pride.mp4" type="video/webm">
+                        </video> -->
+                        <h2>Research and Publication Committee</h2>
+                        <div>
+                            <img src="{% static 'usa_website/images/icondata.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                            <img src="{% static 'usa_website/images/iconwebdev.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                            <img src="{% static 'usa_website/images/iconresearch.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                            <img src="{% static 'usa_website/images/iconcareerexploration.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                            <img src="{% static 'usa_website/images/iconivp.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                            <img src="{% static 'usa_website/images/iconevp.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
                         </div>
+                        <br>
+                        <div>
+                            <center>
+                                <a href="#fh5co-blog-section">
+                                    <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
+                                </a>
+                            </center>
+                        </div>
+                        <!-- <a href="/careerex" class="btn btn-select-plan btn-sm" style="padding:10px 20px; background:#5bc0de; color:#fff">Apply Now!</a> -->
                     </div>
+                  </div>
                 </div>
-            </li>
+          </div>
+
+            <ul class="slides">
+            <li style="background-image: url({% static 'usa_website/images/research.jpg' %});"></li>
 
             </ul>
         </div>
@@ -40,9 +67,107 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
                     <h2>Research and Publication</h2>
-                    <p>The Research and Publication Committee gives driven students the opportunity to pursue individual research projects or writing pieces on topics of personal interest while backed by readily available individual guidance and a professional medium of publication. Articles are published on <a href="{% url 'blog' %}">The University Statistics Review</a>, our online journal.</p>
+                    <p>The Research and Publication Committee gives driven students the opportunity to pursue individual research projects or writing pieces on topics of personal interest while backed by readily available individual guidance and a professional medium of publication.
+                      {% comment %} Articles are published on <a href="{% url 'blog' %}">The University Statistics Review</a>, our online journal.{% endcomment %}</p>
                 </div>
             </div>
+            <div class="row">
+              <center><h2>Past Projects</h2></center>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'shallow_dive' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">A Shallow Dive into Time Series: Analysis of Local Restaurant Data Using R</h3>
+                                <h5 class="date"><span>Kenna Schoeler</span></h5>
+                                <h5 class="date"><span>Fall 2017</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'tobacco_heart_disease' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">A Spatial Investigation into Heart Disease Mortality Rates and Youth Tobacco Rates</h3>
+                                <h5 class="date"><span>Mee Kyoung Seo</span></h5>
+                                <h5 class="date"><span>Fall 2017</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'alphago' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">An Introduction to Go, AlphaGo and Quantifying Go Gameplay</h3>
+                                <h5 class="date"><span>Issac Yiu</span></h5>
+                                <h5 class="date"><span>Fall 2017</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'rapnet' %}" class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/blog/rapnet.png' %})">
+                      </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Rapnet: Machine Learning for Hip-Hop Artist Classification</h3>
+                                <h5 class="date"><span>Alex Chan</span></h5>
+                                <h5 class="date"><span>Fall 2017</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'evol_lyrics' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">The Evolution of Lyrics</h3>
+                                <h5 class="date"><span>Kathleen Qin</span></h5>
+                                <h5 class="date"><span>Fall 2017</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'ucb_ug_mental' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">UC Berkeley Undergraduates' General Mental Health and Use of Mental Health Services</h3>
+                                <h5 class="date"><span>Shengyi Wu</span></h5>
+                                <h5 class="date"><span>Fall 2017</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'world_happiness' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">World Happiness Report EDA</h3>
+                                <h5 class="date"><span>Sydney Yang</span></h5>
+                                <h5 class="date"><span>Fall 2017</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'yelp_review' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Yelp Review and Rating Analysis</h3>
+                                <h5 class="date"><span>Annabelle Lee</span></h5>
+                                <h5 class="date"><span>Fall 2017</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+              </div>
                 <!--
                 <div class="col-md-12 text-center">
                     <p><a href="#" class="btn btn-primary with-arrow">View More Posts <i class="icon-arrow-right"></i></a></p>
@@ -53,5 +178,3 @@
     </div>
 
     {% endblock %}
-
-

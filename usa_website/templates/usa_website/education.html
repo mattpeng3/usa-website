@@ -1,0 +1,131 @@
+
+{% extends "header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<!-- scroll button -->
+<script src="../../static/usa_website/js/scroll-down.js"></script>
+<!-- smooth scroll -->
+
+    <div class="container">
+
+    </div>
+    <aside id="fh5co-hero" class="js-fullheight">
+        <div class="flexslider js-fullheight">
+          <div class="background-overlay animated fadeInUp">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+
+                    <div class="slider-text-inner">
+                        <!-- <video playsinline autoplay muted loop>
+                            WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+                            <source src="static/usa_website/images/Pride.mp4" type="video/webm">
+                        </video> -->
+                        <h2>Education Committee</h2>
+                        <br>
+                        <div>
+                            <center>
+                                <a href="#fh5co-blog-section">
+                                    <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
+                                </a>
+                            </center>
+                        </div>
+                        <!-- <a href="/careerex" class="btn btn-select-plan btn-sm" style="padding:10px 20px; background:#5bc0de; color:#fff">Apply Now!</a> -->
+                    </div>
+                  </div>
+                </div>
+          </div>
+
+            <ul class="slides">
+            <li style="background-image: url({% static 'usa_website/images/research.jpg' %});"></li>
+            </ul>
+        </div>
+    </aside>
+
+    <div id="fh5co-blog-section" class="fh5co-light-grey-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+                    <h2>Education Committee</h2>
+                    <p>The Education Committee provides a great outlet for those interested in statistics, data science, and machine learning to share their knowledge through writing and presenting material. Members will work on a multitude of topics, rotating between creating and presenting material for our Career Exploration Committee, creating blog posts, and incorporating all of our work into a DeCal for Spring 2019.</p>
+                </div>
+            </div>
+            <div class="row">
+              <center><h2>Crash Courses</h2></center>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'r0' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to R - Installing R and RStudio</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>February 22, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'r1' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to R - Base R and Basic Packages</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>March 10, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'r2' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to R - Preparing for Data Analysis</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>March 5, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'bias_variance' %}" class="item-grid">
+                      {% comment %}
+                        <div class="image" style="width:100%; background-image: url({% static 'usa_website/images/blog/bias_variance.gif' %})">
+                        </div>
+                      {% endcomment%}
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">The Bias Variance Tradeoff, Decision Trees, Bagging and Ensemble Learning</h3>
+                                <h5 class="date"><span>Patrick Chao</span></h5>
+                                <h5 class="date"><span>March 21, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'p0' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Introduction to Python - Installing Python and Anaconda</h3>
+                                <h5 class="date"><span>Arun Ramamurthy</span></h5>
+                                <h5 class="date"><span>February 21, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'website_tutorial_0' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">How to Build Your Own Personal Website Part 0 - An Introduction to Git</h3>
+                                <h5 class="date"><span>Abhinav Bhaskar</span></h5>
+                                <h5 class="date"><span>June 25, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+    {% endblock %}
