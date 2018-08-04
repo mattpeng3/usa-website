@@ -1,4 +1,4 @@
-{% extends "blog/blog_header.html" %}
+{% extends "blog/education/education_header.html" %}
 {% block content %}
 {% load staticfiles %}
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
@@ -95,7 +95,7 @@ def validate(model,numSamples=500,dataRange=[70,140],showPlot=True):
         maxY = max(max(dataRange*a+b),max(predY))
         plt.plot(coordX1, [minY,maxY], 'k-', lw=1,linestyle="--")
         plt.plot(coordX2, [minY,maxY], 'k-', lw=1,linestyle="--")
-        
+
         plt.plot(inputX,predY,'bo')
         plt.plot(dataRange, dataRange*a+b, 'r-', lw=2)
         plt.ylabel("Predicted Y")
@@ -137,20 +137,20 @@ def overfittingDemo(maxDegree=6):
         currTestErr = validate(currModel,showPlot=True)
         trainError.append(currTrainErr)
         testError.append(currTestErr)
-    
+
     #Plot the errors
     plt.figure(figsize=(15,4))
     plt.subplot(1,3,1)
     plt.plot(range(maxDegree+1),trainError)
     plt.ylabel("Error")
     plt.title("Training Error")
-    
+
     plt.subplot(1,3,2)
     plt.plot(range(1,maxDegree+1),trainError[1:])
     plt.xlabel("Degree of Model")
     plt.title("Training Error w/o Deg 0")
-    
-    
+
+
     plt.subplot(1,3,3)
     plt.plot(range(maxDegree+1),testError)
     plt.title("Test Error")
@@ -158,14 +158,14 @@ def overfittingDemo(maxDegree=6):
     # Uncomment if you are curious about the actual error values
     # print("Training Errors:",trainError)
     # print("Test Errors:",testError)
-    
+
 
 #True model: y=ax+b
 a = 2
 b = 1
 
 #To try your own examples
-#Uncomment to test around yourself! 
+#Uncomment to test around yourself!
 
 overfittingDemo()
 
@@ -229,7 +229,7 @@ def ridgeDemo(lambdaCoeff,maxDegree=6):
     print("Model params with degree",maxDegree,":",currModel)
     print("Training Error:",currTrainErr)
     print("Test Error:",currTestErr)
-    
+
 def ridgeModel(trainX,trainY,lambdaCoeff,degree=10):
     powers=np.vander(trainX,degree+1)
     A=powers
@@ -237,7 +237,7 @@ def ridgeModel(trainX,trainY,lambdaCoeff,degree=10):
     model = np.linalg.solve(A.T@A+regularizationMatrix,A.T@trainY)
     return model
 
-ridgeDemo(lambdaCoeff = 1) 
+ridgeDemo(lambdaCoeff = 1)
 	    </code>
 	  </pre>
 	</figure>
@@ -296,7 +296,7 @@ import pandas as pd
 def wordFreq(movieTitle,words):
     #Change movieTitle to lower case
     movieTitle=movieTitle.lower()
-    
+
     #Change words to lower case
     words = [word.lower() for word in words]
     #Check if movie title is found
@@ -305,14 +305,14 @@ def wordFreq(movieTitle,words):
     except:
         print("Movie title not found!")
         return ""
-    
+
     #Check if given words are not found
     try:
         wordFrequencies = movie[words].as_matrix()[0]
     except:
         print("Words not found")
         return ""
-    
+
     return wordFrequencies
 	    </code>
 	  </pre>
@@ -334,7 +334,7 @@ movies.head()
 #What type is movies?
 print(type(movies))
 
-#What is the frequency of the words "hey" and "i" in the matrix? Try some yourself! 
+#What is the frequency of the words "hey" and "i" in the matrix? Try some yourself!
 print(wordFreq("batman",["Hey","i"]))
 
 ## Result
@@ -394,7 +394,7 @@ def kShortestDistance(k,movie,movieSet,words):
     #Iterate over all movies
     for i in range(movieSet.shape[0]):
         currMovieTitle = movieSet.iloc[i]["Title"]
-        #Get the distance of two movies from two movies 
+        #Get the distance of two movies from two movies
         dist = distance(currMovieTitle,movie["Title"],words)
         distances.append((dist,i))
     #Sort the array
@@ -431,7 +431,7 @@ def getMajority(nearestMovies):
 #Given a dataset, a set of word features, and the value of k
 #Returns the percentage correct (0-100)
 def accuracy(dataset,features,k):
-    numCorrect = 0 
+    numCorrect = 0
     #Iterate over all movies
     for i in range(dataset.shape[0]):
         currMovie = dataset.iloc[i].squeeze()
@@ -456,7 +456,7 @@ features = ["power","love"]
 movie = getMovie("batman returns")
 #Get the five closest movies to the "batman returns" using the training set
 closest=kShortestDistance(5,movie,trainingSet,features)
-#Given the closest movies, returns the majority 
+#Given the closest movies, returns the majority
 #Represents the kNN Prediction
 getMajority(closest)
 

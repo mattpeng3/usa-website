@@ -1,4 +1,4 @@
-{% extends "blog/blog_header.html" %}
+{% extends "blog/rp/rp_header.html" %}
 {% block content %}
 {% load staticfiles %}
 
@@ -26,7 +26,7 @@
 	}
 	.frac span.symbol {
 	    display: none;
-	} 
+	}
 	th, td, caption {
 		text-align: center;
 	}
@@ -129,7 +129,7 @@
 	<p>The alternative hypothesis claims that the game is “unfair”:</p>
 	<p><center><i>H<sub>1</sub></i>: &mu; &ne; 0.5</center></p>
 	<p>Find the average SE over 50 games, the z-test statistic, and then take the corresponding p-value:</p>
-	<p><center><i>SE<sub>avg</sub></i> &equals; 
+	<p><center><i>SE<sub>avg</sub></i> &equals;
 	<div class="frac">
 	    <span>&radic;<span style="text-decoration: overline">50</span> &times; &radic;<span style="text-decoration: overline">0.5 &times; 0.5</span></span>
 	    <span class="symbol">/</span>
