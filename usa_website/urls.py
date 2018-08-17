@@ -101,6 +101,7 @@ urlpatterns = [
     url(r'yitz$', views.yitz, name = "yitz"),
     # url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),
     url(r'webapp/', views.susawebapp, name = "susawebapp"),
+    url(r'population-modeling-webapp/', views.susawebapp, name = "susawebapp"),
     # url(r'webapp/Argentina.csv', views.argentina, name = "argentina"),
     # url(r'webapp/china.csv', views.china, name = "china"),
     # url(r'webapp/Guatemala.csv', views.guatemala, name = "guatemala"),

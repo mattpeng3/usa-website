@@ -36,13 +36,13 @@
         font-size: 11px;*/
         background-color: #EEE9D4;
       }
-      h1{
+      .webapp_header{
         /*font-size: 50px;*/
         text-align: center;
         vertical-align: middle;
         padding-top: 16px;
       }
-      p{
+      .webapp_text{
         /*font-size: 16px;*/
         text-align: center;
         padding:15px;
@@ -72,7 +72,7 @@
           text-align: center;
           padding-bottom: 10px;
       }
-      .container{
+      .webapp_container{
         text-align: center;
       }
 
@@ -107,9 +107,7 @@
       .dropdown:hover .dropbtn {
           background-color: #337ab7;
       }
-      .container2{
-        text-align: center;
-      }
+
       svg{
         background-color: #f0eada;
 
@@ -275,13 +273,13 @@
                         <div class="collapse navbar-collapse" id="header-bar">
                         -->
                         <ul>
-                            <li><a href="{% url 'blog' %}">Blog</a></li>
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Committees<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{% url 'dataconsulting' %}">Data Consulting</a></li>
-                                    <li><a href="{% url 'webdev' %}">Web Development</a></li>
-                                    <li><a href="{% url 'research' %}">Research and Publication</a></li>
-                                    <li><a href="{% url 'careerex' %}">Career Exploration</a></li>
+                                  <li><a href="{% url 'dataconsulting' %}">Data Consulting</a></li>
+                                  <li><a href="{% url 'webdev' %}">Web Development</a></li>
+                                  <li><a href="{% url 'research' %}">Research and Publication</a></li>
+                                  <li><a href="{% url 'education' %}">Education</a></li>
+                                  <li><a href="{% url 'careerex' %}">Career Exploration</a></li>
                                 </ul>
                             </li>
                             <li><a href="calendar">Calendar</a></li>
@@ -804,8 +802,8 @@
 
       //set margins
       var w = window.innerWidth * 0.8,
-          h = window.innerHeight * 0.75,
-          margin = { top: 40, right: 20, bottom: 20, left: 60 },
+          h = window.innerHeight * 0.75+5,
+          margin = { top: 40, right: 20, bottom: 20, left: 75 },
           radius = 4;
 
 
