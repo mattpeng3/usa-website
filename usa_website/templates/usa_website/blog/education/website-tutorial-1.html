@@ -1,10 +1,10 @@
-{% extends "blog/blog_header.html" %}
+{% extends "blog/education/education_header.html" %}
 {% block content %}
 {% load staticfiles %}
 
 <title> Introduction to HTML</title>
 <h3>How To Build Your Own Personal Website </h3>
-  <h4> Part 1: An Introduction To HTML!</h4>
+  <h4> Part 1: An Introduction To HTML</h4>
   <h4>
     <span style="color: #D5518D" id="author">By </span>
     <span style="color: #3E95D7" id="name">Anthony Yu and Abhinav Bhaskar</span>
@@ -323,42 +323,30 @@
     represented by two different tags: <code>ol</code> and <code>ul</code>.
   </p>
   <pre>
-    &lt;div class="row"&gt;
-      &lt;div class="col-md-6"&gt;
-        &lt;ol&gt;
-          &lt;li&gt;First item&lt;/li&gt;
-          &lt;li&gt;Second item&lt;/li&gt;
-          &lt;li&gt;Third item&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/div&gt;
-      &lt;div class="col-md-6"&gt;
-        &lt;ul&gt;
-          &lt;li&gt;First item&lt;/li&gt;
-          &lt;li&gt;Second item&lt;/li&gt;
-          &lt;li&gt;Third item&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;ol&gt;
+      &lt;li&gt;First item&lt;/li&gt;
+      &lt;li&gt;Second item&lt;/li&gt;
+      &lt;li&gt;Third item&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;ul&gt;
+      &lt;li&gt;First item&lt;/li&gt;
+      &lt;li&gt;Second item&lt;/li&gt;
+      &lt;li&gt;Third item&lt;/li&gt;
+    &lt;/ul&gt;
   </pre>
   <p>
     And this looks like:
   </p>
-  <div class="row">
-    <div class="col-md-6">
-      <ol>
-        <li>First item</li>
-        <li>Second item</li>
-        <li>Third item</li>
-      </ol>
-    </div>
-    <div class="col-md-6">
-      <ul>
-        <li>First item</li>
-        <li>Second item</li>
-        <li>Third item</li>
-      </ul>
-    </div>
-  </div>
+  <ol>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ol>
+  <ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ul>
   <p>
     It's quite simple - for ordered lists use the <code>ol</code> tag, and for unordered lists use the <code>ul</code> tag. For each item you want to
     put in the list, add a pair of opening and closing <code>li</code> tags (stands for List Item) and enter the item in between those tags.
