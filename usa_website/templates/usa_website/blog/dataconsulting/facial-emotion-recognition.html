@@ -43,15 +43,8 @@
 
 </style>
 
-<div class="main">
-<div class = "sidenav">
-	<a href="#Top">Back to Top</a>
-	<a href="#Introduction">1. Introduction</a>
-  <a href="#Pre-Trained_Models">2. Pre-Trained Models</a>
-  <a href="#Explicitly_Overfitting_Models">3. Explicitly Overfitting Models</a>
-</div>
 
-<div class="container_blog">
+<div class="container-fluid">
 <div id="top">
 	<h3>Facial Emotion Recognition</h3>
 	<h4><span style="color: #D5518D" id="author">PM:</span><span style="color: #3E95D7" id="name"> Zhongling Jiang</span></h4>
@@ -84,6 +77,15 @@
 	<p>It took around 24 hours to train all 8 models on a single AWS EC2 p2 instance. We would have liked to train the models for longer, however both the convolutional and residual architectures seemed to not improve their training accuracy beyond a few hours. The final ensemble model got us a decent 65% validation accuracy which puts us in the top 5 competitors.</p>
 </div>
 </div>
-</div>
 
+{% endblock %}
+{% block navigation %}
+<div class="item-grid">
+	<p>
+		<a href="#top">Back to Top</a><br>
+		<a href="#Introduction">Introduction</a><br>
+		<a href="#Pre-Trained_Models">Pre-Trained Models</a><br>
+		<a href="Explicitly_Overfitting_Models">Explicitly Overfitting Models</a>
+	</p>
+</div>
 {% endblock %}
