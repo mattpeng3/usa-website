@@ -114,6 +114,12 @@
                         <div class="collapse navbar-collapse" id="header-bar">
                         -->
                         <ul>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="{% url 'people' %}">About Us</a></li>
+                                  <li><a href="{% url 'people' %}">People</a></li>
+                                  <li><a href="{% url 'people' %}">Social Media</a></li>
+                                </ul>
                             <li><a href="calendar">Calendar</a></li>
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Committees<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -142,7 +148,7 @@
                                     <li><a href="{% url 'stat159' %}">Stat 159</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{% url 'people' %}">People</a></li>
+
                         </ul>
                     </div>
                 </nav>
@@ -161,7 +167,7 @@
 
     <footer id="fh5co-footer" role="contentinfo">
 
-        <div class="container">
+        <!-- <div class="container">
             <div class="col-md-12 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
                 <h3>About Us</h3>
                 <p>The Statistics Undergraduate Student Association is a premier organization at UC Berkeley that stimulates its members' interests in Statistics and facilitates their further development in a statistics career.</p>
@@ -189,11 +195,41 @@
             <div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
                     <li><a href="#"><i class="icon-facebook"></i></a></li>
             </div>
-            </ul>-->
+            </ul>
             </div>
-            </div>
-            <div class="col-md-12 fh5co-copyright text-center">
-                <p>Copyright © 2018 SUSA. All rights reserved. Design by Yitz Deng, Aaron Chai, David Nahm, Anthony Yu.</p>
+          </div> -->
+
+
+            <div class=" fh5co-copyright text-center">
+              <div class="row_socials">
+                <div class="col_socials">
+                </div>
+
+                <div class="row_socials">
+                  <div class="col_socials">
+                    <a href="https://www.facebook.com/susaberkeley/">
+                      <img src="{% static 'usa_website/images/social_media/facebook-32px.png' %}" alt="fb">
+                    </a>
+                  </div>
+                  <div class="col_socials">
+                    <a href="https://github.com/SUSA-org">
+                      <img src="{% static 'usa_website/images/social_media/github-32px.png' %}" alt="git" style="height:32px;">
+                    </a>
+                  </div>
+                  <div class="col_socials">
+                    <a href="https://www.linkedin.com/company/susaberkeley/">
+                      <img src="{% static 'usa_website/images/social_media/linkedin-32px.png' %}" alt="linkedin" style="height:32px; ">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col_socials">
+
+                </div>
+              </div>
+              <br>
+                <p style="font-size:18px;">Contact us at <a href="mailto:contact@susa.berkeley.edu">contact@susa.berkeley.edu</a></p>
+                <p>Copyright © 2018 SUSA. All rights reserved. Design by Yitz Deng, Aaron Chai, David Nahm, Anthony Yu, Abhinav Bhaskar.</p>
                 <p>We are a student group acting independently of the University of California. <span> We take full responsibility for our organization and this web site. </span></p>
     <a href="https://www.ocf.berkeley.edu">
             <img src="https://www.ocf.berkeley.edu/hosting-logos/ocfbadge_mini8darkglow.png"
