@@ -67,6 +67,47 @@ h1, h2, h3, h4, h5, h6, figure {
   text-transform: uppercase;
 }
 
+.apply-button-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apply-button {
+  font-size: 20px;
+  color:white;
+  margin:30px 0 0 0;
+  padding-top:10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right:20px;
+  background-color:rgba(0,0,0,.4);
+  /*background-color:rgb(76,169,216, .75);*/
+  border-radius: 5px;
+  border-style:solid;
+  border-width: 3px;
+  border-color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.apply-button:hover, .apply-button:focus{
+  text-decoration:none;
+  color:white;
+}
+
+.apply-header{
+  background:rgba(255, 255, 255, 0.7);
+  color:rgb(0,0,0) !important;
+  border-radius:3px;
+  margin-left: 10px;
+  padding:5px 10px 5px 10px !important;
+}
+
+.apply-header:hover{
+  background-color: rgb(39,255,206);
+}
+
 ::-webkit-selection {
   color: #fff;
   background: #268BD2;
@@ -431,6 +472,7 @@ h1, h2, h3, h4, h5, h6, figure {
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
+  margin-right:5px;
 }
 
 #fh5co-header nav ul li a i {
@@ -941,17 +983,18 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-footer {
-  padding: 2em 0;
+  padding: 1.5em 0;
   float: left;
   width: 100%;
   position: relative;
   background: #262626;
   color: #eee8d5;
   z-index: 555;
+  font-size: 12px;
 }
 @media screen and (max-width: 768px) {
   #fh5co-footer {
-    padding: 2em 0;
+    padding: 1.5em 0;
   }
 }
 #fh5co-footer h2, #fh5co-footer h3, #fh5co-footer h4 {
@@ -994,9 +1037,6 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-copyright {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  clear: both;
-  margin-top: 10px !important;
   padding: 10px 0 0 0;
   font-size: 12px;
 }
@@ -1465,4 +1505,12 @@ figure {
 
 .date {
   margin: 0px;
+}
+
+.row_socials {
+  display:flex;
+}
+.col_socials {
+  flex:10%;
+  padding:20px;
 }
