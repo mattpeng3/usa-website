@@ -89,7 +89,7 @@ urlpatterns = [
     url(r'education/installing-python-and-anaconda$', views.p0, name="p0"),
     url(r'education/ml-classification$', views.ml_classification, name="ml_classification"),
     url(r'education/website-tutorial-0$', views.website_tutorial_0, name="website_tutorial_0"),
-    url(r'blog/website-tutorial-1$', views.website_tutorial_1, name="website_tutorial_1"),
+    url(r'education/website-tutorial-1$', views.website_tutorial_1, name="website_tutorial_1"),
     #Data Consulting
     url(r'dataconsulting/population-modeling$', views.population_modeling, name="population_modeling"),
     url(r'dataconsulting/tutorfly$', views.tutorfly, name="tutorfly"),
