@@ -67,6 +67,45 @@ h1, h2, h3, h4, h5, h6, figure {
   text-transform: uppercase;
 }
 
+
+
+.infosession-left {
+  left: 20px;
+  color: #E181B3;
+}
+
+.infosession-right {
+  right: 20px;
+  color: #51AAD6;
+}
+
+.infosession-text {
+  vertical-align: middle;
+  text-align: center;
+  font-family: "Britannic Bold", serif;
+  font-size: 24px;
+}
+
+.infosession-left, .infosession-right {
+  height: 125px;
+  width: 200px;
+  position: absolute;
+  top: 20px;
+  background-color:rgba(0,0,0,.4);
+  border-radius: 5px;
+  border-style:solid;
+  border-width: 3px;
+  border-color: white;
+}
+
+@media (max-width: 1064px) {
+  .infosession-left, .infosession-right {
+    float: none;
+    width: 100%;
+    position: static;
+  }
+}
+
 .apply-button-container {
   width: 100%;
   display: flex;
