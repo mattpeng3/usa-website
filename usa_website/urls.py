@@ -125,6 +125,7 @@ urlpatterns = [
     # url(r'user.csv', views.user, name = "user"),
     url(r'housingcrisis$', views.housingcrisis, name = "housingcrisis"),
     url(r'housingcrisis/$', views.housingcrisis, name = "housingcrisis"),
+    url(r'housingcRincess$', views.housingcRincess, name = "housingcRincess"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio")
         #url('^', include('schedule_builder.urls')),
