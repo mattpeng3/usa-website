@@ -30,7 +30,7 @@
       Technically, Part 0 is not required as we will only be dealing with local files in this and future installments of this tutorial
       series, but it does contain important information about our overall goal with this series, collaborative work, and website hosting.
       Part 1 will be focused on explaining the basics of HTML, and Part 2 will show you how to combine HTML with CSS to give some style
-      to your website. Part three will be focused on providing a very basic introduction to Javascript.
+      to your website.
 </div>
 <div id="Introduction">
   <h4>Introduction: What is HTML?</h4>
@@ -124,13 +124,13 @@
 <div id="Section2">
     <h4>Section 2: The <code>div</code> and the <code>span</code></h4>
     <p>
-      There are two very important tags used across every website on the Internet: the <code>div</code> and the <code>span</code> tags. 
+      There are two very important tags used across every website on the Internet: the <code>div</code> and the <code>span</code> tags.
       These are basically container tags, where <code>span</code> is typically used for in-line elements and <code>div</code> for block
       (or simply larger) elements. It helps to organize your HTML code within these tags and becomes especially handy when you want to
       style a group of individual HTML elements a certain way with CSS, which we will explore in the next tutorial.
     </p>
     <p>
-      To see how this grouping works, let's put a <code>div</code> wrapping your <code>h1</code> and your <code>p</code> elements, then 
+      To see how this grouping works, let's put a <code>div</code> wrapping your <code>h1</code> and your <code>p</code> elements, then
       outside this <code>div</code> add another paragraph:
     </p>
 
@@ -159,7 +159,7 @@
     </pre>
 
     <p>
-      Now if you refresh, you should see that your name and your first paragraph are colored blue, and the paragraph below is untouched! 
+      Now if you refresh, you should see that your name and your first paragraph are colored blue, and the paragraph below is untouched!
     </p>
     <p>
       <i>
@@ -170,8 +170,8 @@
     </p>
 
     <p>
-      As an exercise for yourself, try using the <code>span</code> element in the same fashion to color your first name and last name in different 
-      colors. 
+      As an exercise for yourself, try using the <code>span</code> element in the same fashion to color your first name and last name in different
+      colors.
     </p>
 </div>
 
@@ -193,7 +193,7 @@
   </p>
   <p>
     In this tutorial, we'll be specifically looking at Bootstrap's grid system. I personally use this a lot to move elements around the page or to
-    have content on multiple columns of the page. I'm sure you will find this feature really useful as well, and thankfully it's easy to use! We'll 
+    have content on multiple columns of the page. I'm sure you will find this feature really useful as well, and thankfully it's easy to use! We'll
     use this feature to have two paragraph elements be on two separate columns in the same row to show the design of the grid system.
   </p>
   <p>
@@ -203,9 +203,9 @@
     &lt;div class="container-fluid" style="color: blue"&gt;
   </pre>
   <p>
-    There's quite a bit going on with that small addition. We will discuss more formally what that <code>class</code> means in the CSS tutorial, but 
+    There's quite a bit going on with that small addition. We will discuss more formally what that <code>class</code> means in the CSS tutorial, but
     basically it's saying that this <code>div</code> element is an instance of a group of <code>div</code>s under the name <code>container-fluid</code>.
-    <code>container-fluid</code> is a Bootstrap class that tells the browser to render this element to span across the entire width of the element 
+    <code>container-fluid</code> is a Bootstrap class that tells the browser to render this element to span across the entire width of the element
     it's in. If you don't want it to span the full width of the window, use <code>container</code> instead, in which you use other CSS formatting to specify its width. However, to use the grid system you <b>must</b> use one of these.
   </p>
   <p>
@@ -213,7 +213,7 @@
     Our job now is to specify where to create new rows, and for each row how wide we want our columns to be.
   </p>
   <p>
-    Let's create a row just for our name header, and another row for your paragraph element sitting in your <code>container-fluid</code> 
+    Let's create a row just for our name header, and another row for your paragraph element sitting in your <code>container-fluid</code>
     <code>div</code>. We specify rows with more <code>div</code> elements with a class named <code>row</code>:
   </p>
   <pre>
@@ -268,18 +268,18 @@
   <p>
     Try refreshing the page, and you should see the second paragraph start from the middle of the screen! This is because the first <code>div</code>
     covered the first six units of the table, so the second <code>div</code> grabbed the remaining six of the row. Feel free to play around with
-    the numbers and see how the text shifts! 
+    the numbers and see how the text shifts!
   </p>
   <p>
     <i>
-      NOTE: You can have up to 12 columns, each specified with a class of <code>col-*-1</code>, where <code>*</code> is the screen specification. 
+      NOTE: You can have up to 12 columns, each specified with a class of <code>col-*-1</code>, where <code>*</code> is the screen specification.
       You don't need to fill up all 12 units per row, but if you exceed 12, Bootstrap will automatically overflow the excess columns to the next row.
       For clarity, it's best that you specify the rows yourself and never exceed 12 units per row.
     </i>
   </p>
   <p>
-    More about this grid system can be found <a href="https://getbootstrap.com/docs/4.1/layout/grid/">here</a>, and the general 
-    documentation for this library can be found <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/">here</a>. 
+    More about this grid system can be found <a href="https://getbootstrap.com/docs/4.1/layout/grid/">here</a>, and the general
+    documentation for this library can be found <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/">here</a>.
     At the time this was written, you will be linked to the documentation for version 4.1.
   </p>
 </div>
@@ -292,7 +292,7 @@
   </p>
   <p><u>Links</u></p>
   <p>
-    If you ever have a website that has two different pages, you'd definitely want to add hyperlinks. Hyperlinks can be done using the 
+    If you ever have a website that has two different pages, you'd definitely want to add hyperlinks. Hyperlinks can be done using the
     <code>a</code> tag ("a" stands for anchor). Check out the example below to see how to use this tag!
   </p>
   <pre>
@@ -302,17 +302,17 @@
     And this looks like:
   </p>
   <p>Here is a <a href="https://susa.berkeley.edu">link</a> to SUSA's website.</p>
-  <p>The things to keep in mind are the <code>href</code> and the text you put in between the opening and closing tags of the 
+  <p>The things to keep in mind are the <code>href</code> and the text you put in between the opening and closing tags of the
     <code>a</code> element. The <code>href</code> (stands for Hypertext REFerence) is where you put whatever page you want to link to.
     This could be a URL or a file path to link to another page (so in a local setting on your own computer, you can reference your computer's files)!
-    Remember to put that link in quotes to let it know that these characters are exactly what you want HTML to read as the link. 
+    Remember to put that link in quotes to let it know that these characters are exactly what you want HTML to read as the link.
     The text in between the tags are the characters you want to be hyperlinked. Be mindful that additional spaces <i>are</i> considered, so if you
     want to get every single character to look right on your website, be sure to keep this in mind!
   </p>
   <p>
     <i>
       NOTE: <code>a</code> is not the same thing as <code>link</code>, which was used to "import" Bootstrap earlier. <code>link</code> is used to
-      link your HTML file with other files such as CSS or JavaScript files. Notice that the <code>link</code> you included for Bootstrap ends with 
+      link your HTML file with other files such as CSS or JavaScript files. Notice that the <code>link</code> you included for Bootstrap ends with
       <code>.css</code>, indicating a CSS file. <code>a</code> makes a hyperlink within the body of your HTML page, and clicking on one of these
       redirects the viewer to a completely new page.
     </i>
@@ -415,10 +415,10 @@
     &lt;img src="file_path_or_URL_to_image" alt="Text" height="in_pixels" width="in_pixels"&gt;
   </pre>
   <p>
-    The only required one to fill is the <code>src</code> attribute, but it's a good idea to add the <code>alt</code> attribute as well. 
+    The only required one to fill is the <code>src</code> attribute, but it's a good idea to add the <code>alt</code> attribute as well.
     <code>src</code> specifies a link to your image, and that link is done in the same way you would do an <code>a</code> tag. Be sure that you are linking to an image file. <code>alt</code> holds "alternate text," which means that if for some reason your image isn't loading or is taking
     a long time to render, the text you fill in here will show up in place of the image. For this attribute, you should fill in what the image depicts
-    in a few words so that viewers know what should be there if the image doesn't show up. 
+    in a few words so that viewers know what should be there if the image doesn't show up.
   </p>
 
 
