@@ -15,7 +15,7 @@
     <ol>
       <li><a href="#Purpose">Purpose</a></li>
       <li><a href="#Introduction">Introduction: What is CSS?</a></li>
-      <li><a href="#Setup">Step 1: Setting up a CSS file</a></li>
+      <li><a href="#Setup">Step 1: Setting up an External CSS file</a></li>
       <li><a href="#Create_Repo">Step 2: Creating a Repository on GitHub</a></li>
       <li><a href="#Create_Local">Step 3: Creating a Local Project Folder</a></li>
       <li><a href="#Github">Step 4: Working with GitHub</a></li>
@@ -27,7 +27,7 @@
   <div id="Purpose">
     <h4>Purpose</h4>
       <p>
-        Welcome back to Part 2 of our Web Development tutorials! This tutorial will take what you have learned in <a href=http://susa.berkeley.edu/blog/website-tutorial-1>Part 1</a>, and teach you how to add CSS, or Cascading Style Sheets, to your HTML document to make it look visually appealing.
+        Welcome back to Part 2 of our Web Development tutorials! This tutorial will take what you have learned in <a href=http://susa.berkeley.edu/education/website-tutorial-1>Part 1</a>, and teach you how to add CSS, or Cascading Style Sheets, to your HTML document to make it look visually appealing. This tutorial will be focused on replicating a very simple layout. We encourage all of our members to play around with CSS during our bootcamp to get themselves more familiar with the fundamentals of web development.
       </p>
   </div>
 
@@ -37,22 +37,53 @@
         As you may have noticed, the HTML webpages you created in Part 1 were very plain looking with not a lot going on. This is because we have not yet introduced CSS to our webpages. CSS, or Cascading Style Sheets, is used in tandem with any markup language such as HTML to describe to your web browser the visual layout of a page.
       </p>
       <p>
-        There are 3 main types of CSS: external, internal and inline. The only real difference between these three is readability.
-        <br>
-        <b>External</b> CSS is perhaps the most common form of CSS. For the sake of readability and good practice, you should have one external CSS file that services your entire website. It is possible to have multiple external CSS files, but this makes finding the right container very hard and needlessly complex.
+        There are 3 main types of CSS: external, internal and inline. The only real difference between these three is readability. Each type of CSS is listed before with a brief description and code to turn all of the text in a div class named container red.
+        <br></br>
+        <b>External CSS</b> is perhaps the most common form of CSS. For the sake of readability and good practice, you should have one external CSS file that services your entire website. It is possible to have multiple external CSS files, but this makes finding the right container very hard and needlessly complex.
+<pre>.container{
+  text-color:red;
+}</pre>
         <br>
         <b>Internal CSS</b> is CSS that is written at the top of each html document. This specifies styling for an individual web page. Typically you will only use this if one web page does not match the formatting of your external css file.
+<pre>&lt;style&gt;
+  .container{
+    text-color:red;
+  }
+&lt;/style&gt;</pre>
         <br>
-        <b>Inline CSS</b> is a form of CSS that is actually written inside the html tag in your html file. This should be used sparingly due to the difficulty in maintaining web pages.
+        <b>Inline CSS</b> is a form of CSS that is actually written inside the html tag in your html file. This should be used sparingly due to the difficulty in maintaining and updating web pages.
+      <br>
+<pre>
+  &lt;div class= "container" style="text-color:red;"&gt;
+</pre>
         <br>
-        Examples of each type of CSS code are given below!
-asdfasdfadsf
+
         Because it is the most common form, the rest of this tutorial will deal solely with external CSS. You may reference the above images to convert CSS between its external, internal and inline forms.
       </p>
   </div>
   <div id="Setup">
-    <h4>Step 1: Setting up a CSS file</h4>
+    <h4>Step 1: Setting up an external CSS file</h4>
     <p>
-      In this tutorial, we will
+      To start, we must configure a CSS file and connect it to an existing html document. To do this, first generate an html document such as the one below:
+
+      <pre>&lt;!Doctype html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Abhinav is better than Anthony!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p>Susa is great&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+    </p>
+    <p>
+      Once this is done, adding a CSS file to this document is easy. Simply add <code> &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;</code> in between the head tag. This bit of code just adds a link to the stylesheet and tells the html document to treat it as a text/css document. The href, as you learned in part 1, just provides a link to the document relative to your current working directory.
+    </p>
+    <p>
+      Now we can create a CSS file. Just create a text document in your current directory and name it <code>style.css</code>. The CSS file doesn't need any special formatting to get it working. Just start inputting styles! To make sure it's working, paste the following in <code>style.css</code> and refresh your web browser:
+      <code>p{text-color:yellow;}</code>. If you set it up correctly, the "Susa is great" text should now be yellow. If it turns yellow, you're now ready to learn about some more specific styling commands.
     </p>
   </div>
+
+  <div id=""
+  {% endblock %}
