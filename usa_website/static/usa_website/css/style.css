@@ -69,6 +69,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 
 
+
 .infosession-left {
   left: 20px;
   color: #E181B3;
@@ -1152,6 +1153,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none !important;
 }
+
 #fh5co-offcanvas ul li a:hover {
   color: #268BD2;
 }

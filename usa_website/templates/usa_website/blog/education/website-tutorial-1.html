@@ -3,12 +3,12 @@
 {% load staticfiles %}
 
 <title> Introduction to HTML</title>
-<h3>How To Build Your Own Personal Website </h3>
-  <h4> Part 1: An Introduction To HTML</h4>
-  <h4>
+<h2>How To Build Your Own Personal Website </h2>
+  <h3> Part 1: An Introduction To HTML</h3>
+  <h3>
     <span style="color: #D5518D" id="author">By </span>
     <span style="color: #3E95D7" id="name">Anthony Yu and Abhinav Bhaskar</span>
-  </h4>
+  </h3>
   <br />
 
 
@@ -22,18 +22,20 @@
     <li><a href="#Section4">Section 4: Some Other Useful Tags</a></li>
   </ol>
   </div>
+  <br>
 <div id="Purpose">
-  <h4>Purpose</h4>
+  <h3>Purpose</h3>
     <p>
       Hello and Welcome to Part 1 in our three part series on How To Build Your Own Personal Website! If you have not already,
-      be sure to check out <a href= http://susa.berkeley.edu/education/website-tutorial-0>Part 0: An Introduction To Git! </a>
+      be sure to check out <a href= {% url 'website_tutorial_0' %}>Part 0: An Introduction To Git! </a>
       Technically, Part 0 is not required as we will only be dealing with local files in this and future installments of this tutorial
       series, but it does contain important information about our overall goal with this series, collaborative work, and website hosting.
-      Part 1 will be focused on explaining the basics of HTML, and Part 2 will show you how to combine HTML with CSS to give some style
-      to your website.
+      <a href="{% url 'website_tutorial_1' %}">Part 1</a> will be focused on explaining the basics of HTML, and <a
+      href="{% url 'website_tutorial_2' %}">Part 2</a> and <a href="{% url 'website_tutorial_3' %}">Part 3</a> will show you
+      how to combine HTML with CSS to give some style to your website.
 </div>
 <div id="Introduction">
-  <h4>Introduction: What is HTML?</h4>
+  <h3>Introduction: What is HTML?</h3>
     <p>
       HTML, or Hypertext Markup Language, is the core language behind building websites. We will be focusing on HTML5, the latest version of HTML.
       With HTML, you will have the basic building blocks to create headings, paragraphs, links, tables, images, and many more to use directly in your website.
@@ -45,9 +47,9 @@
     </p>
 </div>
 
-<br></br>
+<br>
 <div id="Section1">
-  <h4>Section 1: Core HTML Elements</h4>
+  <h3>Section 1: Core HTML Elements</h3>
   <p>
     Let's set up our first HTML file! Open a text editor of your choice, and in your project folder, create a file called <code>index.html</code>.
     Your index will be the default or home page on your website. After this is done, enter in your first bit of HTML code:
@@ -122,7 +124,7 @@
 </div>
 
 <div id="Section2">
-    <h4>Section 2: The <code>div</code> and the <code>span</code></h4>
+    <h3>Section 2: The <code>div</code> and the <code>span</code></h3>
     <p>
       There are two very important tags used across every website on the Internet: the <code>div</code> and the <code>span</code> tags.
       These are basically container tags, where <code>span</code> is typically used for in-line elements and <code>div</code> for block
@@ -176,7 +178,7 @@
 </div>
 
 <div id="Section3">
-  <h4>Bootstrap</h4>
+  <h3>Bootstrap</h3>
   <p>
     Bootstrap is an incredibly popular and powerful library for web development. Using this library can make some front-end development (implementing
     the part of the website users see directly on their screen, as opposed to back-end development) a lot easier, and it also comes with some built-in
@@ -285,12 +287,12 @@
 </div>
 
 <div id="Section4">
-  <h4>Some Other Useful Tags</h4>
+  <h3>Some Other Useful Tags</h3>
   <p>
     Your website isn't always just going to be paragraphs and headers - usually you'd want to include some other elements to your page!
     This tutorial will specifically explore on how to add hyperlinks, lists, tables, and images to your website.
   </p>
-  <p><u>Links</u></p>
+  <h4>Links</h4>
   <p>
     If you ever have a website that has two different pages, you'd definitely want to add hyperlinks. Hyperlinks can be done using the
     <code>a</code> tag ("a" stands for anchor). Check out the example below to see how to use this tag!
@@ -305,6 +307,7 @@
   <p>The things to keep in mind are the <code>href</code> and the text you put in between the opening and closing tags of the
     <code>a</code> element. The <code>href</code> (stands for Hypertext REFerence) is where you put whatever page you want to link to.
     This could be a URL or a file path to link to another page (so in a local setting on your own computer, you can reference your computer's files)!
+    href can also refer to something called an ID (on the same page) which we will look at in the next tutorial - just use #IDName.
     Remember to put that link in quotes to let it know that these characters are exactly what you want HTML to read as the link.
     The text in between the tags are the characters you want to be hyperlinked. Be mindful that additional spaces <i>are</i> considered, so if you
     want to get every single character to look right on your website, be sure to keep this in mind!
@@ -317,7 +320,7 @@
       redirects the viewer to a completely new page.
     </i>
   </p>
-  <p><u>Lists</u></p>
+  <h4>Lists</h4>
   <p>
     There are two types of lists: ordered (like numbered lists) and unordered (like bullet points). Their format is exactly the same - they are simply
     represented by two different tags: <code>ol</code> and <code>ul</code>.
@@ -351,7 +354,7 @@
     It's quite simple - for ordered lists use the <code>ol</code> tag, and for unordered lists use the <code>ul</code> tag. For each item you want to
     put in the list, add a pair of opening and closing <code>li</code> tags (stands for List Item) and enter the item in between those tags.
   </p>
-  <p><u>Tables</u></p>
+  <h4>Tables</h4>
   <p>
     Tables follow a similar format to lists but have a little more to it:
   </p>
@@ -407,7 +410,7 @@
     </ul>
     And with all those tags, don't forget to close them!
   </p>
-  <p><u>Images</u></p>
+  <h4>Images</h4>
   <p>
     Images can help make a page look a lot nicer! Let's see how to add an image:
   </p>
@@ -424,6 +427,6 @@
 
 </div>
 
-
+  <p>That's about it for html! For the next part, <a href="{% url 'website_tutorial_3' %}">Click Here!</a>
 
 {% endblock %}
