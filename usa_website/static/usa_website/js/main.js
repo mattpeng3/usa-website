@@ -1,5 +1,5 @@
 ;(function () {
-	
+
 	'use strict';
 
 
@@ -37,7 +37,7 @@
 	};
 
 	var sliderMain = function() {
-		
+
 	  	$('#fh5co-hero .flexslider').flexslider({
 			animation: "fade",
 			slideshowSpeed: 5000,
@@ -57,9 +57,9 @@
 
 	  	});
 
-	  	$('#fh5co-hero .flexslider .slides > li').css('height', $(window).height());	
+	  	$('#fh5co-hero .flexslider .slides > li').css('height', $(window).height());
 	  	$(window).resize(function(){
-	  		$('#fh5co-hero .flexslider .slides > li').css('height', $(window).height());	
+	  		$('#fh5co-hero .flexslider .slides > li').css('height', $(window).height());
 	  	});
 
 	};
@@ -75,7 +75,7 @@
 		setTimeout(function(){
 			$('.js-responsive > .v-align').css('height', $('.js-responsive > img').height());
 		}, 1);
-		
+
 		$(window).resize(function(){
 			setTimeout(function(){
 				$('.js-responsive > .v-align').css('height', $('.js-responsive > img').height());
@@ -96,10 +96,10 @@
 	    		$('#fh5co-offcanvas').animate({"right": -275}, 0, 'swing');
     			$('body').removeClass('offcanvas-visible');
     			$('.js-fh5co-nav-toggle').removeClass('active');
-				
+
 	    	}
-	    
-	    	
+
+
 	    }
 		});
 
@@ -154,7 +154,7 @@
 
 
 	var toggleBtnColor = function() {
-		if ( $('#fh5co-hero').length > 0 ) {	
+		if ( $('#fh5co-hero').length > 0 ) {
 			$('#fh5co-hero').waypoint( function( direction ) {
 				if( direction === 'down' ) {
 					$('.fh5co-nav-toggle').addClass('dark');
@@ -165,7 +165,7 @@
 				if( direction === 'up' ) {
 					$('.fh5co-nav-toggle').removeClass('dark');
 				}
-			} , { 
+			} , {
 				offset:  function() { return -$(this.element).height() + 0; }
 			} );
 		}
@@ -178,7 +178,7 @@
 		$('.animate-box').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-				
+
 				i++;
 
 				$(this.element).addClass('item-animate');
@@ -201,9 +201,9 @@
 							el.removeClass('item-animate');
 						},  k * 200, 'easeInOutExpo' );
 					});
-					
+
 				}, 100);
-				
+
 			}
 
 		} , { offset: '85%' } );
@@ -224,7 +224,7 @@
 		});
 	};
 
-	
+
 	$(function(){
 		fullHeight();
 		sliderMain();
