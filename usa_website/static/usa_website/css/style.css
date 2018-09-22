@@ -69,6 +69,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 
 
+
 .infosession-left {
   left: 20px;
   color: #E181B3;
@@ -1152,6 +1153,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none !important;
 }
+
 #fh5co-offcanvas ul li a:hover {
   color: #268BD2;
 }
@@ -1209,14 +1211,14 @@ h1, h2, h3, h4, h5, h6, figure {
   font: bold 14px/.4 Helvetica;
   text-transform: uppercase;
   text-indent: -55px;
-  background: #000;
+  background: #fff;
   transition: all 0.2s ease-out;
 }
 .fh5co-nav-toggle i::before, .fh5co-nav-toggle i::after {
   content: '';
   width: 30px;
   height: 2px;
-  background: #000;
+  background: #fff;
   position: absolute;
   left: 0;
   -webkit-transition: 0.2s;
