@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g6o*!49h66xlufne(c*7*$j$c3dy_(!*=4fp9dojt@y8ai16m_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['susa.berkeley.edu', 'susa-berkeley-edu.apphost.ocf.berkeley.edu', "127.0.0.1"]
 
