@@ -90,6 +90,8 @@ urlpatterns = [
     url(r'education/ml-classification$', views.ml_classification, name="ml_classification"),
     url(r'education/website-tutorial-0$', views.website_tutorial_0, name="website_tutorial_0"),
     url(r'education/website-tutorial-1$', views.website_tutorial_1, name="website_tutorial_1"),
+    url(r'education/website-tutorial-2$', views.website_tutorial_2, name="website_tutorial_2"),
+    url(r'education/website-tutorial-3$', views.website_tutorial_3, name="website_tutorial_3"),
     #Data Consulting
     url(r'dataconsulting/population-modeling$', views.population_modeling, name="population_modeling"),
     url(r'dataconsulting/tutorfly$', views.tutorfly, name="tutorfly"),
@@ -125,6 +127,7 @@ urlpatterns = [
     # url(r'user.csv', views.user, name = "user"),
     url(r'housingcrisis$', views.housingcrisis, name = "housingcrisis"),
     url(r'housingcrisis/$', views.housingcrisis, name = "housingcrisis"),
+    url(r'housingcRincess$', views.housingcRincess, name = "housingcRincess"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio")
         #url('^', include('schedule_builder.urls')),

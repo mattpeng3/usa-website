@@ -203,7 +203,7 @@ def yelp_review(request):
     return HttpResponse(t.render(context))
 
 #######################################
-###### SPRING 2018 DC BLOG POSTS ######
+###### WEB DEV TUTORIAL BLOG POSTS ######
 #######################################
 
 def website_tutorial_0(request):
@@ -215,6 +215,17 @@ def website_tutorial_1(request):
     t = get_template("blog/education/website-tutorial-1.html")
     context = Context({})
     return HttpResponse(t.render(context))
+
+def website_tutorial_2(request):
+    t = get_template("blog/education/website-tutorial-2.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def website_tutorial_3(request):
+    t = get_template("blog/education/website-tutorial-3.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 
 #####################################
 ###### SPRING 2018 DC PROJECTS ######

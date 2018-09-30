@@ -3,12 +3,12 @@
 {% load staticfiles %}
 
 <title> Introduction to getting started with git</title>
-<h3>How To Build Your Own Personal Website </h3>
-  <h4> Part 0: An Introduction To Git!</h4>
-  <h4>
+<h2>How To Build Your Own Personal Website </h2>
+  <h3> Part 0: An Introduction To Git!</h3>
+  <h3>
     <span style="color: #D5518D" id="author">By </span>
     <span style="color: #3E95D7" id="name">Abhinav Bhaskar, Anthony Yu</span>
-  </h4>
+  </h3>
   <br />
 
 
@@ -26,21 +26,21 @@
 <br></br>
 
 <div id="Purpose">
-  <h4>Purpose</h4>
+  <h3>Purpose</h3>
     <p>
       This series of tutorials will be aimed at teaching you the very fundamentals of web development and
-      using what you learn to build your very own personal website using a mix of HTML, CSS, and Javascript.
+      using what you learn to build your very own personal website using a mix of HTML (<a href="{% url 'website_tutorial_1' %}">Part 1</a>) and CSS (<a href="{% url 'website_tutorial_2' %}">Part 2</a> and <a href="{% url 'website_tutorial_3' %}">Part 3</a>).
       Because GitHub Pages is free and accessible to anyone with a GitHub account, we will use it to host
       our finished website. However, due to this, certain features may not be available to us as
-      GitHub Pages is not able to host back end languages such as node.js, PHP, Django. Future more advanced tutorials
-      may be focused around back-end development, but for now we will try to create something simple using what we have.
+      GitHub Pages is not able to host back end languages such as node.js, PHP, Django. Future tutorials
+      may be focused around javascript or back-end development, but for now we will try to create something simple using what we have.
       This tutorial will assume no prior programming knowledge and will be a prerequisite to working as a part of SUSA's
       Web Development Committee. So without further ado let us get started!
     </p>
 </div>
 
 <div id="Introduction">
-  <h4>Introduction: What is Git?</h4>
+  <h3>Introduction: What is Git?</h3>
     <p>
       Git is a popular version control system that is used to help groups of developers to keep track of changes
       to an existing code base. It is not necessary for individual developers to use Git, but when working on a team,
@@ -54,7 +54,7 @@
 
 <br></br>
 <div id="Installation">
-  <h4> Step 1: Installing Git</h4>
+  <h3> Step 1: Installing Git</h3>
   <p>
     In order to use Git, we have to install it first. The following instructions will help you to install git on your preferred OS.
     <br></br>
@@ -82,7 +82,7 @@ $ git config --global user.email "myemail@email.com"
 </div>
 
 <div id="Create_Repo">
-  <h4> Step 2: Creating a Repository on GitHub</h4>
+  <h3> Step 2: Creating a Repository on GitHub</h3>
     <p>
       Before we create our repository, it helps to have an idea of what a GitHub is, and what a repository helps us do.
       As mentioned earlier, <a href="https://github.com"><i>GitHub</i></a> is a web-based repository hosting service that uses Git. This essentially means GitHub
@@ -123,7 +123,7 @@ $ git config --global user.email "myemail@email.com"
     </p>
 </div>
 <div id="Create_Local">
-  <h4> Step 3: Creating a Local Project Folder</h4>
+  <h3> Step 3: Creating a Local Project Folder</h3>
     <p>
       For this chapter (and for future projects), you should memorize the following shell commands:
       <ul>
@@ -145,7 +145,7 @@ $ git config --global user.email "myemail@email.com"
 </div>
 
 <div id="Github">
-  <h4> Step 4: Working with GitHub</h4>
+  <h3> Step 4: Working with GitHub</h3>
     <p>
       Remember when you set up your GitHub repository earlier? Now it's time to connect that to our local folder. Type in the following into your terminal and hit enter:
       <pre><code>git remote add origin https://github.com/User/User.github.io.git</code></pre>
@@ -203,7 +203,7 @@ $ git config --global user.email "myemail@email.com"
 </div>
 
 <div id="Github_Pages">
-  <h4> Step 5: Using GitHub Pages</h4>
+  <h3> Step 5: Using GitHub Pages</h3>
     <p>
       We're almost done getting set up! Our last step is to publish to GitHub pages. Open up the Settings tab and scroll down until you see this:
     </p>
@@ -221,7 +221,7 @@ $ git config --global user.email "myemail@email.com"
     <br></br>
     <p>
       Go ahead and visit the url <i>https://user.github.io</i> and enjoy your "Hello World" text. Congratulations! You've finished setting up the basis for your personal website.
-      Please visit the next tutorial to learn more about HTML and CSS.
+      Please visit <a href="{% url 'website_tutorial_1' %}">Part 1</a> to learn more about HTML and CSS.
       <br></br>
     </p>
 </div>
