@@ -1,0 +1,199 @@
+{% extends "blog/education/education_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title> Introduction to CSS</title>
+<h2>How To Build Your Own Personal Website </h2>
+  <h3> Part 2: An Introduction To CSS</h3>
+  <h3>
+    <span style="color: #D5518D" id="author">By </span>
+    <span style="color: #3E95D7" id="name">Abhinav Bhaskar</span>
+  </h3>
+  <br />
+
+  <div class=Blog_Navigation>
+    <ol>
+      <li><a href="#Purpose">Purpose</a></li>
+      <li><a href="#Introduction">Introduction: What is CSS?</a></li>
+      <li><a href="#Setup">Step 1: Setting up an External CSS file</a></li>
+      <li><a href="#Classes">Step 2: What are Classes and Ids</a></li>
+      <li><a href="#Styling">Step 3: Styling Default Tags, Classes, and Ids</a></li>
+      <li><a href="#Color">Step 4: Styling with Color</a></li>
+    </ol>
+  </div>
+  <br></br>
+
+  <div id="Purpose">
+    <h3>Purpose</h3>
+      <p>
+        Welcome back to Part 2 of our Web Development tutorials! This tutorial will take what you have learned in
+        <a href=http://susa.berkeley.edu/education/website-tutorial-1>Part 1</a>, and teach you how to add CSS, or Cascading Style Sheets, to your HTML document to make it
+        look visually appealing. This tutorial will be structured like Part 1 where we teach you how to style documents through the explanation of various properties.
+        <a href=http://susa.berkeley.edu/education/website-tutorial-3>Part 3</a> will continue to teach you about CSS and get a bit more in depth about various properties
+        and the positioning of elements. We encourage all of our members to play around with CSS during our bootcamp to get themselves more familiar with the fundamentals
+        of web development as we believe it is a more interactive and beneficial method of learning than a simple walkthrough. If you have any questions, feel free to ask
+        the Web Dev directors or email us!
+      </p>
+  </div>
+
+  <div id="Introduction">
+    <h3>What is CSS?</h3>
+      <p>
+        As you may have noticed, the HTML webpages you created in Part 1 were very plain looking with not a lot going on. This is because we have not yet introduced CSS to
+        our webpages. CSS, or Cascading Style Sheets, is used in tandem with any markup language such as HTML to describe to your web browser the visual layout of a page.
+      </p>
+      <p>
+        There are 3 main types of CSS: external, internal and inline. The only real difference between these three is readability. Each type of CSS is listed before with a
+        brief description and code to turn all of the text in a div class named container red.
+        <br></br>
+        <b>External CSS</b> is perhaps the most common form of CSS. For the sake of readability and good practice, you should have one external CSS file that services your
+        entire website. It is possible to have multiple external CSS files, but this makes finding the right container very hard and needlessly complex.
+      </p>
+<pre>.container{
+  text-color:red;
+}</pre>
+      <br>
+      <p>
+        <b>Internal CSS</b> is CSS that is written at the top of each html document. This specifies styling for an individual web page. Typically you will only use this if
+        one web page does not match the formatting of your external css file. The style tag must go inside the head tags!
+      </p>
+<pre>&lt;head&gt;
+  &lt;style&gt;
+  .container{
+    text-color:red;
+  }
+  &lt;/style&gt;
+&lt;/head&gt;</pre>
+      <br>
+      <p>
+        <b>Inline CSS</b> is a form of CSS that is actually written inside the html tag in your html file. This should be used sparingly due to the difficulty in
+        maintaining and updating web pages.
+      </p>
+<pre>
+  &lt;div class= "container" style="text-color:red;"&gt;
+</pre>
+        <br>
+      <p>
+        It is also important to understand how these three can work in unison. The Inline will override the Internal and External CSS, and the Internal CSS will override
+        the External CSS. Apart from this, CSS has a hierarchy based on <a href="https://www.w3schools.com/css/css_specificity.asp" target="_blank">Specificity</a>.
+        Specificity will be the leading cause of your headaches with CSS, so be careful - bad code can lead to a nightmare when you're revisiting or editing your work!
+      </p>
+
+      <p>
+        <i>NOTE: The !important rule helps to overrule any CSS by placing <code>!important;</code> immediately after the modified property by telling the browser to ignore
+          any specificity and use this styling. This should only be used very sparingly as it often is overused and results in code that is very hard to maintain.
+          Subsequent (lower line number) !important rules with equal or greater specificity override preceding !important rules.</i>
+      </p>
+      <p>
+        Because it is the most common form, the rest of this tutorial will deal solely with external CSS. You may reference the above snippets to convert CSS between its
+        external, internal and inline forms.
+      </p>
+  </div>
+  <div id="Setup">
+    <h3>Step 1: Setting up an external CSS file</h3>
+    <p>
+      To start, we must configure a CSS file and connect it to an existing html document. To do this, first generate an html document such as the one below:
+
+<pre><code>&lt;!DOCTYPE html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Abhinav is better than Anthony!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p>Susa is great&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    </p>
+    <p>
+      Once this is done, adding a CSS file to this document is easy. First create a file in the same working directory and name it <code>style.css</code>. Now go back to
+      your html document and simply add <code> &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;</code> in between the head tags. This bit of code just adds a
+      link to the stylesheet and tells the html document to treat it as a text/css document. The href, as you learned in Part 1, just provides a link to the document
+      relative to your current working directory. At this point everything should be set up so let's go test it out.
+    </p>
+    <p>
+      The CSS file doesn't need any special formatting to get it working. Just start inputting styles! Paste the following in <code>style.css</code> and refresh your web
+      browser:
+      <code>p{color:yellow;}</code>. If you set it up correctly, the "Susa is great" text should now be yellow. If it turns yellow, you're now ready to learn about
+      how to style documents on your own!
+    </p>
+  </div>
+
+<div id="Classes">
+  <h3>Step 2: What are Classes and Ids?</h3>
+  <p>
+    In Part 1, Anthony taught you about the <code>div</code> (short for division) and <code>span</code> tags in html. In this section, we are going to introduce two new
+    terms, <code>class</code> and <code>id</code>. Both of these tags are used to apply inline and external CSS efficiently to groups of code.
+  </p>
+  <p>
+    A <b>Class</b> is a unique block of code and can be created using <code>&lt;div class="container"&gt;text&lt;/div&gt;</code>. This creates a class called container and
+    all CSS applied to container will be applied to text (the code between the <code>&lt;div&gt;&lt;/div&gt;</code> tags). We will learn how to style this in the next
+    section. Classes should be used to group large blocks of texts that each require their own styles.
+  </p>
+  <p>
+    An <b>id</b>, in contrast, is not unique. ids can be reused as much as you want to apply a specific set of styles to multiple blocks of code. An id can be created using
+    <code>&lt;div id="container"&gt;text&lt;/div&gt;</code>. Like the aforementioned class, all CSS applied to container will be applied to whatever is inside the
+    <code>div</code> tags. ids are a great way to reuse existing code and keep your CSS compact.
+  </p>
+
+<div id="Styling">
+  <h3>Step 3: Styling Default Classes, Custom Classes, and Ids</h3>
+  <h4>Default Tags</h4>
+  <p>
+    The general approach to styling Default Classes, Custom Classes and Ids are all the same, but are going to start with the default html classes. These are preset
+    classes included in any html document you create. There are a few of these you'll probably use, namely <code>html, body, p, a</code> and the header tags. For now,
+    we're just going to apply the <code>color:red;</code> property. All you need to know at this point is that this will turn the text-color red. We'll explore other ways
+    of working with color next section. To turn all text on the webpage red, just use the following code:
+<pre><code>html{
+  color:red;
+}</code></pre>
+    this format will be heavily reused so memorize it now. The semicolon will be used at the end of EVERY property to let the webpage know we're done specifying that
+    attribute. If you want to style any other default class, just replace the <code>html</code> in the code with the class name.
+  </p>
+  <h4> Special Case: 'a' Tag</h4>
+  <p>
+    In addition to styling links, you can also decide what they should look like when you hover over them and click them. by using <code>hover active visited</code>. Hover
+    will change the style when the cursor hovers over the link, active will change the style the moment you click the link, and visited will change the style after you
+    click the link. The general format for styling any of these can be seen below:
+  </p>
+<pre><code>a:hover{
+  color:red;
+}</code></pre>
+  <p>
+    To style hover and active at the same time, just use <code>a:hover, a:active</code>. You can also use this comma technique to apply properties to multiple Classes or Ids at once.
+  </p>
+  <h4>Custom Classes and Ids</h4>
+  <p>
+    Throughout your journey in web development, you are probably going to create your own classes using div containers. How do we style them? It's very similar to styling default tags, just add a <code>.</code> in front of your class name as shown below:
+  </p>
+<pre><code>.container{
+  color:red;
+}</code></pre>
+  <p>
+    To style Ids, instead of using a <code>.</code>, just use a <code>#</code>
+  </p>
+<pre><code>#container{
+  color:red;
+}</code></pre>
+</div>
+<br>
+
+<div id="Color">
+  <h3>Step 4: Styling with Color</h3>
+  <p>
+    Now that we know how to style different types of Classes and Ids, let's talk about one of the most used properties - Color. In this section, we will discuss text color, but the same concepts can be applied to <code>background-color</code> to adjust the background color of a section of a webpage.
+  </p>
+  <p>
+    There are three main ways of specifying color in CSS, via <b>text</b> ("black"), <b>hex code</b> (#000000), or <b>rgba</b> (rgba(0, 0, 0, 1)). The easiest to understand and what you are probably already most comfortable with is text. We simply type in a color and it is recognized by the webpage. However, the number of colors we can input via text is finite. What happens when we wish to use a different shade of red? Of course we can try red-orange, but this isn't specific enough for most of our design needs.
+  </p>
+  <p>
+    This is where hex code comes in. A hex code is a three byte hexidecimal number of the form (#RRGGBB) that represents a specific color. Each byte (number pair) in the hex code represents an intensity of its corresponding color (red, green, blue). If you don't want to memorize all possible hex codes, you can use a <a href="https://www.color-hex.com/">3rd Party site</a> to look up whichever color you want to use. The hex code for black is #000000 or just #000 (#RBG form)
+  </p>
+  <p>
+    rgba is pretty much the same as hex code, but it adds in a useful "alpha" factor which specifies a value for opacity between 0% and 100%. If you aren't adjusting the opacity value, you can just leave it at 1, or use rgb() which just leaves out the alpha value. the rgba for black is rgba(0, 0, 0, 1).
+  </p>
+</div>
+  <p>
+    That's all for the introduction to CSS! Due to length constraints, I have decided to split the CSS tutorial into two parts. For Part 3, <a href="http://susa.berkeley.edu/education/website-tutorial-3">Click Here!</a>
+  </p>
+{% endblock %}

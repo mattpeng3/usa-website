@@ -1,0 +1,81 @@
+{% extends "blog/education/education_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title>Advanced CSS</title>
+<h2>How To Build Your Own Personal Website </h2>
+  <h3> Part 3: Advanced CSS - UNDER CONSTRUCTION</h3>
+  <h3>
+    <span style="color: #D5518D" id="author">By </span>
+    <span style="color: #3E95D7" id="name">Abhinav Bhaskar</span>
+  </h3>
+  <br />
+
+  <div class=Blog_Navigation>
+    <ol>
+      <li><a href="#Purpose">Purpose</a></li>
+      <li><a href="#Other">Step 5: Other Useful Properties</a></li>
+      <li><a href="#Images">Step 6: Styling Images</a></li>
+      <li><a href="#Positioning">Step 7: Positioning Without Bootstrap</a></li>
+      <li><a href="#Flexbox">Step 8: Bootstrap Revisited - Flexbox</a></li>
+      <li><a href="#Animations">Step 9: Animations</a></li>
+    </ol>
+  </div>
+  <br>
+
+  <div id ="Purpose">
+    <h3>Purpose</h3>
+    <p>
+      Welcome back to Part 3 of our Web Dev tutorial series! Due to length, I decided to split the CSS tutorial into two sections. You can find Part 2 <a href="{% url 'website_tutorial_2' %}">here</a>. This Part will be slightly more advanced and will focus on introducing you to more properties you can play with and getting you to think more about the layout of your website. Again we highly encourage our members to play around with the CSS we go over in this chapter to get a better understanding of everything that can be done with CSS and HTML.
+    </p>
+  </div>
+  <div id="Other">
+    <h3> Step 5: Other Useful Properties</h3>
+    <p>
+      In this section we will just list some of the most used properties on the Susa website. Due to the vast number of properties and abundance of existing resources on the internet, we will not list each and every one. For a larger reference, please visit <a href="https://www.w3schools.com/css/default.asp">This Page</a> or <a href="http://devdocs.io/css/">This Page</a>.
+    </p>
+    <h4>background-color:</h4>
+    <p>
+      This property will change the background of the container it is applied to. The usage is identical to <code>color</code>, which was covered last tutorial, and the same three forms of specifying color may be used: text, hex code, or rgba.
+    </br>
+      <b>Usage:</b> <code>.container { background-color:#fff}</code>
+    </p>
+    <h4></h4>
+    <h4>Tables???????</h4>
+  </div>
+    </p>
+
+  <div id="Images">
+    <h3>Step 6: Styling Images</h3>
+    <p>
+      Images are for the most Part the same as text with the obvious exception that you cannot alter the some properties such as color.
+    </p>
+    <h4>background-image:</h4>
+    <p>
+      Selecting a background image will apply the select image to the background of the container it is used on. To select an image, we use <code>url("location.extension")</code> as shown below. In addition to specifying a background image, we can modify properties of the background by using settings like <code>background-repeat, background-position, and background-attachment</code> the last of which is important in creating a <i>parallax</i> effect where the website seems to scroll over the background image.
+      <br>
+      <b>Usage:</b><pre><code>.container {
+        background-image:url("susa.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }</code></pre>
+    </p>
+  </div>
+
+  <div id="Positioning">
+    <h3>Step 7: Positioning</h3>
+    <p>
+      With Flexbox, positioning elements on a webpage is extremely easy. However, we will try to do the same without flexbox due to previous directors opting to use Bootstrap 3 and traditional methods to position elements on the SUSA website.
+    </p>
+    <p>
+    </p>
+  </div>
+
+  <div id="Flexbox">
+    <h3>Step 8: Bootstrap Revisited - Flexbox</h3>
+  </div>
+
+  <div id="Animations">
+    <h3>Step 9: Animations</h3>
+  </div>
+    {% endblock %}

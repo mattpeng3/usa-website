@@ -1,0 +1,229 @@
+{% extends "blog/education/education_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title> Introduction to getting started with git</title>
+<h2>How To Build Your Own Personal Website </h2>
+  <h3> Part 0: An Introduction To Git!</h3>
+  <h3>
+    <span style="color: #D5518D" id="author">By </span>
+    <span style="color: #3E95D7" id="name">Abhinav Bhaskar, Anthony Yu</span>
+  </h3>
+  <br />
+
+
+<div class=Blog_Navigation>
+  <ol>
+    <li><a href="#Purpose">Purpose</a></li>
+    <li><a href="#Introduction">Introduction: What is Git?</a></li>
+    <li><a href="#Installation">Step 1: Installing Git</a></li>
+    <li><a href="#Create_Repo">Step 2: Creating a Repository on GitHub</a></li>
+    <li><a href="#Create_Local">Step 3: Creating a Local Project Folder</a></li>
+    <li><a href="#Github">Step 4: Working with GitHub</a></li>
+    <li><a href="#Github_Pages">Step 5: Using GitHub Pages</a></li>
+  </ol>
+</div>
+<br></br>
+
+<div id="Purpose">
+  <h3>Purpose</h3>
+    <p>
+      This series of tutorials will be aimed at teaching you the very fundamentals of web development and
+      using what you learn to build your very own personal website using a mix of HTML (<a href="{% url 'website_tutorial_1' %}">Part 1</a>) and CSS (<a href="{% url 'website_tutorial_2' %}">Part 2</a> and <a href="{% url 'website_tutorial_3' %}">Part 3</a>).
+      Because GitHub Pages is free and accessible to anyone with a GitHub account, we will use it to host
+      our finished website. However, due to this, certain features may not be available to us as
+      GitHub Pages is not able to host back end languages such as node.js, PHP, Django. Future tutorials
+      may be focused around javascript or back-end development, but for now we will try to create something simple using what we have.
+      This tutorial will assume no prior programming knowledge and will be a prerequisite to working as a part of SUSA's
+      Web Development Committee. So without further ado let us get started!
+    </p>
+</div>
+
+<div id="Introduction">
+  <h3>Introduction: What is Git?</h3>
+    <p>
+      Git is a popular version control system that is used to help groups of developers to keep track of changes
+      to an existing code base. It is not necessary for individual developers to use Git, but when working on a team,
+      it is very beneficial and in most cases, required to use some version or alternative of Git.
+    </p>
+    <i>
+      NOTE: You may have heard of GitHub before. It is important to note that GitHub and Git are not the same thing.
+      Git is a version control system, while GitHub is a web-based repository hosting service that uses Git.
+    </i>
+</div>
+
+<br></br>
+<div id="Installation">
+  <h3> Step 1: Installing Git</h3>
+  <p>
+    In order to use Git, we have to install it first. The following instructions will help you to install git on your preferred OS.
+    <br></br>
+    <b>Linux:</b> If you have Linux, odds are you know how to get Git. But in case you don't, for Debian Based Linux, type in <code>$ sudo apt install git-all</code>
+    and for Fedora, type in <code>$ sudo dnf install git-all</code>.
+    </br>
+    <b>Mac:</b> visit <a href="https://git-scm.com/download/mac">https://git-scm.com/download/mac</a> for an automatic download.
+    You can also install Git via Homebrew or Xcode for a more up to date version, but we will not cover that here. You can check your
+    version of Git by opening a terminal and typing <code>$ git --version</code>.
+    </br>
+    <b>Windows:</b> visit <a href= "http://git-scm.com/download/win">http://git-scm.com/download/win</a> for an automatic download.
+    This is technically not the same as the other versions of git, but it will work the same. For more information, visit
+    <a href="https://gitforwindows.org/">https://gitforwindows.org/</a>. Alternatively you could just buy a Mac or dualboot with Linux.
+    <br></br>
+    Now that you have git, we must configure it globally.
+    Go ahead and open up a Terminal or Command Prompt window and type in the following:
+
+<pre><code>$ git config --global user.name "First Last"
+$ git config --global user.email "myemail@email.com"
+</code></pre>
+
+    Every <code>git commit</code> will attach these credentials to every change you make in the codebase to help keep track of who changed what.
+    It only needs to be done once on each machine. Now that we have Git, it's time to move on to Step 2.
+  </p>
+</div>
+
+<div id="Create_Repo">
+  <h3> Step 2: Creating a Repository on GitHub</h3>
+    <p>
+      Before we create our repository, it helps to have an idea of what a GitHub is, and what a repository helps us do.
+      As mentioned earlier, <a href="https://github.com"><i>GitHub</i></a> is a web-based repository hosting service that uses Git. This essentially means GitHub
+      allows us to use it to host our <i>repository</i> ("repo" for short) - a file storage location which we can use to store code.
+      In the context of our project, we will use GitHub Pages, a GitHub owned hosting service, to access the code on our repo
+      and generate a website.
+      <br></br>
+      In order to create a repo you first need a GitHub account! To get one, sign up
+      <a href="https://github.com/">Here</a>! Once you have your account, go ahead and click the "Start a Project" button
+      to create your repository. You should see the following:
+    </p>
+    <img src="{% static 'usa_website/images/blog/webdev_tutorials/0_create_repo.png' %}" alt="Creating a Repository" style="margin:auto">
+    <br></br>
+    <p>
+      The next step is very important. Your Repository name <b>MUST</b> be the same as your GitHub username. For example, if your username is <i>SUSAisgr8</i>,
+      your personal website's repository must be called <i>SUSAisgr8.github.io</i> and will be located at <i>https://SUSAisgr8.github.io</i>. If your repository name does not
+      match your username, you will need to rename this repo or create a new one. Go ahead and keep this repo public, and check the box to initialize the repo
+      with a <i>README</i>. The README is where you will provide visitors to your repository a brief explanation of what they are looking at and what code lies inside
+      the repository. For our project, you don't need to worry about a gitignore file, or a license. However, in case you decide to include these on a different project,
+      I will provide a brief explanation of both below:
+    </p>
+    <ul>
+      <li>A <i>.gitignore</i> file contains a list of files in your repository that git should ignore and not track. Such files would include temporary files,
+        OS related files, scripts that generate output, etc... basically anything your fellow collaborators don't want to see when they open the repo or things that
+        won't be included in the final build of your project.
+      </li>
+
+      <li>A <i>license</i> details the conditions that others must meet in order to share or use your work on GitHub. Because GitHub is used to share open source software,
+        licenses are an easy way in order to make sure your work is not plagiarized or used without your knowledge. Without one, other developers may not use your code.
+        The most common license is the MIT license which allows others to use your work as long as they give you credit and relieves you of any liability. For a more
+        complex rundown of the various types of licenses, visit this GitHub-owned <a href="https://choosealicense.com/"> Site</a>.
+      </li>
+    </ul>
+    <br>
+    <p>
+      Once you've finished with the above instructions, go ahead and click the "Create Repository" button. Congratulations, you have created your repository!
+      Don't try to add any files here, we will come back to this page in a bit, so just (.git)ignore it for now and proceed to step 3.
+    </p>
+</div>
+<div id="Create_Local">
+  <h3> Step 3: Creating a Local Project Folder</h3>
+    <p>
+      For this chapter (and for future projects), you should memorize the following shell commands:
+      <ul>
+        <li><code>pwd</code> - Print Working Directory - Gives an idea of where you are.</li>
+        <li><code>cd</code> - Change Directory - Enters a directory.</li>
+        <li><code>ls</code> - List Segments - Lists the contents of a directory (folder).</li>
+        <li><code>touch</code> - Creates a file in the current directory.</li>
+        <li><code>mkdir</code> - Make Directory - Creates a working directory.</li>
+      </ul>
+      Now open up your terminal (Mac/Linux) or Git Bash (Windows). Choose a spot on your computer to create a folder to hold all files for our newly created repository.
+      You can create this folder wherever you want, but as an example, mine is located at <code>/Users/Abhinav/documents/github</code>. To get there, I would <code>cd documents/github</code>
+      as terminal starts me off my home directory - <code>/Users/Abhinav/</code> - when I open it.
+      If you get lost, just type in <code> pwd</code> and your terminal will list the pathway to your current directory. You can also go up one level by typing in <code>cd ..</code>
+      Once you decide on where you want your folder, type in <code>mkdir Github</code> to create your GitHub directory.
+      <br></br>
+      Next, <code>cd</code> inside your GitHub directory. Our next step is to initialize git. Doing this is pretty easy, just make sure you're inside the right directory, and
+      type in <code>git init</code>. Once this finishes, we will move on to working with GitHub.
+    </p>
+</div>
+
+<div id="Github">
+  <h3> Step 4: Working with GitHub</h3>
+    <p>
+      Remember when you set up your GitHub repository earlier? Now it's time to connect that to our local folder. Type in the following into your terminal and hit enter:
+      <pre><code>git remote add origin https://github.com/User/User.github.io.git</code></pre>
+      where you replace <code>User</code> with your GitHub username.
+      This pathway can also be found on the repository site from earlier if you click on clone/download:
+    </p>
+    <img src="{% static 'usa_website/images/blog/webdev_tutorials/0_clone_download.png' %}" alt="clone/download repo"></img>
+    <br></br>
+    <p>
+      This is an old screenshot of what my website's repo used to look like. Don't mind the file names or folders, yours will look different from mine.
+      Your terminal will not print any output, so make sure to <code>ls</code> to see if your project folder is there. Then <code>cd</code> inside and <code>ls</code> again.
+      There should be your README.md from earlier. Go ahead and use the <code>touch</code> command from earlier to create an index.html. This will be the basis for your website
+      as we will discover in the next tutorial.
+      <br></br>
+      Once you've created your file, go ahead and type in <code>git status</code>. You should see that git is properly set up, but that your index.html is "untracked". This means that git is not keeping
+      track of the edit history for this file, and it will not show up in GitHub unless you explicitly tell it to. In order to do that, type in <code>git add index.html</code>. Likewise,
+      if you ever find yourself removing a file, use the <code>git rm</code> command in the same fashion.
+      <br></br>
+      Open up your text editor of choice (<a href="https://atom.io/">Atom</a> in my case) and try to modify your index.html by typing in <code>&lt;p&gt;Hello World&lt;/p&gt;</code>.
+      In order to tell github that you've changed this file, we're going to use a new command, <code> git commit</code>. This will stage your commit, which essentially means you are making a checkpoint in your code
+      without telling github to keep track of a new file. Once you've typed this in, you might notice a screen pop up in your terminal. On Linux/Mac, this is vi - a unix based text editor. On Windows,
+      it may be another text editor. It will ask you for a "commit message" which is basically a short 1-2 sentence message for your collaborators to understand what exactly you've changed since the last commit.
+      For now, since we don't have any collaborators, just input "First Commit" or something, and hit escape and enter to exit this screen. You can also make this process a bit faster by typing in <code>git commit -m "Message Here"</code>
+      to bypass the built in text editor. Also note that all commits are public, so don't make your commit message anything too crazy.
+      <br></br>
+      If you look at your web browser, you might notice that the files aren't showing up on GitHub. This is because we have not yet <i>pushed</i> the files to GitHub.
+      While git is tracking those files, GitHub has not explicitly been told to store them yet. To rectify this, type in <code>git push</code> and refresh your web browser. All
+      relevant files (index.html, README.md) should now show up.
+      <br></br>
+      We have skipped a command, <code>git pull</code> because it will be of no use to us in series of tutorials. However, this is very important in a collaborative setting.
+      This command will be used to grab code others will have worked on from the GitHub repository so that we can stay up to date and edit their sections of the code if necessary.
+      <br></br>
+      <i>
+        NOTE: If you have multiple files that are being added, removed or just changed, you can use the <code>--all</code> modifier to either <code>git add rm commit</code> to
+        perform the command to all relevant files at once.
+      </i>
+      <br></br>
+      In collaborative environments it is also very important to use <i>branches</i>. In short, a branch is a way to organize your code while keeping it separate from your collaborators and the finished features that reside on the <code>master</code> branch.
+      Depending on the organization you are a part of, branches can signify different features that are being worked on, or just different users' work.
+      Within SUSA's website repository, we use branches to differentiate each person's work. You do not need to follow this for this series of tutorials, but here is a quick rundown of how branches work for when you start collaborating with others!
+      First, type in <code>git branch</code> to see which branch you're working on right now. You should be on <code>master</code>, which is the main branch used to hold code that you intend to use during deployment. To switch out to a new branch,
+      use the command <code>git checkout -b new-branch-name</code>. This creates a new branch called <code>new-branch-name</code> and switches the your current working branch to that one. Just type in <code>git branch</code> now to confirm that this is the case.
+      If you ever need to switch to another <i>existing</i> branch, use the same <code>git checkout</code> command without the <code>-b</code>.
+      Note that when this is done, you will need to specify which branch you are altering when you use commands like <code>git push</code> or <code>git pull</code>. Typically this means that you will be using
+      <code>git push origin your-branch</code> to push new changes to your personal branch, not to <code>master</code> where the latest complete "version" of the code resides, and <code>git pull origin master</code> to grab new features that have
+      been reviewed and merged into the <code>master</code> branch. Here, <code>origin</code> refers to the specific repository on github that we cloned to our local folder earlier when we used the <code>git remote add</code> at the beginning of this step.
+      Note that without branches, <code>git push</code> and <code>git pull</code> is equivalent to <code>git push origin master</code> and <code> git pull origin master</code>.
+      <br></br>
+      <i>
+        For a more visual review of how branches work, please visit this <a href="https://guides.github.com/introduction/flow/">GitHub Blog</a>.
+      </i>
+      <br></br>
+
+    </p>
+</div>
+
+<div id="Github_Pages">
+  <h3> Step 5: Using GitHub Pages</h3>
+    <p>
+      We're almost done getting set up! Our last step is to publish to GitHub pages. Open up the Settings tab and scroll down until you see this:
+    </p>
+    <img src="{% static 'usa_website/images/blog/webdev_tutorials/0_github_pages_before.png' %}" alt=github pages before></img>
+    <br></br>
+    <p>
+      Where you see the dropdown menu, select the master branch. GitHub requires that User Pages are built using the master branch.
+      If you read the paragraphs on branches in Step 4, I should also mention that it is advised to create a new source branch for the repository in the case that you accidentally push some code to the
+      master branch that breaks your site. To avoid this, first create a "Source" branch. Then just go to Settings -> Branches and change the default branch to "Source" instead of "master".
+      If you choose to do this, you must push code to your Source branch, then once you make sure that the code works, merge it into master.
+      <br></br>
+      If you've followed these steps so far with no issues, you should see the following:
+    </p>
+    <img src="{% static 'usa_website/images/blog/webdev_tutorials/0_github_pages_after.png' %}" alt=github pages after></img>
+    <br></br>
+    <p>
+      Go ahead and visit the url <i>https://user.github.io</i> and enjoy your "Hello World" text. Congratulations! You've finished setting up the basis for your personal website.
+      Please visit <a href="{% url 'website_tutorial_1' %}">Part 1</a> to learn more about HTML and CSS.
+      <br></br>
+    </p>
+</div>
+
+{% endblock %}
