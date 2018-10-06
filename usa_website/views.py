@@ -2,9 +2,13 @@ from django.http import HttpResponse
 
 from django.template.loader import get_template
 from django.template import Context
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from .models import Course, Blog
+from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
-from .forms import PostForm
+from .forms import PostForm, AttendanceForm
+from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
+#from .utils.attendance import GetFinalTable
 
 
 
@@ -408,3 +412,37 @@ def convert_csv(request):
     t= get_template("webapp/convert_csv.py")
     context = Context({})
     return HttpResponse(t.render(context))
+
+class AttendanceView(TemplateView):
+    #Please view /usa_website/utils/attendance.py to understand GetAttendanceHeader + Details
+    template_name = "attendance.html"
+
+    def get(self, request):
+        form = AttendanceForm()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = AttendanceForm(request.POST)
+        if form.is_valid():
+            SID = form.cleaned_data['post']
+            if SID == '0':
+                text = "Error: Please Submit A Valid SID"
+                form = AttendanceForm()
+                args = {'form': form, 'text': text}
+                return render(request, self.template_name, args)
+            else:
+                text = "Points Summary for SID - " + form.cleaned_data['post'] +":"
+                values = LookupSIDs()
+                head_list = GetAttendanceHeader(SID)
+                det_list = GetAttendanceDetails(SID, values)
+                if det_list == 1:
+                    text = "Your SID does not appear in our records, please check if you have made an error or email us at 'contact@susa.berkeley'."
+                    form = AttendanceForm()
+                    args = {'form': form, 'text': text}
+                    return render(request, self.template_name, args)
+                form = AttendanceForm()
+        else:
+            text = "Error: Please Submit A Valid SID"
+
+        args = {'form': form, 'text': text, 'head_list': head_list, 'det_list': det_list}
+        return render(request, self.template_name, args)
