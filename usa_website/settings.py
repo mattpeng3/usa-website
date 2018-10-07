@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     #'google-auth',
     #'google-auth-oauthlib',
     #'google-auth-httplib2',
-    
     'httplib2',
 ]
 
