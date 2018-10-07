@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Get authentication to use google API
 import httplib2
 import os
