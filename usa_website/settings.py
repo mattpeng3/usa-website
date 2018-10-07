@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'usa_website.apps.UsaWebsiteConfig',
     #'django.contrib.sites',
     #test
-    'httplib2',
+    #'httplib2', addingnew installed apps breaks site 502 error
 ]
 
 MIDDLEWARE_CLASSES = [
