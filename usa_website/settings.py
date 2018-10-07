@@ -48,6 +48,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'usa_website.apps.UsaWebsiteConfig',
     #'django.contrib.sites',
+    #'client_secret.json',
+    #'google-api-python-client',
+    #'google-auth',
+    #'google-auth-oauthlib',
+    #'google-auth-httplib2',
+    
+    'httplib2',
 ]
 
 MIDDLEWARE_CLASSES = [
