@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'usa_website.apps.UsaWebsiteConfig',
     #'django.contrib.sites',
+    #test
 ]
 
 MIDDLEWARE_CLASSES = [
