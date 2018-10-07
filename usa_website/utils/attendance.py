@@ -25,7 +25,7 @@ except ImportError:
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 CLIENT_SECRET_LOC = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/client_secret.json'
 APPLICATION_NAME = 'SusaClient'
-REDIRECT_URI = 'https://susa.berkeley.edu/attendance'
+REDIRECT_URI = 'https://susa.berkeley.edu/attendance.html'
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
 
 def get_credentials():
