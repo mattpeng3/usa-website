@@ -23,7 +23,7 @@ except ImportError:
     flags = None
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
-CLIENT_SECRET_LOC = 'usa_website/utils/client_secret.json'
+CLIENT_SECRET_LOC = '~/usa-website/src/usa_website/utils/client_secret.json'
 APPLICATION_NAME = 'SusaClient'
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
 
