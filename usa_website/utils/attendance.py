@@ -1,6 +1,3 @@
-from __future__ import print_function
-from googleapiclient import discovery
-
 #Get authentication to use google API
 import google.oauth2.credentials
 import google_auth_oauthlib.flow
