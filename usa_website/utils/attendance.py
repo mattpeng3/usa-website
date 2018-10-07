@@ -1,6 +1,4 @@
 #Get authentication to use google API
-import google.oauth2.credentials
-import google_auth_oauthlib.flow
 import httplib2
 import os
 from googleapiclient.discovery import build
