@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     #'google-auth',
     #'google-auth-oauthlib',
     #'google-auth-httplib2',
-    'httplib2', #errors 502
+    #'httplib2', #errors 502
 ]
 
 MIDDLEWARE_CLASSES = [
