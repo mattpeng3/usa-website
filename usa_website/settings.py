@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'usa_website.apps.UsaWebsiteConfig',
     #'django.contrib.sites',
     #test
+    'httplib2',
 ]
 
 MIDDLEWARE_CLASSES = [
