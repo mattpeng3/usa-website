@@ -23,9 +23,10 @@ except ImportError:
     flags = None
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
+#change bleow to /usa_website/utils/client_secret.json when testing
 CLIENT_SECRET_LOC = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/client_secret.json'
 APPLICATION_NAME = 'SusaClient'
-REDIRECT_URI = 'https://susa.berkeley.edu/attendance.html'
+REDIRECT_URI = 'https://susa.berkeley.edu/attendance.py'
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
 
 def get_credentials():

@@ -413,6 +413,11 @@ def convert_csv(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def attendance_py(request):
+    t= get_template("utils/attendance.py")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 class AttendanceView(TemplateView):
     #Please view /usa_website/utils/attendance.py to understand GetAttendanceHeader + Details
     template_name = "attendance.html"

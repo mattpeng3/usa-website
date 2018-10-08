@@ -49,6 +49,7 @@ urlpatterns = [
     url(r'aboutus$', views.aboutus, name = 'aboutus'),
     url(r'calendar$', views.calendar, name = 'calendar'),
     url(r'attendance', views.AttendanceView.as_view(), name = "attendance"),
+    url(r'utils/attendance.py', views.attendance_py, name = "attendance_py"),
     url(r'officehours$', views.officehours, name='officehours'),
     url(r'stat-133$', views.stat133, name = "stat133"),
     url(r'stat-134$', views.stat134, name = "stat134"),
