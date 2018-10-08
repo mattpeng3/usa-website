@@ -26,11 +26,11 @@ SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 #change bleow to /usa_website/utils/client_secret.json when testing
 CLIENT_SECRET_LOC = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/client_secret.json'
 APPLICATION_NAME = 'SusaClient'
-REDIRECT_URI = 'https://susa.berkeley.edu/attendance.py'
+REDIRECT_URI = 'https://susa.berkeley.edu/attendance.html'
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
 
 def get_credentials():
-    home_dir = 'usa_website/utils/'
+    home_dir = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/'
     credential_dir = os.path.join(home_dir, '.credentials')
     http = httplib2.Http(cache=".cache")
     if not os.path.exists(credential_dir):
