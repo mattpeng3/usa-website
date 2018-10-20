@@ -11,8 +11,8 @@ from oauth2client import tools
 
 #from multiprocessing import Pool
 from cachetools import cached, TTLCache
-cacheHeaders = TTLCache(maxsize=9, ttl=172800)
-cacheSIDs = TTLCache(maxsize=150, ttl=172800)
+cacheHeaders = TTLCache(maxsize=9, ttl=10)
+cacheSIDs = TTLCache(maxsize=150, ttl=10)
 
 #Full code takes about 6 seconds TODO: See if we can lower that
 
