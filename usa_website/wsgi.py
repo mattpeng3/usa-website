@@ -19,8 +19,7 @@ if __file__ == '/home/u/ug/ugradsa/usa-website/src/usa_website/wsgi.py':
     site.addsitedir('/home/u/ug/ugradsa/usa-website/src/venv/lib/python3.4/site-packages')
     print(activate_env)
     #execfile(activate_env, dict(__file__=activate_env))
-    with open(activate_env) as f:
-        exec(f.read(), {'__file__': activate_env})
+    execfile(activate_env, dict(__file__=activate_env))
 else:
     activate_env=os.path.expanduser("./venv/bin/activate_this.py")
     site.addsitedir('./venv/lib/python3.6/site-packages')
