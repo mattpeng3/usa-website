@@ -16,15 +16,11 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "usa_website.settings")
 logging.warning('test1')
 if __file__ == '/home/u/ug/ugradsa/usa-website/src/usa_website/wsgi.py':
-    logging.warning('test2')
-    activate_env=os.path.expanduser("../venv2/bin/activate_this.py")
-    logging.warning('test2')
-    site.addsitedir('../venv2/lib/python2.7/site-packages')
-    logging.warning('test3')
+    activate_env=os.path.expanduser("/home/u/ug/ugradsa/usa-website/src/venv2/bin/activate_this.py")
+    site.addsitedir('/home/u/ug/ugradsa/usa-website/src/venv2/lib/python2.7/site-packages')
     #execfile(activate_env, dict(__file__=activate_env))
     execfile(activate_env, dict(__file__=activate_env))
-    with open(activate_env) as f:
-        exec(f.read(), {'__file__': activate_env})
+    
 else:
     activate_env=os.path.expanduser("./venv/bin/activate_this.py")
     site.addsitedir('./venv/lib/python3.6/site-packages')
