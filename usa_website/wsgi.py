@@ -19,12 +19,12 @@ if os.path.dirname(os.path.abspath(__file__)) == '/home/u/ug/ugradsa/usa-website
     activate_env=os.path.expanduser("~/usa-website/src/venv2/bin/activate_this.py")
     site.addsitedir('~/usa-website/src/venv2/lib/python2.7/site-packages')
     execfile(activate_env, dict(__file__=activate_env))
-# else:
-#     print(os.path.dirname(os.path.abspath(__file__)))
-#     activate_env=os.path.expanduser("./venv/bin/activate_this.py")
-#     site.addsitedir('./venv/lib/python3.6/site-packages')
-#     with open(activate_env) as f:
-#         exec(f.read(), {'__file__': activate_env})
+else:
+    print(os.path.dirname(os.path.abspath(__file__)))
+    activate_env=os.path.expanduser("./venv/bin/activate_this.py")
+    site.addsitedir('./venv/lib/python3.6/site-packages')
+    with open(activate_env) as f:
+        exec(f.read(), {'__file__': activate_env})
 #add external libs in venv
 #site.addsitedir('/home/u/ug/ugradsa/usa-website/src/venv/lib/python2.7/site-packages')
 #activate virtual env comment out the following two lines when local testing

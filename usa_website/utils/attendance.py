@@ -31,7 +31,8 @@ REDIRECT_URI = 'https://susa.berkeley.edu/attendance.html'
 
 def get_credentials():
     #change following line to /usa_website/utils when testing
-    HOME_DIR = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/'
+    #HOME_DIR = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/'
+    HOME_DIR = './usa_website/utils'
     credential_dir = os.path.join(HOME_DIR, '.credentials')
     http = httplib2.Http(cache=".cache")
     if not os.path.exists(credential_dir):
@@ -88,9 +89,17 @@ def GetAttendanceDetails(SID, values):
         return(1)
     else:
         new_range='A'+ str(icounter) + ':I' + str(icounter)
+        print(new_range)
         new_result = service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=new_range).execute()
         new_values=new_result.get('values', [])
+        alph = ['A','B','C','D','E','F','G','H','I']
         new_flat_values = [item for sublist in new_values for item in sublist]
         final_values = [x or '0' for x in new_flat_values]
+        i = len(alph) - len(final_values)
+        while i > 0:
+            final_values.append(0)
+            i=i-1
         print(final_values)
+        print(new_range)
+        print(new_result)
         return(final_values)
