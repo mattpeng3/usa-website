@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/
 
 import os
 import site
+import logging
 
 from django.core.wsgi import get_wsgi_application
 
@@ -17,9 +18,11 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "usa_website.settings")
 if __file__ == '/home/u/ug/ugradsa/usa-website/src/usa_website/wsgi.py':
     activate_env=os.path.expanduser("./venv2/bin/activate_this.py")
     site.addsitedir('./venv2/lib/python2.7/site-packages')
-    print(activate_env)
+    logging.warning('test')
     #execfile(activate_env, dict(__file__=activate_env))
     execfile(activate_env, dict(__file__=activate_env))
+    with open(activate_env) as f:
+        exec(f.read(), {'__file__': activate_env})
 else:
     activate_env=os.path.expanduser("./venv/bin/activate_this.py")
     site.addsitedir('./venv/lib/python3.6/site-packages')
