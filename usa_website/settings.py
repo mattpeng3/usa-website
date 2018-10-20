@@ -26,7 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['susa.berkeley.edu', 'susa-berkeley-edu.apphost.ocf.berkeley.edu', "127.0.0.1"]
 
-
+#site.addsitedir(''/home/u/ug/ugradsa/usa-website/src/venv/lib/python3.4/site-packages')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
@@ -48,6 +48,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'usa_website.apps.UsaWebsiteConfig',
     #'django.contrib.sites',
+    #'client_secret.json',
+    #'google-api-python-client',
+    #'google-auth',
+    #'google-auth-oauthlib',
+    #'google-auth-httplib2',
+    #'httplib2', #errors 502
 ]
 
 MIDDLEWARE_CLASSES = [
