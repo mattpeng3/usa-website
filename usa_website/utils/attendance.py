@@ -31,8 +31,8 @@ REDIRECT_URI = 'https://susa.berkeley.edu/attendance.html'
 
 def get_credentials():
     #change following line to /usa_website/utils when testing
-    #HOME_DIR = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/'
-    HOME_DIR = './usa_website/utils'
+    HOME_DIR = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/'
+    #HOME_DIR = './usa_website/utils'
     credential_dir = os.path.join(HOME_DIR, '.credentials')
     http = httplib2.Http(cache=".cache")
     if not os.path.exists(credential_dir):
