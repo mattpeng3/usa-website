@@ -16,7 +16,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "usa_website.settings")
 
 if __file__ == '/home/u/ug/ugradsa/usa-website/src/usa_website/wsgi.py':
     activate_env=os.path.expanduser("~/usa-website/src/venv/bin/activate_this.py")
-    site.addsitedir('/home/u/ug/ugradsa/usa-website/src/venv/lib/python2.7/site-packages')
+    site.addsitedir('/home/u/ug/ugradsa/usa-website/src/venv/lib/python3.4/site-packages')
     print(activate_env)
     #execfile(activate_env, dict(__file__=activate_env))
     with open(activate_env) as f:
