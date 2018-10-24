@@ -4,7 +4,15 @@
 {% extends "header.html" %}
 {% block content %}
 {% load staticfiles %}
-
+  <style>
+  h3{
+    padding-top:30px;
+    text-align: center;
+  }
+  </style>
+  <h3>For descriptions of various statistics courses and enrollment advice, please visit the following
+    <a href="../../static/usa_website/pdf/EnrollmentAdvising.pdf">PDF</a>.
+  </h3>
     <object id="svg1" data="{% static 'usa_website/images/final_coursemap$wagmoneydavidNAHM.svg' %}" type="image/svg+xml"></object>
 
     <!--
@@ -148,4 +156,3 @@
     -->
 
    {% endblock %}
-

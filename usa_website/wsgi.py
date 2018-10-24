@@ -29,12 +29,6 @@ else:
     site.addsitedir('./venv/lib/python3.6/site-packages')
     with open(activate_env) as f:
         exec(f.read(), {'__file__': activate_env})
-#add external libs in venv
-#site.addsitedir('/home/u/ug/ugradsa/usa-website/src/venv/lib/python2.7/site-packages')
-#activate virtual env comment out the following two lines when local testing
-#activate_env=os.path.expanduser("~/usa-website/src/venv/bin/activate_this.py")
 
-#execfile(activate_env, dict(__file__=activate_env))
-#exec(open(activate_env).read())
 
 application = get_wsgi_application()
