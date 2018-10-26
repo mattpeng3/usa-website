@@ -29,7 +29,8 @@
     opacity:1;
 }
 html {
-  background-color: #eee8d5;
+  /*background-color: #eee8d5;*/
+  background-color: white;
   }
 
 body {
@@ -61,10 +62,11 @@ p {
 
 h1, h2, h3, h4, h5, h6, figure {
   color: #000;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
   font-family: "Britannic Bold", serif;
   font-weight: 400;
   margin: 0 0 30px 0;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 
@@ -1319,7 +1321,8 @@ h1, h2, h3, h4, h5, h6, figure {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  background: #f0eada;
+  /*background: #f0eada;*/
+  background: white;
 
 }
 #fh5co-pricing-section .price-box.popular .btn-select-plan {
