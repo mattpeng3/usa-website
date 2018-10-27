@@ -30,9 +30,10 @@ REDIRECT_URI = 'https://susa.berkeley.edu/attendance.html'
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
 
 def get_credentials():
-    #change following line to /usa_website/utils when testing
-    HOME_DIR = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/'
-    #HOME_DIR = './usa_website/utils'
+    if os.path.dirname(os.path.abspath(__file__)) == '/home/u/ug/ugradsa/usa-website/src/usa_website':
+        HOME_DIR = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/'
+    else:
+        HOME_DIR = './usa_website/utils'
     credential_dir = os.path.join(HOME_DIR, '.credentials')
     http = httplib2.Http(cache=".cache")
     if not os.path.exists(credential_dir):
@@ -57,7 +58,7 @@ def GetAttendanceHeader(SID):
     http = credentials.authorize(httplib2.Http())
     service = build('sheets', 'v4', http)
     SPREADSHEET_ID = '1dnLK86wVXIvtJ5sOPUgPKkDRap6IG11q8ZqUXvixmAE'
-    range='A1:I1'
+    range='A1:O1'
     result = service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=range).execute()
     values=result.get('values', [])
     flat_values = [item for sublist in values for item in sublist]
@@ -88,11 +89,11 @@ def GetAttendanceDetails(SID, values):
     if icounter <= 1:
         return(1)
     else:
-        new_range='A'+ str(icounter) + ':I' + str(icounter)
+        new_range='A'+ str(icounter) + ':O' + str(icounter)
         print(new_range)
         new_result = service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=new_range).execute()
         new_values=new_result.get('values', [])
-        alph = ['A','B','C','D','E','F','G','H','I']
+        alph = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O']
         new_flat_values = [item for sublist in new_values for item in sublist]
         final_values = [x or '0' for x in new_flat_values]
         i = len(alph) - len(final_values)
