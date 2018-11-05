@@ -23,7 +23,7 @@ except ImportError:
     flags = None
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
-#change bleow to /usa_website/utils/client_secret.json when testing
+#when testing, the pathway below won't work, doesn't really matter though
 CLIENT_SECRET_LOC = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/client_secret.json'
 APPLICATION_NAME = 'SusaClient'
 REDIRECT_URI = 'https://susa.berkeley.edu/attendance.html'
@@ -33,6 +33,7 @@ def get_credentials():
     # if os.path.dirname(os.path.abspath(__file__)) == '/home/u/ug/ugradsa/usa-website/src/usa_website/utils':
     #     HOME_DIR = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/'
     # else:
+    #HOME_DIR = './usa_website/utils'
     HOME_DIR = os.path.dirname(os.path.abspath(__file__))
     credential_dir = os.path.join(HOME_DIR, '.credentials')
     http = httplib2.Http(cache=".cache")
