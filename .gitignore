@@ -98,3 +98,4 @@ ENV/
 .ropeproject
 
 .DS_Store
+credentials.json

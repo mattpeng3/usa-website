@@ -30,9 +30,11 @@ REDIRECT_URI = 'https://susa.berkeley.edu/attendance.html'
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
 
 def get_credentials():
-    #change following line to /usa_website/utils when testing
-    #HOME_DIR = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/'
-    HOME_DIR = './usa_website/utils'
+    # if os.path.dirname(os.path.abspath(__file__)) == '/home/u/ug/ugradsa/usa-website/src/usa_website/utils':
+    #     HOME_DIR = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/'
+    # else:
+    #HOME_DIR = './usa_website/utils'
+    HOME_DIR = os.path.dirname(os.path.abspath(__file__))
     credential_dir = os.path.join(HOME_DIR, '.credentials')
     http = httplib2.Http(cache=".cache")
     if not os.path.exists(credential_dir):
