@@ -21,6 +21,7 @@
                             }
                             </style>
                             <h3>No Idea</h3>
+
                         </div>
                     </div>
                 </div>
@@ -29,8 +30,27 @@
         </div>
     </aside>
 
+    <form  method="post">
+      {% csrf_token %}
+      <textarea name="brand_list_input" id = "brand_list_input" cols="50" rows="10"></textarea>
+      <input type="submit" value="Submit" onclick = "getText()" id = "buttonID" />
+      <!--<input type="submit" value="Calculate">-->
+    </form>
+<script>
+    function getText() {
+      var text = document.getElementById("brand_list_input").value;
+      var test = {{hello}} + {{what}};
+      var test = test/12;
+      var ltest = "{{yep}}";
+      // var t = {{long}};
+      console.log("no!!")
+      alert(ltest);
+      document.getElementById("brand_list_input").reset();
+
+
+    }
+</script>
 
 
 
     {% endblock %}
-
