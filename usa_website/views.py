@@ -1,5 +1,4 @@
 from django.http import HttpResponse
-
 from django.template.loader import get_template
 from django.template import Context
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
@@ -446,3 +445,9 @@ class AttendanceView(TemplateView):
 
         args = {'form': form, 'text': text, 'head_list': head_list, 'det_list': det_list}
         return render(request, self.template_name, args)
+
+#WEBDEV Fall 2018
+def montyhall(request):
+    t = get_template("montyhall.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
