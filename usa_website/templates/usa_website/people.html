@@ -16,7 +16,7 @@
     font-size: 42px !important;
   }
   body{
-    background: white !important;
+    background-color: rgba(238,232,213,.5) !important;
   }
 
 
@@ -31,13 +31,14 @@
      transition: height, 0.5s linear;
 }
  .slider.opened {
-     height:280px;
+     height:200px;
      margin:0 20% 0 20%;
      -webkit-transition:height, 0.5s linear;
      -moz-transition: height, 0.5s linear;
      -ms-transition: height, 0.5s linear;
      -o-transition: height, 0.5s linear;
      transition: height, 0.5s linear;
+     overflow-y: auto;
  }
   #test{
     overflow:hidden;
@@ -46,9 +47,25 @@
     width:100%;
 
   }
+
+  @media screen and (max-width: 780px) and (min-width:601px) {
+    h3{
+      font-size: 15px !important;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    div.fh5co-team{
+      font-size:10px;
+    }
+    h3{
+      font-size: 10px !important;
+      font-weight:50 !important;
+      color:red;
+    }
+  }
 </style>
 
-  <div class="fh5co-team fh5co-light-grey-section">
+  <div class="fh5co-team ">
       <div class="container">
         <!--      <div class="row">
                   <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
@@ -81,7 +98,7 @@
                 </div>
                 <div class ="row">
                   <div class="col flex-fill"></div>
-                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                  <div class="col fh5co-staff text-center col-md-6" style="flex-basis:25%;flex-grow:0;">
                           <img src="{% static 'usa_website/images/fall2017/adish.jpg' %}" alt="Adish" style="width:100%; height:auto;">
 
 
@@ -168,6 +185,7 @@
                 </div>
               <div class="row">
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
                       <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Elliot Stahnke</h3>
                       <h3>Math GOD</h3>
@@ -177,9 +195,11 @@
                       <ul class="fh5co-social">
                           <li><a href="mailto:elliot.stahnke@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
+                    </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
-                      <img src="{% static 'usa_website/images/people/junseo_square.png' %}" alt="junseo" style="width:100%; height:auto;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/junseo_square_new.png' %}" alt="junseo" style="width:100%; height:auto;">
                       <h3>Junseo Park</h3>
                       <h3>Face of :JunSeo:</h3>
                       <p>
@@ -188,8 +208,10 @@
                       <ul class="fh5co-social">
                           <li><a href="mailto:junseopark@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
+                    </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
                       <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Kana Mishra</h3>
                       <h3>Data Consulting Director</h3>
@@ -199,8 +221,10 @@
                       <ul class="fh5co-social">
                           <li><a href="mailto:kana@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
+                    </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
                       <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Suhas Rao</h3>
                       <h3>Data Consulting Director</h3>
@@ -210,13 +234,14 @@
                       <ul class="fh5co-social">
                           <li><a href="mailto:suhasr@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
+                    </div>
                   </div>
               </div>
               <br>
-              <div class="row">
+              <div class="row" style="justify-content:space-between;">
 
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
-
+                    <div class="width-restrict">
                       <img src="{% static 'usa_website/images/fall2017/oscar.jpg' %}" alt="Oscar" style="width:100%; height:auto;">
                       <h3>Oscar Syu</h3>
                       <h3>Research & Publications Editor-in-Chief</h3>
@@ -225,9 +250,10 @@
                       <ul class="fh5co-social">
                           <li><a href="mailto:oscar.syu@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
-
+                    </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
                       <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Rick Yang</h3>
                       <h3>Research & Publications Director</h3>
@@ -235,8 +261,10 @@
                       <ul class="fh5co-social">
                           <li><a href="mailto:rickyang@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
+                    </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
                       <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Caroline Chen</h3>
                       <h3>Research & Publications Director</h3>
@@ -246,8 +274,10 @@
                       <ul class="fh5co-social">
                           <li><a href="mailto:carolinejchen@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
+                    </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
                       <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Fahad Paryani</h3>
                       <h3>Career Exploration Director</h3>
@@ -257,32 +287,36 @@
                       <ul class="fh5co-social">
                           <li><a href="mailto:paryanifahad@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
+                    </div>
                   </div>
               </div>
               <br>
 
               <div class="row">
-                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
-                      <img src="{% static 'usa_website/images/fall2017/patrick_chao.jpg' %}" alt="Patrick" style="width:100%; height:auto;">
+                  <div class="col fh5co-staff text-center width-restrict" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/fall2017/patrick_chao_new.jpg' %}" alt="Patrick" style="width:100%; height:auto;">
                       <h3>Patrick Chao</h3>
                       <h3>ML GOD</h3>
                   <!--    <p>Patrick is an avid learner in math and machine learning. He hopes to conquer the world with non-applicable research one day and spend the world's wealth on infinite dogs and ice cream. He also enjoys long strolls by the water and watching sunsets.</p> -->
                       <ul class="fh5co-social">
                           <li><a href="mailto:prc@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
-
+                    </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
-                      <img src="{% static 'usa_website/images/fall2017/isabelle.jpg' %}" alt="Patrick" style="width:100%; height:auto;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/fall2017/isabelle_new.jpg' %}" alt="Patrick" style="width:100%; height:auto;">
                       <h3>Isabelle Townley-Smith</h3>
                       <h3>Education Director</h3>
                     <!--  <p>Isabelle has been a part of the Events and Career Exploration committees as well as being IVP before becoming an education committee director.</p> -->
                       <ul class="fh5co-social">
                           <li><a href="mailto:itownley@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
-
+                    </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
                       <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Abhinav Bhaskar</h3>
                       <h3>Web Development Director</h3>
@@ -292,16 +326,19 @@
                       <ul class="fh5co-social">
                           <li><a href="mailto:abhaskar@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
+                    </div>
                   </div>
 
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
-                      <img src="{% static 'usa_website/images/spring2018/anthony.jpg' %}" alt="Anthony" style="width:100%; height:auto;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/spring2018/anthony_new.jpg' %}" alt="Anthony" style="width:100%; height:auto;">
                       <h3>Anthony Yu</h3>
                       <h3>Cal Hacks Winner</h3>
                   <!--    <p>Anthony is an aspiring computer scientist eager to apply data to produce new solutions. He continues to learn new technologies and the applicability of statistics and data to keep up with the rapid technological development. His other interests include basketball, chess, and climbing the Clash Royale ladder.</p> -->
                       <ul class="fh5co-social">
                           <li><a href="mailto:anthonyhsyu@berkeley.edu"><i class="icon-envelope"></i></a></li>
                       </ul>
+                    </div>
                   </div>
               </div>
               <br>
@@ -342,7 +379,7 @@
       let pElem = document.createElement('p');
       pElem.className = "description align-self-center";
       pElem.innerHTML = descriptions[i];
-      pElem.style= "padding: 10px; border-bottom:1px solid gray; border-top:1px solid gray; background-color:rgba(0, 204, 204,.05)";
+      pElem.style= "padding: 10px; border-bottom:1px solid gray; border-top:1px solid gray; background-color:rgba(0, 204, 204,.05);";
       x.appendChild(pElem);
     }
     function deleteDescrip(){
@@ -352,6 +389,22 @@
         elements[0].parentNode.removeChild(elements[0]);
       }
     }
+
+
+    $( document ).ready(function() {
+        var heights = $("width-restrict").map(function() {
+            return $(this).width();
+        }).get(),
+        maxHeight = Math.max.apply(null, heights);
+        $("width-restrict").width(maxHeight);
+    });
+    $( document ).ready(function() {
+        var heights = $("fh5co-staff").map(function() {
+            return $(this).height();
+        }).get(),
+        maxHeight = Math.max.apply(null, heights);
+        $("fh5co-staff").height(maxHeight);
+    });
 
 </script>
 

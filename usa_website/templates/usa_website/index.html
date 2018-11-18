@@ -2,7 +2,10 @@
 {% load staticfiles %}
 {% block content %}
 
-
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/style.css' %}" >
+</head>
 <script>
 
 $( document ).ready(function() {
@@ -14,12 +17,7 @@ $( document ).ready(function() {
 });
 
 </script>
-<style>
-  body, aside, .price-box{
-    background: rgba(0, 0, 0, 0.03) !important;
-  }
 
-</style>
     <aside id="fh5co-hero" class="js-fullheight" >
         <div class="flexslider " style="height:calc(100% - 80px) !important;">
           <div class="background-overlay animated fadeInUp">
@@ -75,7 +73,7 @@ $( document ).ready(function() {
                   </div>
                 </div>
           </div>
-            <ul class="slides" style="height:100% !important;">
+            <ul class="slides" >
             <li style="background-image: url({% static 'usa_website/images/adish_on_stump.jpg' %});"></li>
             <li style="background-image: url({% static 'usa_website/images/housingcRincess.jpg' %});"></li>
             <li style="background-image: url({% static 'usa_website/images/slide_2.jpg' %});"></li>
@@ -93,7 +91,7 @@ $( document ).ready(function() {
                 </div>
             </div>
             <div class="row">
-                <div class="pricing">
+
                     <div class="col-md-6">
                         <div class="price-box">
                                 <img src="{% static 'usa_website/images/icondata.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
@@ -113,7 +111,7 @@ $( document ).ready(function() {
                             <p>The Career Exploration Committee is a great place to start for students who are just beginning their careers in Statistics! Members get access to exclusive weekly talks, statistical and professional workshops, and career info sessions, along with private office hours with experienced advisors and the continuous academic and social support SUSA offers. </p>
                             <a href="{% url 'careerex' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
                         </div>
-                    </div>
+
                 </div>
             </div>
             <br>

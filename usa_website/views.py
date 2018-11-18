@@ -27,6 +27,11 @@ def home(request):
     context = Context({})
     return HttpResponse(html.render(context))
 
+def index_new(request):
+    html = get_template("index_new.html")
+    context = Context({})
+    return HttpResponse(html.render(context))
+
 def aboutus(request):
     html = get_template("aboutus.html")
     context = Context({})

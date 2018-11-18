@@ -44,6 +44,7 @@ urlpatterns = [
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'index$', views.index, name = 'index'),
+    url(r'index_new$', views.index_new, name = 'index_new'),
     url(r'home$', views.home, name = 'home'),
     url(r'^$', views.home, name = 'home'),
     url(r'aboutus$', views.aboutus, name = 'aboutus'),
