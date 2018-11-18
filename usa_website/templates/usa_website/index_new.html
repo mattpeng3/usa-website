@@ -1,0 +1,198 @@
+{% extends "header.html" %}
+{% load staticfiles %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/style.css' %}" >
+
+<style>
+h2{
+  margin-bottom:20px;
+  font-size: 55px;
+}
+.price-box {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 40px;
+  position: relative;
+  -webkit-box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.20);
+  -moz-box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.20);
+  top: 2px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  /*background: #f0eada;*/
+  /*background: white;*/
+
+}
+#committee_header{
+  margin-top:10px;
+}
+.btn{
+  color:white;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  h3{
+    font-size:15px;
+  }
+  p{
+    font-size:14px !important;
+  }
+}
+</style>
+
+  <div class="fullheight" style="height:calc(100vh - 80px) !important;">
+    <div class="flexslider ">
+      <div class="background-overlay animated fadeInUp">
+        <div class="container">
+          <div class="col-md-10 col-md-offset-1 text-center slider-text" style="height:calc(100vh - 80px);">
+            <div class="slider-text-inner">
+              <h2>Statistics Undergraduate Student Association</h2>
+              <div>
+                  <img src="{% static 'usa_website/images/icondata.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                  <img src="{% static 'usa_website/images/iconcareerexploration.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                  <img src="{% static 'usa_website/images/iconwebdev.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                  <img src="{% static 'usa_website/images/iconresearch.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                  <img src="{% static 'usa_website/images/education.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                  <img src="{% static 'usa_website/images/iconivp.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+                  <img src="{% static 'usa_website/images/iconevp.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
+              </div>
+              <br>
+              <div>
+                  <center>
+                      <a href="#committee_header">
+                          <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
+                      </a>
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      <ul class="slides" style="height:calc(100vh - 80px) !important;">
+        <li style="background-image: url({% static 'usa_website/images/adish_on_stump.jpg' %});"></li>
+        <li style="background-image: url({% static 'usa_website/images/housingcRincess.jpg' %});"></li>
+        <li style="background-image: url({% static 'usa_website/images/slide_2.jpg' %});"></li>
+        <li style="background-image: url({% static 'usa_website/images/image_1.jpg' %});"></li>
+      </ul>
+  </div>
+</div>
+<br>
+<div class = "container">
+  <div class = "row">
+    <div class ='col-md-6 offset-md-3'>
+      <div class="text-center" id="committee_header">
+        <h2>Committees</h2>
+      </div>
+        <p class='text-center'>
+          Besides hosting events, SUSA also offers opportunities for students to hone their skills as a member of one of its four committees. By joining a committee, students can get involved in the leadership of the club and gain practical experience in statistical research, event planning, or marketing. We encourage any interested students to apply at the beginning of each semester.
+        </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+        <div class="price-box">
+                <img src="{% static 'usa_website/images/icondata.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+              <br></br>
+            <h3>Data Consulting</h3>
+
+            <p>At the core of our club is the Data Consulting Committee. Members have the opportunity to analyze real-life data, working with companies, nonprofits, and Berkeley-affiliated organizations to advise policy and make data-driven decisions. Students will learn a variety of machine learning techniques and advanced statistical methods, as well as a suite of visualization tools, all in a professional yet instructive setting.</p><br>
+            <a href="{% url 'dataconsulting' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="price-box">
+                <img src="{% static 'usa_website/images/iconcareerexploration.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                <br></br>
+            <h3>Career Exploration</h3>
+            <p>The Career Exploration Committee is a great place to start for students who are just beginning their careers in Statistics! Members get access to exclusive weekly talks, statistical and professional workshops, and career info sessions, along with private office hours with experienced advisors and the continuous academic and social support SUSA offers. </p>
+            <a href="{% url 'careerex' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
+        </div>
+    </div>
+  </div>
+  <br></br>
+  <div class="row">
+      <div class="pricing">
+          <div class="col-md-6">
+              <div class="price-box">
+                      <img src="{% static 'usa_website/images/iconwebdev.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                      <br></br>
+                  <h3>Web Development</h3>
+                  <p> The Web Development Committee develops and maintains our website in addition to developing web applications for various uses. Members will learn the fundamentals of developing and maintaining a website through working on projects for the SUSA website as well as undergo a 2-3 week bootcamp to create their own personal website.</p>
+                  <a href="{% url 'webdev' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
+              </div>
+          </div>
+
+          <div class="col-md-6">
+              <div class="price-box">
+
+                      <img src="{% static 'usa_website/images/iconresearch.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                      <br></br>
+                  <h3>Research and Publication</h3>
+                  <p>The Research and Publication Committee gives driven students the opportunity to pursue personal research projects in topics ranging from industry trends and developments to personal statistical studies while backed by readily available individual guidance and a professional medium of publication.</p>
+                  <a href="{% url 'research' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="pricing">
+          <div class="col-md-6 justify-content-center">
+              <div class="price-box">
+                      <img src="{% static 'usa_website/images/education.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                      <br></br>
+                  <h3>Education</h3>
+                  <p>The Education Committee provides a great outlet for those interested in statistics, data science, and machine learning to share their knowledge through writing and presenting material. Members will work on a multitude of topics, rotating between creating and presenting material for our Career Exploration Committee, creating blog posts, and incorporating all of our work into a DeCal for Spring 2019.</p>
+                  <a href="{% url 'education' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
+              </div>
+          </div>
+
+            <div class="col-md-6">
+                <div class="price-box">
+                        <img src="{% static 'usa_website/images/iconivp.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                        <br></br>
+                    <h3>Events and Marketing (IVP Office)</h3>
+                    <p>The Events and Marketing Committee is a small team dedicated to planning academic, professional, and social events for the club, gaining hands-on experience in event organization and management. Members will also earn valuable design and marketing skills through event design and upkeep of our social media pages.</p>
+                    <!--<a href="{% url 'comingSoon' %}" class="btn btn-select-plan btn-sm">Learn More</a>-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="pricing justify-content-center">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="price-box">
+                    <img src="{% static 'usa_website/images/iconevp.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                    <br></br>
+                <h3>External Affairs (EVP Office)</h3>
+                <p>The External Affairs Committee is a committee designed to aid the EVP in his/her daily tasks. As part of this committee, members will be aiding in maintaining relationships with our professor and alumni networks, as well as collaborating with other campus organizations through our club outreach programs. </p>
+                <!--<a href="{% url 'comingSoon' %}" class="btn btn-select-plan btn-sm">Learn More</a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+<script>
+
+$( document ).ready(function() {
+    var heights = $(".price-box").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".price-box").height(maxHeight);
+});
+
+</script>
+
+{% endblock %}
