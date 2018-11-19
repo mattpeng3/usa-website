@@ -21,7 +21,7 @@ if os.path.dirname(os.path.abspath(__file__)) == '/home/u/ug/ugradsa/usa-website
     execfile(activate_env, dict(__file__=activate_env))
 else:
     print(os.path.dirname(os.path.abspath(__file__)))
-    activate_env=os.path.expanduser("./venv/bin/activate_this.py")
+    activate_env=os.path.expanduser("./venv/Scripts/activate_this.py")
     site.addsitedir('./venv/lib/python3.6/site-packages')
     with open(activate_env) as f:
         exec(f.read(), {'__file__': activate_env})
