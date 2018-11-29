@@ -8,7 +8,7 @@
     "text": ""
   },
   "text": {
-    "more": "Prerequisites-\u003e Math 1a,1b,53,54\nCore Courses-\u003e Stat 133,134,135\nMachine Learning-\u003e Stat 151,154,155\nData Science-\u003e Stat 158,153,152,159\nProbability Theory-\u003e Stat 150",
+    "more": "[Lower Division] Math 1A, Math 1B, Math 53, Math 54, Stat 20\n[Core Classes] Stat 133, 134/140, 135\n[Laboratory] Stat 151A, 152, 153, 154, 158, 159\n[Data Science] Stat 152, 153, 158, 159\n[Machine Learning] Stat 151A, 154, 155\n[Probability] Stat 150, 157",
     "intro": "Course Guide for undergraduate Statistics courses",
     "title": "Course Map"
   },
@@ -19,7 +19,7 @@
   },
   "features": {
     "search": false,
-    "groupSelectorAttribute": false,
+    "groupSelectorAttribute": "color",
     "hoverBehavior": "dim"
   },
   "informationPanel": {
