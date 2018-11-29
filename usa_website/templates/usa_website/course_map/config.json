@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "/templates/usa_website/course_map/data.json",
+  "logo": {
+    "file": "",
+    "link": "",
+    "text": ""
+  },
+  "text": {
+    "more": "[Lower Division (blue)] Math 1A, Math 1B, Math 53, Math 54, Stat 20\n[Core Classes (yellow)] Stat 133, 134/140, 135\n[Laboratory (green)] Stat 151A, 152, 153, 154, 158, 159\n[Data Science] Stat 152, 153, 158, 159\n[Machine Learning] Stat 151A, 154, 155\n[Probability] Stat 150, 157",
+    "intro": "Course Guide for Undergraduate Statistics Courses",
+    "title": "Course Map"
+  },
+  "legend": {
+    "edgeLabel": "Prerequisites",
+    "colorLabel": "Association",
+    "nodeLabel": "Class"
+  },
+  "features": {
+    "search": false,
+    "groupSelectorAttribute": false,
+    "hoverBehavior": "dim"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": "Label"
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 0.5,
+      "minEdgeSize": 0.2,
+      "minNodeSize": 1,
+      "maxNodeSize": 7
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}
