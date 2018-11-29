@@ -129,6 +129,7 @@ urlpatterns = [
     url(r'housingcrisis$', views.housingcrisis, name = "housingcrisis"),
     url(r'housingcrisis/$', views.housingcrisis, name = "housingcrisis"),
     url(r'housingcRincess$', views.housingcRincess, name = "housingcRincess"),
+    url(r'aDishwasher$', views.aDishwasher, name = "aDishwasher"),
     url(r'montyhall$', views.montyhall, name = "montyhall"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio")

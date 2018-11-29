@@ -322,6 +322,11 @@ def housingcRincess(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def aDishwasher(request):
+    t = get_template("aDishwasher.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 # def argentina(request):
 #     t = get_template("webapp/Argentina.csv")
 #     context = Context({})
