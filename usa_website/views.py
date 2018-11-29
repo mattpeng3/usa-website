@@ -5,9 +5,7 @@ from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from .models import Course, Blog
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
-from .forms import PostForm, AttendanceForm
-from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
-#from .utils.attendance import GetFinalTable
+from .forms import PostForm
 
 
 
