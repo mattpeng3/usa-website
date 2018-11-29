@@ -8,8 +8,8 @@
     "text": ""
   },
   "text": {
-    "more": "[Lower Division] Math 1A, Math 1B, Math 53, Math 54, Stat 20\n[Core Classes] Stat 133, 134/140, 135\n[Laboratory] Stat 151A, 152, 153, 154, 158, 159\n[Data Science] Stat 152, 153, 158, 159\n[Machine Learning] Stat 151A, 154, 155\n[Probability] Stat 150, 157",
-    "intro": "Course Guide for undergraduate Statistics courses",
+    "more": "[Lower Division (blue)] Math 1A, Math 1B, Math 53, Math 54, Stat 20\n[Core Classes (yellow)] Stat 133, 134/140, 135\n[Laboratory (green)] Stat 151A, 152, 153, 154, 158, 159\n[Data Science] Stat 152, 153, 158, 159\n[Machine Learning] Stat 151A, 154, 155\n[Probability] Stat 150, 157",
+    "intro": "Course Guide for Undergraduate Statistics Courses",
     "title": "Course Map"
   },
   "legend": {
@@ -19,7 +19,7 @@
   },
   "features": {
     "search": false,
-    "groupSelectorAttribute": "color",
+    "groupSelectorAttribute": false,
     "hoverBehavior": "dim"
   },
   "informationPanel": {
