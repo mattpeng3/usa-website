@@ -21,29 +21,9 @@ $( document ).ready(function() {
     <aside id="fh5co-hero" class="js-fullheight" >
         <div class="flexslider " style="height:calc(100% - 80px) !important;">
           <div class="background-overlay animated fadeInUp">
-
             <div class="container">
-                <!-- <a href="https://www.facebook.com/events/232343147456811/" target="_blank">
-                    <div class="infosession-left">
-                        <div class="infosession-text">
-                            Infosession 1<br>1011 Evans<br>8/30 8-9PM
-                        </div>
-                    </div>
-                </a>
-                <a href="https://www.facebook.com/events/282714378997856/" target="_blank">
-                    <div class="infosession-right">
-                        <div class="infosession-text">
-                            Infosession 2<br>1011 Evans<br>8/31 7-8PM
-                        </div>
-                    </div>
-                </a> -->
-                <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-
+                <div class="col-md-12 text-center js-fullheight slider-text">
                     <div class="slider-text-inner">
-                        <!-- <video playsinline autoplay muted loop>
-                            WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-                            <source src="static/usa_website/images/Pride.mp4" type="video/webm">
-                        </video> -->
                         <h2>Statistics Undergraduate Student Association</h2>
                         <div>
                             <img src="{% static 'usa_website/images/icondata.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
@@ -54,7 +34,6 @@ $( document ).ready(function() {
                             <img src="{% static 'usa_website/images/iconivp.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
                             <img src="{% static 'usa_website/images/iconevp.png' %}" style="padding:5px; width:75px; height:75px; display:inline"></img>
                         </div>
-
                         <!--
                         <div class="apply-button-container">
                           <a class="apply-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdSLX6RBZKGpzU04y5_EVpvBQbagi0R4aeqc8HpcNbrV9MBcw/viewform?usp=sf_link" target="_blank">Apply Now!</a>
@@ -68,12 +47,11 @@ $( document ).ready(function() {
                                 </a>
                             </center>
                         </div>
-                        <!-- <a href="/careerex" class="btn btn-select-plan btn-sm" style="padding:10px 20px; background:#5bc0de; color:#fff">Apply Now!</a> -->
                     </div>
                   </div>
                 </div>
           </div>
-            <ul class="slides" >
+            <ul class="slides" style="height:100%;">
             <li style="background-image: url({% static 'usa_website/images/adish_on_stump.jpg' %});"></li>
             <li style="background-image: url({% static 'usa_website/images/housingcRincess.jpg' %});"></li>
             <li style="background-image: url({% static 'usa_website/images/slide_2.jpg' %});"></li>
@@ -85,88 +63,77 @@ $( document ).ready(function() {
     <div id="fh5co-pricing-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+                <div class="col-md-6 offset-md-3 text-center fh5co-heading">
                     <h2>Committees</h2>
                     <p>Besides hosting events, SUSA also offers opportunities for students to hone their skills as a member of one of its four committees. By joining a committee, students can get involved in the leadership of the club and gain practical experience in statistical research, event planning, or marketing. We encourage any interested students to apply at the beginning of each semester.</p>
                 </div>
             </div>
             <div class="row">
-
-                    <div class="col-md-6">
-                        <div class="price-box">
-                                <img src="{% static 'usa_website/images/icondata.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
-                              <br></br>
-                            <h3>Data Consulting</h3>
-
-                            <p>At the core of our club is the Data Consulting Committee. Members have the opportunity to analyze real-life data, working with companies, nonprofits, and Berkeley-affiliated organizations to advise policy and make data-driven decisions. Students will learn a variety of machine learning techniques and advanced statistical methods, as well as a suite of visualization tools, all in a professional yet instructive setting.</p><br>
-                            <a href="{% url 'dataconsulting' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="price-box">
-                                <img src="{% static 'usa_website/images/iconcareerexploration.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
-                                <br></br>
-                            <h3>Career Exploration</h3>
-                            <p>The Career Exploration Committee is a great place to start for students who are just beginning their careers in Statistics! Members get access to exclusive weekly talks, statistical and professional workshops, and career info sessions, along with private office hours with experienced advisors and the continuous academic and social support SUSA offers. </p>
-                            <a href="{% url 'careerex' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
-                        </div>
-
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="pricing">
-                    <div class="col-md-6">
-                        <div class="price-box">
-                                <img src="{% static 'usa_website/images/iconwebdev.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
-                                <br></br>
-                            <h3>Web Development</h3>
-                            <p> The Web Development Committee develops and maintains our website in addition to developing web applications for various uses. Members will learn the fundamentals of developing and maintaining a website through working on projects for the SUSA website as well as undergo a 2-3 week bootcamp to create their own personal website.</p>
-                            <a href="{% url 'webdev' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="price-box">
-
-                                <img src="{% static 'usa_website/images/iconresearch.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
-                                <br></br>
-                            <h3>Research and Publication</h3>
-                            <p>The Research and Publication Committee gives driven students the opportunity to pursue personal research projects in topics ranging from industry trends and developments to personal statistical studies while backed by readily available individual guidance and a professional medium of publication.</p>
-                            <a href="{% url 'research' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="pricing">
-                  <div class="col-md-6 justify-content-center">
-                      <div class="price-box">
-                              <img src="{% static 'usa_website/images/education.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
-                              <br></br>
-                          <h3>Education</h3>
-                          <p>The Education Committee provides a great outlet for those interested in statistics, data science, and machine learning to share their knowledge through writing and presenting material. Members will work on a multitude of topics, rotating between creating and presenting material for our Career Exploration Committee, creating blog posts, and incorporating all of our work into a DeCal for Spring 2019.</p>
-                          <a href="{% url 'education' %}" class="btn btn-select-plan btn-sm committee-btn">Learn More</a>
-                      </div>
+              <div class="col-md-6">
+                  <div class="price-box">
+                          <img src="{% static 'usa_website/images/icondata.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                        <br></br>
+                      <h3>Data Consulting</h3>
+                      <p>At the core of our club is the Data Consulting Committee. Members have the opportunity to analyze real-life data, working with companies, nonprofits, and Berkeley-affiliated organizations to advise policy and make data-driven decisions. Students will learn a variety of machine learning techniques and advanced statistical methods, as well as a suite of visualization tools, all in a professional yet instructive setting.</p><br>
+                      <a href="{% url 'dataconsulting' %}" class="btn btn-select-plan btn-sm committee-btn" style="font-size:16px;">Learn More</a>
                   </div>
+              </div>
 
-                    <div class="col-md-6">
-                        <div class="price-box">
-                                <img src="{% static 'usa_website/images/iconivp.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
-                                <br></br>
-                            <h3>Events and Marketing (IVP Office)</h3>
-                            <p>The Events and Marketing Committee is a small team dedicated to planning academic, professional, and social events for the club, gaining hands-on experience in event organization and management. Members will also earn valuable design and marketing skills through event design and upkeep of our social media pages.</p>
-                            <!--<a href="{% url 'comingSoon' %}" class="btn btn-select-plan btn-sm">Learn More</a>-->
-                        </div>
-                    </div>
-
-                </div>
+              <div class="col-md-6">
+                  <div class="price-box">
+                          <img src="{% static 'usa_website/images/iconcareerexploration.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                          <br></br>
+                      <h3>Career Exploration</h3>
+                      <p>The Career Exploration Committee is a great place to start for students who are just beginning their careers in Statistics! Members get access to exclusive weekly talks, statistical and professional workshops, and career info sessions, along with private office hours with experienced advisors and the continuous academic and social support SUSA offers. </p>
+                      <a href="{% url 'careerex' %}" class="btn btn-select-plan btn-sm committee-btn" style="font-size:16px;">Learn More</a>
+                  </div>
+              </div>
             </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="price-box">
+                            <img src="{% static 'usa_website/images/iconwebdev.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                            <br></br>
+                        <h3>Web Development</h3>
+                        <p> The Web Development Committee develops and maintains our website in addition to developing web applications for various uses. Members will learn the fundamentals of developing and maintaining a website through working on projects for the SUSA website. In Spring 2019, we will also offer some projects related to front-end data visualization.</p>
+                        <a href="{% url 'webdev' %}" class="btn btn-select-plan btn-sm committee-btn" style="font-size:16px;">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="price-box">
+                            <img src="{% static 'usa_website/images/iconresearch.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                            <br></br>
+                        <h3>Research and Publication</h3>
+                        <p>The Research and Publication Committee gives driven students the opportunity to pursue personal research projects in topics ranging from industry trends and developments to personal statistical studies while backed by readily available individual guidance and a professional medium of publication.</p>
+                        <a href="{% url 'research' %}" class="btn btn-select-plan btn-sm committee-btn" style="font-size:16px;">Learn More</a>
+                    </div>
+                </div>
+             </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6 justify-content-center">
+                  <div class="price-box">
+                          <img src="{% static 'usa_website/images/education.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                          <br></br>
+                      <h3>Education</h3>
+                      <p>The Education Committee provides a great outlet for those interested in statistics, data science, and machine learning to share their knowledge through writing and presenting material. Members will work on a multitude of topics, rotating between creating and presenting material for our Career Exploration Committee, creating blog posts, and incorporating all of our work into a DeCal for Fall 2019.</p>
+                      <a href="{% url 'education' %}" class="btn btn-select-plan btn-sm committee-btn" style="font-size:16px;">Learn More</a>
+                  </div>
+              </div>
+                <div class="col-md-6">
+                    <div class="price-box">
+                            <img src="{% static 'usa_website/images/iconivp.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
+                            <br></br>
+                        <h3>Events and Marketing (IVP Office)</h3>
+                        <p>The Events and Marketing Committee is a small team dedicated to planning academic, professional, and social events for the club, gaining hands-on experience in event organization and management. Members will also earn valuable design and marketing skills through event design and upkeep of our social media pages.</p>
+                        <!--<a href="{% url 'comingSoon' %}" class="btn btn-select-plan btn-sm">Learn More</a>-->
+                    </div>
+                </div>
+              </div>
             <div class="row">
                 <div class="pricing justify-content-center">
-                  <div class="col-md-6 col-md-offset-3">
+                  <div class="col-md-6 offset-md-3">
                       <div class="price-box">
                               <img src="{% static 'usa_website/images/iconevp.png' %}" style="padding:5px; width:100px; height:100px; display:inline"></img>
                               <br></br>

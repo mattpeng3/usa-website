@@ -89,38 +89,67 @@
 
 
 
-    <div id="header_page">
+    <div id="fh5co-page">
     <header id="fh5co-header" role="banner">
         <div class="container">
             <div class="header-inner">
                 <!--<h1><a href="{% url 'home' %}">SUSA</a></h1>-->
-                <a href="/"><img src="/static/usa_website/images/susafinallogowhite.png" style="height:90%;vertical-align:middle;margin-top:5px;"></img></a>
+
                 <!--
                 <div class="fb-share-button fb_iframe_widget" data-href="https://susa.berkeley.edu/" data-layout="button_count" data-size="small" data-mobile-iframe="true" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsusa.berkeley.edu%2F&amp;src=sdkpreparse">Share</a></div>
                 -->
-                <nav class="navbar" role="navigation">
-                    <div class="container-fluid">
+                <nav class="navbar navbar-expand-sm" role="navigation">
+                    <div class="container-fluid" style="justify-content:end;">
+                      <a href="/" style="height:80px; width:auto; display:inline-block; margin-right:auto;">
+                        <img src="/static/usa_website/images/susafinallogowhite.png" style="height:70px;vertical-align:middle;margin-top:5px; "></img>
+                      </a>
                         <!--
-                        <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-bar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-
-                        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'usa_website/images/susafinallogo.png' %}" style="height:200%;vertical-align:left"></img></a>
-                        <div class="fb-share-button" data-href="https://susa.berkeley.edu/" data-layout="button_count" data-size="small" data-mobile-iframe="true" style="padding-top:20px"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsusa.berkeley.edu%2F&amp;src=sdkpreparse">Share</a></div>
-
-                        </div>
-
                         <div class="collapse navbar-collapse" id="header-bar">
                         -->
-                        <ul>
+                        <!-- Links  NOTE: Even though bootstrap 4 has a default caret, DON'T USE IT, it messes up the animation -->
+                      <ul class="navbar-nav" style="margin-top:16px; margin-bottom:16px;">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown" style="line-height:1.4 !important;">
+                            About <span class="caret"></span>
+                          </a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'people' %}" style="line-height:1.4 !important;">About Us</a>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown" style="line-height:1.4 !important;">
+                            Committiees<span class="caret"></span>
+                          </a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'careerex' %}" style="line-height:1.4 !important;">Career Exploration</a>
+                            <a class="dropdown-item" href="{% url 'dataconsulting' %}" style="line-height:1.4 !important;">Data Consulting</a>
+                            <a class="dropdown-item" href="{% url 'education' %}" style="line-height:1.4 !important;">Education</a>
+                            <a class="dropdown-item" href="{% url 'research' %}" style="line-height:1.4 !important;">Research and Education</a>
+                            <a class="dropdown-item" href="{% url 'webdev' %}" style="line-height:1.4 !important;">Web Development</a>
+                          </div>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'courseMap' %}" style="line-height:1.4 !important;" >Course Map</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown" style="line-height:1.4 !important;">
+                            Events <span class="caret"></span>
+                          </a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'attendance' %}" style="line-height:1.4 !important;">Attendance</a>
+                            <a class="dropdown-item" href="{% url 'calendar' %}" style="line-height:1.4 !important;">Calendar</a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+
+                        <!--<ul>
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                  <!--<li><a href="{% url 'people' %}">About Us</a></li>-->
+                                  <li><a href="{% url 'people' %}">About Us</a></li>
                                   <li><a href="{% url 'people' %}">People</a></li>
-                                  <!--<li><a href="{% url 'people' %}">Social Media</a></li>-->
+                                  <li><a href="{% url 'people' %}">Social Media</a></li>
                                 </ul>
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Committees<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -132,36 +161,22 @@
                                 </ul>
                             </li>
                             <li><a href="course-map">Course Map</a></li>
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Events<span class="caret"></span></a>
+                            <li class="dropdown">
+                              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="attendance">Attendance</a></li>
                                     <li><a href="calendar">Calendar</a></li>
                                 </ul>
-                            </li>
-                            <!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses<span class="caret"></span></a>
-                                <ul class="dropdown-menu" style="overflow-x:hidden; overflow-y:auto; max-height:250px;">
-                                    <li><a href="{% url 'stat133' %}">Stat 133</a></li>
-                                    <li><a href="{% url 'stat134' %}">Stat 134</a></li>
-                                    <li><a href="{% url 'stat135' %}">Stat 135</a></li>
-                                    <li><a href="{% url 'stat150' %}">Stat 150</a></li>
-                                    <li><a href="{% url 'stat151a' %}">Stat 151A</a></li>
-                                    <li><a href="{% url 'stat151b' %}">Stat 151B</a></li>
-                                    <li><a href="{% url 'stat152' %}">Stat 152</a></li>
-                                    <li><a href="{% url 'stat153' %}">Stat 153</a></li>
-                                    <li><a href="{% url 'stat154' %}">Stat 154</a></li>
-                                    <li><a href="{% url 'stat155' %}">Stat 155</a></li>
-                                    <li><a href="{% url 'stat157' %}">Stat 157</a></li>
-                                    <li><a href="{% url 'stat158' %}">Stat 158</a></li>
-                                    <li><a href="{% url 'stat159' %}">Stat 159</a></li>
-                                </ul>
-                            </li> -->
+                            </li>-->
+
                             <!-- APPLY BUTTON:
                             <li ><a class="apply-header"
-                               href="https://docs.google.com/forms/d/e/1FAIpQLSdSLX6RBZKGpzU04y5_EVpvBQbagi0R4aeqc8HpcNbrV9MBcw/viewform?usp=sf_link" target="_blank">Apply</a></li>
-                             -->
+                               href="https://docs.google.com/forms/d/e/1FAIpQLSdSLX6RBZKGpzU04y5_EVpvBQbagi0R4aeqc8HpcNbrV9MBcw/viewform?usp=sf_link" target="_blank">Apply</a>
+                            </li>
+
                         </ul>
                     </div>
-                </nav>
+                </nav>-->
             </div>
         </div>
     </header>
@@ -176,40 +191,6 @@
 
 
     <footer id="fh5co-footer" role="contentinfo">
-
-        <!-- <div class="container">
-            <div class="col-md-12 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-                <h3>About Us</h3>
-                <p>The Statistics Undergraduate Student Association is a premier organization at UC Berkeley that stimulates its members' interests in Statistics and facilitates their further development in a statistics career.</p>
-
-                <p>You may contact us at <a href="mailto:contact@susa.berkeley.edu">contact@susa.berkeley.edu</a> or follow us on <a href="https://www.facebook.com/susaberkeley">Facebook!</a></p>
-                <!--<p><a href="#" class="btn btn-primary btn-outline with-arrow btn-sm">Join Us <i class="icon-arrow-right"></i></a></p>-->
-            <!-- <div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-                <h3>Our Services</h3>
-                <ul class="float">
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">Branding &amp; Identity</a></li>
-                    <li><a href="#">Free HTML5</a></li>
-                    <li><a href="#">HandCrafted Templates</a></li>
-                </ul>
-                <ul class="float">
-                    <li><a href="#">Free Bootstrap Template</a></li>
-                    <li><a href="#">Free HTML5 Template</a></li>
-                    <li><a href="#">Free HTML5 &amp; CSS3 Template</a></li>
-                    <li><a href="#">HandCrafted Templates</a></li>
-                </ul>
-            </div>
-            <div class="col-md-12 col-md-push-0 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0 fh5co-social">
-                <h3><a href="https://www.facebook.com/susaberkeley/">Follow us on Facebook!</a></h3>
-            <ul class="fh5co-social">
-            <div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-            </div>
-            </ul>
-            </div>
-          </div> -->
-
-
             <div class=" fh5co-copyright text-center">
               <div class="row_socials">
                 <div class="col_socials">
@@ -241,15 +222,15 @@
                 <p style="font-size:20px;">Contact us at <a href="mailto:contact@susa.berkeley.edu">contact@susa.berkeley.edu</a></p>
                 <p>Copyright © 2018 SUSA. All rights reserved. Design by Yitz Deng, Aaron Chai, David Nahm, Anthony Yu, Abhinav Bhaskar.</p>
                 <p>We are a student group acting independently of the University of California. <span> We take full responsibility for our organization and this web site. </span></p>
-    <a href="https://www.ocf.berkeley.edu">
-            <img src="https://www.ocf.berkeley.edu/hosting-logos/ocfbadge_mini8darkglow.png"
-                    alt="Hosted by the OCF" style="border: 0;" />
-    </a>
+              <a href="https://www.ocf.berkeley.edu">
+              <img src="https://www.ocf.berkeley.edu/hosting-logos/ocfbadge_mini8darkglow.png"
+                      alt="Hosted by the OCF" style="border: 0;" />
+              </a>
             </div>
 
         </div>
     </footer>
-    </div>
+    
 
 
 
