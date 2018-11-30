@@ -10,17 +10,12 @@
     <div class="container">
 
     </div>
-    <aside id="fh5co-hero" class="js-fullheight">
-        <div class="flexslider js-fullheight">
+    <aside id="fh5co-hero" class="js-fullheight" >
+        <div class="flexslider " style="height:calc(100% - 80px) !important;">
           <div class="background-overlay animated fadeInUp">
             <div class="container">
-                <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-
+                <div class="col-md-12 text-center js-fullheight slider-text">
                     <div class="slider-text-inner">
-                        <!-- <video playsinline autoplay muted loop>
-                            WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-                            <source src="static/usa_website/images/Pride.mp4" type="video/webm">
-                        </video> -->
                         <h2>Education Committee</h2>
                         <br>
                         <div>
@@ -30,29 +25,31 @@
                                 </a>
                             </center>
                         </div>
-                        <!-- <a href="/careerex" class="btn btn-select-plan btn-sm" style="padding:10px 20px; background:#5bc0de; color:#fff">Apply Now!</a> -->
                     </div>
                   </div>
                 </div>
           </div>
 
-            <ul class="slides">
+            <ul class="slides" style="height:100%">
             <li style="background-image: url({% static 'usa_website/images/research.jpg' %});"></li>
             </ul>
         </div>
     </aside>
 
-    <div id="fh5co-blog-section" class="fh5co-light-grey-section">
+    <div id="fh5co-blog-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+                <div class="col-md-6 offset-md-3 text-center fh5co-heading">
                     <h2>Education Committee</h2>
                     <p>The Education Committee provides a great outlet for those interested in statistics, data science, and machine learning to share their knowledge through writing and presenting material. Members will work on a multitude of topics, rotating between creating and presenting material for our Career Exploration Committee, creating blog posts, and incorporating all of our work into a DeCal for Spring 2019.</p>
-                    <center><h2>Crash Courses</h2></center>
+                    <br />
+                    <h2>Crash Courses</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="justify-content:center;">
               	<h3>aRun's R Tutorials</h3>
+            </div>
+            <div class="row" >
                 <div class="col-md-4 col-sm-4">
                     <a href="{% url 'r0' %}" class="item-grid">
                         <div class="v-align">
@@ -87,8 +84,10 @@
                     </a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="justify-content:center;">
             	<h3>Machine Learning</h3>
+            </div>
+            <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <a href="{% url 'bias_variance' %}" class="item-grid">
                       {% comment %}
@@ -105,8 +104,10 @@
                     </a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="justify-content:center;">
             	<h3>Python</h3>
+            </div>
+            <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <a href="{% url 'p0' %}" class="item-grid">
                         <div class="v-align">
@@ -119,8 +120,10 @@
                     </a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="justify-content:center;">
             	<h3>Web Development</h3>
+            </div>
+            <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <a href="{% url 'website_tutorial_0' %}" class="item-grid">
                         <div class="v-align">

@@ -38,7 +38,7 @@
 
 	var sliderMain = function() {
 
-	  	$('#fh5co-hero .flexslider').flexslider({
+	  	$(' .flexslider').flexslider({
 			animation: "fade",
 			slideshowSpeed: 5000,
 			directionNav: true,
@@ -57,9 +57,9 @@
 
 	  	});
 
-	  	$('#fh5co-hero .flexslider .slides > li').css('height', $(window).height());
+	  	$(' .flexslider .slides > li').css('height', $(window).height());
 	  	$(window).resize(function(){
-	  		$('#fh5co-hero .flexslider .slides > li').css('height', $(window).height());
+	  		$(' .flexslider .slides > li').css('height', $(window).height());
 	  	});
 
 	};

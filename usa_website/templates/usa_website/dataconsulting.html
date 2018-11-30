@@ -20,17 +20,12 @@ $( document ).ready(function() {
     <div class="container">
 
     </div>
-    <aside id="fh5co-hero" class="js-fullheight">
-        <div class="flexslider js-fullheight">
+    <aside id="fh5co-hero" class="js-fullheight" >
+        <div class="flexslider " style="height:calc(100% - 80px) !important;">
           <div class="background-overlay animated fadeInUp">
             <div class="container">
-                <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-
+                <div class="col-md-12 text-center js-fullheight slider-text">
                     <div class="slider-text-inner">
-                        <!-- <video playsinline autoplay muted loop>
-                            WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-                            <source src="static/usa_website/images/Pride.mp4" type="video/webm">
-                        </video> -->
                         <h2>Data Consulting Committee</h2>
                         <br>
                         <div>
@@ -40,13 +35,11 @@ $( document ).ready(function() {
                                 </a>
                             </center>
                         </div>
-                        <!-- <a href="/careerex" class="btn btn-select-plan btn-sm" style="padding:10px 20px; background:#5bc0de; color:#fff">Apply Now!</a> -->
                     </div>
                   </div>
                 </div>
           </div>
-
-            <ul class="slides">
+            <ul class="slides" style="height:100%;">
             <li style="background-image: url({% static 'usa_website/images/resistance.jpg' %});"></li>
             <li style="background-image: url({% static 'usa_website/images/grad_students.jpg' %});"></li>
             <li style="background-image: url({% static 'usa_website/images/uizard_team.jpg' %});"></li>
@@ -54,36 +47,28 @@ $( document ).ready(function() {
         </div>
     </aside>
 
-    <div id="fh5co-blog-section" class="fh5co-light-grey-section">
+    <div id="fh5co-blog-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+                <div class="col-md-6 offset-md-3 text-center fh5co-heading">
                     <h2>Data Consulting</h2>
                     <p>In the Data Consulting committee, members have the opportunity to analyze real-life data, working with companies, nonprofits, and Berkeley-affiliated organizations to advise policy and make data-driven decisions. Students will learn a variety of machine learning techniques and advanced statistical methods, as well as a suite of visualization tools, all in a professional yet instructive setting.</p>
                     <p>Each semester we work on a diverse slate of projects. From analyzing city traffic data to surveying Cal Undergraduates, our members become experienced data collectors, data mungers, data modelers, data visualizers, and data presenters. We bring skill sets from academia and the workforce to tackle any kind of challenge. More importantly, we come together as a team to learn from each other and collaborate together.</p>
                 </div>
             </div>
-            <div class="row">
-                <center>
-                  <h2>This Semester</h2>
-                </center>
-                <div class="col-md-4 col-sm-4 col-sm-offset-4">
-                  <div class="item-grid">
-                  <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/tacobell_f18.png' %})">
-                  </div>
-                    <div class="v-align">
-                        <div class="v-align-middle">
-                            <h3 class="title">Taco Bell Demand Prediction</h3>
-                            <h5 class="date"><span>PM Elliot Stahnke</span></h5>
-                            <h5 class="date"><span>Fall 2018</span></h5>
-                        </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="row" style=" justify-content:center;">
+                  <h2> This Semester</h2>
             </div>
-            <div class="row">
-                <br>
-                <center><h2>Past Projects</h2></center>
+            <div class="row" style="justify-content:center;">
+              <p>
+                Projects will be announced as we begin our school year, please stay tuned and check back later!
+              </p>
+            </div>
+            <div class="row" style="justify-content:center;">
+                <br /> <br/>
+                  <h2>Past Projects</h2>
+            </div>
+            <div class="row" >
                 <div class="col-md-4 col-sm-4 ">
                   <a href="{% url 'tutorfly' %}" class="item-grid">
                     <div class="image" style="background-image: url({% static 'usa_website/images/blog/tutorfly.png' %})">
@@ -238,5 +223,6 @@ $( document ).ready(function() {
             </div>
         </div>
     </div>
+  </div>
 
     {% endblock %}
