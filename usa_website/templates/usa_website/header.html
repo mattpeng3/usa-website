@@ -99,9 +99,9 @@
                 <div class="fb-share-button fb_iframe_widget" data-href="https://susa.berkeley.edu/" data-layout="button_count" data-size="small" data-mobile-iframe="true" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsusa.berkeley.edu%2F&amp;src=sdkpreparse">Share</a></div>
                 -->
                 <nav class="navbar navbar-expand-sm" role="navigation">
-                    <div class="container-fluid" style="justify-content:end;">
+                    <div class="container-fluid" id="nav-container" style="justify-content:end;">
                       <a href="/" style="height:80px; width:auto; display:inline-block; margin-right:auto;">
-                        <img src="/static/usa_website/images/susafinallogowhite.png" style="height:70px;vertical-align:middle;margin-top:5px; "></img>
+                        <img src="/static/usa_website/images/susafinallogowhite.png" style="height:70px;vertical-align:middle;margin-top:5px; " id="susaa"></img>
                       </a>
                         <!--
                         <div class="collapse navbar-collapse" id="header-bar">
@@ -189,7 +189,6 @@
 
     {% endblock %}
 
-
     <footer id="fh5co-footer" role="contentinfo">
             <div class=" fh5co-copyright text-center">
               <div class="row_socials">
@@ -230,7 +229,7 @@
 
         </div>
     </footer>
-    
+
 
 
 
@@ -249,5 +248,28 @@
     <script src="{% static 'usa_website/js/owl.carousel.min.js' %}"></script>
     <!-- MAIN JS -->
     <script src="{% static 'usa_website/js/main.js' %}"></script>
+
+    <script>
+    $(document).ready(function() {
+      var viewportWidth = $(window).width();
+      if (viewportWidth > 753) {
+        $(".navbar").addClass("navbar-expand-sm");
+        $("#nav-container").css('justify-content', 'end');
+      } else {
+        $(".navbar").removeClass("navbar-expand-sm");
+        $("#nav-container").css('justify-content', 'start');
+      }
+    });
+    $(window).resize(function () {
+        var viewportWidth = $(window).width();
+        if (viewportWidth > 753) {
+          $(".navbar").addClass("navbar-expand-sm");
+          $("#nav-container").css('justify-content', 'end');
+        } else {
+          $(".navbar").removeClass("navbar-expand-sm");
+          $("#nav-container").css('justify-content', 'start');
+        }
+    });
+    </script>
     </body>
 </html>

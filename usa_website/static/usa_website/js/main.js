@@ -111,6 +111,7 @@
 		$('#fh5co-offcanvas').prepend('<ul id="fh5co-side-links">');
 		$('body').prepend('<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>');
 		$('#fh5co-offcanvas').append($('#fh5co-header nav').clone());
+
 	};
 
 
