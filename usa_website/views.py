@@ -117,7 +117,7 @@ def people(request):
     return HttpResponse(t.render(context))
 
 def courseMap(request):
-    t = get_template("course-map.html")
+    t = get_template("course-map-old.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
